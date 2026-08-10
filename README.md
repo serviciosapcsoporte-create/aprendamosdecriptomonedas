@@ -2,7 +2,7 @@
 
 Plataforma educativa en español sobre blockchain y criptomonedas: curso guiado en 5 niveles, blog, guías descargables y recursos. _"Educación segura, estrategia clara y sin humo."_
 
-Sitio desplegado en **https://aprendamosdecriptomonedas.online** (GitHub Pages).
+Sitio desplegado en **https://aprendamosdecriptomonedas.lat** (GitHub Pages).
 
 ## Stack
 
@@ -60,7 +60,7 @@ Los temas de niveles 3-5 se escriben en markdown extendido (títulos, listas, ta
 
 ## Deploy en GitHub Pages
 
-El dominio `aprendamosdecriptomonedas.online` ya apunta a GitHub. El workflow `.github/workflows/deploy.yml` publica `dist/` en cada push a `main` mediante GitHub Actions. También se usa `public/404.html` (generado en el build) para el fallback SPA de links profundos.
+El dominio `aprendamosdecriptomonedas.lat` ya apunta a GitHub. El workflow `.github/workflows/deploy.yml` publica `dist/` en cada push a `main` mediante GitHub Actions. También se usa `public/404.html` (generado en el build) para el fallback SPA de links profundos.
 
 ## Notas legales
 

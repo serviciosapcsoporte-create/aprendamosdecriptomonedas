@@ -17,7 +17,7 @@ export const Route = createFileRoute("/blog/$postId")({
         { property: "og:description", content: post.summary },
         { property: "og:type", content: "article" },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:image", content: `https://aprendamosdecriptomonedas.online${post.image}` },
+        { property: "og:image", content: `https://aprendamosdecriptomonedas.lat${post.image}` },
       ],
     };
   },

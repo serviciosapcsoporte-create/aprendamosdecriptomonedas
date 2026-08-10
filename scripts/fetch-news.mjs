@@ -26,7 +26,7 @@ const FALLBACK_ITEMS = [
   {
     title: "El resumen cripto de hoy no estÃ¡ disponible en este momento",
     source: "Aprendamos de Criptomonedas",
-    link: "https://aprendamosdecriptomonedas.online/noticias",
+    link: "https://aprendamosdecriptomonedas.lat/noticias",
     publishedAt: new Date().toISOString(),
     excerpt:
       "No se pudo actualizar el resumen automÃ¡tico. La prÃ³xima actualizaciÃ³n programada lo restaurarÃ¡ automÃ¡ticamente.",

@@ -6,7 +6,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = resolve(root, "dist");
 const dataDir = resolve(root, "app", "data");
 
-const SITE = "https://aprendamosdecriptomonedas.online";
+const SITE = "https://aprendamosdecriptomonedas.lat";
 
 const staticRoutes = [
   "/",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aprendamosdecriptomonedas.online/sitemap.xml
+Sitemap: https://aprendamosdecriptomonedas.lat/sitemap.xml
