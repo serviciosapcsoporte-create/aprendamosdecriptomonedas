@@ -23,3 +23,6 @@ Thumbs.db
 
 # Vite cache
 .vite/
+# Artefactos exportados
+*.html-saved-page
+
