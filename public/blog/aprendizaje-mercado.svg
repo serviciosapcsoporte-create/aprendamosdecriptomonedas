@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="El aprendizaje detrás del mercado">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1f3a"/>
+      <stop offset="1" stop-color="#3b2f5f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.15" cy="0.15" r="0.6">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <polyline points="120,470 260,400 400,430 560,320 720,360 880,240 1080,180" fill="none" stroke="#fbbf24" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="880" cy="240" r="12" fill="#fbbf24"/>
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#ffffff" text-anchor="middle">El aprendizaje detrás del mercado</text>
+</svg>

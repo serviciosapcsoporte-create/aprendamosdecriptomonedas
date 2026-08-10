@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# TanStack Router generated files
+.tanstack/
+app/routeTree.gen.ts
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.local
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Vite cache
+.vite/
