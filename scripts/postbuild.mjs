@@ -21,6 +21,11 @@ const staticRoutes = [
   "/nivel-5-especializaciones",
   "/nivel-1/que-es-blockchain",
   "/nivel-1/como-funciona-un-bloque",
+  "/recursos/el-inversor-que-sobrevive",
+  "/recursos/checklist-supervivencia-cripto",
+  "/recursos/el-custodio",
+  "/recursos/el-escudo-de-5-minutos",
+  "/recursos/el-escanner",
 ];
 
 function slurp(file) {

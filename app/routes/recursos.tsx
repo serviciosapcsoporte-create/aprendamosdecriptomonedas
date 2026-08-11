@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { Download, Lock,ShoppingCart } from "lucide-react";
+import { BookOpen, CheckCircle2, Download, Eye, Lock, ShieldCheck, ShoppingCart } from "lucide-react";
 
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
@@ -36,31 +36,39 @@ function RecursosPage() {
             price="GRATIS"
             badge="free"
             icon={<Lock className="w-6 h-6 text-green-600" />}
-            href="/recursos/el-escudo-de-5-minutos.pdf"
+            href="/recursos/el-escudo-de-5-minutos"
           />
           <ResourceCard
             title="Checklist de Supervivencia Cripto"
             description="Lista de verificación para no caer en estafas, hackeos ni decisiones impulsivas."
             price="GRATIS"
             badge="free"
-            icon={<Download className="w-6 h-6 text-green-600" />}
-            href="/recursos/checklist-supervivencia-cripto.pdf"
+            icon={<CheckCircle2 className="w-6 h-6 text-green-600" />}
+            href="/recursos/checklist-supervivencia-cripto"
           />
           <ResourceCard
             title="El Custodio de su propia Libertad"
             description="Autocustodia paso a paso: claves, semillas y errores que cuestan carteras enteras."
-            price="$10 USD"
-            badge="paid"
-            icon={<Lock className="w-6 h-6 text-amber-600" />}
-            href="#pricing"
+            price="GRATIS"
+            badge="free"
+            icon={<ShieldCheck className="w-6 h-6 text-green-600" />}
+            href="/recursos/el-custodio"
           />
           <ResourceCard
             title="El Inversor que Sobrevive"
             description="Gestión de riesgo y emociones para permanecer en el mercado a largo plazo."
-            price="$5 USD"
-            badge="paid"
-            icon={<Download className="w-6 h-6 text-amber-600" />}
-            href="#pricing"
+            price="GRATIS"
+            badge="free"
+            icon={<BookOpen className="w-6 h-6 text-green-600" />}
+            href="/recursos/el-inversor-que-sobrevive"
+          />
+          <ResourceCard
+            title="El Escáner"
+            description="Filtros de lógica para analizar protocolos: rendimiento real vs Ponzi."
+            price="GRATIS"
+            badge="free"
+            icon={<Eye className="w-6 h-6 text-green-600" />}
+            href="/recursos/el-escanner"
           />
         </div>
 
@@ -84,7 +92,6 @@ function RecursosPage() {
               <p className="text-3xl font-bold text-amber-600 mb-4">$99 USD</p>
               <ul className="text-sm text-muted-foreground mb-4 space-y-1">
                 <li>Los 5 niveles completos</li>
-                <li>Todas las guías y checklists</li>
                 <li>Nuevas especializaciones mensuales</li>
                 <li>Soporte prioritario</li>
               </ul>
@@ -132,10 +139,9 @@ function ResourceCard({
       {href.startsWith("/recursos/") ? (
         <a
           href={href}
-          download
           className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
         >
-          Descargar
+          Leer guía
         </a>
       ) : (
         <a

@@ -61,22 +61,20 @@ function Nivel1Page() {
         ))}
 
         <div className="mt-16 bg-gradient-to-r from-amber-50 to-amber-100/50 dark:from-amber-950/20 dark:to-amber-950/10 rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Guías gratuitas descargables</h3>
+          <h3 className="text-xl font-bold mb-2">Guías gratuitas</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Refuerza tu aprendizaje con nuestras guías en PDF.
+            Refuerza tu aprendizaje con nuestras guías de seguridad y control.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="/recursos/el-escudo-de-5-minutos.pdf"
+              href="/recursos/el-escudo-de-5-minutos"
               className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
-              download
             >
               El Escudo de 5 minutos (GRATIS)
             </a>
             <a
-              href="/recursos/checklist-supervivencia-cripto.pdf"
+              href="/recursos/checklist-supervivencia-cripto"
               className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
-              download
             >
               Checklist de Supervivencia Cripto (GRATIS)
             </a>
