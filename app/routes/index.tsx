@@ -2,6 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { cn } from "@/lib/utils";
+import { Layers, Route, Shield, Cog } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -52,55 +53,82 @@ function Index() {
     <>
       <Header />
       <main className="flex-1">
-        <section className="py-12 md:py-20 bg-gradient-to-br from-navy via-navy-light to-navy">
-          <div className="container mx-auto px-4 text-center">
-            <div className="mb-8">
-              <img
-                src="/logo-white.png"
-                alt="Aprendamos de Criptomonedas"
-                className="mx-auto h-20 w-auto mb-6"
-                loading="eager"
-              />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
-                PLAN EDUCATIVO COMPLETO
-              </h1>
-              <h2 className="text-xl md:text-2xl text-amber-400 font-bold mb-5">
-                BLOCKCHAIN &amp; CRIPTOMONEDAS
-              </h2>
-              <p className="text-lg font-semibold text-amber-200/90 mb-5">
-                Educación segura · <span className="text-white">Estrategia clara</span> ·{" "}
-                <span className="text-cyan-300">Sin humo</span>
-              </p>
-              <p className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground mb-6">
-                Aprende Web3 como un ingeniero. Sin influencers, sin promesas. Fundamentos
-                criptográficos, estrategia on-chain y ejecución profesional.
-              </p>
-              <p className="text-sm font-semibold text-amber-400 mb-10">
-                5 niveles · 75 temas (15 + 18 + 18 + 13 + 11)
-              </p>
-            </div>
+        <section className="relative overflow-hidden bg-[#080d1a] py-16 md:py-24">
+          <div className="absolute inset-0 cyber-grid" />
+          <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-cyan-500/20 blur-[120px]" />
+          <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-cyan-400/10 blur-[120px]" />
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-              <button
-                onClick={() => {
-                  const el = document.getElementById("curriculum");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="btn-gold text-base"
-              >
-                Empezar ahora
-              </button>
-              <Link
-                to="/nivel-1-principiante"
-                className="inline-flex items-center justify-center rounded-md border border-cyan-400/60 px-6 py-3 text-base font-medium text-cyan-200 hover:bg-cyan-400/10 transition-colors"
-              >
-                Ver ruta
-              </Link>
-            </div>
+          <div className="relative container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-8">
+              <div className="text-center lg:text-left space-y-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300 transition-colors hover:border-cyan-400/70 hover:bg-cyan-400/10">
+                  <span className="text-cyan-400">•</span>
+                  Plan Educativo Completo
+                  <span className="text-cyan-400">•</span>
+                  Blockchain &amp; Criptomonedas
+                </span>
 
-            <div className="flex flex-wrap justify-center gap-2">
-              <span className="neon-chip">Educación, no asesoría</span>
-              <span className="neon-chip neon-chip--amber">On-chain first</span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white">
+                  Educación segura · Estrategia clara ·{" "}
+                  <span className="text-cyan-400 drop-shadow-[0_0_18px_rgba(0,242,254,0.45)]">
+                    Sin humo
+                  </span>
+                </h1>
+
+                <p className="text-base md:text-lg text-[#94a3b8] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                  Aprende Web3 como un ingeniero. Sin influencers, sin promesas.
+                  Fundamentos criptográficos, estrategia on-chain y ejecución
+                  profesional.
+                </p>
+
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
+                  <Layers className="h-4 w-4 text-cyan-400" />
+                  5 niveles · 75 temas (15 + 18 + 18 + 13 + 11)
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById("curriculum");
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#00f2fe] px-7 py-3 text-base font-bold text-black transition-all hover:bg-[#33f5ff] hover:shadow-[0_0_30px_rgba(0,242,254,0.7)]"
+                  >
+                    Empezar ahora
+                  </button>
+                  <Link
+                    to="/nivel-1-principiante"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-400/30 bg-white/5 backdrop-blur px-7 py-3 text-base font-medium text-white transition-all hover:border-cyan-400/60 hover:bg-cyan-400/10"
+                  >
+                    <Route className="h-4 w-4 text-cyan-400" />
+                    Ver ruta
+                  </Link>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs text-slate-500">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Shield className="h-3.5 w-3.5 text-slate-400" />
+                    Educación, no asesoría
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Cog className="h-3.5 w-3.5 text-slate-400" />
+                    On-chain first
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative flex items-center justify-center py-6">
+                <div className="absolute h-72 w-72 rounded-full bg-cyan-500/20 blur-[80px]" />
+                <div className="absolute h-64 w-64 rounded-full border border-cyan-400/25" />
+                <div className="absolute h-80 w-80 rounded-full border border-dashed border-cyan-400/15 animate-[spin_24s_linear_infinite]" />
+                <div className="absolute h-96 w-96 rounded-full border border-cyan-400/5" />
+                <img
+                  src="/logo-white.png"
+                  alt="Aprendamos de Criptomonedas"
+                  className="relative h-44 w-auto animate-float drop-shadow-[0_0_30px_rgba(0,242,254,0.55)]"
+                  loading="eager"
+                />
+              </div>
             </div>
           </div>
         </section>

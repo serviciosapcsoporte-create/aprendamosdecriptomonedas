@@ -235,3 +235,12 @@ body {
 .animate-float {
   animation: floaty 7s ease-in-out infinite;
 }
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 242, 254, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 80%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 80%);
+}
