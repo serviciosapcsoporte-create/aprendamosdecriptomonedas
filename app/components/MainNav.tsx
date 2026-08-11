@@ -282,36 +282,36 @@ export function MainNav() {
           <Link
             to={item.href}
             className={cn(
-              "flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors",
+              "flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium text-foreground/90 hover:bg-accent hover:text-accent-foreground transition-colors",
               item.badge === "paid" &&
-                "text-amber-600 hover:text-amber-700",
+                "text-amber-300 hover:text-amber-200",
             )}
           >
             <span>{item.title}</span>
             {item.badge === "free" && (
-              <span className="text-xs bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 text-cyan-300">
                 Gratis
               </span>
             )}
             {item.badge === "register" && (
-              <span className="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border border-violet-400/50 bg-violet-500/15 text-violet-300">
                 Registro
               </span>
             )}
             {item.badge === "paid" && (
-              <span className="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-400/40 bg-amber-400/10 text-amber-300">
                 Premium
               </span>
             )}
             {item.badge === "new" && (
-              <span className="text-xs bg-red-100 text-red-800 px-1.5 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border border-fuchsia-400/50 bg-fuchsia-500/15 text-fuchsia-300">
                 Nuevo
               </span>
             )}
           </Link>
 
           {item.children && (
-            <div className="absolute left-0 top-full mt-2 w-64 rounded-md bg-popover p-2 shadow-lg ring-1 ring-border opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
+            <div className="absolute left-0 top-full mt-2 w-64 rounded-lg bg-[#0a1226]/95 p-2 shadow-neon-sm ring-1 ring-cyan-400/20 backdrop-blur-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
               {item.children.map((child) => (
                 <div key={child.href ?? child.title} className="mb-1">
                   {child.children ? (

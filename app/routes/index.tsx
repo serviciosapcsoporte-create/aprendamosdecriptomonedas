@@ -52,22 +52,23 @@ function Index() {
     <>
       <Header />
       <main className="flex-1">
-        <section className="py-12 md:py-20 bg-gradient-to-br from-navy via-navy-light to-navy">
-          <div className="container mx-auto px-4 text-center">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-navy via-navy-light to-navy relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center relative">
             <div className="mb-8">
               <img
-                src="/logo.svg"
+                src="/logo-white.png"
                 alt="Aprendamos de Criptomonedas"
-                className="mx-auto h-20 w-auto mb-6"
+                className="mx-auto h-20 w-auto mb-6 animate-pulse-glow drop-shadow-[0_0_24px_rgba(0,240,255,0.35)]"
                 loading="eager"
               />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              <span className="neon-chip mb-5">Curso gratuito · En español · Sin humo</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-glow mb-4">
                 PLAN EDUCATIVO COMPLETO
               </h1>
-              <h2 className="text-xl md:text-2xl text-amber-400 font-bold mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-amber-400 mb-4">
                 BLOCKCHAIN &amp; CRIPTOMONEDAS
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-muted-foreground">
                 Educación segura · Estrategia clara · Sin humo
               </p>
             </div>
@@ -78,7 +79,7 @@ function Index() {
                   const el = document.getElementById("curriculum");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-base font-medium text-navy shadow-lg hover:bg-amber-400 transition-colors"
+                className="btn-cyber text-base"
               >
                 Empezar ahora
               </button>
@@ -164,7 +165,7 @@ function Index() {
               </a>
               <Link
                 to="/blog"
-                className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-medium text-white hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-md border border-cyan-400/40 px-6 py-3 text-base font-medium text-white hover:bg-cyan-400/10 transition-colors"
               >
                 Leer el blog
               </Link>
@@ -194,25 +195,25 @@ function LevelCard({
 }) {
   return (
     <Link to={href} className="group block">
-      <div className="flex flex-col p-6 bg-white dark:bg-card rounded-lg border shadow-sm transition-all duration-200 group-hover:shadow-md group-hover:-translate-y-1">
+      <div className="glass-card flex flex-col p-6">
         <div className="mb-4 flex items-center justify-between">
           <span className="text-sm font-bold text-muted-foreground">{level}</span>
           <span
             className={cn(
               "text-xs font-semibold px-2.5 py-0.5 rounded-full border",
               badge === "free"
-                ? "bg-green-100 text-green-800 border-green-200"
+                ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-300"
                 : badge === "register"
-                ? "bg-blue-100 text-blue-800 border-blue-200"
-                : "bg-amber-100 text-amber-800 border-amber-200",
+                ? "border-violet-400/50 bg-violet-500/15 text-violet-300"
+                : "border-amber-400/40 bg-amber-400/10 text-amber-300",
             )}
           >
             {badge === "free" ? "GRATIS" : badge === "register" ? "REGISTRO" : "PREMIUM"}
           </span>
         </div>
-        <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary">{title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-neon">{title}</h3>
         <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <span className="text-sm font-medium text-primary mt-auto">Ver contenido →</span>
+        <span className="text-sm font-medium text-neon mt-auto">Ver contenido →</span>
       </div>
     </Link>
   );
