@@ -128,11 +128,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="pointer-events-none fixed left-5 top-1/3 z-20 hidden lg:block" aria-hidden="true">
+      <div className="pointer-events-none fixed left-4 top-[18%] z-20 hidden lg:block" aria-hidden="true">
         <img
           src="/logo-white.png"
           alt=""
-          className="h-36 w-auto animate-float opacity-40 drop-shadow-[0_0_22px_rgba(0,240,255,0.55)]"
+          className="h-36 w-auto animate-float opacity-60 drop-shadow-[0_0_22px_rgba(0,240,255,0.55)]"
         />
       </div>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

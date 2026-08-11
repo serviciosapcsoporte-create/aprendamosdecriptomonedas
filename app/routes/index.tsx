@@ -61,27 +61,46 @@ function Index() {
                 className="mx-auto h-20 w-auto mb-6"
                 loading="eager"
               />
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
                 PLAN EDUCATIVO COMPLETO
               </h1>
-              <h2 className="text-xl md:text-2xl text-amber-400 font-bold mb-4">
+              <h2 className="text-xl md:text-2xl text-amber-400 font-bold mb-5">
                 BLOCKCHAIN &amp; CRIPTOMONEDAS
               </h2>
-              <p className="text-lg text-gray-300">
-                Educación segura · Estrategia clara · Sin humo
+              <p className="text-lg font-semibold text-amber-200/90 mb-5">
+                Educación segura · <span className="text-white">Estrategia clara</span> ·{" "}
+                <span className="text-cyan-300">Sin humo</span>
+              </p>
+              <p className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground mb-6">
+                Aprende Web3 como un ingeniero. Sin influencers, sin promesas. Fundamentos
+                criptográficos, estrategia on-chain y ejecución profesional.
+              </p>
+              <p className="text-sm font-semibold text-amber-400 mb-10">
+                5 niveles · 75 temas (15 + 18 + 18 + 13 + 11)
               </p>
             </div>
 
-            <div className="mt-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <button
                 onClick={() => {
                   const el = document.getElementById("curriculum");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-base font-medium text-navy shadow-lg hover:bg-amber-400 transition-colors"
+                className="btn-gold text-base"
               >
                 Empezar ahora
               </button>
+              <Link
+                to="/nivel-1-principiante"
+                className="inline-flex items-center justify-center rounded-md border border-cyan-400/60 px-6 py-3 text-base font-medium text-cyan-200 hover:bg-cyan-400/10 transition-colors"
+              >
+                Ver ruta
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-2">
+              <span className="neon-chip">Educación, no asesoría</span>
+              <span className="neon-chip neon-chip--amber">On-chain first</span>
             </div>
           </div>
         </section>
