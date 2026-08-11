@@ -2,7 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { cn } from "@/lib/utils";
-import { Layers, Route, Shield, Cog } from "lucide-react";
+import { Layers, Route as RouteIcon, Shield, Cog } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -100,7 +100,7 @@ function Index() {
                     to="/nivel-1-principiante"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-400/30 bg-white/5 backdrop-blur px-7 py-3 text-base font-medium text-white transition-all hover:border-cyan-400/60 hover:bg-cyan-400/10"
                   >
-                    <Route className="h-4 w-4 text-cyan-400" />
+                    <RouteIcon className="h-4 w-4 text-cyan-400" />
                     Ver ruta
                   </Link>
                 </div>
