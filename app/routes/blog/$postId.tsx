@@ -23,8 +23,9 @@ export const Route = createFileRoute("/blog/$postId")({
   },
 });
 
-function PostPage({ params }: { params: { postId: string } }) {
-  const post = findPost(params.postId);
+function PostPage() {
+  const { postId } = Route.useParams();
+  const post = findPost(postId);
 
   if (!post) {
     return (

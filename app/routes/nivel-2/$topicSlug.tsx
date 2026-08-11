@@ -43,9 +43,10 @@ function findTopic(slug: string, level: string) {
   return undefined;
 }
 
-function TopicPage({ params }: { params: { topicSlug: string } }) {
+function TopicPage() {
+  const { topicSlug } = Route.useParams();
   const level = "2";
-  const topic = findTopic(params.topicSlug, level);
+  const topic = findTopic(topicSlug, level);
   const levelPrefix = `nivel-${level}`;
   const suffix = levelMap[level];
 
