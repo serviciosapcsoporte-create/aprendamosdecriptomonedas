@@ -48,10 +48,10 @@ module.exports = {
         violet: "var(--violet)",
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        heading: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Archivo Black", "Inter", "sans-serif"],
+        sans: ["Barlow", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Barlow", "sans-serif"],
+        body: ["Barlow", "sans-serif"],
+        display: ["Archivo Black", "Barlow", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
