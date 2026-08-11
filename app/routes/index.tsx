@@ -123,7 +123,7 @@ function Index() {
                 <div className="absolute h-80 w-80 rounded-full border border-dashed border-cyan-400/15 animate-[spin_24s_linear_infinite]" />
                 <div className="absolute h-96 w-96 rounded-full border border-cyan-400/5" />
                 <img
-                  src="/logo-white.png"
+                  src="/logo.png"
                   alt="Aprendamos de Criptomonedas"
                   className="relative h-44 w-auto animate-float drop-shadow-[0_0_30px_rgba(0,242,254,0.55)]"
                   loading="eager"

@@ -8,7 +8,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/logo-white.png"
+            src="/logo.png"
             alt="Aprendamos de Criptomonedas"
             className="h-10 w-auto"
             loading="eager"

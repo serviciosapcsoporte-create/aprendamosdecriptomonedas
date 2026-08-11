@@ -130,7 +130,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="pointer-events-none fixed left-4 top-[18%] z-20 hidden lg:block" aria-hidden="true">
         <img
-          src="/logo-white.png"
+          src="/logo.png"
           alt=""
           className="h-36 w-auto animate-float opacity-60 drop-shadow-[0_0_22px_rgba(0,240,255,0.55)]"
         />
