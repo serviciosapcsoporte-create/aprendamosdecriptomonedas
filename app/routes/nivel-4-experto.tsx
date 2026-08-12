@@ -40,12 +40,12 @@ function Nivel4Page() {
         <div className="mb-12 bg-card rounded-xl p-6 md:p-8 text-center border">
           <h2 className="text-xl font-bold mb-4">Accede a este nivel</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            El Nivel 4 aborda sistemas distribuidos avanzados, DeFi profesional, escalabilidad compleja y tecnología de agentes autónomos. Ideal para ingenieros y analistas avanzados.
+            El Nivel 4 aborda sistemas distribuidos avanzados, DeFi profesional, escalabilidad compleja y tecnología de agentes autónomos. Acceso de por vida por un pago único.
           </p>
-          <a href="/recursos#pricing"
+          <a href="#payhip-n4"
             className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-base font-medium text-navy hover:bg-amber-400"
           >
-            Ver planes de suscripción
+            Comprar Nivel 4 — $39 USD
           </a>
         </div>
 

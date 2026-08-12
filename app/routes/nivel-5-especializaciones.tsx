@@ -42,10 +42,10 @@ function Nivel5Page() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             El Nivel 5 ofrece especializaciones modulares. Puedes elegir el módulo que se ajuste a tus objetivos: trading profesional, minería, desarrollo blockchain o infraestructura Web3.
           </p>
-          <a href="/recursos#pricing"
+          <a href="#payhip-n5"
             className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-base font-medium text-navy hover:bg-amber-400"
           >
-            Ver especializaciones
+            Comprar Nivel 5 — $45 USD
           </a>
         </div>
 

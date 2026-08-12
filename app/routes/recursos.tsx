@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { BookOpen, CheckCircle2, Download, Eye, Lock, ShieldCheck, ShoppingCart } from "lucide-react";
+import { BookOpen, CheckCircle2, Download, Eye, Lock, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
@@ -74,31 +74,44 @@ function RecursosPage() {
 
         <div id="pricing" className="mt-16 bg-card rounded-xl p-8 border">
           <h2 className="text-2xl font-bold text-center mb-8">Accede a todo el contenido</h2>
-          <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
+          <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
             <div className="p-6 border rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-2">Suscripción Mensual</h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">$9.99 USD</p>
+              <h3 className="text-xl font-bold mb-2">Nivel 3 — Avanzado</h3>
+              <p className="text-3xl font-bold text-amber-600 mb-4">GRATIS</p>
               <ul className="text-sm text-muted-foreground mb-4 space-y-1">
-                <li>Niveles 1-2 completos</li>
-                <li>Nivel 3 (Avanzado)</li>
-                <li>Acceso a comunidad</li>
+                <li>DeFi avanzado y trading</li>
+                <li>Layer 2 y cross-chain</li>
+                <li>Solo requiere registro en Payhip</li>
               </ul>
-              <button className="w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
-                Comenzar
-              </button>
+              <a href="#payhip-n3" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
+                Registrarme gratis
+              </a>
             </div>
             <div className="p-6 border-2 border-amber-500 rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-2">Suscripción Anual</h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">$99 USD</p>
+              <h3 className="text-xl font-bold mb-2">Nivel 4 — Experto</h3>
+              <p className="text-3xl font-bold text-amber-600 mb-4">$39 USD</p>
               <ul className="text-sm text-muted-foreground mb-4 space-y-1">
-                <li>Los 5 niveles completos</li>
-                <li>Nuevas especializaciones mensuales</li>
-                <li>Soporte prioritario</li>
+                <li>Pago único · Acceso de por vida</li>
+                <li>Sistemas distribuidos y ZK-tech</li>
+                <li>DeFi profesional y trading algorítmico</li>
+                <li>Se incluye el Nivel 3 (Avanzado)</li>
               </ul>
-              <button className="w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
-                <ShoppingCart className="w-4 h-4 inline mr-2" />
-                Más popular
-              </button>
+              <a href="#payhip-n4" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
+                Comprar Nivel 4 — $39
+              </a>
+            </div>
+            <div className="p-6 border rounded-lg text-center">
+              <h3 className="text-xl font-bold mb-2">Nivel 5 — Especializaciones</h3>
+              <p className="text-3xl font-bold text-amber-600 mb-4">$45 USD</p>
+              <ul className="text-sm text-muted-foreground mb-4 space-y-1">
+                <li>Pago único · Acceso de por vida</li>
+                <li>Ethereum Scaling y Blockchain Modular</li>
+                <li>Desarrollo avanzado y regulación</li>
+                <li>Se incluyen Niveles 3 y 4</li>
+              </ul>
+              <a href="#payhip-n5" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
+                Comprar Nivel 5 — $45
+              </a>
             </div>
           </div>
         </div>

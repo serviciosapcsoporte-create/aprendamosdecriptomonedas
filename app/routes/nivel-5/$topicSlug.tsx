@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { Markdown } from "@/components/Markdown";
+import { PremiumGate } from "@/components/PremiumGate";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -58,6 +59,16 @@ function TopicPage() {
           <h1 className="text-2xl font-bold mb-4">Tema no encontrado</h1>
           <Link to={`/${levelPrefix}-${suffix}`}>Volver a Nivel {level}</Link>
         </main>
+        <Footer />
+      </>
+    );
+  }
+
+  if (topic.badge === "paid" || topic.badge === "register") {
+    return (
+      <>
+        <Header />
+        <PremiumGate level={level} backTo={{ label: `Volver a Nivel ${level}`, href: `/${levelPrefix}-${suffix}` }} />
         <Footer />
       </>
     );
