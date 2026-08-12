@@ -122,11 +122,14 @@ function Index() {
                 <div className="absolute h-64 w-64 rounded-full border border-cyan-400/25" />
                 <div className="absolute h-80 w-80 rounded-full border border-dashed border-cyan-400/15 animate-[spin_24s_linear_infinite]" />
                 <div className="absolute h-96 w-96 rounded-full border border-cyan-400/5" />
-                <img
-                  src="/logo.png"
-                  alt="Aprendamos de Criptomonedas"
-                  className="relative h-44 w-auto animate-float drop-shadow-[0_0_30px_rgba(0,242,254,0.55)]"
-                  loading="eager"
+                <video
+                  src="/videos/intro.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label="Intro animado de Aprendamos de Criptomonedas"
+                  className="relative h-44 w-44 rounded-full object-cover animate-float drop-shadow-[0_0_30px_rgba(0,242,254,0.55)] ring-2 ring-cyan-400/40"
                 />
               </div>
             </div>
