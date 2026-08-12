@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "fetch:news": "node scripts/fetch-news.mjs",
-    "build": "npm run fetch:news && vite build && node scripts/postbuild.mjs",
+    "build": "npm run fetch:news && npm run assets && vite build && node scripts/postbuild.mjs",
+    "assets": "node scripts/generate-sales-assets.mjs && node scripts/generate-kit-pdf.mjs",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",

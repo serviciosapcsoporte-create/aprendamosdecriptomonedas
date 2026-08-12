@@ -1,7 +1,8 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { BookOpen, CheckCircle2, Download, Eye, Lock, ShieldCheck } from "lucide-react";
+import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck, Zap } from "lucide-react";
+import { salesOffers } from "@/data/sales";
 
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
@@ -70,54 +71,65 @@ function RecursosPage() {
             icon={<Eye className="w-6 h-6 text-green-600" />}
             href="/recursos/el-escanner"
           />
+          <ResourceCard
+            title="Kit de Inicio Nivel 3 (PDF)"
+            description="Checklist de DeFi y trading + guía de Layer 2 para empezar el Nivel Avanzado."
+            price="GRATIS"
+            badge="free"
+            icon={<FileText className="w-6 h-6 text-green-600" />}
+            href="/resources/kit-nivel-3.pdf"
+          />
         </div>
 
-        <div id="pricing" className="mt-16 bg-card rounded-xl p-8 border">
-          <h2 className="text-2xl font-bold text-center mb-8">Accede a todo el contenido</h2>
-          <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-            <div className="p-6 border rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-2">Nivel 3 — Avanzado</h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">GRATIS</p>
-              <ul className="text-sm text-muted-foreground mb-4 space-y-1">
-                <li>DeFi avanzado y trading</li>
-                <li>Layer 2 y cross-chain</li>
-                <li>Solo requiere registro en Payhip</li>
-              </ul>
-              <a href="#payhip-n3" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
-                Registrarme gratis
-              </a>
-            </div>
-            <div className="p-6 border-2 border-amber-500 rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-2">Nivel 4 — Experto</h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">$39 USD</p>
-              <ul className="text-sm text-muted-foreground mb-4 space-y-1">
-                <li>Pago único · Acceso de por vida</li>
-                <li>Sistemas distribuidos y ZK-tech</li>
-                <li>DeFi profesional y trading algorítmico</li>
-                <li>Se incluye el Nivel 3 (Avanzado)</li>
-              </ul>
-              <a href="#payhip-n4" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
-                Comprar Nivel 4 — $39
-              </a>
-            </div>
-            <div className="p-6 border rounded-lg text-center">
-              <h3 className="text-xl font-bold mb-2">Nivel 5 — Especializaciones</h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">$45 USD</p>
-              <ul className="text-sm text-muted-foreground mb-4 space-y-1">
-                <li>Pago único · Acceso de por vida</li>
-                <li>Ethereum Scaling y Blockchain Modular</li>
-                <li>Desarrollo avanzado y regulación</li>
-                <li>Se incluyen Niveles 3 y 4</li>
-              </ul>
-              <a href="#payhip-n5" className="block w-full rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400">
-                Comprar Nivel 5 — $45
-              </a>
-            </div>
-          </div>
-        </div>
+        <PricingSection />
       </main>
       <Footer />
     </>
+  );
+}
+
+function PricingSection() {
+  return (
+    <div id="pricing" className="mt-16 bg-card rounded-xl p-8 border">
+      <h2 className="text-2xl font-bold text-center mb-8">Accede a todo el contenido</h2>
+      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+        {(["nivel-3", "nivel-4", "nivel-5"] as const).map((key, i) => {
+          const offer = salesOffers[key];
+          const featured = i === 1;
+          return (
+            <div
+              key={key}
+              className={`p-6 rounded-lg text-center ${featured ? "border-2 border-amber-500" : "border"}`}
+            >
+              <h3 className="text-xl font-bold mb-2">
+                Nivel {key.slice(-1)} — {offer.title}
+              </h3>
+              <p className="text-3xl font-bold text-amber-600 mb-4">{offer.price}</p>
+              <ul className="text-sm text-muted-foreground mb-4 space-y-1 text-left">
+                {offer.includes.map((inc) => (
+                  <li key={inc} className="flex items-start gap-1.5">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                    {inc}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={offer.funnelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-1.5 rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
+              >
+                <Zap className="h-4 w-4" />
+                {offer.ctaLabel}
+              </a>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-6 text-center text-xs text-muted-foreground">
+        Pago seguro procesado por systeme.io · PayPal y tarjeta · Acceso de por vida
+      </p>
+    </div>
   );
 }
 
@@ -136,6 +148,7 @@ function ResourceCard({
   icon: React.ReactNode;
   href: string;
 }) {
+  const isExternal = href.startsWith("/resources/");
   return (
     <div className="flex flex-col h-full p-6 bg-card rounded-lg border">
       <div className="flex items-center gap-3 mb-4">
@@ -149,21 +162,15 @@ function ResourceCard({
       <div className="mb-4">
         <span className="text-xl font-bold">{price}</span>
       </div>
-      {href.startsWith("/recursos/") ? (
-        <a
-          href={href}
-          className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
-        >
-          Leer guía
-        </a>
-      ) : (
-        <a
-          href={href}
-          className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
-        >
-          Comprar
-        </a>
-      )}
+      <a
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="inline-flex items-center justify-center gap-1.5 rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
+      >
+        <Download className="h-4 w-4" />
+        {isExternal ? "Descargar PDF" : "Leer guía"}
+      </a>
     </div>
   );
 }

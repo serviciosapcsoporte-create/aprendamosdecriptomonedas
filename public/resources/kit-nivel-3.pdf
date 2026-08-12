@@ -1,0 +1,64 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+4 0 obj
+<< /Length 2256 >>
+stream
+BT /F2 18 Tf 1 0 0 1 56 736 Td (Kit de Inicio  Nivel 3 \(Avanzado\)) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 708 Td (Checklist de DeFi, trading y Layer 2) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 686 Td (Antes de empezar \(seguridad\)) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Cartera fria o hardware wallet para fondos grandes) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  2FA activado en exchanges y email principal) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Semilla escrita en papel, guardada fuera de casa) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  Nunca compartas claves ni semillas con nadie) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 600 Td ([ ]  Verifica siempre la URL del exchange / dApp antes de conectar) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 580 Td (DeFi: lo minimo antes de tocar contratos) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 558 Td ([ ]  Entiendes la diferencia: exchange centralizado vs DEX) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  Conoces como funciona un AMM \(x*y=k\) y el slippage) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Has probado primero en red de testnet) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 510 Td ([ ]  Compruebas la liquidez del pool antes de operar) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 494 Td ([ ]  Sabes que gas != fee del protocolo) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 474 Td (Layer 2: elegir red sin errores) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 452 Td ([ ]  Sabes si el L2 es optimistic rollup o zk-rollup) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Conoces como se vuelve a L1 \(bridge\) y sus costos) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 420 Td ([ ]  Usas el bridge oficial o el que audito la comunidad) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 404 Td ([ ]  Tienes ETH en L2 para pagar gas \(no el mismo que en L1\)) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 384 Td (Trading: regla de supervivencia) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 362 Td ([ ]  Nunca arriesgas mas del 1-2% por operacion) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 346 Td ([ ]  Plan escrito antes de abrir: entrada, stop y objetivo) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 330 Td ([ ]  No apalancas mientras operas en spot) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 314 Td ([ ]  Llevas registro de cada trade \(gano/perdi y por que\)) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 286 Td (Recuerda: primero riesgo, despues rentabilidad. Este kit acompaña los 18 temas del Nivel 3. Disfrutalo.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000000232 00000 n 
+0000002540 00000 n 
+0000002597 00000 n 
+0000002743 00000 n 
+trailer
+<< /Size 8 /Root 7 0 R >>
+startxref
+2792
+%%EOF

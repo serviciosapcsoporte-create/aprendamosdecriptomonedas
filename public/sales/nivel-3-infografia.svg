@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050a18"/>
+      <stop offset="1" stop-color="#08122b"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd60a"/>
+      <stop offset="1" stop-color="#00f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="80" r="220" fill="rgba(0,240,255,0.08)"/>
+  <circle cx="150" cy="560" r="260" fill="rgba(255,214,10,0.06)"/>
+  <rect x="60" y="52" width="1080" height="4" rx="2" fill="url(#line)"/>
+  <text x="60" y="140" font-size="22" font-weight="bold" fill="#ffd60a" font-family="Archivo Black, Arial, sans-serif">APRENDAMOS DE CRIPTO · SIN HUMO</text>
+  <text x="60" y="220" font-size="64" font-weight="bold" fill="#ffffff" font-family="Archivo Black, Arial, sans-serif">NIVEL 3</text>
+  <text x="60" y="280" font-size="40" font-weight="bold" fill="#00f0ff" font-family="Archivo Black, Arial, sans-serif">Avanzado</text>
+  <rect x="60" y="300" width="180" height="44" rx="22" fill="rgba(255,214,10,0.15)" stroke="#ffd60a" stroke-width="1.5"/>
+  <text x="150" y="329" font-size="18" font-weight="bold" fill="#ffd60a" text-anchor="middle" font-family="Barlow, Arial, sans-serif">REGISTRO</text>
+  <text x="270" y="334" font-size="20" font-weight="bold" fill="#ffffff" font-family="Archivo Black, Arial, sans-serif">→</text>
+  <text x="310" y="334" font-size="40" font-weight="bold" fill="#ffd60a" font-family="Archivo Black, Arial, sans-serif">GRATIS</text>
+  <rect x="60" y="360" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="226" y="395" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">DEX vs Centralizado</text>
+<rect x="420" y="360" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="586" y="395" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">AMM Matemáticas</text>
+<rect x="780" y="360" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="946" y="395" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">Layer 2 y Rollups</text>
+<rect x="60" y="436" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="226" y="471" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">Préstamos & Oráculos</text>
+<rect x="420" y="436" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="586" y="471" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">Privacidad</text>
+<rect x="780" y="436" width="332" height="56" rx="12" fill="#0a1226" stroke="rgba(0,240,255,0.25)"/>
+<text x="946" y="471" font-size="16" font-weight="bold" fill="#00f0ff" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">Gobernanza</text>
+  <rect x="60" y="530" width="332" height="64" rx="12" fill="#ffd60a"/>
+  <text x="226" y="570" font-size="20" font-weight="bold" fill="#050a18" text-anchor="middle" font-family="Archivo Black, Arial, sans-serif">Desbloquear gratis en systeme.io</text>
+  <text x="60" y="600" font-size="16" fill="#94a3b8" font-family="Barlow, Arial, sans-serif">Pago seguro por systeme.io · PayPal y tarjeta · Acceso de por vida</text>
+  <text x="1140" y="600" font-size="14" fill="#64748b" text-anchor="end" font-family="Barlow, Arial, sans-serif">aprendamosdecriptomonedas.com</text>
+</svg>
