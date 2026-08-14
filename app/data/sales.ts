@@ -193,7 +193,7 @@ export const salesOffers: Record<string, SalesOffer> = {
      priceNote: "Sin cargo · Acceso inmediato al PDF",
      flagLine: "PDF descargable",
      ctaLabel: "Descargar El Custodio gratis",
-     funnelUrl: "https://aprendamosdecriptomonedas.lat/el-custodio-de-su-propiedad-libertad",
+     funnelUrl: "https://aprendamosdecriptomonedas.lat/b/el-custodio-de-su-propiedad-libertad",
      topics: 5,
      sections: [
        {
@@ -248,7 +248,7 @@ export const salesOffers: Record<string, SalesOffer> = {
      priceNote: "Sin cargo · Acceso inmediato al checklist",
      flagLine: "Checklist PDF",
      ctaLabel: "Descargar El Escudo gratis",
-     funnelUrl: "https://aprendamosdecriptomonedas.lat/el-escudo-de-5-minutos",
+     funnelUrl: "https://aprendamosdecriptomonedas.lat/b/el-escudo-de-5-minutos",
      topics: 8,
      sections: [
        {
@@ -303,7 +303,7 @@ export const salesOffers: Record<string, SalesOffer> = {
      priceNote: "Sin cargo · Acceso inmediato al PDF",
      flagLine: "Checklist + Mindset",
      ctaLabel: "Descargar Checklist gratis",
-     funnelUrl: "https://aprendamosdecriptomonedas.lat/checklist-de-supervivencia-cripto",
+     funnelUrl: "https://aprendamosdecriptomonedas.lat/b/checklist-de-supervivencia-cripto",
      topics: 10,
      sections: [
        {
@@ -358,7 +358,7 @@ export const salesOffers: Record<string, SalesOffer> = {
      priceNote: "Sin cargo · Acceso inmediato al PDF",
      flagLine: "Invierte con criterio",
      ctaLabel: "Descargar El Inversor gratis",
-     funnelUrl: "https://aprendamosdecriptomonedas.lat/el-inversor-que-sobrevive",
+     funnelUrl: "https://aprendamosdecriptomonedas.lat/b/el-inversor-que-sobrevive",
      topics: 7,
      sections: [
        {
