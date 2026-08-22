@@ -46,17 +46,19 @@ scripts/
 
 ## Contenido
 
-Curso de **75 temas** en 5 niveles:
+Curso de **75 temas** en 5 niveles — **100% gratuito y sin registro**:
 
 | Nivel | Temas | Acceso |
 |-------|-------|--------|
 | 1 — Principiante | 15 | Gratis |
-| 2 — Intermedio | 18 | Registro |
-| 3 — Avanzado | 18 | Registro |
-| 4 — Experto | 13 | Premium |
-| 5 — Especializaciones | 11 | Premium |
+| 2 — Intermedio | 18 | Gratis |
+| 3 — Avanzado | 18 | Gratis |
+| 4 — Experto | 13 | Gratis |
+| 5 — Especializaciones | 11 | Gratis |
 
 Los temas de niveles 3-5 se escriben en markdown extendido (títulos, listas, tablas, bloques de código) y se renderizan con un renderer liviano propio.
+
+Además: blog, noticias automáticas (RSS, actualización diaria), guías descargables en `/recursos` y rutas legacy `/b/*` que redirigen a `/recursos`.
 
 ## Deploy en GitHub Pages
 

@@ -65,7 +65,7 @@ const navItems: NavItem[] = [
   {
     title: "NIVEL 2 — INTERMEDIO",
     href: "/nivel-2-intermedio",
-    badge: "register",
+    badge: "free",
     children: [
       {
         title: "Blockchain Técnica",
@@ -114,7 +114,7 @@ const navItems: NavItem[] = [
   {
     title: "NIVEL 3 — AVANZADO",
     href: "/nivel-3-avanzado",
-    badge: "register",
+    badge: "free",
     children: [
       {
         title: "DeFi Avanzado",
@@ -183,7 +183,7 @@ const navItems: NavItem[] = [
   {
     title: "NIVEL 4 — EXPERTO",
     href: "/nivel-4-experto",
-    badge: "paid",
+    badge: "free",
     children: [
       {
         title: "Layer 2",
@@ -252,7 +252,7 @@ const navItems: NavItem[] = [
   {
     title: "NIVEL 5 — ESPECIALIZACIONES",
     href: "/nivel-5-especializaciones",
-    badge: "paid",
+    badge: "free",
     children: [
       { title: "ZK-Rollups y Ethereum", href: "/nivel-5/zk-rollups-y-el-futuro-ethereum" },
       { title: "MEV Maximizer", href: "/nivel-5/mev-maximizer-y-auction-design" },
@@ -283,24 +283,12 @@ export function MainNav() {
             to={item.href}
             className={cn(
               "flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors",
-              item.badge === "paid" &&
-                "text-amber-600 hover:text-amber-700",
             )}
           >
             <span>{item.title}</span>
             {item.badge === "free" && (
               <span className="text-xs bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full">
                 Gratis
-              </span>
-            )}
-            {item.badge === "register" && (
-              <span className="text-xs bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-full">
-                Registro
-              </span>
-            )}
-            {item.badge === "paid" && (
-              <span className="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full">
-                Premium
               </span>
             )}
             {item.badge === "new" && (

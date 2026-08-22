@@ -81,7 +81,7 @@ export const level2Topics: Omit<Topic, "level">[] = [
   {
     id: "21",
     slug: "que-son-smart-contracts",
-    title: "¿Qué son?",
+    title: "¿Qué son los Smart Contracts?",
     description: "Definición y funcionamiento básico de los contratos inteligentes.",
     content: [
       "Un smart contract (contrato inteligente) es un programa que vive en la blockchain y se ejecuta automáticamente cuando se cumplen ciertas condiciones predefinidas, sin necesidad de un intermediario. Una vez desplegado, su código es —en la mayoría de los casos— público y no se puede modificar (aunque existen patrones de contratos \"actualizables\").",
@@ -96,7 +96,7 @@ export const level2Topics: Omit<Topic, "level">[] = [
   {
     id: "22",
     slug: "para-que-sirven",
-    title: "¿Para qué sirven?",
+    title: "¿Para qué sirven los Smart Contracts?",
     description: "Casos de uso: DEX, DeFi, NFTs, DAOs.",
     content: [
       "Los usos de los smart contracts van mucho más allá de simples transferencias de dinero:",
@@ -111,7 +111,7 @@ export const level2Topics: Omit<Topic, "level">[] = [
   {
     id: "23",
     slug: "riesgos-comunes",
-    title: "Riesgos comunes",
+    title: "Riesgos Comunes en Smart Contracts",
     description: "Vulnerabilidades típicas: reentrada, overflow, oracle manipulation.",
     content: [
       "Los smart contracts no son infalibles — su seguridad depende enteramente de qué tan bien esté escrito su código. Riesgos frecuentes:",

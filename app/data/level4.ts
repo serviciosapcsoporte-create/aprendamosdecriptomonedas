@@ -454,9 +454,9 @@ export const level4Topics: Omit<Topic, "level">[] = [
     badge: "paid",
   },
   {
-    id: "n4-10-ssti-attacks",
-    slug: "ssti-exploits-y-lecciones",
-    title: "SSTI Exploits y Lecciones: Beanstalk, Mento, y Lessons de Seguridad",
+    id: "n4-10-exploits-lecciones",
+    slug: "exploits-y-lecciones-seguridad",
+    title: "Grandes Exploits y Lecciones: Beanstalk, Mento y Seguridad",
     description: "Análisis de exploits famosos, cómo funciona cada ataque y cómo prevenirlos.",
     content: [
       "### Beanstalk Farms (2022)",

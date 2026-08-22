@@ -4,8 +4,8 @@ export const level5Topics: Omit<Topic, "level">[] = [
   {
     id: "n5-1-zk-rollups-futuro",
     slug: "zk-rollups-y-el-futuro-ethereum",
-    title: "ZK-Rollups y el Futuro de Ethereum: Validium vs Validium",
-    description: "Arquitecturas avanzadas de rollups ZK, comparativa con Validium, Validium vs Validium y el roadmap Ethereum.",
+    title: "ZK-Rollups y el Futuro de Ethereum: Rollup vs Validium",
+    description: "Arquitecturas avanzadas de rollups ZK, comparativa Rollup vs Validium, zkEVM y el roadmap Ethereum.",
     content: [
       "### Arquitectura de ZK-Rollups",
       "",
