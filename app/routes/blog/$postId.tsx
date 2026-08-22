@@ -2,7 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { findPost } from "@/data/posts";
-import { Calendar, ArrowLeft } from "lucide-react";
+import { Calendar, ArrowLeft, BookOpen } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$postId")({
   component: PostPage,
@@ -80,6 +80,27 @@ function PostPage() {
               </section>
             ))}
           </div>
+
+          {post.related && post.related.length > 0 && (
+            <aside className="mt-12 rounded-lg border bg-muted/40 p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="w-5 h-5 text-amber-500" />
+                <h2 className="text-xl font-bold">Sigue aprendiendo</h2>
+              </div>
+              <ul className="space-y-3">
+                {post.related.map((rel) => (
+                  <li key={rel.href}>
+                    <Link
+                      to={rel.href}
+                      className="text-base text-primary hover:underline"
+                    >
+                      {rel.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          )}
         </article>
       </main>
       <Footer />
