@@ -3,7 +3,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { Markdown } from "@/components/Markdown";
-import { PremiumGate } from "@/components/PremiumGate";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -64,19 +63,9 @@ function TopicPage() {
     );
   }
 
-  if (topic.badge === "paid" || topic.badge === "register") {
-    return (
-      <>
-        <Header />
-        <PremiumGate level={level} backTo={{ label: `Volver a Nivel ${level}`, href: `/${levelPrefix}-${suffix}` }} />
-        <Footer />
-      </>
-    );
-  }
-
   const prevTopic = getPrevTopic(topic);
   const nextTopic = getNextTopic(topic);
-  const badge = badgeMap[topic.badge || "free"];
+  const badge = badgeMap["free"];
 
   return (
     <>
@@ -86,11 +75,9 @@ function TopicPage() {
           <Link to={`/${levelPrefix}-${suffix}`} className="text-sm text-muted-foreground hover:text-foreground">
             Volver a Nivel {level}
           </Link>
-          {topic.badge && (
-            <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badge.class}`}>
-              {badge.text}
-            </span>
-          )}
+          <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badge.class}`}>
+            {badge.text}
+          </span>
         </nav>
 
         <article className="prose dark:prose-invert max-w-none">
