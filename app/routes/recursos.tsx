@@ -1,8 +1,7 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck, Zap } from "lucide-react";
-import { salesOffers } from "@/data/sales";
+import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
@@ -80,56 +79,9 @@ function RecursosPage() {
             href="/resources/kit-nivel-3.pdf"
           />
         </div>
-
-        <PricingSection />
       </main>
       <Footer />
     </>
-  );
-}
-
-function PricingSection() {
-  return (
-    <div id="pricing" className="mt-16 bg-card rounded-xl p-8 border">
-      <h2 className="text-2xl font-bold text-center mb-8">Accede a todo el contenido</h2>
-      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-        {(["nivel-3", "nivel-4", "nivel-5"] as const).map((key, i) => {
-          const offer = salesOffers[key];
-          const featured = i === 1;
-          return (
-            <div
-              key={key}
-              className={`p-6 rounded-lg text-center ${featured ? "border-2 border-amber-500" : "border"}`}
-            >
-              <h3 className="text-xl font-bold mb-2">
-                Nivel {key.slice(-1)} — {offer.title}
-              </h3>
-              <p className="text-3xl font-bold text-amber-600 mb-4">{offer.price}</p>
-              <ul className="text-sm text-muted-foreground mb-4 space-y-1 text-left">
-                {offer.includes.map((inc) => (
-                  <li key={inc} className="flex items-start gap-1.5">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                    {inc}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={offer.funnelUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-1.5 rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
-              >
-                <Zap className="h-4 w-4" />
-                {offer.ctaLabel}
-              </a>
-            </div>
-          );
-        })}
-      </div>
-      <p className="mt-6 text-center text-xs text-muted-foreground">
-        Pago seguro procesado por systeme.io · PayPal y tarjeta · Acceso de por vida
-      </p>
-    </div>
   );
 }
 
