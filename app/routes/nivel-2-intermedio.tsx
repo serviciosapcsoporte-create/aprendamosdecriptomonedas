@@ -12,7 +12,7 @@ export const Route = createFileRoute("/nivel-2-intermedio")({
       {
         name: "description",
         content:
-          "Nivel 2 Intermedio: Blockchain técnica, smart contracts, economía cripto y DeFi básico. Requiere registro gratuito.",
+          "Nivel 2 Intermedio gratis: Blockchain técnica, smart contracts, economía cripto y DeFi básico. Sin registro, acceso inmediato.",
       },
       { name: "keywords", content: "curso blockchain tecnico, smart contracts curso, defi para principiantes, economia cripto" },
     ],
@@ -32,29 +32,9 @@ function Nivel2Page() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
             {levelData.description}
           </p>
-          <span className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
-            Registro gratuito requerido
+          <span className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800 border border-green-200">
+            100% GRATIS · Sin registro
           </span>
-        </div>
-
-        <div className="max-w-2xl mx-auto mb-12">
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="tu@email.com"
-              required
-              className="flex-1 rounded-md border border-input bg-background px-4 py-2.5 text-sm focus:ring-2 focus:ring-amber-500 outline-none"
-            />
-            <button
-              type="submit"
-              className="rounded-md bg-amber-500 px-6 py-2.5 text-sm font-medium text-navy hover:bg-amber-400 transition-colors"
-            >
-              Registrarme gratis
-            </button>
-          </form>
-          <p className="mt-2 text-xs text-muted-foreground">
-            Accede inmediato al Nivel 2 y recibe actualizaciones del curso.
-          </p>
         </div>
 
         {levelData.sections.map((section) => (
