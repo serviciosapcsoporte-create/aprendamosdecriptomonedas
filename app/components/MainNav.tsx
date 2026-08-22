@@ -153,7 +153,7 @@ const navItems: NavItem[] = [
         href: "/nivel-3/seguridad",
         children: [
           { title: "Seguros DeFi", href: "/nivel-3/seguros-en-defi" },
-          { title: "SSTI Exploits", href: "/nivel-3/ssti-exploits-y-lecciones" },
+          { title: "Privacidad Cripto", href: "/nivel-3/privacidad-zcash-monero" },
         ],
       },
       {
@@ -214,7 +214,7 @@ const navItems: NavItem[] = [
         children: [
           { title: "Custodia Institucional", href: "/nivel-4/custodia-institucional" },
           { title: "Hardware Wallets", href: "/nivel-4/hardware-wallets-y-cold-storage" },
-          { title: "SSTI Exploits", href: "/nivel-4/ssti-exploits-y-lecciones" },
+          { title: "Exploits y Lecciones", href: "/nivel-4/exploits-y-lecciones-seguridad" },
           { title: "Formal Verification", href: "/nivel-4/defi-security-y-formal-verification" },
         ],
       },

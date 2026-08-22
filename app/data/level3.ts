@@ -30,7 +30,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Trading Avanzado",
     keywords: ["DEX", "exchange", "AMM", "Uniswap", "centralizado vs descentralizado"],
     icon: "🔄",
-    badge: "register",
+    badge: "free",
     resources: [
       { name: "Whitepaper Uniswap", href: "https://uniswap.org/whitepaper.pdf" },
     ],
@@ -63,7 +63,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["AMM", "automated market maker", "liquidity pool", "slippage", "x*y=k"],
     icon: "📊",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-3-yield-farming",
@@ -95,7 +95,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["yield farming", "DeFi", "liquidity mining", "compounding", "impermanent loss"],
     icon: "🌾",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-4-stablecoins",
@@ -123,7 +123,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["stablecoin", "USDC", "USDT", "DAI", "UST", "algorítmica"],
     icon: "💵",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-5-bridge-cross-chain",
@@ -153,7 +153,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Cross-Chain",
     keywords: ["bridge", "cross-chain", "interoperabilidad", "Wormhole", "Multichain"],
     icon: "🌉",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-6-oracle-problem",
@@ -184,7 +184,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["oracle", "Chainlink", "datos externos", "ataque oracle", "precio manipulado"],
     icon: "🔮",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-7-layer2-scaling",
@@ -222,7 +222,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Ethereum Scaling",
     keywords: ["Layer 2", "L2", "rollup", "scaling", "Optimistic", "zk-rollup", "StarkNet"],
     icon: "🚀",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-8-defi-2",
@@ -251,7 +251,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["DeFi 2.0", "OlympusDAO", "reserva", "venta de emisiones", "bonding curve"],
     icon: "🔬",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-9-lending",
@@ -288,7 +288,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["préstamo DeFi", "lending", "colateral", "liquidación", "Money Legos"],
     icon: "🏦",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-10-insurance-defi",
@@ -324,7 +324,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "DeFi",
     keywords: ["seguro DeFi", "Nexus Mutual", "Cover Protocol", "InsurAce", "protección"],
     icon: "🛡️",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-11-trading-avanzado",
@@ -364,7 +364,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Trading Avanzado",
     keywords: ["trading", "gestión de riesgo", "psicología", "stop loss", "ratio RR"],
     icon: "📈",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-12-mining-hashrate",
@@ -401,7 +401,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Minería",
     keywords: ["mining", "hashrate", "proof of work", "ASIC", "GPU", "pool"],
     icon: "⛏️",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-13-nft-mercado",
@@ -445,7 +445,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "NFTs",
     keywords: ["NFT", "non-fungible token", "mercado NFT", "valor fundamental", "CryptoPunks"],
     icon: "🎨",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-14-dao-gobernanza",
@@ -487,7 +487,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Gobernanza",
     keywords: ["DAO", "gobernanza descentralizada", "votación", "token de gobernanza", "MakerDAO"],
     icon: "🏛️",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-15-ethereum2-staking",
@@ -527,7 +527,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Ethereum",
     keywords: ["Ethereum 2.0", "staking", "PoS", "validador", "Lido", "Rocket Pool"],
     icon: "🚀",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-16-mev-busqueda",
@@ -569,7 +569,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Ethereum",
     keywords: ["MEV", "maximal extractable value", "front-running", "Flashbots", "reordenamiento"],
     icon: "🤖",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-17-web3-identidad",
@@ -613,7 +613,7 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Identidad",
     keywords: ["wallet", "ENS", "identidad Web3", "DID", "self-sovereign identity", "seed phrase"],
     icon: "🆔",
-    badge: "register",
+    badge: "free",
   },
   {
     id: "n3-18-privacy-zcash",
@@ -662,6 +662,6 @@ export const level3Topics: Omit<Topic, "level">[] = [
     section: "Privacidad",
     keywords: ["privacidad", "Zcash", "Monero", "zk-SNARK", "ring signatures", "anonymity"],
     icon: "🔐",
-    badge: "register",
+    badge: "free",
   },
 ];

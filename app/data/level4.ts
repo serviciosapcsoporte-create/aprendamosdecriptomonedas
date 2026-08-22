@@ -45,7 +45,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Layer 2",
     keywords: ["Arbitrum", "Optimism", "Optimistic Rollup", "Nitro", "OP Stack", "sequencer"],
     icon: "🚀",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-2-zk-rollups-starknet",
@@ -89,7 +89,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Layer 2",
     keywords: ["ZK-rollup", "StarkNet", "zkSync", "zk-STARK", "zk-SNARK", "validity proof"],
     icon: "🔏",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-3-dex-avanzados",
@@ -139,7 +139,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Trading DeFi",
     keywords: ["DEX avanzado", "GammaSwap", "liquidez concentrada", "TWAP", "apalancamiento", "dYdX"],
     icon: "📉",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-4-derivatives-futures",
@@ -191,7 +191,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Trading",
     keywords: ["futuros", "opciones", "derivados", "perpetuos", "funding", "apalancamiento"],
     icon: "📐",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-5-arb-bot-mev",
@@ -247,7 +247,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Trading Algorítmico",
     keywords: ["bot de arbitraje", "flash loan", "MEV", "Flashbots", "trading algorítmico", "bots"],
     icon: "🤖",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-6-institutional-custody",
@@ -297,7 +297,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Seguridad",
     keywords: ["custodia institucional", "multi-sig", "threshold signatures", "Shamir backup", "social recovery"],
     icon: "🏦",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-7-hardware-wallets",
@@ -348,7 +348,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Seguridad",
     keywords: ["hardware wallet", "Coldcard", "Trezor", "Ledger", "cold storage", "PSBT"],
     icon: "🔐",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-8-defi-composability",
@@ -398,7 +398,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "DeFi Avanzado",
     keywords: ["yield aggregation", "Yearn", "Beefy", "Risk Parity", "Money Legos", "composabilidad"],
     icon: "🧩",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-9-token-unlocks",
@@ -451,7 +451,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Análisis de Tokens",
     keywords: ["token unlocks", "dilución", "emission schedule", "vesting", "cliff"],
     icon: "🔓",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-10-exploits-lecciones",
@@ -495,7 +495,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Seguridad",
     keywords: ["exploit", "Beanstalk", "flashloan attack", "governance attack", "auditoría"],
     icon: "⚠️",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-11-dune-analytics",
@@ -547,7 +547,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Análisis",
     keywords: ["on-chain analysis", "Dune Analytics", "NVT", "MVRV", "SOPR", "Glassnode", "Arkham"],
     icon: "📊",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-12-portfolio-insurance",
@@ -604,7 +604,7 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Finanzas",
     keywords: ["portfolio insurance", "hedging", "put spread", "delta hedging", "Sharpe ratio", "rebalanceo"],
     icon: "🛡️",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n4-13-liquid-staking",
@@ -662,6 +662,6 @@ export const level4Topics: Omit<Topic, "level">[] = [
     section: "Staking",
     keywords: ["liquid staking", "Lido", "Rocket Pool", "staking token", "EigenLayer", "restaking"],
     icon: "💧",
-    badge: "paid",
+    badge: "free",
   },
 ];

@@ -48,7 +48,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Ethereum Scaling",
     keywords: ["ZK-rollup", "Validium", "StarkNet", "zkEVM", "EIP-4844", "blob", "Verkle Trees"],
     icon: "🔏",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-2-mev-maximizer",
@@ -96,7 +96,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Ethereum",
     keywords: ["MEV", "MEV-Boost", "PBS", "builder", "proposer", "relay", "Flashbots"],
     icon: "⚡",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-3-account-abstraction",
@@ -145,7 +145,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Wallet Tech",
     keywords: ["account abstraction", "EIP-4337", "smart contract wallet", "paymaster", "EntryPoint"],
     icon: "🧠",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-4-cross-rollups",
@@ -195,7 +195,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Cross-Chain",
     keywords: ["CCIP", "IBC", "LayerZero", "interoperabilidad", "cross-chain messaging", "Chainlink"],
     icon: "🔗",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-5-zero-knowledge-identity",
@@ -247,7 +247,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Privacidad",
     keywords: ["ZK identity", "Semaphore", "Tornado Cash", "Worldcoin", "biometría", "privacidad"],
     icon: "🎭",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-6-op-stack-modular",
@@ -301,7 +301,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Blockchain Modular",
     keywords: ["modular blockchain", "OP Stack", "Polygon CDK", "Celestia", "EigenDA", "app-chain"],
     icon: "🏗️",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-7-starknet-cairo",
@@ -358,7 +358,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Desarrollo Avanzado",
     keywords: ["StarkNet", "Cairo", "zk-STARK", "programación ZK", "optimización gas"],
     icon: "💻",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-8-restaking-eigenlayer",
@@ -417,7 +417,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Seguridad",
     keywords: ["EigenLayer", "restaking", "shared security", "AVS", "slashing", "delegation"],
     icon: "🔒",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-9-defi-security-audit",
@@ -489,7 +489,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Seguridad",
     keywords: ["formal verification", "invariant testing", "bug bounty", "auditoría", "Echidna", "Certora"],
     icon: "🛡️",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-10-portfolio-engineering",
@@ -559,7 +559,7 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Finanzas",
     keywords: ["portfolio construction", "risk models", "Sharpe ratio", "factor models", "optimización"],
     icon: "📊",
-    badge: "paid",
+    badge: "free",
   },
   {
     id: "n5-10-regulatory-landscape",
@@ -630,6 +630,6 @@ export const level5Topics: Omit<Topic, "level">[] = [
     section: "Regulación",
     keywords: ["regulación", "MiCA", "SEC", "CFTC", "compliance", "KYC", "AML"],
     icon: "⚖️",
-    badge: "paid",
+    badge: "free",
   },
 ];

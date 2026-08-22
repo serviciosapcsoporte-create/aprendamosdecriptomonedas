@@ -42,7 +42,7 @@ export const curriculumData: Record<string, LevelData> = {
     title: "Avanzado",
     subtitle: "DeFi, Trading, Arquitectura de Red y Análisis On-Chain",
     description: "Dominó los conceptos intermedios:DEXs avanzados, préstamos, oráculos, Layer 2 y trading con apalancamiento.",
-    badge: "register",
+    badge: "free",
     sections: [
       {
         title: "DeFi",
@@ -91,7 +91,7 @@ export const curriculumData: Record<string, LevelData> = {
     title: "Experto",
     subtitle: "ZK-Tech, Custodia, Estrategias Avanzadas y Arquitectura",
     description: "Especialízate en ZK-rollups, custodia institucional, bots de arbitraje, MEV y análisis on-chain avanzado.",
-    badge: "paid",
+    badge: "free",
     sections: [
       {
         title: "Layer 2",
@@ -140,7 +140,7 @@ export const curriculumData: Record<string, LevelData> = {
     title: "Especializado",
     subtitle: "ZK Programming, Modular Chains, EigenLayer y Regulación",
     description: "Domina StarkNet/Cairo, EigenLayer/restaking, análisis on-chain profundo y frameworks regulatorios globales.",
-    badge: "paid",
+    badge: "free",
     sections: [
       {
         title: "Ethereum Scaling",
@@ -210,7 +210,7 @@ export const curriculumData: Record<string, LevelData> = {
     title: "Intermedio",
     subtitle: "Blockchain Técnica · Smart Contracts · Economía · DeFi",
     description: "Objetivo: dar comprensión técnica básica y habilidades prácticas para operar.",
-    badge: "register",
+    badge: "free",
     sections: [
       {
         title: "Blockchain Técnica",
