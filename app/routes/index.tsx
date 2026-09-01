@@ -104,7 +104,7 @@ function Index() {
     <>
       {/* MinimalistNavbar con efecto scroll */}
       <MinimalistNavbar
-        logo={<span className="text-2xl font-serif font-bold text-[var(--foreground)]">Aprendamos</span>}
+        logo="Aprendamos"
         links={navbarLinks}
         onScroll={() => {}}
       />
