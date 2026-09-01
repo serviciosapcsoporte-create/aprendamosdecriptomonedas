@@ -4,10 +4,10 @@ function renderInline(text: string, key: number): ReactNode {
   const parts: ReactNode[] = [];
   // Escape HTML entities to prevent XSS - only process trusted formatting tokens
   const escapedText = text
-    .replace(/&/g, "&")
-    .replace(/</g, "<")
-    .replace(/>/g, ">")
-    .replace(/"/g, """)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
   
   const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;

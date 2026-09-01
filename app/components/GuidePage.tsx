@@ -53,7 +53,7 @@ export function GuidePage({
       <Header />
       <main className="flex-1 bg-[#080d1a]">
         <section className="relative overflow-hidden py-14 md:py-20">
-          {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise }}
+          {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise */}
 
           <div className="relative container mx-auto px-4 text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">

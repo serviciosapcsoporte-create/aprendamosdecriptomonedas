@@ -1,9 +1,8 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { AnimatedSection } from "@/components/AnimatedSection";
-import { ElegantHeading } from "@/components/ElegantHeading";
-import { Markdown } from "@/components/Markdown";
 import { Header, Footer } from "@/components/Header";
+import { curriculumData } from "@/data/curriculum";
+import { Markdown } from "@/components/Markdown";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -24,24 +23,11 @@ export const Route = createFileRoute("/nivel-4/$topicSlug")({
   head: ({ params }) => {
     const topic = findTopic(params.topicSlug as string, "4");
     if (!topic) return { meta: [{ title: "Tema no encontrado" }] };
-    const metaDesc = topic.description.substring(0, 155) + "...";
     return {
       meta: [
         { title: `${topic.title} | NIVEL 4 | Aprendamos de Criptomonedas` },
-        { name: "description", content: metaDesc },
-        { name: "keywords", content: topic.keywords?.join(", ") || "" },
-        { property: "og:title", content: topic.title },
-        { property: "og:description", content: metaDesc },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: topic.title },
-        { name: "twitter:description", content: metaDesc },
-        {
-          "@type": "TechArticle",
-          "headline": topic.title,
-          "description": metaDesc,
-          "author": { "@type": "Organization", "name": "Aprendamos de Criptomonedas" },
-        },
+        { name: "description", content: topic.description + " " + (topic.keywords ? topic.keywords.join(", ") : "") },
+        { name: "keywords", content: topic.keywords.join(", ") },
       ],
     };
   },
@@ -79,62 +65,71 @@ function TopicPage() {
 
   const prevTopic = getPrevTopic(topic);
   const nextTopic = getNextTopic(topic);
+  const badge = badgeMap["free"];
 
   return (
     <>
       <Header />
       <main className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
-        <AnimatedSection animation="fade-in-up" delay={0.1}>
-          <nav className="mb-8 flex items-center justify-between">
-            <Link to={`/${levelPrefix}-${suffix}`} className="text-sm text-muted-foreground hover:text-foreground">
-              Volver a Nivel {level}
-            </Link>
-            <span className={badgeMap["free"].class}>
-              {badgeMap["free"].text}
-            </span>
-          </nav>
-        </AnimatedSection>
+        <nav className="mb-8 flex items-center justify-between">
+          <Link to={`/${levelPrefix}-${suffix}`} className="text-sm text-muted-foreground hover:text-foreground">
+            Volver a Nivel {level}
+          </Link>
+          <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badge.class}`}>
+            {badge.text}
+          </span>
+        </nav>
 
-        <AnimatedSection animation="fade-in-up" delay={0.2}>
-          <article className="prose dark:prose-invert max-w-none">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-[var(--primary)] dark:bg-[var(--primary-dark)] rounded-lg">
-                {topic.icon}
-              </div>
-              <ElegantHeading as="h1" className="mb-0 text-[var(--heading-text-size)]">
-                {topic.title}
-              </ElegantHeading>
+        <article className="prose dark:prose-invert max-w-none">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg">
+              {topic.icon}
             </div>
+            <h1 className="text-3xl font-bold mb-0">{topic.title}</h1>
+          </div>
 
-            {topic.resources && (
-              <div className="mb-6 rounded-lg bg-amber-50 dark:bg-amber-950/20 p-4 border border-amber-200 dark:border-amber-900/30">
-                <h3 className="text-sm font-bold text-amber-800 dark:text-amber-300 mb-2">Recursos descargables</h3>
-                <ul className="space-y-1">
-                  {topic.resources.map((resource) => (
-                    <li key={resource.href}>
-                      <a href={resource.href} className="text-sm text-amber-700 dark:text-amber-300 hover:underline" download>
-                        {resource.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            })
+          {topic.resources && (
+            <div className="mb-6 rounded-lg bg-amber-50 dark:bg-amber-950/20 p-4 border border-amber-200 dark:border-amber-900/30">
+              <h3 className="text-sm font-bold text-amber-800 dark:text-amber-300 mb-2">Recursos descargables</h3>
+              <ul className="space-y-1">
+                {topic.resources.map((resource) => (
+                  <li key={resource.href}>
+                    <a href={resource.href} className="text-sm text-amber-700 dark:text-amber-300 hover:underline" download>
+                      {resource.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-            {topic.keywords && topic.keywords.length > 0 && (
-              <div className="mb-4">
-                <p className="text-xs text-muted-foreground">Temas relacionados: {topic.keywords.join(", ")}</p>
-              </div>
-            })
+          {topic.keywords && topic.keywords.length > 0 && (
+            <div className="mb-4">
+              <p className="text-xs text-muted-foreground">Temas relacionados: {topic.keywords.join(", ")}</p>
+            </div>
+          )}
 
-            <AnimatedSection animation="fade-in-up" delay={0.3}>
-              <div className="mb-8">
-                <Markdown content={topic.content} />
+          <div className="mb-8">
+            <Markdown content={topic.content} />
+          </div>
+
+          {topic.related && topic.related.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold mb-3">Temas relacionados</h3>
+              <div className="flex flex-wrap gap-2">
+                {topic.related.map((slug) => {
+                  const relatedTopic = findTopicBySlug(slug, level);
+                  return relatedTopic ? (
+                    <Link key={slug} to={`/${levelPrefix}/${slug}`}
+                      className="inline-flex items-center px-3 py-1 text-sm rounded-md bg-muted hover:bg-muted/80 transition-colors">
+                      {relatedTopic.title}
+                    </Link>
+                  ) : null;
+                })}
               </div>
-            </AnimatedSection>
-          </article>
-        </AnimatedSection>
-        </AnimatedSection>
+            </div>
+          )}
+        </article>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between p-6 bg-card rounded-lg border">
           {prevTopic && (
