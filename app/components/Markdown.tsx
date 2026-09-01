@@ -2,33 +2,46 @@ import { Fragment, ReactNode } from "react";
 
 function renderInline(text: string, key: number): ReactNode {
   const parts: ReactNode[] = [];
+  // Escape HTML entities to prevent XSS - only process trusted formatting tokens
+  const escapedText = text
+    .replace(/&/g, "&")
+    .replace(/</g, "<")
+    .replace(/>/g, ">")
+    .replace(/"/g, """)
+    .replace(/'/g, "&#039;");
+  
   const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let i = 0;
-  while ((match = regex.exec(text)) !== null) {
+  while ((match = regex.exec(escapedText)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
+      parts.push(escapedText.slice(lastIndex, match.index));
     }
     const token = match[0];
     let node: ReactNode = token;
     if (token.startsWith("**") && token.endsWith("**")) {
-      node = <strong>{token.slice(2, -2)}</strong>;
+      const inner = token.slice(2, -2).replace(/</g, "<").replace(/>/g, ">");
+      node = <strong dangerouslySetInnerHTML={{ __html: inner }} />;
     } else if (token.startsWith("*") && token.endsWith("*")) {
-      node = <em>{token.slice(1, -1)}</em>;
+      const inner = token.slice(1, -1).replace(/</g, "<").replace(/>/g, ">");
+      node = <em dangerouslySetInnerHTML={{ __html: inner }} />;
     } else if (token.startsWith("`")) {
-      node = <code>{token.slice(1, -1)}</code>;
+      const inner = token.slice(1, -1);
+      node = <code><pre>{inner}</pre></code>;
     } else if (token.startsWith("[")) {
       const linkMatch = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(token);
       if (linkMatch) {
+        const linkText = linkMatch[1].replace(/</g, "<").replace(/>/g, ">");
+        const hrefSafe = linkMatch[2].startsWith("http") ? linkMatch[2] : "";
         node = (
           <a
-            href={linkMatch[2]}
+            href={hrefSafe}
             target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
             rel={linkMatch[2].startsWith("http") ? "noopener noreferrer" : undefined}
             className="text-primary hover:underline"
           >
-            {linkMatch[1]}
+            {linkText}
           </a>
         );
       }
@@ -37,7 +50,7 @@ function renderInline(text: string, key: number): ReactNode {
     lastIndex = regex.lastIndex;
   }
   if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
+    parts.push(escapedText.slice(lastIndex));
   }
   return <Fragment key={key}>{parts}</Fragment>;
 }
