@@ -53,9 +53,7 @@ export function GuidePage({
       <Header />
       <main className="flex-1 bg-[#080d1a]">
         <section className="relative overflow-hidden py-14 md:py-20">
-          <div className="absolute inset-0 cyber-grid" />
-          <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-cyan-500/15 blur-[120px]" />
-          <div className="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-cyan-400/10 blur-[120px]" />
+          {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise }}
 
           <div className="relative container mx-auto px-4 text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
@@ -63,7 +61,7 @@ export function GuidePage({
               {badge}
               <span className="text-cyan-400">•</span>
             </span>
-            <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white text-glow">
+            <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white text-subtle-glow">
               {title}
             </h1>
             {subtitle && (

@@ -2,31 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 228 64% 5%;
-  --foreground: 186 40% 96%;
-  --card: 228 58% 7%;
-  --card-foreground: 186 40% 96%;
-  --popover: 228 58% 7%;
-  --popover-foreground: 186 40% 96%;
-  --primary: 189 100% 50%;
-  --primary-foreground: 228 70% 6%;
-  --secondary: 45 100% 53%;
-  --secondary-foreground: 228 70% 6%;
-  --muted: 228 50% 10%;
-  --muted-foreground: 190 28% 75%;
-  --accent: 189 95% 55%;
-  --accent-foreground: 228 70% 6%;
-  --destructive: 0 84% 60%;
-  --border: 189 80% 55% / 0.18;
-  --input: 189 80% 55% / 0.22;
-  --ring: 189 100% 52%;
-  --radius: 0.6rem;
-  --navy: #050a18;
-  --navy-light: #0a1226;
-  --neon: #00f0ff;
-  --amber: #ffd60a;
-  --violet: #7c3aed;
+@layer base {
+  :root {
+    --background: 228 64% 5%;
+    --foreground: 186 40% 96%;
+    --card: 228 58% 7%;
+    --card-foreground: 186 40% 96%;
+    --popover: 228 58% 7%;
+    --popover-foreground: 186 40% 96%;
+    --primary: 189 100% 50%;
+    --primary-foreground: 228 70% 6%;
+    --secondary: 45 100% 53%;
+    --secondary-foreground: 228 70% 6%;
+    --muted: 228 50% 10%;
+    --muted-foreground: 190 28% 75%;
+    --accent: 189 95% 55%;
+    --accent-foreground: 228 70% 6%;
+    --destructive: 0 84% 60%;
+    --border: 189 80% 55% / 0.18;
+    --input: 189 80% 55% / 0.22;
+    --ring: 189 100% 52%;
+  }
+
+  :root.dark,
+  .dark {
+    --background: 228 64% 5%;
+    --foreground: 186 40% 96%;
+    --card: 228 58% 7%;
+    --card-foreground: 186 40% 96%;
+    --popover: 228 58% 7%;
+    --popover-foreground: 186 40% 96%;
+    --primary: 189 100% 50%;
+    --primary-foreground: 228 70% 6%;
+    --secondary: 45 100% 53%;
+    --secondary-foreground: 228 70% 6%;
+    --muted: 228 50% 10%;
+    --muted-foreground: 190 28% 75%;
+    --accent: 189 95% 55%;
+    --accent-foreground: 228 70% 6%;
+    --destructive: 0 84% 60%;
+    --border: 189 80% 55% / 0.18;
+    --input: 189 80% 55% / 0.22;
+    --ring: 189 100% 52%;
+  }
+}
+
+@layer utilities {
+  /* Focus visible universal — mejorar accesibilidad */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
+  /* Contraste mejorado: blanco puro sobre navy para 21:1 */
+  body {
+    color: hsl(0 0% 100%);
+  }
+
+  /* Reducir ruido visual del grid cyber */
+  .cyber-grid {
+    background-size: 88px 88px;
+    opacity: 0.08;
+  }
+
+  /* Scrollbar consistente */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060d1f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #14818b, #0b3b4a);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f0ff, #0b3b4a);
+  }
 }
 
 :root.dark,
@@ -127,10 +181,14 @@ body {
     box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.12), 0 10px 34px -12px rgba(0, 240, 255, 0.35);
     transform: translateY(-2px);
   }
-  .text-glow {
+.text-glow {
     color: #ffffff;
     text-shadow: 0 0 22px rgba(0, 240, 255, 0.55), 0 0 60px rgba(0, 240, 255, 0.25);
-  }
+}
+.text-subtle-glow {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 240, 255, 0.35), 0 0 40px rgba(0, 240, 255, 0.15);
+}
   .text-gold {
     color: #ffd60a;
   }

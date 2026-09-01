@@ -283,7 +283,9 @@ export function MainNav() {
             to={item.href}
             className={cn(
               "flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             )}
+            aria-haspopup={item.children ? "true" : undefined}
           >
             <span>{item.title}</span>
             {item.badge === "free" && (
@@ -299,7 +301,13 @@ export function MainNav() {
           </Link>
 
           {item.children && (
-            <div className="absolute left-0 top-full mt-2 w-64 rounded-md bg-popover p-2 shadow-lg ring-1 ring-border opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
+            <div
+              className={cn(
+                "absolute left-0 top-full mt-2 w-64 rounded-md bg-popover p-2 shadow-lg ring-1 ring-border opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50",
+                "focus-visible:visible focus-visible:opacity-100"
+              )}
+              aria-expanded={true}
+            >
               {item.children.map((child) => (
                 <div key={child.href ?? child.title} className="mb-1">
                   {child.children ? (
@@ -309,7 +317,7 @@ export function MainNav() {
                   ) : (
                     <Link
                       to={child.href}
-                      className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                      className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                     >
                       {child.title}
                     </Link>
@@ -320,7 +328,7 @@ export function MainNav() {
                         <Link
                           key={grandchild.href}
                           to={grandchild.href}
-                          className="block rounded-md px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-accent"
+                          className="block rounded-md px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                         >
                           {grandchild.title}
                         </Link>
