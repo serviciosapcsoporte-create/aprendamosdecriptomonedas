@@ -1,10 +1,8 @@
-name: Deploy a GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
