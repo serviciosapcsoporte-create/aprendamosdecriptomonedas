@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
+          "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +75 temas en 5 niveles desde conceptos básicos hasta análisis on-chain avanzado.",
       },
       { name: "author", content: "Alejandro P." },
       {
@@ -27,22 +27,47 @@ export const Route = createFileRoute("/")({
           "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Aprendamos de Criptomonedas | Educación cripto sin humo",
       },
       {
         name: "twitter:description",
-        content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
+        content:
+          "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
       },
       {
         property: "og:image",
-        content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7761f8623acca94de589ec90167f0983/id-preview-a5c283a1--d62faac5-e5fb-4752-bf05-f063dd5d4030.lovable.app-1786283217978.png",
+        content: "/social-card.png",
       },
       {
         name: "twitter:image",
-        content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7761f8623acca94de589ec90167f0983/id-preview-a5c283a1--d62faac5-e5fb-4752-bf05-f063dd5d4030.lovable.app-1786283217978.png",
+        content: "/social-card.png",
+      },
+      { name: "twitter:creator", content: "@AprendamosCripto" },
+      {
+        property: "og:url",
+        content: "https://aprendamosdecriptomonedas.lat",
+      },
+      {
+        name: "robots",
+        content: "index, follow, max-snippet:-1, max-image-preview:large",
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aprendamosdecriptomonedas.lat/#website",
+        "name": "Aprendamos de Criptomonedas",
+        "description": "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
+        "url": "https://aprendamosdecriptomonedas.lat",
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": "https://aprendamosdecriptomonedas.lat?q={search_term_string}",
+          "query": "required string {search_term_string}"
+        }]
+      },
+      {
+        name: "revisit-after",
+        content: "7 days",
       },
     ],
   }),
