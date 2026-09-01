@@ -113,7 +113,7 @@ function Index() {
         {/* Hero Section con AnimatedSection */
         <AnimatedSection
           animation="fade-in-up"
-          delay={0}
+          delay="0"
           className="relative z-10"
         >
           <div className="container mx-auto px-4 max-w-2xl">
@@ -151,7 +151,7 @@ function Index() {
         {/* Currículum Section con animaciones escalonadas */}
         <AnimatedSection
           animation="fade-in-up"
-          delay={0.2}
+          delay="0.2"
           className="relative z-10"
         >
           <div className="container mx-auto px-4 max-w-6xl">
@@ -266,7 +266,7 @@ function Index() {
         {/* Recursos Section */
         <AnimatedSection
           animation="fade-in-up"
-          delay={0.4}
+          delay="0.4"
           className="relative z-10"
         >
           <div className="container mx-auto px-4 py-16 bg-[var(--navy)] dark:bg-[var(--navy-dark)]">
