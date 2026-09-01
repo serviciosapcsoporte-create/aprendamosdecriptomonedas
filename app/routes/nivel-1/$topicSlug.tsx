@@ -22,12 +22,25 @@ export const Route = createFileRoute("/nivel-1/$topicSlug")({
   component: TopicPage,
   head: ({ params }) => {
     const topic = findTopic(params.topicSlug as string, "1");
-    if (!topic) return { meta: [{ title: "Tema no encontrado" }] };
+    if (!topic) return { meta: [{ title: "Tema no encontrado | Aprendamos de Criptomonedas" }] };
+    const metaDesc = topic.description.substring(0, 155) + "...";
     return {
       meta: [
         { title: `${topic.title} | NIVEL 1 | Aprendamos de Criptomonedas` },
-        { name: "description", content: topic.description + " " + (topic.keywords ? topic.keywords.join(", ") : "") },
-        { name: "keywords", content: topic.keywords.join(", ") },
+        { name: "description", content: metaDesc },
+        { name: "keywords", content: topic.keywords?.join(", ") || "" },
+        { property: "og:title", content: topic.title },
+        { property: "og:description", content: metaDesc },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: topic.title },
+        { name: "twitter:description", content: metaDesc },
+        {
+          "@type": "TechArticle",
+          "headline": topic.title,
+          "description": metaDesc,
+          "author": { "@type": "Organization", "name": "Aprendamos de Criptomonedas" },
+        },
       ],
     };
   },
