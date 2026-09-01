@@ -1,8 +1,16 @@
+/* Página de inicio redesign ILAB Italian Style
+   - Mantiene la arquitectura de información existente (múltiples páginas/niveles)
+   - Aplica estilo visual "sartorial" italiano con estética minimalista
+   - Usa componentes reutilizables: AnimatedSection, ElegantHeading, MinimalistNavbar
+   - Animaciones de entrada en viewport para todos los elementos
+   - No es One-Page: cada sección mantiene su estructura separada
+*/
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Header, Footer } from "@/components/Header";
-import { cn } from "@/lib/utils";
-import { Layers, Route as RouteIcon, Shield, Cog } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { ElegantHeading } from "@/components/ElegantHeading";
+import { MinimalistNavbar } from "@/components/MinimalistNavbar";
+import { Footer } from "@/components/Header";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -28,6 +36,10 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
         name: "twitter:title",
         content: "Aprendamos de Criptomonedas | Educación cripto sin humo",
       },
@@ -44,7 +56,10 @@ export const Route = createFileRoute("/")({
         name: "twitter:image",
         content: "/social-card.png",
       },
-      { name: "twitter:creator", content: "@AprendamosCripto" },
+      {
+        name: "twitter:creator",
+        content: "@AprendamosCripto",
+      },
       {
         property: "og:url",
         content: "https://aprendamosdecriptomonedas.lat",
@@ -74,221 +89,215 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const navbarLinks = [
+    { href: "/nivel-1-principiante", label: "Nivel 1 — Principiante", badge: "free" },
+    { href: "/nivel-2-intermedio", label: "Nivel 2 — Intermedio", badge: "free" },
+    { href: "/nivel-3-avanzado", label: "Nivel 3 — Avanzado", badge: "free" },
+    { href: "/nivel-4-experto", label: "Nivel 4 — Experto", badge: "free" },
+    { href: "/nivel-5-especializaciones", label: "Nivel 5 — Especializaciones", badge: "free" },
+    { href: "/blog", label: "Blog", badge: "new" },
+    { href: "/recursos", label: "Recursos", badge: undefined },
+    { href: "/acerca-de", label: "Acerca de mí", badge: undefined },
+  ];
+
   return (
     <>
-      <Header />
-      <main className="flex-1">
-        <section className="relative overflow-hidden bg-[#080d1a] py-16 md:py-24">
-          <div className="absolute inset-0 cyber-grid" />
-          <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-cyan-500/20 blur-[120px]" />
-          <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-cyan-400/10 blur-[120px]" />
+      {/* MinimalistNavbar con efecto scroll */}
+      <MinimalistNavbar
+        logo={<span className="text-2xl font-serif font-bold text-[var(--foreground)]">Aprendamos</span>}
+        links={navbarLinks}
+        onScroll={() => {}}
+      />
 
-          <div className="relative container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-8">
-              <div className="text-center lg:text-left space-y-6">
-                <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300 transition-colors hover:border-cyan-400/70 hover:bg-cyan-400/10">
-                  <span className="text-cyan-400">•</span>
-                  Plan Educativo Completo
-                  <span className="text-cyan-400">•</span>
-                  Blockchain &amp; Criptomonedas
-                </span>
+      <main className="flex-1 bg-background">
+        {/* Hero Section con AnimatedSection */
+        <AnimatedSection
+          animation="fade-in-up"
+          delay={0}
+          className="relative z-10"
+        >
+          <div className="container mx-auto px-4 max-w-2xl">
+            <ElegantHeading as="h1" className="mb-6 text-[var(--heading-text-size)] sm:text-[var(--heading-text-size-md)] md:text-[var(--heading-text-size-lg)]">
+              Tu ruta de aprendizaje paso a paso
+              <span className="italic text-[var(--muted-foreground)]">desde conceptos básicos hasta análisis on-chain avanzado</span>
+            </ElegantHeading>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white">
-                  Educación segura · Estrategia clara ·{" "}
-                  <span className="text-cyan-400 drop-shadow-[0_0_18px_rgba(0,242,254,0.45)]">
-                    Sin humo
-                  </span>
-                </h1>
-
-                <p className="text-base md:text-lg text-[#94a3b8] max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  Aprende Web3 como un ingeniero. Sin influencers, sin promesas.
-                  Fundamentos criptográficos, estrategia on-chain y ejecución
-                  profesional.
-                </p>
-
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
-                  <Layers className="h-4 w-4 text-cyan-400" />
-                  5 niveles · 75 temas (15 + 18 + 18 + 13 + 11)
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById("curriculum");
-                      if (el) el.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#00f2fe] px-7 py-3 text-base font-bold text-black transition-all hover:bg-[#33f5ff] hover:shadow-[0_0_30px_rgba(0,242,254,0.7)]"
-                  >
-                    Empezar ahora
-                  </button>
-                  <Link
-                    to="/nivel-1-principiante"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-400/30 bg-white/5 backdrop-blur px-7 py-3 text-base font-medium text-white transition-all hover:border-cyan-400/60 hover:bg-cyan-400/10"
-                  >
-                    <RouteIcon className="h-4 w-4 text-cyan-400" />
-                    Ver ruta
-                  </Link>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2 pt-2 text-xs text-slate-500">
-                  <span className="inline-flex items-center gap-1.5">
-                    <Shield className="h-3.5 w-3.5 text-slate-400" />
-                    Educación, no asesoría
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <Cog className="h-3.5 w-3.5 text-slate-400" />
-                    On-chain first
-                  </span>
-                </div>
-              </div>
-
-              <div className="relative flex items-center justify-center py-6">
-                <div className="absolute h-72 w-72 rounded-full bg-cyan-500/20 blur-[80px]" />
-                <div className="absolute h-64 w-64 rounded-full border border-cyan-400/25" />
-                <div className="absolute h-80 w-80 rounded-full border border-dashed border-cyan-400/15 animate-[spin_24s_linear_infinite]" />
-                <div className="absolute h-96 w-96 rounded-full border border-cyan-400/5" />
-                <video
-                  src="/videos/intro.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  aria-label="Intro animado de Aprendamos de Criptomonedas"
-                  className="relative h-44 w-44 rounded-full object-cover animate-float drop-shadow-[0_0_30px_rgba(0,242,254,0.55)] ring-2 ring-cyan-400/40"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="curriculum" className="py-12 md:py-16 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-amber-600 mb-2">
-                5 niveles · 75 temas (15 + 18 + 18 + 13 + 11)
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                Tu ruta de aprendizaje paso a paso
-              </h2>
-              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-                Desde los conceptos fundamentales hasta la ingeniería de tokens
-                y sistemas distribuidos. Cada nivel está diseñado para construir
-                sobre el anterior.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <LevelCard
-                level="NIVEL 1"
-                title="Principiante"
-                description="Entiende lo esencial y entra al ecosistema sin riesgos."
-                topics={["Conceptos Fundamentales", "Seguridad Inicial", "Primeros Pasos"]}
-                href="/nivel-1-principiante"
-                badge="free"
-              />
-              <LevelCard
-                level="NIVEL 2"
-                title="Intermedio"
-                description="Habilidades técnicas para operar de forma autónoma."
-                topics={["Blockchain Técnica", "Smart Contracts", "Economía Cripto", "DeFi"]}
-                href="/nivel-2-intermedio"
-                badge="register"
-              />
-              <LevelCard
-                level="NIVEL 3"
-                title="Avanzado"
-                description="DEXs, DeFi, trading y análisis on-chain."
-                topics={["DEXs Avanzados", "DeFi 2.0", "Trading Avanzado", "Cross-Chain"]}
-                href="/nivel-3-avanzado"
-                badge="register"
-              />
-              <LevelCard
-                level="NIVEL 4"
-                title="Experto"
-                description="ZK-Tech, custodia, estrategias avanzadas y arquitectura."
-                topics={["ZK-Rollups", "Arbitrum/Optimism", "Custodia", "Bots de Arbitraje"]}
-                href="/nivel-4-experto"
-                badge="paid"
-              />
-              <LevelCard
-                level="NIVEL 5"
-                title="Especializado"
-                description="ZK programming, modular chains, EigenLayer y regulación."
-                topics={["StarkNet/Cairo", "Account Abstraction", "EigenLayer", "Regulación Global"]}
-                href="/nivel-5-especializaciones"
-                badge="paid"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 md:py-16 bg-gradient-to-br from-navy to-navy-light">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Recursos descargables
-            </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-              Guías prácticas, checklists y plantillas para proteger tu inversión.
+            <p className="text-lg text-[var(--muted-foreground)] mb-8 max-w-2xl">
+              Domina criptomonedas, blockchain, DeFi y seguridad con 75 temas
+              distribuidos en 5 niveles diseñados para construir conocimiento
+              progressively. Sin influencers, sin promesas, solo educación real.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/recursos"
-                className="inline-flex items-center justify-center rounded-md bg-amber-500 px-6 py-3 text-base font-medium text-navy hover:bg-amber-400"
+
+            <div className="flex flex-wrap gap-3 mb-12">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("curriculum");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-7 py-3 text-base font-bold text-[var(--primary-foreground)] transition-all hover:bg-[var(--primary-dark)]"
               >
-                Ver todos los recursos
-              </a>
+                Empezar ahora →
+              </button>
               <Link
-                to="/blog"
-                className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-base font-medium text-white hover:bg-white/10"
+                to="/nivel-1-principiante"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-7 py-3 text-base font-medium text-[var(--muted-foreground)] transition-all hover:border-[var(--primary)]"
               >
-                Leer el blog
+                Ver ruta →
               </Link>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
+
+        {/* Currículum Section con animaciones escalonadas */}
+        <AnimatedSection
+          animation="fade-in-up"
+          delay={0.2}
+          className="relative z-10"
+        >
+          <div className="container mx-auto px-4 max-w-6xl">
+            <ElegantHeading as="h2" className="mb-8 text-[var(--heading-text-size)]">
+              Tu ruta de aprendizaje paso a paso
+            </ElegantHeading>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {/* Nivel 1 - Principiante */}
+              <div className="group bg-[var(--card)] dark:bg-[var(--card-dark)] rounded-xl border border-[var(--border)] p-6 hover:shadow-soft transition-all group-hover:shadow-soft-lg cursor-pointer">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">1</span>
+                  </div>
+                  <div>
+                    <ElegantHeading as="h3" className="mb-1 text-[var(--heading-text-size-sm)]">
+                      Nivel 1 — Principiante
+                    </ElegantHeading>
+                    <p className="text-sm text-[var(--muted-foreground)]">
+                      Conceptos fundamentales, seguridad y primeros pasos
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  15 temas · Fundamentos criptográficos, wallets, seguridad inicial
+                </p>
+              </div>
+
+              {/* Nivel 2 - Intermedio */}
+              <div className="group bg-[var(--card)] dark:bg-[var(--card-dark)] rounded-xl border border-[var(--border)] p-6 hover:shadow-soft transition-all group-hover:shadow-soft-lg cursor-pointer" style="animation-delay: 0.1s;">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">2</span>
+                  </div>
+                  <div>
+                    <ElegantHeading as="h3" className="mb-1 text-[var(--heading-text-size-sm)]">
+                      Nivel 2 — Intermedio
+                    </ElegantHeading>
+                    <p className="text-sm text-[var(--muted-foreground)]">
+                      Blockchain técnica, smart contracts, DeFi básico
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  18 temas · Smart contracts, economía cripto, trading básico
+                </p>
+              </div>
+
+              {/* Nivel 3 - Avanzado */}
+              <div className="group bg-[var(--card)] dark:bg-[var(--card-dark)] rounded-xl border border-[var(--border)] p-6 hover:shadow-soft transition-all group-hover:shadow-soft-lg cursor-pointer" style="animation-delay: 0.2s;">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">3</span>
+                  </div>
+                  <div>
+                    <ElegantHeading as="h3" className="mb-1 text-[var(--heading-text-size-sm)]">
+                      Nivel 3 — Avanzado
+                    </ElegantHeading>
+                    <p className="text-sm text-[var(--muted-foreground)]">
+                      DeFi avanzado, trading, cross-chain, análisis on-chain
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  18 topics · Trading avanzado, cross-chain, Ethereum scaling
+                </p>
+              </div>
+
+              {/* Nivel 4 - Experto */}
+              <div className="group bg-[var(--card)] dark:bg-[var(--card-dark)] rounded-xl border border-[var(--border)] p-6 hover:shadow-soft transition-all group-hover:shadow-soft-lg cursor-pointer" style="animation-delay: 0.3s;">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">4</span>
+                  </div>
+                  <div>
+                    <ElegantHeading as="h3" className="mb-1 text-[var(--heading-text-size-sm)]">
+                      Nivel 4 — Experto
+                    </ElegantHeading>
+                    <p className="text-sm text-[var(--muted-foreground)]">
+                      ZK-tech, custodia institucional, bots de arbitraje, MEV
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  13 temas · ZK-rollups, trading algorítmico, seguridad avanzada
+                </p>
+              </div>
+
+              {/* Nivel 5 - Especializado */}
+              <div className="group bg-[var(--card)] dark:bg-[var(--card-dark)] rounded-xl border border-[var(--border)] p-6 hover:shadow-soft transition-all group-hover:shadow-soft-lg cursor-pointer" style="animation-delay: 0.4s;">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--primary)] flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">5</span>
+                  </div>
+                  <div>
+                    <ElegantHeading as="h3" className="mb-1 text-[var(--heading-text-size-sm)]">
+                      Nivel 5 — Especializado
+                    </ElegantHeading>
+                    <p className="text-sm text-[var(--muted-foreground)]">
+                      ZK programming, modular chains, EigenLayer, regulación global
+                    </p>
+                  </div>
+                </div>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  11 topics · StarkNet/Cairo, account abstraction, regulación
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Recursos Section */
+        <AnimatedSection
+          animation="fade-in-up"
+          delay={0.4}
+          className="relative z-10"
+        >
+          <div className="container mx-auto px-4 py-16 bg-[var(--navy)] dark:bg-[var(--navy-dark)]">
+            <div className="max-w-4xl mx-auto text-center">
+              <ElegantHeading as="h2" className="mb-6 text-[var(--heading-text-size)]">
+                Recursos descargables
+              </ElegantHeading>
+              <p className="text-[var(--muted-foreground)] text-lg mb-8 max-w-2xl mx-auto">
+                Guías prácticas, checklists y plantillas para proteger tu
+                inversión y optimizar tu experiencia en criptomonedas.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 justify-center">
+                <a
+                  href="/recursos"
+                  className="inline-flex items-center justify-center rounded-md bg-[var(--earth-500)] px-6 py-3 text-base font-medium text-[var(--earth-950)] hover:bg-[var(--earth-400)] transition-colors"
+                >
+                  Ver todos los recursos
+                </a>
+                <Link
+                  to="/blog"
+                  className="inline-flex items-center justify-center rounded-md border border-[var(--border)] px-6 py-3 text-base font-medium text-[var(--muted-foreground)] hover:bg-[var(--earth-50)] transition-colors"
+                >
+                  Leer el blog
+                </Link>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
       </main>
+
       <Footer />
     </>
-  );
-}
-
-function LevelCard({
-  level,
-  title,
-  description,
-  topics,
-  href,
-  badge,
-}: {
-  level: string;
-  title: string;
-  description: string;
-  topics: string[];
-  href: string;
-  badge: "free" | "register" | "paid";
-}) {
-  return (
-    <Link to={href} className="group block">
-      <div className="flex flex-col p-6 bg-white dark:bg-card rounded-lg border shadow-sm transition-all duration-200 group-hover:shadow-md group-hover:-translate-y-1">
-        <div className="mb-4 flex items-center justify-between">
-          <span className="text-sm font-bold text-muted-foreground">{level}</span>
-          <span
-            className={cn(
-              "text-xs font-semibold px-2.5 py-0.5 rounded-full border",
-              badge === "free"
-                ? "bg-green-100 text-green-800 border-green-200"
-                : badge === "register"
-                ? "bg-blue-100 text-blue-800 border-blue-200"
-                : "bg-amber-100 text-amber-800 border-amber-200",
-            )}
-          >
-            {badge === "free" ? "GRATIS" : badge === "register" ? "REGISTRO" : "PREMIUM"}
-          </span>
-        </div>
-        <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary">{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4">{description}</p>
-        <span className="text-sm font-medium text-primary mt-auto">Ver contenido →</span>
-      </div>
-    </Link>
   );
 }
