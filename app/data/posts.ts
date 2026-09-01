@@ -153,8 +153,11 @@ export const blogPosts: BlogPost[] = [
     summary:
       "No existe 'la mejor wallet', existe la wallet correcta para tu uso real. Diferencias honestas entre wallets frías, calientes y custodiales, y cómo combinarlas según cuánto manejas y para qué.",
     date: "2026-08-14",
+<<<<<<< HEAD
     targetKeyword: "wallet fría caliente custodial",
     metaDescription: "Comparativa wallet fría vs caliente vs custodial: diferencias honestas, cuándo usar cada una y cómo combinar según tu perfil de usuario para maximizar seguridad y comodidad.",
+=======
+>>>>>>> 2003b1a4d9e52d8d745ce7c878bb816cba08e9fa
     dateLabel: "14/08/2026",
     image: "/blog/wallet-cual-elegir.svg",
     related: [
@@ -212,8 +215,11 @@ export const blogPosts: BlogPost[] = [
     summary:
       "Olvida el jergón técnico: blockchain es un libro contable compartido donde escribir historia es fácil y falsificarla es prácticamente imposible. Así funciona, explicado con analogías que sí se entienden.",
     date: "2026-08-12",
+<<<<<<< HEAD
     targetKeyword: "qué es blockchain",
     metaDescription: "Blockchain explicado simple: el libro contable distribuido que nadie puede falsificar. Guía completa sobre cómo funciona, por qué es seguro y aplicaciones reales más allá del dinero.",
+=======
+>>>>>>> 2003b1a4d9e52d8d745ce7c878bb816cba08e9fa
     dateLabel: "12/08/2026",
     image: "/blog/que-es-blockchain-simple.svg",
     related: [
@@ -270,8 +276,11 @@ export const blogPosts: BlogPost[] = [
     summary:
       "Exchange centralizado o descentralizado no es religión, es herramienta. Ventajas y límites reales de cada modelo, y el error de novato que termina costando carillas.",
     date: "2026-08-10",
+<<<<<<< HEAD
     targetKeyword: "DEX vs CEX",
     metaDescription: "DEX vs CEX diferencias reales: ventajas honestas de exchanges centralizados y descentralizados, errores comunes de novato y cuándo usar cada modelo para maximizar seguridad y rentabilidad.",
+=======
+>>>>>>> 2003b1a4d9e52d8d745ce7c878bb816cba08e9fa
     dateLabel: "10/08/2026",
     image: "/blog/dex-vs-cex-reales.svg",
     related: [
