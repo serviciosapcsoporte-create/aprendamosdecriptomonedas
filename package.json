@@ -7,7 +7,7 @@
     "dev": "vite dev",
     "fetch:news": "node scripts/fetch-news.mjs",
     "build": "npm run fetch:news && npm run assets && vite build && node scripts/postbuild.mjs",
-    "assets": "node scripts/generate-kit-pdf.mjs",
+    "assets": "node scripts/generate-kit-pdf.mjs && node scripts/generate-blog-covers.mjs",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
