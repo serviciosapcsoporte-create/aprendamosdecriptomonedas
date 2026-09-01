@@ -9,15 +9,20 @@ export const Route = createFileRoute("/blog/$postId")({
   head: ({ params }) => {
     const post = findPost(params.postId);
     if (!post) return { meta: [{ title: "Post no encontrado | Aprendamos de Criptomonedas" }] };
+    const metaDesc = post.metaDescription || post.summary.substring(0, 155) + "...";
     return {
       meta: [
         { title: `${post.title} | Blog | Aprendamos de Criptomonedas` },
-        { name: "description", content: post.summary },
+        { name: "description", content: metaDesc },
         { property: "og:title", content: post.title },
-        { property: "og:description", content: post.summary },
+        { property: "og:description", content: metaDesc },
         { property: "og:type", content: "article" },
+        { property: "og:image", content: post.image.startsWith("http") ? post.image : `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}${post.image}` },
         { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:image", content: `https://aprendamosdecriptomonedas.lat${post.image}` },
+        { name: "twitter:title", content: post.title },
+        { name: "twitter:description", content: metaDesc },
+        { name: "twitter:image", content: post.image.startsWith("http") ? post.image : `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}${post.image}` },
+        { "@type": "Article", "@id": `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}/blog/${post.id}`, "headline": post.title, "description": metaDesc, "datePublished": post.date, "author": { "@type": "Organization", "name": "Aprendamos de Criptomonedas" } },
       ],
     };
   },
