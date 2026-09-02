@@ -21,6 +21,7 @@ export interface Topic {
 
 export interface LevelData {
   number: string;
+  href: string;
   title: string;
   subtitle: string;
   description: string;
@@ -39,10 +40,11 @@ const addLevel = (
 export const curriculumData: Record<string, LevelData> = {
   "nivel-3": {
     number: "NIVEL 3",
+    href: "/nivel-3-avanzado",
     title: "Avanzado",
     subtitle: "DeFi, Trading, Arquitectura de Red y Análisis On-Chain",
-    description: "Dominó los conceptos intermedios:DEXs avanzados, préstamos, oráculos, Layer 2 y trading con apalancamiento.",
-    badge: "free",
+    description: "Domina los conceptos avanzados: DEXs avanzados, préstamos, oráculos, Layer 2 y trading con apalancamiento. Requiere registro.",
+    badge: "register",
     sections: [
       {
         title: "DeFi",
@@ -88,10 +90,11 @@ export const curriculumData: Record<string, LevelData> = {
   },
   "nivel-4": {
     number: "NIVEL 4",
+    href: "/nivel-4-experto",
     title: "Experto",
     subtitle: "ZK-Tech, Custodia, Estrategias Avanzadas y Arquitectura",
     description: "Especialízate en ZK-rollups, custodia institucional, bots de arbitraje, MEV y análisis on-chain avanzado.",
-    badge: "free",
+    badge: "paid",
     sections: [
       {
         title: "Layer 2",
@@ -137,10 +140,11 @@ export const curriculumData: Record<string, LevelData> = {
   },
   "nivel-5": {
     number: "NIVEL 5",
+    href: "/nivel-5-especializaciones",
     title: "Especializado",
     subtitle: "ZK Programming, Modular Chains, EigenLayer y Regulación",
     description: "Domina StarkNet/Cairo, EigenLayer/restaking, análisis on-chain profundo y frameworks regulatorios globales.",
-    badge: "free",
+    badge: "paid",
     sections: [
       {
         title: "Ethereum Scaling",
@@ -186,6 +190,7 @@ export const curriculumData: Record<string, LevelData> = {
   },
   "nivel-1": {
     number: "NIVEL 1",
+    href: "/nivel-1-principiante",
     title: "Principiante",
     subtitle: "Conceptos Fundamentales, Seguridad, Primeros Pasos",
     description: "Objetivo: que cualquier persona entienda lo esencial y pueda entrar al ecosistema sin riesgos.",
@@ -207,6 +212,7 @@ export const curriculumData: Record<string, LevelData> = {
   },
   "nivel-2": {
     number: "NIVEL 2",
+    href: "/nivel-2-intermedio",
     title: "Intermedio",
     subtitle: "Blockchain Técnica · Smart Contracts · Economía · DeFi",
     description: "Objetivo: dar comprensión técnica básica y habilidades prácticas para operar.",

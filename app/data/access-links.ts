@@ -1,21 +1,15 @@
-export const siteConfig = {
-  site: "Aprendamos de Criptomonedas",
-  domain: "aprendamosdecriptomonedas.lat",
-  // Web3Forms access key (misma cuenta de Servicios APC para no crear más
-  // cuentas. Los leads se distinguen por "site"/"fuente"/"pagina" en el email).
-  web3formsAccessKey: "c5cdb094-a9cd-4e68-9041-2fafe475fff6",
-  email: "serviciosapcsoporte@gmail.com",
-};
-
-export const accessLinks: Record<string, { url: string; cta: string; unlock: string }> = {
+/**
+ * Enlaces de acceso para el contenido de pago/registro.
+ * Reemplaza estos placeholders por tus URLs reales de Payhip cuando
+ * crees los productos (ver PLAYBOOK-LANZAMIENTO.md, Día 3).
+ */
+export const accessLinks: Record<string, { url: string; cta: string }> = {
   register: {
-    url: "#unlock",
-    cta: "Activa tu acceso gratis al Nivel 3",
-    unlock: "Tu acceso al Nivel 3 está activado. Disfruta la lección completa.",
+    url: "https://payhip.com/b/REEMPLAZAR-NIVEL-3", // producto GRATIS en Payhip que pide registro (email)
+    cta: "Regístrate gratis para desbloquear el Nivel 3",
   },
   paid: {
-    url: "#unlock",
-    cta: "Activa tu acceso completo a este nivel",
-    unlock: "Tu acceso a este nivel está activado. Disfruta la lección completa.",
+    url: "https://payhip.com/b/REEMPLAZAR-NIVEL-4-5", // producto DE PAGO en Payhip
+    cta: "Desbloquea este nivel en Payhip",
   },
 };
