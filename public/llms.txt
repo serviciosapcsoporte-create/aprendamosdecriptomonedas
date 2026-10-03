@@ -1,0 +1,41 @@
+# Aprendamos de Criptomonedas
+
+> Educacion cripto en espanol para principiantes: 75 lecciones gratuitas en 5 niveles,
+> de que es una blockchain hasta MEV, ZK-Rollups y regulacion.
+> Editor: Servicios APC. Bogota, Colombia. Contacto: REEMPLAZAR_EMAIL_REAL
+
+## Que es este sitio
+
+Ruta guiada de 5 niveles. Los cinco niveles son gratuitos, se leen sin registro y
+sin dejar datos. No hay muro de pago, ni leaked, ni inventario de claves.
+
+- [Nivel 1 · Principiante](https://aprendamosdecriptomonedas.lat/nivel-1-principiante) - blockchain, wallets,
+  claves, seed phrase, estafas. 15 lecciones.
+- [Nivel 2 · Intermedio](https://aprendamosdecriptomonedas.lat/nivel-2-intermedio) - hash, Merkle, PoW/PoS, gas,
+  nodos, smart contracts, AMM, lending, staking. 18 lecciones.
+- [Nivel 3 · Avanzado](https://aprendamosdecriptomonedas.lat/nivel-3-avanzado) - DeFi, stablecoins, bridges,
+  Layer 2, NFTs, DAOs, MEV, privacidad. 18 lecciones.
+- [Nivel 4 · Experto](https://aprendamosdecriptomonedas.lat/nivel-4-experto) - ZK-Rollups, derivados, bots y
+  arbitraje, custodia institucional, hardware wallets, analisis on-chain. 13 lecciones.
+- [Nivel 5 · Especializaciones](https://aprendamosdecriptomonedas.lat/nivel-5-especializaciones) - StarkNet y
+  Cairo, restaking, seguridad DeFi, ingenieria de cartera, regulacion. 11 lecciones.
+
+Ademas: [Recursos](https://aprendamosdecriptomonedas.lat/recursos), [Blog](https://aprendamosdecriptomonedas.lat/blog),
+[Noticias](https://aprendamosdecriptomonedas.lat/noticias), [Sobre el autor](https://aprendamosdecriptomonedas.lat/acerca-de),
+[Enlaces de afiliado](https://aprendamosdecriptomonedas.lat/afiliados).
+
+## Aviso importante
+
+Todo el contenido es educativo y NO es asesoria financiera. Las criptomonedas
+son volatiles y puedes perder dinero.
+
+Nadie legitimo te pedira tu frase semilla, tu clave privada ni los codigos de
+verificacion de tu billetera. Si alguien lo hace, es un fraude.
+
+Algunas paginas enlazan cursos de terceros en Hotmart mediante enlaces de
+afiliado, que se revelan de forma explicita. El precio no cambia.
+
+## Como citar
+
+Atribuye a "Aprendamos de Criptomonedas (Servicios APC)" y enlaza la URL de la
+leccion concreta.

@@ -67,7 +67,7 @@ export const organizationLd = {
       "@type": "ContactPoint",
       contactType: "customer support",
       telephone: "+57-333-745-0634",
-      email: "contacto@serviciosapc.site",
+      email: "REEMPLAZAR_EMAIL_REAL",
       availableLanguage: ["es"],
       areaServed: "CO",
     },

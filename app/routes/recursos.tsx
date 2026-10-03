@@ -13,7 +13,6 @@ export const Route = createFileRoute("/recursos")({
         name: "description",
         content: "Descarga guías, checklists y recursos para proteger tu inversión en criptomonedas. Guías de seguridad, estrategia y más.",
       },
-      { name: "keywords", content: "recursos criptomonedas, guias descargas, checklist seguridad" },
     ],
     links: [{ rel: "canonical", href: canonical("/recursos") }],
   }),

@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-4-experto")({
   component: Nivel4Page,
   head: () => ({
@@ -14,7 +15,6 @@ export const Route = createFileRoute("/nivel-4-experto")({
         content:
           "Nivel 4 Experto gratis: ZK-rollups, derivados, bots de arbitraje, custodia institucional y análisis on-chain. 13 temas completos, sin registro.",
       },
-      { name: "keywords", content: "curso sistemas distribuidos, defi profesional, zk rollup, cross chain messaging, curso experto cripto gratis" },
     ],
     links: [{ rel: "canonical", href: canonical("/nivel-4-experto") }],
     scripts: [jsonLd(
@@ -61,6 +61,7 @@ function Nivel4Page() {
             </div>
           </div>
         ))}
+        <AffiliateCta nivel="4" />
       </main>
       <Footer />
     </>

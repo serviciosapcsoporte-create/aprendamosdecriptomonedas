@@ -16,7 +16,6 @@ export const Route = createFileRoute("/noticias")({
         content:
           "Resumen diario de noticias de Bitcoin, blockchain, DeFi y criptomonedas. Educación segura, estrategia clara y sin humo.",
       },
-      { name: "keywords", content: "noticias bitcoin, noticias cripto, blockchain, criptomonedas hoy, resumen diario cripto" },
       { property: "og:title", content: "Noticias de Criptomonedas al día | Aprendamos de Criptomonedas" },
       {
         property: "og:description",

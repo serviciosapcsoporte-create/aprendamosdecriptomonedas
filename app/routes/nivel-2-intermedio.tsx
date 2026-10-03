@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { curriculumData } from "@/data/curriculum";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-2-intermedio")({
   component: Nivel2Page,
   head: () => ({
@@ -15,7 +16,6 @@ export const Route = createFileRoute("/nivel-2-intermedio")({
         content:
           "Nivel 2 Intermedio gratis: Blockchain técnica, smart contracts, economía cripto y DeFi básico. Sin registro, acceso inmediato.",
       },
-      { name: "keywords", content: "curso blockchain tecnico, smart contracts curso, defi para principiantes, economia cripto" },
     ],
     links: [{ rel: "canonical", href: canonical("/nivel-2-intermedio") }],
     scripts: [jsonLd(
@@ -62,6 +62,7 @@ function Nivel2Page() {
             </div>
           </div>
         ))}
+        <AffiliateCta nivel="2" />
       </main>
       <Footer />
     </>

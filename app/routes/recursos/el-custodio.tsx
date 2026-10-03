@@ -14,11 +14,6 @@ export const Route = createFileRoute("/recursos/el-custodio")({
         content:
           "Guía de autocustodia: exchange vs wallet, el espejismo del saldo, tu frase semilla, el envío seguro y la técnica 4-4.",
       },
-      {
-        name: "keywords",
-        content:
-          "autocustodia cripto, exchange vs wallet, seed phrase, técnica 4-4, envío seguro, hot wallet cold wallet, auto custodia bitcoin",
-      },
       { property: "og:title", content: "El Custodio de su Propia Libertad" },
       {
         property: "og:description",

@@ -1,4 +1,63 @@
+# robots.txt - Aprendamos de Criptomonedas
+# https://aprendamosdecriptomonedas.lat/
+#
+# Regla: todo el contenido es publico y queremos que lo lean TODOS los
+# rastreadores, incluidos los de IA y los de publicidad.
+
 User-agent: *
 Allow: /
 
+# --- Buscadores generativos y agentes de IA ---
+# Todos son identificables por IP, asi que el Allow explicito no cambia nada
+# hoy. Se deja documentado para que quede claro que la intencion es permitir.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# --- Publicidad ---
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# --- Ubicacion ---
 Sitemap: https://aprendamosdecriptomonedas.lat/sitemap.xml

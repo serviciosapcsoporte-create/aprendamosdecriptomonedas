@@ -14,11 +14,6 @@ export const Route = createFileRoute("/recursos/el-escanner")({
         content:
           "Filtros de lógica para analizar un protocolo cripto: la fuente del flujo, lending real vs Ponzi, ingresos de red e inflación vacía.",
       },
-      {
-        name: "keywords",
-        content:
-          "analizar criptomoneda, detectar Ponzi, rendimiento real cripto, fuente del flujo, inflación vacía, protocolo cripto",
-      },
       { property: "og:title", content: "El Escáner · Análisis de protocolo" },
       {
         property: "og:description",

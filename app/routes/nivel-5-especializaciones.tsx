@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-5-especializaciones")({
   component: Nivel5Page,
   head: () => ({
@@ -14,7 +15,6 @@ export const Route = createFileRoute("/nivel-5-especializaciones")({
         content:
           "Nivel 5 Especializaciones gratis: Ethereum scaling, MEV, account abstraction, restaking, seguridad DeFi y regulación global. 11 temas, sin registro.",
       },
-      { name: "keywords", content: "curso trading riesgo, minería criptomonedas, solidity rust, gobernanza dao, infraestructura web3" },
     ],
     links: [{ rel: "canonical", href: canonical("/nivel-5-especializaciones") }],
     scripts: [jsonLd(
@@ -61,6 +61,7 @@ function Nivel5Page() {
             </div>
           </div>
         ))}
+        <AffiliateCta nivel="5" />
       </main>
       <Footer />
     </>

@@ -42,8 +42,9 @@ function Privacidad() {
           <div>
             <h2 className="text-2xl font-bold mb-3">1. Responsable</h2>
             <p>
-              Servicios APC, NIT 1.030.445.723-1, es el responsable del tratamiento de los datos
-              personales recopilados en este sitio. Su domicilio es Bogotá, Colombia.
+              Servicios APC, NIT REEMPLAZAR_NIT, es el responsable del tratamiento de
+              los datos personales recopilados en este sitio. Su domicilio es
+              REEMPLAZAR_DIRECCION_COMPLETA.
             </p>
           </div>
 
@@ -108,8 +109,8 @@ function Privacidad() {
             <p className="mb-3">
               Puedes conocer, actualizar, suprimir tu información y revocar tu consentimiento en
               cualquier momento escribiendo a{" "}
-              <a href="mailto:contacto@serviciosapc.site" className="text-primary hover:underline">
-                contacto@serviciosapc.site
+              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
+                REEMPLAZAR_EMAIL_REAL
               </a>
               . Respondemos en un plazo máximo de 15 días hábiles, según el artículo 19 de la Ley
               1581 de 2012.
@@ -141,8 +142,8 @@ function Privacidad() {
             <h2 className="text-2xl font-bold mb-3">Contacto</h2>
             <p>
               Servicios APC · Bogotá, Colombia · +57 333 745 0634 ·{" "}
-              <a href="mailto:contacto@serviciosapc.site" className="text-primary hover:underline">
-                contacto@serviciosapc.site
+              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
+                REEMPLAZAR_EMAIL_REAL
               </a>
             </p>
           </div>

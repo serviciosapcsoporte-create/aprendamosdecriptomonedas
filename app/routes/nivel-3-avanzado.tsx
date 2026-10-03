@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-3-avanzado")({
   component: Nivel3Page,
   head: () => ({
@@ -14,7 +15,6 @@ export const Route = createFileRoute("/nivel-3-avanzado")({
         content:
           "Nivel 3 Avanzado gratis: DeFi profundo, AMMs, stablecoins, bridges, Layer 2 y trading con gestión de riesgo. 18 temas completos, sin registro.",
       },
-      { name: "keywords", content: "curso criptografia avanzada, arquitectura blockchain, token engineering, zk proofs, defi curso gratis" },
     ],
     links: [{ rel: "canonical", href: canonical("/nivel-3-avanzado") }],
     scripts: [jsonLd(
@@ -61,6 +61,7 @@ function Nivel3Page() {
             </div>
           </div>
         ))}
+        <AffiliateCta nivel="3" />
       </main>
       <Footer />
     </>

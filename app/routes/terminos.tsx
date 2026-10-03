@@ -70,8 +70,8 @@ function Terminos() {
             </p>
             <p>
               Si encuentras un error, escríbenos a{" "}
-              <a href="mailto:contacto@serviciosapc.site" className="text-primary hover:underline">
-                contacto@serviciosapc.site
+              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
+                REEMPLAZAR_EMAIL_REAL
               </a>{" "}
               y lo corregimos.
             </p>
@@ -127,8 +127,8 @@ function Terminos() {
             <h2 className="text-2xl font-bold mb-3">Contacto</h2>
             <p>
               Servicios APC · Bogotá, Colombia · +57 333 745 0634 ·{" "}
-              <a href="mailto:contacto@serviciosapc.site" className="text-primary hover:underline">
-                contacto@serviciosapc.site
+              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
+                REEMPLAZAR_EMAIL_REAL
               </a>
             </p>
           </div>

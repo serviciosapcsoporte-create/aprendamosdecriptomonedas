@@ -125,8 +125,8 @@ function Afiliados() {
             <p>
               Si alguna vez recibes una comisión y crees que eso condicionó lo que escribimos,
               escríbenos a{" "}
-              <a href="mailto:contacto@serviciosapc.site" className="text-primary hover:underline">
-                contacto@serviciosapc.site
+              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
+                REEMPLAZAR_EMAIL_REAL
               </a>
               . Lo revisamos.
             </p>

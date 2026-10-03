@@ -14,11 +14,6 @@ export const Route = createFileRoute("/recursos/el-escudo-de-5-minutos")({
         content:
           "Rutina de seguridad de 5 minutos antes de operar: revisa 2FA, seed phrase, red y dirección. Minimiza los errores irreversibles.",
       },
-      {
-        name: "keywords",
-        content:
-          "seguridad cripto, rutina de seguridad, 2FA, seed phrase, verificación de dirección, protección wallet, antes de operar",
-      },
       { property: "og:title", content: "El Escudo de 5 Minutos" },
       {
         property: "og:description",

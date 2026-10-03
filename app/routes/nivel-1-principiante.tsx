@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { navItems } from "@/components/MainNav";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-1-principiante")({
   component: Nivel1Page,
   head: () => ({
@@ -17,7 +18,6 @@ export const Route = createFileRoute("/nivel-1-principiante")({
         content:
           "Nivel 1: Conceptos Fundamentales, Seguridad Inicial y Primeros Pasos Prácticos. Entra al ecosistema cripto sin riesgos.",
       },
-      { name: "keywords", content: "curso criptomonedas gratis, aprender criptomonedas desde cero, blockchain para principiantes, wallets, seed phrase" },
     ],
     links: [{ rel: "canonical", href: canonical("/nivel-1-principiante") }],
     scripts: [jsonLd(
@@ -86,6 +86,7 @@ function Nivel1Page() {
             </a>
           </div>
         </div>
+        <AffiliateCta nivel="1" />
       </main>
       <Footer />
     </>

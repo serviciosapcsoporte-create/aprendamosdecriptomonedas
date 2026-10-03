@@ -14,11 +14,6 @@ export const Route = createFileRoute("/recursos/checklist-supervivencia-cripto")
         content:
           "Checklist de seguridad y control antes de invertir, enviar o tradear: 8 bloques de verificación, reglas de oro y resultado final.",
       },
-      {
-        name: "keywords",
-        content:
-          "checklist seguridad cripto, seguridad criptomonedas, autocustodia, seed phrase, verificación envío, estafas cripto, gestión de riesgo",
-      },
       { property: "og:title", content: "Checklist de Supervivencia Cripto" },
       {
         property: "og:description",

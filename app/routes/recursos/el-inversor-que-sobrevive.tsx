@@ -15,11 +15,6 @@ export const Route = createFileRoute("/recursos/el-inversor-que-sobrevive")({
         content:
           "Guía educativa para entender antes de arriesgar: control, seguridad y criterio en el mercado cripto. Protege tu capital antes de pensar en ganancias.",
       },
-      {
-        name: "keywords",
-        content:
-          "guía inversor cripto, no perder dinero en cripto, educación criptomonedas, gestión de riesgo cripto, seguridad en cripto",
-      },
       { property: "og:title", content: "El Inversor que Sobrevive | Aprendamos de Criptomonedas" },
       {
         property: "og:description",
