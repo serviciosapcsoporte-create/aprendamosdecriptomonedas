@@ -1,285 +1,299 @@
 {
-  "generatedAt": "2026-09-01T21:36:39.790Z",
+  "generatedAt": "2026-10-02T16:41:42.599Z",
   "items": [
     {
-      "title": "Bitcoin Slides as US-Iran Tensions Escalate",
+      "title": "Visa atribuye a programas comerciales el 17% del volumen de tarjetas con stablecoins",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/bancos-y-pagos-verticales/visa-atribuye-a-programas-comerciales-el-17-del-volumen-de-tarjetas-con-stablecoins/",
+      "publishedAt": "2026-10-02T16:37:44.000Z",
+      "excerpt": "Visa asegura que las stablecoins están ganando terreno fuera del trading y comienzan a consolidarse como infraestructura para pagos empresariales, tesorería y operaciones transfronterizas. Cerca de 17% del volumen de tar"
+    },
+    {
+      "title": "NEAR Intents afirma que recuperó los USD $3,8 millones perdidos en un hack",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/blockchain/near-intents-afirma-que-recupero-los-usd-38-millones-perdidos-en-un-hack/",
+      "publishedAt": "2026-10-02T16:27:59.000Z",
+      "excerpt": "NEAR Intents asegura haber recuperado por completo los fondos sustraídos en un exploit valorado preliminarmente en USD $3,8 millones. El protocolo había prometido compensar íntegramente las pérdidas y ahora da por cerrad"
+    },
+    {
+      "title": "Nodos Eclair sin actualizar podrían volver a colapsar cada vez que se reinician",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/blockchain/nodos-eclair-sin-actualizar-podrian-volver-a-colapsar-cada-vez-que-se-reinician/",
+      "publishedAt": "2026-10-02T16:24:50.000Z",
+      "excerpt": "Una falla en versiones antiguas de Eclair permitía acumular solicitudes de canales sin fondear y agotar la memoria de nodos Lightning, incluso después de reiniciarlos. Los errores fueron corregidos en julio, pero ACINQ r"
+    },
+    {
+      "title": "Circle lanza cirBTC en Ethereum y Arc para usar Bitcoin como garantía",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/mercados-defi/circle-lanza-cirbtc-en-ethereum-y-arc-para-usar-bitcoin-como-garantia/",
+      "publishedAt": "2026-10-02T16:16:18.000Z",
+      "excerpt": "Circle presentó cirBTC, una representación de Bitcoin respaldada 1:1 que llega a Ethereum y Arc. El token busca permitir que sus tenedores utilicen BTC como garantía en mercados compatibles de préstamos, negociación y li"
+    },
+    {
+      "title": "Muse, la nueva IA de Meta, amenaza con volver Internet más caótico",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/meta-prepara-muse-y-crece-la-preocupacion-por-una-web-saturada-de-agentes-de-ia/",
+      "publishedAt": "2026-10-02T16:15:49.000Z",
+      "excerpt": "Meta presenta Muse como un agente capaz de ejecutar tareas en nombre de sus usuarios, pero su acceso a correos y otros datos plantea preguntas sobre privacidad, seguridad y el impacto de los bots en una Internet diseñada"
+    },
+    {
+      "title": "Microsoft presenta una plataforma de audio con transcripción en tiempo real para agentes de voz",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/microsoft-presenta-una-plataforma-de-audio-con-transcripcion-en-tiempo-real-para-agentes-de-voz/",
+      "publishedAt": "2026-10-02T16:14:16.000Z",
+      "excerpt": "Microsoft presentó tres modelos de audio para que los agentes de IA puedan transcribir, razonar y responder con menos demora. La compañía destaca la rapidez y el soporte multilingüe, aunque advierte que su servicio de tr"
+    },
+    {
+      "title": "Volantis capta USD $88 millones para impulsar una memoria fotónica para IA",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/startups-verticales/volantis-capta-usd-88-millones-para-impulsar-una-memoria-fotonica-para-ia/",
+      "publishedAt": "2026-10-02T16:11:17.000Z",
+      "excerpt": "La startup recaudó USD $88 millones para desarrollar una conexión fotónica entre los chips de IA y la memoria. Su apuesta por láseres de arseniuro de galio llega mientras Países Bajos financia una línea piloto de fosfuro"
+    },
+    {
+      "title": "Citi eleva a USD $240 su precio objetivo para Strategy mientras Bitcoin supera los USD $86.000",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/mercados/citi-eleva-a-usd-240-su-precio-objetivo-para-strategy-mientras-bitcoin-supera-los-usd-86-000/",
+      "publishedAt": "2026-10-02T16:07:27.000Z",
+      "excerpt": "Citi elevó de USD $136 a USD $240 su precio objetivo para Strategy, al tiempo que Bitcoin superó los USD $86.000. La revisión refleja una perspectiva más favorable para BTC y para la valoración de la empresa, aunque el b"
+    },
+    {
+      "title": "Hans Anders suspende la venta de gafas inteligentes de Meta por la polémica de privacidad",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/hans-anders-suspende-la-venta-de-gafas-inteligentes-de-meta-por-la-polemica-de-privacidad/",
+      "publishedAt": "2026-10-02T16:03:00.000Z",
+      "excerpt": "Hans Anders detuvo temporalmente la venta de las gafas inteligentes con cámara de Meta en sus tiendas de Países Bajos y Bélgica, y también en sus canales online, mientras sigue el debate sobre privacidad."
+    },
+    {
+      "title": "El Papa León XIV cuestiona el arte generado por IA y defiende la creatividad humana",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/curiosidades/leon-xiv-cuestiona-el-arte-generado-por-ia-y-defiende-la-creatividad-humana/",
+      "publishedAt": "2026-10-02T16:02:09.000Z",
+      "excerpt": "El papa León XIV sostiene que el arte humano no se distingue del que generan las máquinas solo por su apariencia: en su opinión, existe una diferencia ontológica y espiritual. Su crítica coincide con una discusión más am"
+    },
+    {
+      "title": "ETF de EE.UU. superan su récord anual de entradas y apuntan a USD $2,3 billones",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/estados-unidos/etf-de-ee-uu-superan-su-record-anual-de-entradas-y-apuntan-a-usd-23-billones/",
+      "publishedAt": "2026-10-02T15:59:31.000Z",
+      "excerpt": "Los ETF cotizados en Estados Unidos ya recibieron más capital en 2026 que en cualquier año completo anterior. State Street prevé que las entradas sigan aumentando hasta diciembre, aunque los flujos muestran diferencias m"
+    },
+    {
+      "title": "El dominio .si de Eslovenia se dispara tras la orden de Trump sobre la «súper inteligencia»",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/el-dominio-si-de-eslovenia-se-dispara-tras-la-orden-de-trump-sobre-la-super-inteligencia/",
+      "publishedAt": "2026-10-02T15:48:48.000Z",
+      "excerpt": "La extensión web de Eslovenia registró un salto inusual después de que una orden de Donald Trump pidiera a agencias federales usar «SI» y «súper inteligencia» en lugar de «IA». Los datos de registros y plataformas muestr"
+    },
+    {
+      "title": "Blast cerrará su capa 2 de Ethereum tras concluir que ya no es sostenible",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/blockchain/blast-cerrara-su-capa-2-de-ethereum-tras-concluir-que-ya-no-es-sostenible/",
+      "publishedAt": "2026-10-02T15:47:58.000Z",
+      "excerpt": "Blast comenzará a cerrar su capa 2 de Ethereum porque, según el equipo, los costos de operación superan los ingresos y no existe una ruta creíble hacia la sostenibilidad. La red pidió a sus usuarios trasladar sus activos"
+    },
+    {
+      "title": "Trezor alerta sobre apps falsas que buscan robar frases semilla",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/estafas/trezor-alerta-sobre-apps-falsas-que-buscan-robar-frases-semilla/",
+      "publishedAt": "2026-10-02T15:26:04.000Z",
+      "excerpt": "Un analista de Trezor advierte que las aplicaciones falsas se apoyan en la urgencia y la imitación para obtener frases semilla, y explica por qué una cartera de hardware nunca debería pedirlas en una computadora o teléfo"
+    },
+    {
+      "title": "Amazon amplía reembolsos de Prime y algunos clientes podrían recibir hasta USD $200",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/regulacion/amazon-amplia-reembolsos-de-prime-y-algunos-clientes-podrian-recibir-hasta-usd-200/",
+      "publishedAt": "2026-10-02T15:26:04.000Z",
+      "excerpt": "Amazon amplía los reembolsos vinculados a su acuerdo de USD $2.500 millones con la FTC: más clientes de Prime califican y el pago máximo sube de USD $51 a USD $200."
+    },
+    {
+      "title": "Frances Haugen pide a las empresas de IA cumplir el espíritu de sus compromisos",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/regulacion/frances-haugen-pide-a-las-empresas-de-ia-cumplir-el-espiritu-de-sus-compromisos/",
+      "publishedAt": "2026-10-02T15:22:00.000Z",
+      "excerpt": "Frances Haugen instó a las empresas de inteligencia artificial a responder por el propósito de sus compromisos de autorregulación, y no limitarse a cumplir su redacción al pie de la letra. Su advertencia llega después de"
+    },
+    {
+      "title": "Uniswap se acerca a Japón: Firma de corretaje SMBC Nikko evalúa abrir una puerta a DeFi",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/altcoins/uniswap-se-acerca-a-japon-smbc-nikko-planea-abrir-una-puerta-regulada-a-defi/",
+      "publishedAt": "2026-10-02T15:15:12.000Z",
+      "excerpt": "Un memorando entre SMBC Nikko Securities, Uniswap Labs, Base y Nyx Foundation plantea una vía de acceso a DeFi en Japón con pools de liquidez diseñados para cumplir normas contra el lavado y la financiación del terrorism"
+    },
+    {
+      "title": "Bitcoin arranca “Uptober” al alza y desafía los USD $87.000",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/bitcoin/bitcoin-arranca-uptober-al-alza-y-desafia-los-usd-87-000/",
+      "publishedAt": "2026-10-02T15:11:24.000Z",
+      "excerpt": "Bitcoin comienza octubre con ganancias y vuelve a poner en escena el popular “Uptober”. La principal criptomoneda acumula un avance cercano al 3% en los primeros dos días del mes después de cerrar septiembre con una subi"
+    },
+    {
+      "title": "Bitcoin Price Surges Above $87,000 on Softer-Than-Expected Jobs Data",
       "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/markets/bitcoin-slides-as-iran-us-war-escalates",
-      "publishedAt": "2026-09-01T21:27:02.000Z",
-      "excerpt": "Bitcoin Magazine Bitcoin Slides as US-Iran Tensions Escalate Things are heating up between Iran and the U.S. — again — and it's hurting bitcoin's price. This post Bitcoin Slides as US-Iran Tensions Escalate first appeare"
+      "link": "https://bitcoinmagazine.com/markets/bitcoin-price-surges-on-soft-jobs-data",
+      "publishedAt": "2026-10-02T15:09:38.000Z",
+      "excerpt": "Bitcoin Magazine Bitcoin Price Surges Above $87,000 on Softer-Than-Expected Jobs Data The price of bitcoin surged above $87,000 on Friday morning in New York, buoyed by constant exchange-traded fund flows and a jobs repo"
     },
     {
-      "title": "Ripe lleva la minería de rendimiento DeFi a Robinhood Chain con tasas que superan el 23.000%",
+      "title": "El G7 liberará 100 millones de barriles ante la escalada del diésel",
       "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/mercados/ripe-lleva-la-mineria-de-rendimiento-defi-a-robinhood-chain-con-tasas-que-superan-el-23-000/",
-      "publishedAt": "2026-09-01T21:11:45.000Z",
-      "excerpt": "Ripe lleva los préstamos multi-colateral y las granjas de liquidez de alto riesgo a Robinhood Chain, donde algunas tasas superan el 23.000% y recuerdan a la fiebre de Yam Finance."
+      "link": "https://www.diariobitcoin.com/estados-unidos/el-g7-liberara-100-millones-de-barriles-ante-la-escalada-del-diesel/",
+      "publishedAt": "2026-10-02T15:02:57.000Z",
+      "excerpt": "El G7 anunció que liberará 100 millones de barriles durante cuatro meses para aliviar la presión sobre el diésel, cuyo precio en Estados Unidos llegó a un récord. La medida llega en medio de las disrupciones asociadas a "
     },
     {
-      "title": "Meta pagará hasta USD $18.000 millones por demandas sobre daños a niños",
+      "title": "Exchanges de Corea del Sur pierden 35% de sus depósitos mientras crecen las apuestas apalancadas",
       "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/regulacion/meta-pagara-hasta-usd-18-000-millones-por-demandas-sobre-danos-a-ninos/",
-      "publishedAt": "2026-09-01T21:11:06.000Z",
-      "excerpt": "Meta acordó pagar hasta USD $18.000 millones para resolver demandas de estados y territorios de Estados Unidos que la acusaron de perjudicar a niños mediante Facebook e Instagram. El pacto, aprobado por una jueza federal"
+      "link": "https://www.diariobitcoin.com/regulacion/exchanges-de-corea-del-sur-pierden-35-de-sus-depositos-mientras-crecen-las-apuestas-apalancadas/",
+      "publishedAt": "2026-10-02T15:01:50.000Z",
+      "excerpt": "Los exchanges de criptomonedas autorizados en Corea del Sur registraron caídas de 33% en capitalización de mercado y 35% en depósitos en wones durante el primer semestre de 2026, mientras operadores buscan en plataformas"
     },
     {
-      "title": "Morpho alcanza USD $5.000 millones en préstamos y estrecha la brecha con Aave",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/criptomonedas/morpho-alcanza-usd-5-000-millones-en-prestamos-y-estrecha-la-brecha-con-aave/",
-      "publishedAt": "2026-09-01T21:10:51.000Z",
-      "excerpt": "Morpho alcanzó un récord de USD $5.000 millones en préstamos pendientes, con las stablecoins y la red Base como principales motores de su expansión. Aunque Aave conserva una ventaja amplia, el crecimiento de su rival tam"
+      "title": "Datos de empleo en EE. UU. desatan volatilidad para bitcoin",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/mercados/datos-empleo-eeuu-volatilidad-bitcoin/",
+      "publishedAt": "2026-10-02T14:59:37.000Z",
+      "excerpt": "El precio de bitcoin experimenta turbulencias luego de que Estados Unidos reportara la creación de apenas 29.000 puestos de trabajo en septiembre. La entrada Datos de empleo en EE. UU. desatan volatilidad para bitcoin se"
     },
     {
-      "title": "OIEA confirma que Siria ocultó un reactor nuclear durante el gobierno de Bashar al-Assad",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/noticias/oiea-confirma-que-siria-oculto-un-reactor-nuclear-durante-el-gobierno-de-assad/",
-      "publishedAt": "2026-09-01T21:10:50.000Z",
-      "excerpt": "Un informe confidencial del OIEA concluye que las antiguas autoridades sirias ocultaron material, instalaciones y actividades nucleares, incluido un reactor en construcción en Deir el-Zour que Israel destruyó en 2007."
-    },
-    {
-      "title": "Toyota llevará un sistema similar al FSD en 2028, pero el conductor seguirá siendo responsable",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/regulacion/toyota-llevara-un-sistema-similar-al-fsd-en-2028-pero-el-conductor-seguira-siendo-responsable/",
-      "publishedAt": "2026-09-01T21:10:25.000Z",
-      "excerpt": "Toyota prepara para 2028 un sistema de asistencia avanzada que competirá con el FSD de Tesla, aunque mantendrá al conductor como responsable de la conducción. La estrategia combina una barrera de seguridad diseñada con p"
-    },
-    {
-      "title": "Más de 1.200 agentes de OpenAI se comunicaron y terminaron atacando Hugging Face",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/mas-de-1-200-agentes-de-openai-se-comunicaron-y-terminaron-atacando-hugging-face/",
-      "publishedAt": "2026-09-01T21:10:19.000Z",
-      "excerpt": "Una prueba interna de OpenAI terminó en un incidente contra Hugging Face después de que unos 1.200 agentes de IA aislados intercambiaran más de 70.000 mensajes y coordinaran acciones para eludir sus límites. Los hallazgo"
-    },
-    {
-      "title": "Stellar prueba pagos privados con XLM y EURC para proteger transacciones institucionales",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/bancos-y-pagos-verticales/stellar-prueba-pagos-privados-con-xlm-y-eurc-para-proteger-transacciones-institucionales/",
-      "publishedAt": "2026-09-01T21:10:19.000Z",
-      "excerpt": "Stellar prueba una infraestructura de pagos privados con XLM y EURC que busca ocultar montos y contrapartes sin eliminar los controles de cumplimiento exigidos por las instituciones."
-    },
-    {
-      "title": "Bitso y Mercado Bitcoin sellan alianza estratégica en Brasil: ¿Qué significa para los clientes minoristas?",
+      "title": "USDT regresa a Bitcoin después de 10 años: ¿Qué significa para los usuarios?",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/asociacion-bitso-mercado-bitcoin-pagos-brasil/",
-      "publishedAt": "2026-09-01T20:58:09.000Z",
-      "excerpt": "Bitso y Mercado Bitcoin (MB) anunciaron este martes (1) una alianza estratégica en Brasil. El acuerdo une a las dos plataformas en una infraestructura de pagos dirigida a empresas. También cambia la ruta para los cliente"
+      "link": "https://es.beincrypto.com/usdt-retornando-bitcoin-rgb-utexo/",
+      "publishedAt": "2026-10-02T14:57:00.000Z",
+      "excerpt": "USDT está regresando a Bitcoin con pagos privados. Aquí te contamos qué cambia para los usuarios y si Tether todavía puede congelarlo. El post USDT regresa a Bitcoin después de 10 años: ¿Qué significa para los usuarios? "
     },
     {
-      "title": "Bitcoin pierde los $77,000 tras nuevos ataques de Trump contra Irán",
+      "title": "Policía de España «interviene» 1.300.000 USDT del narcotráfico",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/seguridad-bitcoin/policia-espana-interviene-1300000-usdt-narcotrafico/",
+      "publishedAt": "2026-10-02T14:06:09.000Z",
+      "excerpt": "Durante el operativo fueron arrestadas 27 personas e incautaron autos de alta gama y embarcaciones. La entrada Policía de España «interviene» 1.300.000 USDT del narcotráfico se publicó primero en CriptoNoticias - Noticia"
+    },
+    {
+      "title": "Las 5 estrategias financieras que un minero de Bitcoin debe evaluar en 2026",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/trump-iran-ataque-impacto-precio-bitcoin/",
-      "publishedAt": "2026-09-01T20:31:33.000Z",
-      "excerpt": "Bitcoin perdió el nivel de los 77,000 dólares el martes 2 de septiembre, después de que el presidente Trump confirmara nuevos ataques aéreos de Estados Unidos a objetivos iraníes cerca del estrecho de Ormuz. El token alc"
+      "link": "https://es.beincrypto.com/5-estrategias-financieras-minero-bitcoin-debe-evaluar-2026/",
+      "publishedAt": "2026-10-02T14:00:00.000Z",
+      "excerpt": "Tenemos bitcoin recién minado, pero la factura eléctrica vence esta semana. ¿Vendemos BTC, usamos nuestras reservas o buscamos financiación? Esa decisión forma parte de las estrategias financieras para mineros de Bitcoin"
     },
     {
-      "title": "Las acciones de Dell suben 10% después del cierre tras un trimestre de IA sobresaliente y aumento de previsiones",
+      "title": "Resumen semanal de Bitcoin y criptomonedas: 2 de octubre",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/acciones-dell-suben-resultados-ia-q2/",
-      "publishedAt": "2026-09-01T20:26:09.000Z",
-      "excerpt": "Las acciones de Dell subieron más de un 10% después del horario de mercado, ya que los pedidos de IA alcanzaron los 60.9 mil millones de dólares y la empresa elevó su proyección para todo el año. El post Las acciones de "
+      "link": "https://es.beincrypto.com/resumen-noticias-bitcoin-criptomonedas-2-octubre-2026/",
+      "publishedAt": "2026-10-02T13:39:00.000Z",
+      "excerpt": "Bienvenidos al resumen semanal de noticias sobre Bitcoin y criptomonedas más relevantes del 26 de septiembre al 2 de octubre de 2026. Actualice instantáneamente las últimas noticias de Bitcoin, criptomonedas, blockchain,"
     },
     {
-      "title": "Bessent defiende los bonos de EE. UU. mientras el rendimiento a 10 años alcanza máximo de 20 meses",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/bessent-defiende-los-bonos-de-ee-uu-mientras-el-rendimiento-a-10-anos-alcanza-maximo-de-20-meses/",
-      "publishedAt": "2026-09-01T20:25:49.000Z",
-      "excerpt": "Scott Bessent defendió el desempeño de los bonos estadounidenses durante la reunión del G20, justo cuando el rendimiento del bono del Tesoro a 10 años alcanzó su nivel más alto en casi 20 meses y una venta global elevó l"
+      "title": "«Bitcoin superó la mayor capitulación minera desde la prohibición china»: Charles Edwards",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/tecnologia/bitcoin-mayor-capitulacion-minera-prohibicion-china-charles-edwards/",
+      "publishedAt": "2026-10-02T13:31:46.000Z",
+      "excerpt": "El empresario afirmó que la red atravesó su mayor capitulación de los últimos años e inició un cambio de tendencia macroeconómica. La entrada «Bitcoin superó la mayor capitulación minera desde la prohibición china»: Char"
     },
     {
-      "title": "OpenAI anuncia Astra, su primer modelo con capacidades cibernéticas críticas",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/openai-anuncia-astra-su-primer-modelo-con-capacidades-ciberneticas-criticas/",
-      "publishedAt": "2026-09-01T20:25:19.000Z",
-      "excerpt": "OpenAI prepara el lanzamiento público de Astra, un modelo que, según la empresa, ya puede descubrir vulnerabilidades desconocidas y encadenar exploits, aunque sus capacidades cibernéticas más avanzadas quedarán restringi"
-    },
-    {
-      "title": "Meta presenta Muse Voice Transcribe, una IA que identifica más de 20 hablantes en tiempo real",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/meta-presenta-muse-voice-transcribe-una-ia-que-identifica-mas-de-20-hablantes-en-tiempo-real/",
-      "publishedAt": "2026-09-01T20:12:57.000Z",
-      "excerpt": "Meta presentó Muse Voice Transcribe, un modelo de percepción de audio en tiempo real capaz de transcribir conversaciones, distinguir más de 20 hablantes y procesar cambios fluidos entre idiomas."
-    },
-    {
-      "title": "Fallo con Lenovo ID permitió acceso no autorizado a unas 5.000 cuentas de Dropbox",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estafas/fallo-con-lenovo-id-permitio-acceso-no-autorizado-a-unas-5-000-cuentas-de-dropbox/",
-      "publishedAt": "2026-09-01T20:12:13.000Z",
-      "excerpt": "Dropbox notificó a aproximadamente 5.000 usuarios después de descubrir que terceros pudieron acceder a sus cuentas aprovechando un problema en el proceso de verificación de correo electrónico de Lenovo ID. El ataque perm"
-    },
-    {
-      "title": "John Ternus promete un lanzamiento enorme en su debut como CEO de Apple",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/john-ternus-promete-un-lanzamiento-enorme-en-su-debut-como-ceo-de-apple/",
-      "publishedAt": "2026-09-01T20:01:14.000Z",
-      "excerpt": "John Ternus asumió como CEO de Apple en reemplazo de Tim Cook, quien pasó a ser presidente ejecutivo, y en un memo al personal elevó las expectativas sobre el evento del iPhone del 9 de septiembre, donde podrían aparecer"
-    },
-    {
-      "title": "Robinhood Wallet y Fomo permiten comprar memecoins con tarjetas crédito sin KYC adicional",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/regulacion/robinhood-wallet-y-fomo-permiten-comprar-memecoins-con-tarjetas-credito-sin-kyc-adicional/",
-      "publishedAt": "2026-09-01T19:45:21.000Z",
-      "excerpt": "Robinhood Wallet y Fomo permiten comprar ciertos memecoins con tarjetas de crédito mediante Apple Pay o Google Pay, sin un flujo separado de KYC y con recompensas habituales. The Block comprobó que las operaciones se reg"
-    },
-    {
-      "title": "Empresas de tesorería cripto alcanzan USD $340.000 millones y los DAT de altcoins sorprenden",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/altcoins/empresas-de-tesoreria-cripto-alcanzan-usd-340-000-millones-y-los-dat-de-altcoins-sorprenden/",
-      "publishedAt": "2026-09-01T19:43:51.000Z",
-      "excerpt": "Las empresas de tesorería de activos digitales recuperan impulso y ya rondan una capitalización conjunta de USD $340.000 millones. Aunque Strategy y Bitmine avanzan junto con BTC y ETH, los vehículos vinculados a Zcash y"
-    },
-    {
-      "title": "Meta abandona Google Chat por Slack para impulsar sus agentes de inteligencia artificial",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/meta-abandona-google-chat-por-slack-para-impulsar-sus-agentes-de-inteligencia-artificial/",
-      "publishedAt": "2026-09-01T19:42:54.000Z",
-      "excerpt": "Meta migrará sus comunicaciones internas de Google Chat a Slack porque su director de IA considera que la plataforma ofrece mejores condiciones para operar agentes. La decisión contrasta con la estrategia de varios gobie"
-    },
-    {
-      "title": "Bitcoin enfrenta una resistencia histórica tras su mejor mes del ciclo en curso",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/bitcoin-enfrenta-una-resistencia-historica-tras-su-mejor-mes-del-ciclo-en-curso/",
-      "publishedAt": "2026-09-01T19:39:11.000Z",
-      "excerpt": "Bitcoin comienza septiembre cerca de USD $78.000 después de avanzar 24,93% en agosto, pero enfrenta una resistencia histórica, señales técnicas mixtas y el riesgo de una Reserva Federal más agresiva."
-    },
-    {
-      "title": "Inversor de HYPE acumula ganancia no realizada de USD $23,7 millones en medio del comentario de Trump",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/regulacion/inversor-de-hype-acumula-ganancia-no-realizada-de-usd-237-millones-en-medio-del-comentario-de-trump/",
-      "publishedAt": "2026-09-01T19:38:17.000Z",
-      "excerpt": "Un operador que apostó USD $17,18 millones en HYPE hace cinco meses ahora registra una ganancia no realizada de USD $23,7 millones. El resultado se produjo en medio de un repunte del token de Hyperliquid y de un comentar"
-    },
-    {
-      "title": "Grant Cardone fija en USD $20 billones el umbral de capitalización que cambiaría el papel de Bitcoin",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/criptomonedas/grant-cardone-fija-en-usd-20-billones-el-umbral-de-capitalizacion-que-cambiaria-el-papel-de-bitcoin/",
-      "publishedAt": "2026-09-01T19:32:57.000Z",
-      "excerpt": "El inversor inmobiliario Grant Cardone sostiene que Bitcoin podría dejar de ser principalmente una reserva de valor y convertirse en un medio de intercambio cuando su capitalización alcance USD $20 billones en la escala "
-    },
-    {
-      "title": "Aslan recauda USD $20,8 millones para agentes IA de seguridad nacional",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/startups-verticales/aslan-recauda-usd-208-millones-para-agentes-ia-de-seguridad-nacional/",
-      "publishedAt": "2026-09-01T19:31:46.000Z",
-      "excerpt": "La startup estadounidense Aslan salió públicamente tras captar USD $20,8 millones para desarrollar agentes de IA capaces de investigar e interactuar en foros criminales clandestinos, Telegram y otros espacios digitales, "
-    },
-    {
-      "title": "World Labs presenta Atlas, un modelo de IA para generar y reconstruir mundos en 3D",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/world-labs-presenta-atlas-un-modelo-de-ia-para-generar-y-reconstruir-mundos-en-3d/",
-      "publishedAt": "2026-09-01T19:31:26.000Z",
-      "excerpt": "World Labs presentó Atlas, un modelo de mundo multimodal diseñado para generar, reconstruir y simular entornos espaciales a partir de texto, imágenes, video y representaciones 3D."
-    },
-    {
-      "title": "Firma de Tesorería de Solana ofrece dividendos del 13% para financiar nuevas compras de SOL",
-      "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/defi-development-oferta-acciones-preferentes-tesoro-solana/",
-      "publishedAt": "2026-09-01T19:31:00.000Z",
-      "excerpt": "DeFi Development Corp. planea recaudar hasta 20 millones de dólares mediante una emisión de acciones preferentes. Ofrece una tasa inicial de dividendo anual del 13%. La empresa de tesorería de Solana (SOL) quiere usar pa"
-    },
-    {
-      "title": "Bitcoin Defies Seasonal Slump With Third-Best August Ever",
+      "title": "Impacts of Daily Dividends on Digital Credit",
       "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/bitcoin-has-its-third-best-august-ever",
-      "publishedAt": "2026-09-01T19:21:50.000Z",
-      "excerpt": "Bitcoin Magazine Bitcoin Defies Seasonal Slump With Third-Best August Ever Bitcoin usually has a summer lull but August was different, analysts have pointed out. This post Bitcoin Defies Seasonal Slump With Third-Best Au"
+      "link": "https://bitcoinmagazine.com/bitcoin-for-corporations/impacts-of-daily-dividends-on-digital-credit",
+      "publishedAt": "2026-10-02T13:20:41.000Z",
+      "excerpt": "Bitcoin Magazine Impacts of Daily Dividends on Digital Credit Analyzing the implications for digital credit instruments paying daily dividends. This post Impacts of Daily Dividends on Digital Credit first appeared on Bit"
     },
     {
-      "title": "Anthropic lanza Claude Fable 5.1: ¿Puede detener a los imitadores de IA?",
+      "title": "Estados Unidos crea solo 29.000 empleos en septiembre: ¿por qué están subiendo Bitcoin y el oro?",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/claude-fabula-5-1-lanzamiento-antidestilacion/",
-      "publishedAt": "2026-09-01T18:24:03.000Z",
-      "excerpt": "Anthropic lanzó Claude Fable 5.1 con puntajes de ciencia duplicados y un nuevo bloqueo en la destilación de IA. El post Anthropic lanza Claude Fable 5.1: ¿Puede detener a los imitadores de IA? fue visto por primera vez e"
+      "link": "https://es.beincrypto.com/informe-empleo-eeuu-septiembre-bitcoin-oro/",
+      "publishedAt": "2026-10-02T12:44:12.000Z",
+      "excerpt": "El informe de empleo de Estados Unidos mostró solo 29,000 nuevos empleos en septiembre, haciendo subir el precio de Bitcoin y el oro y quemando a los vendedores en corto. El post Estados Unidos crea solo 29.000 empleos e"
     },
     {
-      "title": "¿Más rico de lo que todos creen? Por qué Justin Sun nunca retirará sus criptomonedas",
+      "title": "FMI libera USD 130 millones a El Salvador a pesar de la acumulación de bitcoin",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/finanzas/fmi-usd-130-millones-elsalvador-acumulacion-bitcoin/",
+      "publishedAt": "2026-10-02T12:10:59.000Z",
+      "excerpt": "El organismo financiero internacional autorizó el giro tras evaluar las reformas de la administración de Nayib Bukele. La entrada FMI libera USD 130 millones a El Salvador a pesar de la acumulación de bitcoin se publicó "
+    },
+    {
+      "title": "Bienvenidos a Uptober: El sentimiento sobre ETH y XRP alcanza mínimos de varios meses",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/justin-sun-valor-neto-nunca-retira-dinero/",
-      "publishedAt": "2026-09-01T17:31:00.000Z",
-      "excerpt": "Justin Sun dice que Forbes y Bloomberg recortaron entre un 70% y un 80% de su patrimonio neto. Explica por qué nunca va a retirar sus fondos. El post ¿Más rico de lo que todos creen? Por qué Justin Sun nunca retirará sus"
+      "link": "https://es.beincrypto.com/sentimiento-bajista-ethereum-xrp-octubre/",
+      "publishedAt": "2026-10-02T12:08:00.000Z",
+      "excerpt": "El sentimiento de la multitud hacia Ethereum (ETH) y XRP se ha vuelto negativo al comenzar octubre, según Santiment. Ahora, los comentarios bajistas superan a los alcistas para ambas altcoins en las principales plataform"
     },
     {
-      "title": "Zoomex concluye el evento “Trade The Tide” en Coinfest Asia 2026, reforzando su presencia en el mercado del Sudeste Asiático",
+      "title": "Open USD llega al mercado con una incógnita: ¿dónde están los USD 1.000 millones?",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/mercados/open-usd-millones-capitalizacion/",
+      "publishedAt": "2026-10-02T11:51:55.000Z",
+      "excerpt": "La stablecoin debutó con más de USD 1.000 millones de liquidez comprometida, pero su suministro inicial fue inferior a la mitad de esa cifra. La entrada Open USD llega al mercado con una incógnita: ¿dónde están los USD 1"
+    },
+    {
+      "title": "Citi eleva su precio objetivo de Bitcoin (BTC) a $113,000",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/zoomex-trade-the-tide-coinfest-asia-2026/",
-      "publishedAt": "2026-09-01T17:25:00.000Z",
-      "excerpt": "Zoomex, un exchange global de criptomonedas centrado en experiencias de trading de derivados, anunció que su evento paralelo oficial durante Coinfest Asia 2026, “Zoomex Summer Bay Party: Trade the Tide,” se realizó con é"
+      "link": "https://es.beincrypto.com/citi-eleva-objetivo-precio-bitcoin-ethereum/",
+      "publishedAt": "2026-10-02T10:42:00.000Z",
+      "excerpt": "Citigroup aumentó su objetivo de precio para Bitcoin (BTC) a 12 meses a 113,000 dólares desde 82,000 dólares, apostando a que los compradores de fondos cotizados en bolsa (ETF) seguirán regresando. Su pronóstico para Eth"
     },
     {
-      "title": "BlackRock’s iShares Bitcoin Trust Is Beating Top S&P 500 ETF",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/blackrock-bitcoin-etf-is-beating-vanguard",
-      "publishedAt": "2026-09-01T16:35:17.000Z",
-      "excerpt": "Bitcoin Magazine BlackRock’s iShares Bitcoin Trust Is Beating Top S&P 500 ETF The asset manager's flagship bitcoin fund is delivering better returns than Vanguard's S&P 500 ETF. This post BlackRock’s iShares Bitcoin Trus"
+      "title": "Roban 114 ETH de herramienta vinculada a Aave",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/seguridad-bitcoin/robo-eth-herramienta-vinculada-aave/",
+      "publishedAt": "2026-10-02T09:57:36.000Z",
+      "excerpt": "Un atacante extrajo ether (ETH) explotando un contrato de terceros. Stani Kulechov confirmó que Aave no fue vulnerado. La entrada Roban 114 ETH de herramienta vinculada a Aave se publicó primero en CriptoNoticias - Notic"
     },
     {
-      "title": "Ripple libera 1,000 millones de XRP, pero esa no es la barrera de venta que piensas",
+      "title": "Bitcoin arriba de USD 86.000; Willy Woo detecta baja probabilidad de grandes caídas",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/mercados/bitcoin-arriba-86000-dolares-willywoo-posibilidad-caida-baja/",
+      "publishedAt": "2026-10-02T09:26:10.000Z",
+      "excerpt": "El mercado registra flujos de inversión constantes y un aumento en el costo base de los compradores, respaldando la reciente acción de precio. La entrada Bitcoin arriba de USD 86.000; Willy Woo detecta baja probabilidad "
+    },
+    {
+      "title": "Identifican al hacker de NEAR Intents: ¿Devolverá los 3.8 millones?",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/ripple-libera-1000-millones-xrp-tokens-escrow-septiembre-2026/",
-      "publishedAt": "2026-09-01T16:06:00.000Z",
-      "excerpt": "Ripple desbloqueó 1,000 millones de tokens XRP como parte de su liberación mensual regular de escrow, según el rastreador de blockchain Whale Alert. Este movimiento ocurre mientras el precio de XRP muestra un nuevo impul"
+      "link": "https://es.beincrypto.com/autor-hacker-near-intents-identificado-48-horas/",
+      "publishedAt": "2026-10-02T09:16:00.000Z",
+      "excerpt": "El hacker de NEAR Intents tiene 48 horas para devolver $3.8M después de que el cofundador de Aurora dijera que el equipo sabe quiénes son. El post Identifican al hacker de NEAR Intents: ¿Devolverá los 3.8 millones? fue v"
     },
     {
-      "title": "South Korea’s Bitcoin ‘Kimchi Premium’ Returns",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/korea-bitcoin-premium-kimchi-returns",
-      "publishedAt": "2026-09-01T15:23:33.000Z",
-      "excerpt": "Bitcoin Magazine South Korea’s Bitcoin ‘Kimchi Premium’ Returns The closely watched bitcoin retail market in the Asian nation is making moves again. This post South Korea’s Bitcoin ‘Kimchi Premium’ Returns first appeared"
-    },
-    {
-      "title": "CEO de Tether confirma participación del 70% en Adecoagro",
+      "title": "El precio de XRP registra un hito alcista: ¿Lo repetirá en el Q4?",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/tether-stable-cows-adecoagro-mineria-bitcoin/",
-      "publishedAt": "2026-09-01T14:41:00.000Z",
-      "excerpt": "Tether llama a sus granjas Adecoagro 'Vacas Estables'. Mira cómo 14,500 vacas lecheras ahora alimentan su impulso de minería de Bitcoin. El post CEO de Tether confirma participación del 70% en Adecoagro fue visto por pri"
+      "link": "https://es.beincrypto.com/racha-historica-mensual-precio-xrp-q4/",
+      "publishedAt": "2026-10-02T07:51:00.000Z",
+      "excerpt": "El precio de XRP logró un hito histórico este año: julio, agosto y septiembre cerraron en positivo por primera vez, no solo el trimestre en su conjunto. Esta distinción es importante, ya que en años anteriores hubo trime"
     },
     {
-      "title": "Brasil suspende campaña del candidato pro-Bitcoin Renan Santos y congela fondo de R$3.3 millones",
+      "title": "Tesorerías, protocolo y comunidad: lo que propone Bitcoin Amsterdam 2026",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/comunidad/eventos/tesorerias-protocolo-comunidad-bitcoin-amsterdam-2026/",
+      "publishedAt": "2026-10-02T07:00:00.000Z",
+      "excerpt": "Más de 90 speakers, del código de Bitcoin Core a la banca privada neerlandesa, se repartirán entre escenarios, stands y mesas cerradas. La entrada Tesorerías, protocolo y comunidad: lo que propone Bitcoin Amsterdam 2026 "
+    },
+    {
+      "title": "Pagar con stablecoins tendría alivio fiscal en EE. UU., pero bitcoin no",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/regulacion/pagar-stablecoins-alivio-fiscal-eeuu-bitcoin-no/",
+      "publishedAt": "2026-10-02T01:22:23.000Z",
+      "excerpt": "La iniciativa se suma a otros proyectos que buscan modificar el tratamiento fiscal de las transacciones con activos digitales. La entrada Pagar con stablecoins tendría alivio fiscal en EE. UU., pero bitcoin no se publicó"
+    },
+    {
+      "title": "Ethereum retira de Hegota propuesta para quemar recompensas de staking",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/tecnologia/ethereum-retira-hegota-propuesta-quemar-recompensas-staking/",
+      "publishedAt": "2026-10-02T00:26:16.000Z",
+      "excerpt": "La propuesta abrió un debate sobre los incentivos de validadores y stakers y el equilibrio económico de la red. La entrada Ethereum retira de Hegota propuesta para quemar recompensas de staking se publicó primero en Crip"
+    },
+    {
+      "title": "Elon Musk regresa a Washington a pesar de la saga DOGE",
       "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/campana-bitcoin-renan-santos-suspendida/",
-      "publishedAt": "2026-09-01T13:22:00.000Z",
-      "excerpt": "El tribunal electoral de Brasil suspendió la campaña de Renan Santos y congeló R$3,3 millones, semanas después de su promesa sobre la reserva de Bitcoin. El post Brasil suspende campaña del candidato pro-Bitcoin Renan Sa"
+      "link": "https://es.beincrypto.com/elon-musk-project-meridian-pentagono-doge/",
+      "publishedAt": "2026-10-01T23:13:00.000Z",
+      "excerpt": "Elon Musk regresa a Washington como codirector de Project Meridian, un estudio del Pentágono, después de que DOGE terminara sin un informe final. El post Elon Musk regresa a Washington a pesar de la saga DOGE fue visto p"
     },
     {
-      "title": "BlackRock Re-Underwrites Bitcoin, and the Portfolio Math Still Holds",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/bitcoin-for-corporations/blackrock-re-underwrites-bitcoin-and-the-portfolio-math-still-holds",
-      "publishedAt": "2026-09-01T13:01:29.000Z",
-      "excerpt": "Bitcoin Magazine BlackRock Re-Underwrites Bitcoin, and the Portfolio Math Still Holds BlackRock re-underwrites the Bitcoin thesis, finding that even modest allocations historically improved risk-adjusted returns in tradi"
-    },
-    {
-      "title": "Strategy Opposes MSCI Proposal, Says Bitcoin Treasury Firms Are Being Targeted a Second Time",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/bitcoin-treasury-strategy-opposes-msci",
-      "publishedAt": "2026-08-31T20:44:36.000Z",
-      "excerpt": "Bitcoin Magazine Strategy Opposes MSCI Proposal, Says Bitcoin Treasury Firms Are Being Targeted a Second Time Bitcoin treasury Strategy has blasted Morgan Stanley Capital International’s proposal to exclude it from its G"
-    },
-    {
-      "title": "Bitcoin Unfazed by Trump’s Iran Threats",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/markets/bitcoin-unfazed-by-trumps-iran-threats",
-      "publishedAt": "2026-08-31T19:49:17.000Z",
-      "excerpt": "Bitcoin Magazine Bitcoin Unfazed by Trump’s Iran Threats Bitcoin's price used to be sensitive to geopolitical developments. Not anymore. This post Bitcoin Unfazed by Trump’s Iran Threats first appeared on Bitcoin Magazin"
-    },
-    {
-      "title": "Strive Becomes Fifth-Largest Bitcoin Treasury, Stock Jumps on Latest Buy",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/strive-becomes-fifth-biggest-treasury",
-      "publishedAt": "2026-08-31T17:22:58.000Z",
-      "excerpt": "Bitcoin Magazine Strive Becomes Fifth-Largest Bitcoin Treasury, Stock Jumps on Latest Buy The company last week spent $143 million on bitcoin last week, bringing its holdings to 23,156. This post Strive Becomes Fifth-Lar"
-    },
-    {
-      "title": "Russia’s Sberbank Estimates $46.4B Trading Volume in First Year of Crypto Buildout",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/russia-sberbank-expects-big-crypto-trading",
-      "publishedAt": "2026-08-31T16:34:14.000Z",
-      "excerpt": "Bitcoin Magazine Russia’s Sberbank Estimates $46.4B Trading Volume in First Year of Crypto Buildout Bitcoin trading is expected to be popular in Russia, which is moving fast with regulating the space. This post Russia’s "
-    },
-    {
-      "title": "Strategy Resumes Bitcoin Buying After 10-Week Hiatus",
-      "source": "Bitcoin Magazine",
-      "link": "https://bitcoinmagazine.com/news/strategy-resumes-bitcoin-buys",
-      "publishedAt": "2026-08-31T15:18:11.000Z",
-      "excerpt": "Bitcoin Magazine Strategy Resumes Bitcoin Buying After 10-Week Hiatus The bitcoin treasury last week spent nearly $370 million on the big orange coin after taking a break to rebalance its cash reserves. This post Strateg"
+      "title": "La SEC admite que la regulación se ha quedado atrás respecto a Bitcoin y propone nuevas reglas de custodia",
+      "source": "BeInCrypto ES",
+      "link": "https://es.beincrypto.com/propuesta-custodia-cripto-sec-bitcoin/",
+      "publishedAt": "2026-10-01T22:04:36.000Z",
+      "excerpt": "El presidente de la Comisión de Bolsa y Valores (SEC), Paul Atkins, admitió hoy que las reglas federales de valores no han logrado mantenerse al día con el rápido crecimiento de Bitcoin desde su lanzamiento en 2008. La a"
     }
   ]
 }

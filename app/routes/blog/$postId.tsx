@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { findPost } from "@/data/posts";
 import { Calendar, ArrowLeft, BookOpen } from "lucide-react";
 
+import { SITE_URL, canonical, jsonLd, articleLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/blog/$postId")({
   component: PostPage,
   head: ({ params }) => {
@@ -17,12 +18,30 @@ export const Route = createFileRoute("/blog/$postId")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: metaDesc },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: post.image.startsWith("http") ? post.image : `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}${post.image}` },
+        { property: "og:image", content: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}` },
+        { property: "og:url", content: canonical(`/blog/${post.id}`) },
+        { property: "og:image:alt", content: post.title },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.title },
         { name: "twitter:description", content: metaDesc },
-        { name: "twitter:image", content: post.image.startsWith("http") ? post.image : `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}${post.image}` },
-        { "@type": "Article", "@id": `${process.env.NEXT_PUBLIC_BASE_URL || "https://aprendamosdecriptomonedas.lat"}/blog/${post.id}`, "headline": post.title, "description": metaDesc, "datePublished": post.date, "author": { "@type": "Organization", "name": "Aprendamos de Criptomonedas" } },
+        { name: "twitter:image", content: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}` },
+      ],
+      links: [{ rel: "canonical", href: canonical(`/blog/${post.id}`) }],
+      scripts: [
+        jsonLd(
+          articleLd({
+            headline: post.title,
+            description: metaDesc,
+            path: `/blog/${post.id}`,
+            datePublished: post.date,
+            image: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`,
+          }),
+          breadcrumbLd([
+            { name: "Inicio", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${post.id}` },
+          ]),
+        ),
       ],
     };
   },

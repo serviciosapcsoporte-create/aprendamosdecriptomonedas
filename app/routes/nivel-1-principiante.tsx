@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
 import { navItems } from "@/components/MainNav";
 
+import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/nivel-1-principiante")({
   component: Nivel1Page,
   head: () => ({
@@ -18,6 +19,11 @@ export const Route = createFileRoute("/nivel-1-principiante")({
       },
       { name: "keywords", content: "curso criptomonedas gratis, aprender criptomonedas desde cero, blockchain para principiantes, wallets, seed phrase" },
     ],
+    links: [{ rel: "canonical", href: canonical("/nivel-1-principiante") }],
+    scripts: [jsonLd(
+      courseLd({ name: "Nivel 1 · Principiante", description: "Ruta guiada de Nivel 1 · Principiante con lecciones gratuitas y material descargable.", path: "/nivel-1-principiante", level: "Nivel 1 · Principiante" }),
+      breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 1 · Principiante", path: "/nivel-1-principiante" }]),
+    )],
   }),
 });
 

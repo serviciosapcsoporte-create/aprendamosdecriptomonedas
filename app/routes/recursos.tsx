@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck } from "lucide-react";
 
+import { canonical } from "@/lib/seo";
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
   head: () => ({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/recursos")({
       },
       { name: "keywords", content: "recursos criptomonedas, guias descargas, checklist seguridad" },
     ],
+    links: [{ rel: "canonical", href: canonical("/recursos") }],
   }),
 });
 

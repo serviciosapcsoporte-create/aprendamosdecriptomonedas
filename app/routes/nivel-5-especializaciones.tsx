@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
+import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/nivel-5-especializaciones")({
   component: Nivel5Page,
   head: () => ({
@@ -15,6 +16,11 @@ export const Route = createFileRoute("/nivel-5-especializaciones")({
       },
       { name: "keywords", content: "curso trading riesgo, minería criptomonedas, solidity rust, gobernanza dao, infraestructura web3" },
     ],
+    links: [{ rel: "canonical", href: canonical("/nivel-5-especializaciones") }],
+    scripts: [jsonLd(
+      courseLd({ name: "Nivel 5 · Especializaciones", description: "Ruta guiada de Nivel 5 · Especializaciones con lecciones gratuitas y material descargable.", path: "/nivel-5-especializaciones", level: "Nivel 5 · Especializaciones" }),
+      breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 5 · Especializaciones", path: "/nivel-5-especializaciones" }]),
+    )],
   }),
 });
 

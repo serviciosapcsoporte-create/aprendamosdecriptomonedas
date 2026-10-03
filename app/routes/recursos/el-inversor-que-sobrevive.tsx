@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 
+import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-inversor-que-sobrevive")({
   component: ElInversorQueSobrevive,
   head: () => ({
@@ -26,6 +27,12 @@ export const Route = createFileRoute("/recursos/el-inversor-que-sobrevive")({
           "Control, seguridad y criterio en el mercado cripto. Una guía educativa para no perderlo todo.",
       },
     ],
+    links: [{ rel: "canonical", href: canonical("/recursos/el-inversor-que-sobrevive") }],
+    scripts: [jsonLd(breadcrumbLd([
+      { name: "Inicio", path: "/" },
+      { name: "Recursos", path: "/recursos" },
+      { name: "El Inversor que Sobrevive", path: "/recursos/el-inversor-que-sobrevive" },
+    ]))],
   }),
 });
 

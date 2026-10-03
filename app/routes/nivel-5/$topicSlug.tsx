@@ -18,16 +18,43 @@ const badgeMap: Record<string, { text: string; class: string }> = {
   paid: { text: "PREMIUM", class: "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300" },
 };
 
+import { canonical, OG_IMAGE, jsonLd, articleLd, breadcrumbLd, clampDesc } from "@/lib/seo";
 export const Route = createFileRoute("/nivel-5/$topicSlug")({
   component: TopicPage,
   head: ({ params }) => {
+    const path = `/nivel-5/${params.topicSlug}`;
     const topic = findTopic(params.topicSlug as string, "5");
-    if (!topic) return { meta: [{ title: "Tema no encontrado" }] };
+    if (!topic) {
+      return {
+        meta: [{ title: "Tema no encontrado | Aprendamos de Criptomonedas" }],
+        links: [{ rel: "canonical", href: canonical(path) }],
+      };
+    }
+    const metaDesc = clampDesc(topic.description);
     return {
       meta: [
-        { title: `${topic.title} | NIVEL 5 | Aprendamos de Criptomonedas` },
-        { name: "description", content: topic.description + " " + (topic.keywords ? topic.keywords.join(", ") : "") },
-        { name: "keywords", content: topic.keywords.join(", ") },
+        { title: `${topic.title} | Nivel 5 · Especializaciones | Aprendamos de Criptomonedas` },
+        { name: "description", content: metaDesc },
+        { property: "og:title", content: topic.title },
+        { property: "og:description", content: metaDesc },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: canonical(path) },
+        { property: "og:image", content: OG_IMAGE },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: topic.title },
+        { name: "twitter:description", content: metaDesc },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [{ rel: "canonical", href: canonical(path) }],
+      scripts: [
+        jsonLd(
+          articleLd({ headline: topic.title, description: metaDesc, path }),
+          breadcrumbLd([
+            { name: "Inicio", path: "/" },
+            { name: "Nivel 5 · Especializaciones", path: "/nivel-5-especializaciones" },
+            { name: topic.title, path },
+          ]),
+        ),
       ],
     };
   },

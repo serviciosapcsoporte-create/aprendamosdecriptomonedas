@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { Calendar, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/posts";
 
+import { canonical } from "@/lib/seo";
 export const Route = createFileRoute("/blog")({
   component: BlogPage,
   head: () => ({
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/blog")({
         content: "Artículos sobre criptomonedas, blockchain, trading y seguridad. Educación sin humo.",
       },
     ],
+    links: [{ rel: "canonical", href: canonical("/blog") }],
   }),
 });
 

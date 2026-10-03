@@ -1,18 +1,23 @@
-/* AnimatedSection - Sección con animación framer-motion al entrar en viewport
-   - fade-in-up: título/subtítulo aparecen desplazándose desde abajo
-   - fade-in: elementos simples van apareciendo
-   - slide-in-from-left/lright: listas o grillas desde los lados
-   - "whileInView": activa la animación cuando el elemento entra en el viewport
-   - "transition": configuración suave con spring para naturalidad
-*/
-// @ts-nocheck
+/* AnimatedSection - Seccion con animacion de entrada al entrar en viewport.
+ *
+ * Antes usaba framer-motion, que no estaba declarado en package.json ni
+ * instalado: eso rompia el build de produccion entero. Ademas la version
+ * anterior llevaba repeat: Infinity con repeatType "mirror", o sea que cada
+ * seccion se desvanacia y volvia a aparecer SIN FIN cada vez que se hacia
+ * scroll. Eso consume CPU de forma permanente y castiga INP.
+ *
+ * Ahora es IntersectionObserver + transicion CSS: cero dependencias, se anima
+ * una sola vez y sin coste de layout. La animacion no se activa hasta que
+ * JavaScript marca data-anim-ready en <html>, asi que si el JS falla la
+ * pagina se ve completa en lugar de quedar en blanco.
+ */
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 interface AnimatedSectionProps {
-  /** Retraso en segundos por cada elemento hijo (opcional) */
+  /** Retraso en segundos antes de empezar la animacion */
   delay?: number;
-  /** Tipo de animación */
+  /** Tipo de animacion de entrada */
   animation?:
     | "fade-in-up"
     | "fade-in"
@@ -20,48 +25,72 @@ interface AnimatedSectionProps {
     | "slide-in-from-right";
   /** Clases CSS adicionales */
   className?: string;
-  /** Los niños a animar */
-  children: React.ReactNode;
+  /** Contenido a animar */
+  children: ReactNode;
 }
 
-/** Mapa de nombres de animación a keyframes de Tailwind/Framer */
-const animationMap: Record<string, string> = {
-  "fade-in-up": "fade-in-up",
-  "fade-in": "fade-in",
-  "slide-in-from-left": "slide-in-from-left",
-  "slide-in-from-right": "slide-in-from-right",
-};
+let markedReady = false;
 
-/** Componente AnimatedSection */
+function markAnimReady() {
+  if (markedReady) return;
+  if (typeof document === "undefined") return;
+  document.documentElement.setAttribute("data-anim-ready", "true");
+  markedReady = true;
+}
+
 export const AnimatedSection = ({
   delay = 0,
   animation = "fade-in-up",
   className,
   children,
 }: AnimatedSectionProps) => {
+  const ref = useRef<HTMLElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    markAnimReady();
+    const el = ref.current;
+    if (!el) return;
+
+    // Sin IntersectionObserver (o con reduced motion) mostramos todo directo.
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      setVisible(true);
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            io.disconnect(); // se anima una sola vez
+          }
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <motion.section
-      // Estado inicial fuera del viewport
-      initial={{ opacity: 0, y: 20 }}
-      // Estado cuando entra en viewport
-      whileInView={{ opacity: 1, y: 0 }}
-      // Configuración de la transición
-      transition={{
-        type: "spring",
-        stiffness: 120,
-        damping: 20,
-        delay: delay * 0.15,
-        duration: 0.6,
-        // Cuando se sale del viewport y vuelve a entrar, reinicia
-        repeat: Infinity,
-        repeatType: "mirror",
-      }}
-      className={cn("py-12 md:py-16 lg:py-20", className)}
+    <section
+      ref={ref}
+      data-anim={animation}
+      data-visible={visible ? "true" : "false"}
+      style={{ "--anim-delay": `${Math.min(delay, 2)}s` } as React.CSSProperties}
+      className={cn("anim-section py-12 md:py-16 lg:py-20", className)}
     >
       {children}
-    </motion.section>
+    </section>
   );
 };
 
-/* Export type para uso externo */
 export type { AnimatedSectionProps };

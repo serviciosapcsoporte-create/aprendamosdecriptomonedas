@@ -27,5 +27,21 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        // Separa el vendor del codigo de la app: el bundle de framework cambia
+        // mucho menos que las lecciones, asi que se reutiliza de cache entre
+        // despliegues y el navegador no lo reparsea en cada visita.
+        manualChunks: {
+          react: ["react", "react-dom", "react-dom/client"],
+          tanstack: [
+            "@tanstack/react-router",
+            "@tanstack/router-core",
+            "@tanstack/history",
+            "@tanstack/react-query",
+          ],
+        },
+      },
+    },
   },
 });

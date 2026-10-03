@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
 
+import { canonical } from "@/lib/seo";
 export const Route = createFileRoute("/acerca-de")({
   component: AcercaDePage,
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/acerca-de")({
         content: "Conoce a Alejandro P., fundador de Aprendamos de Criptomonedas. Educación segura y estrategia clara desde 2022.",
       },
     ],
+    links: [{ rel: "canonical", href: canonical("/acerca-de") }],
   }),
 });
 

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 
+import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-custodio")({
   component: ElCustodio,
   head: () => ({
@@ -24,6 +25,12 @@ export const Route = createFileRoute("/recursos/el-custodio")({
         content: "De exchange a wallet: quién tiene el control real de tus criptomonedas y cómo asegurar tu envío.",
       },
     ],
+    links: [{ rel: "canonical", href: canonical("/recursos/el-custodio") }],
+    scripts: [jsonLd(breadcrumbLd([
+      { name: "Inicio", path: "/" },
+      { name: "Recursos", path: "/recursos" },
+      { name: "El Custodio de su Propia Libertad", path: "/recursos/el-custodio" },
+    ]))],
   }),
 });
 

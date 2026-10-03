@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
+import { OG_IMAGE, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -74,6 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
       },
       { name: "author", content: "Alejandro P." },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
       {
         property: "og:description",
@@ -82,16 +84,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Aprendamos de Criptomonedas" },
       { name: "twitter:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
       { name: "twitter:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero." },
       {
         property: "og:image",
-        content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7761f8623acca94de589ec90167f0983/id-preview-a5c283a1--d62faac5-e5fb-4752-bf05-f063dd5d4030.lovable.app-1786283217978.png",
+        content: OG_IMAGE,
       },
       {
         name: "twitter:image",
-        content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7761f8623acca94de589ec90167f0983/id-preview-a5c283a1--d62faac5-e5fb-4752-bf05-f063dd5d4030.lovable.app-1786283217978.png",
+        content: OG_IMAGE,
       },
+    ],
+    scripts: [
+      jsonLd(organizationLd),
+      jsonLd(personLd),
+      jsonLd(webSiteLd),
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -130,7 +140,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="pointer-events-none fixed left-4 top-[18%] z-20 hidden lg:block" aria-hidden="true">
         <img
-          src="/logo.png"
+          src="/logo-512.webp"
           alt=""
           className="h-36 w-auto animate-float opacity-60 drop-shadow-[0_0_22px_rgba(0,240,255,0.55)]"
         />

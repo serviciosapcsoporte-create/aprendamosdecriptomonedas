@@ -18,29 +18,43 @@ const badgeMap: Record<string, { text: string; class: string }> = {
   paid: { text: "PREMIUM", class: "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300" },
 };
 
+import { canonical, OG_IMAGE, jsonLd, articleLd, breadcrumbLd, clampDesc } from "@/lib/seo";
 export const Route = createFileRoute("/nivel-1/$topicSlug")({
   component: TopicPage,
   head: ({ params }) => {
+    const path = `/nivel-1/${params.topicSlug}`;
     const topic = findTopic(params.topicSlug as string, "1");
-    if (!topic) return { meta: [{ title: "Tema no encontrado | Aprendamos de Criptomonedas" }] };
-    const metaDesc = topic.description.substring(0, 155) + "...";
+    if (!topic) {
+      return {
+        meta: [{ title: "Tema no encontrado | Aprendamos de Criptomonedas" }],
+        links: [{ rel: "canonical", href: canonical(path) }],
+      };
+    }
+    const metaDesc = clampDesc(topic.description);
     return {
       meta: [
-        { title: `${topic.title} | NIVEL 1 | Aprendamos de Criptomonedas` },
+        { title: `${topic.title} | Nivel 1 · Principiante | Aprendamos de Criptomonedas` },
         { name: "description", content: metaDesc },
-        { name: "keywords", content: topic.keywords?.join(", ") || "" },
         { property: "og:title", content: topic.title },
         { property: "og:description", content: metaDesc },
-        { property: "og:type", content: "website" },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: canonical(path) },
+        { property: "og:image", content: OG_IMAGE },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: topic.title },
         { name: "twitter:description", content: metaDesc },
-        {
-          "@type": "TechArticle",
-          "headline": topic.title,
-          "description": metaDesc,
-          "author": { "@type": "Organization", "name": "Aprendamos de Criptomonedas" },
-        },
+        { name: "twitter:image", content: OG_IMAGE },
+      ],
+      links: [{ rel: "canonical", href: canonical(path) }],
+      scripts: [
+        jsonLd(
+          articleLd({ headline: topic.title, description: metaDesc, path }),
+          breadcrumbLd([
+            { name: "Inicio", path: "/" },
+            { name: "Nivel 1 · Principiante", path: "/nivel-1-principiante" },
+            { name: topic.title, path },
+          ]),
+        ),
       ],
     };
   },

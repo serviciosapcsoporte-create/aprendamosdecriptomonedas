@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
+import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/nivel-3-avanzado")({
   component: Nivel3Page,
   head: () => ({
@@ -15,6 +16,11 @@ export const Route = createFileRoute("/nivel-3-avanzado")({
       },
       { name: "keywords", content: "curso criptografia avanzada, arquitectura blockchain, token engineering, zk proofs, defi curso gratis" },
     ],
+    links: [{ rel: "canonical", href: canonical("/nivel-3-avanzado") }],
+    scripts: [jsonLd(
+      courseLd({ name: "Nivel 3 · Avanzado", description: "Ruta guiada de Nivel 3 · Avanzado con lecciones gratuitas y material descargable.", path: "/nivel-3-avanzado", level: "Nivel 3 · Avanzado" }),
+      breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 3 · Avanzado", path: "/nivel-3-avanzado" }]),
+    )],
   }),
 });
 

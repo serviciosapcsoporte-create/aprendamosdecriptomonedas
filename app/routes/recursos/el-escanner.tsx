@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 
+import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-escanner")({
   component: ElEscanner,
   head: () => ({
@@ -24,6 +25,12 @@ export const Route = createFileRoute("/recursos/el-escanner")({
         content: "Antes de invertir, identifica la naturaleza del flujo. Aprende a detectar el Ponzi camuflado.",
       },
     ],
+    links: [{ rel: "canonical", href: canonical("/recursos/el-escanner") }],
+    scripts: [jsonLd(breadcrumbLd([
+      { name: "Inicio", path: "/" },
+      { name: "Recursos", path: "/recursos" },
+      { name: "El Escáner", path: "/recursos/el-escanner" },
+    ]))],
   }),
 });
 

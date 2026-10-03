@@ -263,3 +263,54 @@ body {
 .shadow-soft-lg {
   box-shadow: 0 10px 40px -10px hsl(var(--foreground) / 0.12);
 }
+
+/*
+ * Animaciones de entrada de AnimatedSection.
+ * El estado oculto solo se aplica cuando <html data-anim-ready="true">, que es
+ * lo que marca el propio componente al montar. Si el JavaScript no carga, nada
+ * queda invisible.
+ */
+.anim-section {
+  opacity: 1;
+  transform: none;
+}
+
+[data-anim-ready="true"] .anim-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--anim-delay, 0s);
+  will-change: opacity, transform;
+}
+
+[data-anim-ready="true"] .anim-section[data-anim="fade-in"] {
+  transform: none;
+}
+
+[data-anim-ready="true"] .anim-section[data-anim="slide-in-from-left"] {
+  transform: translateX(-24px);
+}
+
+[data-anim-ready="true"] .anim-section[data-anim="slide-in-from-right"] {
+  transform: translateX(24px);
+}
+
+[data-anim-ready="true"] .anim-section[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Accesibilidad: sin transiciones si el usuario las pidio reducer. */
+@media (prefers-reduced-motion: reduce) {
+  [data-anim-ready="true"] .anim-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}
