@@ -42,21 +42,21 @@ module.exports = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         navy: "hsl(var(--navy))",
-        "navy-light": "hsl(var(--navy-light))",
         "navy-dark": "hsl(var(--navy-dark))",
-        neon: "hsl(var(--neon))",
-        amber: "hsl(var(--amber))",
-        violet: "hsl(var(--violet))",
         "earth-50": "hsl(var(--earth-50))",
         "earth-400": "hsl(var(--earth-400))",
         "earth-500": "hsl(var(--earth-500))",
         "earth-950": "hsl(var(--earth-950))",
+        // Estados semanticos de la paleta ILAB. Se usan como bg-success/15,
+        // text-warning, border-danger/30... en lugar de colores genericos de
+        // Tailwind (green-100, cyan-400) pegados en cada componente.
+        success: "hsl(var(--success))",
+        info: "hsl(var(--info))",
+        warning: "hsl(var(--warning))",
+        danger: "hsl(var(--danger))",
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        heading: ["Playfair Display", "serif"],
-        body: ["Inter", "sans-serif"],
-        display: ["Playfair Display", "serif"],
         serif: ["Playfair Display", "serif"],
       },
       borderRadius: {
@@ -67,8 +67,6 @@ module.exports = {
       boxShadow: {
         soft: "0 4px 20px -4px hsl(var(--foreground) / 0.08)",
         "soft-lg": "0 10px 40px -10px hsl(var(--foreground) / 0.12)",
-        neon: "0 0 24px -6px rgba(0,240,255,0.7)",
-        "neon-sm": "0 0 14px -6px rgba(0,240,255,0.55)",
       },
     },
   },

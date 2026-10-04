@@ -37,7 +37,7 @@ function Terminos() {
         </p>
 
         <section className="space-y-8 text-lg leading-relaxed">
-          <div className="rounded-lg border border-amber-300 bg-amber-50 p-6 dark:border-amber-800 dark:bg-amber-950/30">
+          <div className="rounded-lg border border-warning/50 bg-warning/10 p-6 dark:border-warning dark:bg-warning/30">
             <p>
               <strong>Aviso principal:</strong> todo el contenido de este sitio tiene carácter
               estrictamente educativo. No es asesoría financiera, no es una recomendación de

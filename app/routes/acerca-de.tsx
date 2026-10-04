@@ -30,7 +30,7 @@ function AcercaDePage() {
           <img
             src="/alejandro.svg"
             alt={`Retrato de ${AUTHOR}`}
-            className="w-24 h-24 rounded-full object-cover border-4 border-amber-500"
+            className="w-24 h-24 rounded-full object-cover border-4 border-warning"
           />
           <div>
             <h2 className="text-xl font-bold">{AUTHOR}</h2>
@@ -85,7 +85,7 @@ function AcercaDePage() {
             <li>🎓 Enfocado en la enseñanza: Mi objetivo principal es enseñar, educar y guiar a todos aquellos que deseen adentrarse en este emocionante mundo descentralizado.</li>
           </ul>
 
-          <div className="bg-amber-50 dark:bg-amber-950/20 p-6 rounded-lg border border-amber-200 dark:border-amber-900/30 text-center mt-8">
+          <div className="bg-warning/10 dark:bg-warning/20 p-6 rounded-lg border border-warning/30 dark:border-warning/30 text-center mt-8">
             <blockquote>
               <p className="text-lg italic">
                 "En cripto, sobrevivir es la primera victoria."

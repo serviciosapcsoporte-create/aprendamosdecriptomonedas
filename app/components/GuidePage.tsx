@@ -51,35 +51,35 @@ export function GuidePage({
   return (
     <>
       <Header />
-      <main id="contenido" tabIndex={-1} className="flex-1 bg-[#080d1a]">
+      <main id="contenido" tabIndex={-1} className="flex-1 bg-background">
         <section className="relative overflow-hidden py-14 md:py-20">
           {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise */}
 
           <div className="relative container mx-auto px-4 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-cyan-300">
-              <span className="text-cyan-400">•</span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+              <span className="text-primary">•</span>
               {badge}
-              <span className="text-cyan-400">•</span>
+              <span className="text-primary">•</span>
             </span>
-            <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white text-subtle-glow">
+            <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-foreground text-subtle-glow">
               {title}
             </h1>
             {subtitle && (
-              <p className="mx-auto mt-4 max-w-2xl text-lg md:text-xl text-cyan-200/90">
+              <p className="mx-auto mt-4 max-w-2xl text-lg md:text-xl text-foreground/80">
                 {subtitle}
               </p>
             )}
             {tagline && tagline.length > 0 && (
               <div className="mx-auto mt-6 max-w-2xl space-y-1">
                 {tagline.map((line, i) => (
-                  <p key={i} className="text-base text-[#94a3b8]">
+                  <p key={i} className="text-base text-muted-foreground">
                     {renderBold(line, `tag-${i}`)}
                   </p>
                 ))}
               </div>
             )}
             {edition && (
-              <p className="mt-6 text-xs uppercase tracking-widest text-slate-500">{edition}</p>
+              <p className="mt-6 text-xs uppercase tracking-widest text-muted-foreground/70">{edition}</p>
             )}
             <button
               onClick={() => window.print()}
@@ -95,7 +95,7 @@ export function GuidePage({
           {backTo && (
             <a
               href={backTo.href}
-              className="mb-6 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-cyan-300 transition-colors"
+              className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               {backTo.label}
@@ -103,32 +103,32 @@ export function GuidePage({
           )}
 
           {disclaimer && (
-            <div className="mb-8 flex gap-3 rounded-xl border border-amber-400/30 bg-amber-400/5 p-5">
-              <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
-              <p className="text-sm leading-relaxed text-amber-200/90">{disclaimer}</p>
+            <div className="mb-8 flex gap-3 rounded-xl border border-warning/30 bg-warning/5 p-5">
+              <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-warning" />
+              <p className="text-sm leading-relaxed text-warning/90">{disclaimer}</p>
             </div>
           )}
 
           {sections.map((section, idx) => (
             <div key={idx} className="mb-10">
               {section.heading && (
-                <h2 className="mb-4 text-2xl md:text-3xl font-bold text-white">
-                  <span className="text-cyan-400">/</span> {renderBold(section.heading, `h-${idx}`)}
+                <h2 className="mb-4 text-2xl md:text-3xl font-bold text-foreground">
+                  <span className="text-primary">/</span> {renderBold(section.heading, `h-${idx}`)}
                 </h2>
               )}
               {section.paragraphs &&
                 section.paragraphs.map((p, i) => (
-                  <p key={`${idx}-${i}`} className="mb-3 text-base leading-relaxed text-slate-300">
+                  <p key={`${idx}-${i}`} className="mb-3 text-base leading-relaxed text-foreground/85">
                     {renderBold(p, `p-${idx}-${i}`)}
                   </p>
                 ))}
               {section.warning && (
-                <div className="my-5 rounded-xl border border-cyan-400/20 bg-cyan-400/5 p-5">
-                  <p className="text-sm font-semibold text-cyan-200">{section.warning}</p>
+                <div className="my-5 rounded-xl border border-warning/30 bg-warning/5 p-5">
+                  <p className="text-sm font-semibold text-warning/90">{section.warning}</p>
                 </div>
               )}
               {section.quote && (
-                <blockquote className="my-6 rounded-r-xl border-l-4 border-cyan-400 bg-white/5 px-5 py-4 text-lg italic text-white">
+                <blockquote className="my-6 rounded-r-xl border-l-4 border-primary bg-white/5 px-5 py-4 text-lg italic text-foreground">
                   {renderBold(section.quote, `q-${idx}`)}
                 </blockquote>
               )}
@@ -138,11 +138,11 @@ export function GuidePage({
                     {list.items.map((item, ii) => (
                       <li
                         key={`${idx}-${li}-${ii}`}
-                        className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.03] px-4 py-3 text-sm text-slate-200"
+                        className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.03] px-4 py-3 text-sm text-foreground/90"
                       >
                         <span
                           className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
-                            item.check ? "bg-cyan-400 text-black" : "bg-white/10 text-cyan-300"
+                            item.check ? "bg-primary text-primary-foreground" : "bg-white/10 text-primary"
                           }`}
                         >
                           {item.check ? "✓" : "○"}
@@ -162,7 +162,7 @@ export function GuidePage({
                   <a
                     key={i}
                     href={c.href}
-                    className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 bg-white/5 px-7 py-3 text-base font-medium text-white transition-colors hover:border-cyan-400/70 hover:bg-cyan-400/10"
+                    className="inline-flex items-center justify-center rounded-full border border-primary/40 bg-white/5 px-7 py-3 text-base font-medium text-foreground transition-colors hover:border-primary/70 hover:bg-primary/10"
                   >
                     {c.label}
                   </a>

@@ -13,9 +13,9 @@ const levelMap: Record<string, string> = {
 };
 
 const badgeMap: Record<string, { text: string; class: string }> = {
-  free: { text: "GRATIS", class: "bg-green-100 text-green-800 border-green-200 dark:bg-green-900/30 dark:text-green-300" },
+  free: { text: "GRATIS", class: "bg-success/15 text-success border-success/30 dark:bg-success/30 dark:text-success/50" },
   register: { text: "REGISTRO", class: "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300" },
-  paid: { text: "PREMIUM", class: "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300" },
+  paid: { text: "PREMIUM", class: "bg-warning/15 text-warning border-warning/30 dark:bg-warning/30 dark:text-warning/50" },
 };
 
 import { canonical, OG_IMAGE, jsonLd, articleLd, breadcrumbLd, clampDesc } from "@/lib/seo";
@@ -109,19 +109,19 @@ function TopicPage() {
 
         <article className="prose dark:prose-invert max-w-none">
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg">
+            <div className="p-2 bg-warning/15 dark:bg-warning/30 rounded-lg">
               {topic.icon}
             </div>
             <h1 className="text-3xl font-bold mb-0">{topic.title}</h1>
           </div>
 
           {topic.resources && (
-            <div className="mb-6 rounded-lg bg-amber-50 dark:bg-amber-950/20 p-4 border border-amber-200 dark:border-amber-900/30">
-              <h3 className="text-sm font-bold text-amber-800 dark:text-amber-300 mb-2">Recursos descargables</h3>
+            <div className="mb-6 rounded-lg bg-warning/10 dark:bg-warning/20 p-4 border border-warning/30 dark:border-warning/30">
+              <h3 className="text-sm font-bold text-warning dark:text-warning/50 mb-2">Recursos descargables</h3>
               <ul className="space-y-1">
                 {topic.resources.map((resource) => (
                   <li key={resource.href}>
-                    <a href={resource.href} className="text-sm text-amber-700 dark:text-amber-300 hover:underline" download>
+                    <a href={resource.href} className="text-sm text-warning dark:text-warning/50 hover:underline" download>
                       {resource.name}
                     </a>
                   </li>

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
@@ -7,10 +6,10 @@ import { navItems, secondaryItems, type NavItem } from "@/lib/nav-items";
 function Badge({ badge }: { badge?: NavItem["badge"] }) {
   if (!badge) return null;
   const map = {
-    free: { label: "Gratis", className: "bg-green-100 text-green-800" },
-    register: { label: "Registro", className: "bg-cyan-100 text-cyan-800" },
-    paid: { label: "Premium", className: "bg-amber-100 text-amber-800" },
-    new: { label: "Nuevo", className: "bg-red-100 text-red-800" },
+    free: { label: "Gratis", className: "bg-success/15 text-success" },
+    register: { label: "Registro", className: "bg-info/15 text-info" },
+    paid: { label: "Premium", className: "bg-warning/15 text-warning" },
+    new: { label: "Nuevo", className: "bg-danger/15 text-danger" },
   } as const;
   const { label, className } = map[badge];
   return (

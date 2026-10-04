@@ -40,7 +40,7 @@ function Afiliados() {
         </p>
 
         <section className="space-y-8 text-lg leading-relaxed">
-          <div className="rounded-lg border border-amber-300 bg-amber-50 p-6 dark:border-amber-800 dark:bg-amber-950/30">
+          <div className="rounded-lg border border-warning/50 bg-warning/10 p-6 dark:border-warning dark:bg-warning/30">
             <p>
               <strong>Divulgación:</strong> algunas páginas de este sitio incluyen enlaces de
               afiliado a cursos de terceros. Si compras a través de uno de esos enlaces podemos

@@ -28,14 +28,16 @@
     --radius: 0.75rem;
     --navy: 222 47% 11%;
     --navy-dark: 222 70% 3%;
-    --navy-light: 222 30% 20%;
     --earth-50: 33 100% 96%;
     --earth-400: 25 95% 63%;
     --earth-500: 25 95% 53%;
     --earth-950: 15 30% 15%;
-    --neon: 189 100% 50%;
-    --amber: 45 100% 53%;
-    --violet: 262 83% 58%;
+    /* Estados semanticos: mismos parentescos que la paleta ILAB (terracota +
+       navy + neutros caleidos), nunca tonos fluorescentes de la era cyber. */
+    --success: 152 34% 45%;
+    --info: 214 46% 55%;
+    --warning: 45 100% 53%;
+    --danger: 9 68% 52%;
     --heading-text-size: clamp(1.9rem, 4vw, 2.75rem);
     --heading-text-size-md: clamp(2.1rem, 5vw, 3.25rem);
     --heading-text-size-lg: clamp(2.5rem, 6vw, 3.75rem);
@@ -68,6 +70,10 @@
     --earth-400: 25 80% 55%;
     --earth-500: 25 90% 60%;
     --earth-950: 40 20% 96%;
+    --success: 152 45% 58%;
+    --info: 214 62% 68%;
+    --warning: 45 100% 60%;
+    --danger: 9 74% 62%;
   }
 }
 
@@ -79,10 +85,6 @@
   }
   body {
     color: hsl(var(--foreground));
-  }
-  .cyber-grid {
-    background-size: 88px 88px;
-    opacity: 0.04;
   }
   ::-webkit-scrollbar {
     width: 10px;
@@ -127,33 +129,11 @@ body {
 }
 
 @layer components {
-  .glass-card {
-    background: hsl(var(--card));
-    backdrop-filter: blur(8px);
-    border: 1px solid hsl(var(--border));
-    border-radius: calc(var(--radius) + 2px);
-    transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
-  }
-  .glass-card:hover {
-    border-color: hsl(var(--primary) / 0.3);
-    box-shadow: 0 10px 34px -12px hsl(var(--primary) / 0.15);
-    transform: translateY(-2px);
-  }
-  .text-glow {
-    color: hsl(var(--foreground));
-    text-shadow: 0 1px 2px hsl(var(--primary) / 0.1);
-  }
   .text-subtle-glow {
     color: hsl(var(--foreground));
   }
   .text-gold {
     color: hsl(var(--primary));
-  }
-  .text-gold-grad {
-    background: linear-gradient(100deg, hsl(var(--primary)) 0%, hsl(var(--earth-400)) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
   }
   .btn-gold {
     display: inline-flex;
@@ -170,37 +150,6 @@ body {
   .btn-gold:hover {
     filter: brightness(1.07);
   }
-  .card-cyber {
-    transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
-  }
-  .card-cyber:hover {
-    border-color: hsl(var(--primary) / 0.3);
-    box-shadow: 0 10px 30px -10px hsl(var(--primary) / 0.15);
-    transform: translateY(-2px);
-  }
-  .neon-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    padding: 0.18rem 0.6rem;
-    border-radius: 9999px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    background: hsl(var(--muted));
-    border: 1px solid hsl(var(--border));
-    color: hsl(var(--muted-foreground));
-  }
-  .neon-chip--amber {
-    background: hsl(var(--earth-50));
-    border-color: hsl(var(--earth-400) / 0.4);
-    color: hsl(var(--earth-950));
-  }
-  .neon-chip--violet {
-    background: hsl(var(--muted));
-    border-color: hsl(var(--border));
-    color: hsl(var(--muted-foreground));
-  }
   .btn-cyber {
     display: inline-flex;
     align-items: center;
@@ -216,18 +165,6 @@ body {
   .btn-cyber:hover {
     filter: brightness(1.08);
   }
-  .hgrad {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
-  }
-}
-
-.cyber-grid {
-  background-image:
-    linear-gradient(hsl(var(--border)) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
-  background-size: 44px 44px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 80%);
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 80%);
 }
 
 /* ILAB utilities */

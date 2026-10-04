@@ -70,7 +70,7 @@ function NoticiasPage() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto mb-12 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-4">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-warning/15 text-warning mb-4">
             <Newspaper className="w-3.5 h-3.5" />
             Actualización diaria
           </span>
@@ -143,11 +143,11 @@ function NoticiasPage() {
               >
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                    <span className="font-semibold text-amber-700 dark:text-amber-300">{item.source}</span>
+                    <span className="font-semibold text-warning dark:text-warning/50">{item.source}</span>
                     <span>·</span>
                     <time dateTime={item.publishedAt}>{formatDate(item.publishedAt)}</time>
                     {idx === 0 && (
-                      <span className="ml-auto text-[10px] font-semibold uppercase tracking-wide bg-green-100 text-green-800 px-2 py-0.5 rounded-full">
+                      <span className="ml-auto text-[10px] font-semibold uppercase tracking-wide bg-success/15 text-success px-2 py-0.5 rounded-full">
                         Primera plana
                       </span>
                     )}

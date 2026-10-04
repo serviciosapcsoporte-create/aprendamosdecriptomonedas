@@ -36,7 +36,7 @@ function Nivel1Page() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <span className="text-3xl font-bold text-amber-600 mb-2 block">NIVEL 1</span>
+          <span className="text-3xl font-bold text-warning mb-2 block">NIVEL 1</span>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Principiante</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Objetivo: que cualquier persona entienda lo esencial y pueda entrar
@@ -66,7 +66,7 @@ function Nivel1Page() {
           </div>
         ))}
 
-        <div className="mt-16 bg-gradient-to-r from-amber-50 to-amber-100/50 dark:from-amber-950/20 dark:to-amber-950/10 rounded-xl p-6 text-center">
+                <div className="mt-16 bg-gradient-to-r from-warning/10 to-warning/15 dark:from-warning/10 dark:to-warning/5 rounded-xl p-6 text-center">
           <h3 className="text-xl font-bold mb-2">Guías gratuitas</h3>
           <p className="text-sm text-muted-foreground mb-4">
             Refuerza tu aprendizaje con nuestras guías de seguridad y control.
@@ -74,13 +74,13 @@ function Nivel1Page() {
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href="/recursos/el-escudo-de-5-minutos"
-              className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
+              className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
             >
               El Escudo de 5 minutos (GRATIS)
             </a>
             <a
               href="/recursos/checklist-supervivencia-cripto"
-              className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
+              className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
             >
               Checklist de Supervivencia Cripto (GRATIS)
             </a>

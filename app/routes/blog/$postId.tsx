@@ -108,7 +108,7 @@ function PostPage() {
           {post.related && post.related.length > 0 && (
             <aside className="mt-12 rounded-lg border bg-muted/40 p-6">
               <div className="flex items-center gap-2 mb-4">
-                <BookOpen className="w-5 h-5 text-amber-500" />
+                <BookOpen className="w-5 h-5 text-warning" />
                 <h2 className="text-xl font-bold">Sigue aprendiendo</h2>
               </div>
               <ul className="space-y-3">

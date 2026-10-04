@@ -36,7 +36,7 @@ function RecursosPage() {
             description="La rutina mínima de seguridad que puedes aplicar hoy en cinco minutos."
             price="GRATIS"
             badge="free"
-            icon={<Lock className="w-6 h-6 text-green-600" />}
+            icon={<Lock className="w-6 h-6 text-success" />}
             href="/recursos/el-escudo-de-5-minutos"
           />
           <ResourceCard
@@ -44,7 +44,7 @@ function RecursosPage() {
             description="Lista de verificación para no caer en estafas, hackeos ni decisiones impulsivas."
             price="GRATIS"
             badge="free"
-            icon={<CheckCircle2 className="w-6 h-6 text-green-600" />}
+            icon={<CheckCircle2 className="w-6 h-6 text-success" />}
             href="/recursos/checklist-supervivencia-cripto"
           />
           <ResourceCard
@@ -52,7 +52,7 @@ function RecursosPage() {
             description="Autocustodia paso a paso: claves, semillas y errores que cuestan carteras enteras."
             price="GRATIS"
             badge="free"
-            icon={<ShieldCheck className="w-6 h-6 text-green-600" />}
+            icon={<ShieldCheck className="w-6 h-6 text-success" />}
             href="/recursos/el-custodio"
           />
           <ResourceCard
@@ -60,7 +60,7 @@ function RecursosPage() {
             description="Gestión de riesgo y emociones para permanecer en el mercado a largo plazo."
             price="GRATIS"
             badge="free"
-            icon={<BookOpen className="w-6 h-6 text-green-600" />}
+            icon={<BookOpen className="w-6 h-6 text-success" />}
             href="/recursos/el-inversor-que-sobrevive"
           />
           <ResourceCard
@@ -68,7 +68,7 @@ function RecursosPage() {
             description="Filtros de lógica para analizar protocolos: rendimiento real vs Ponzi."
             price="GRATIS"
             badge="free"
-            icon={<Eye className="w-6 h-6 text-green-600" />}
+            icon={<Eye className="w-6 h-6 text-success" />}
             href="/recursos/el-escanner"
           />
           <ResourceCard
@@ -76,7 +76,7 @@ function RecursosPage() {
             description="Checklist de DeFi y trading + guía de Layer 2 para empezar el Nivel Avanzado."
             price="GRATIS"
             badge="free"
-            icon={<FileText className="w-6 h-6 text-green-600" />}
+            icon={<FileText className="w-6 h-6 text-success" />}
             href="/resources/kit-nivel-3.pdf"
           />
         </div>
@@ -106,7 +106,7 @@ function ResourceCard({
     <div className="flex flex-col h-full p-6 bg-card rounded-lg border">
       <div className="flex items-center gap-3 mb-4">
         {icon}
-        <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
+        <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warning/15 text-warning">
           {badge === "free" ? "GRATIS" : "PREMIUM"}
         </span>
       </div>
@@ -119,7 +119,7 @@ function ResourceCard({
         href={href}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
-        className="inline-flex items-center justify-center gap-1.5 rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-navy hover:bg-amber-400"
+        className="inline-flex items-center justify-center gap-1.5 rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
       >
         <Download className="h-4 w-4" />
         {isExternal ? "Descargar PDF" : "Leer guía"}

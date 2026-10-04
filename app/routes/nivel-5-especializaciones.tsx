@@ -32,12 +32,12 @@ function Nivel5Page() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <span className="text-3xl font-bold text-amber-600 mb-2 block">NIVEL 5</span>
+          <span className="text-3xl font-bold text-warning mb-2 block">NIVEL 5</span>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Especializaciones</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
             {levelData.description}
           </p>
-          <span className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800 border border-green-200">
+          <span className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-success/15 text-success border border-success/30">
             100% GRATIS · Sin registro
           </span>
         </div>
