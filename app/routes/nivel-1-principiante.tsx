@@ -4,22 +4,19 @@ import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
 import { navItems } from "@/lib/nav-items";
 
-import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-1-principiante")({
   component: Nivel1Page,
   head: () => ({
+    title: "NIVEL 1 — Principiante | Curso Blockchain & Criptomonedas",
     meta: [
-      {
-        title: "NIVEL 1 — Principiante | Curso Blockchain & Criptomonedas",
-      },
       {
         name: "description",
         content:
           "Nivel 1: Conceptos Fundamentales, Seguridad Inicial y Primeros Pasos Prácticos. Entra al ecosistema cripto sin riesgos.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/nivel-1-principiante") }],
     scripts: [jsonLd(
       courseLd({ name: "Nivel 1 · Principiante", description: "Ruta guiada de Nivel 1 · Principiante con lecciones gratuitas y material descargable.", path: "/nivel-1-principiante", level: "Nivel 1 · Principiante" }),
       breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 1 · Principiante", path: "/nivel-1-principiante" }]),

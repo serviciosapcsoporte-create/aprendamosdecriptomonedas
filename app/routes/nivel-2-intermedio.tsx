@@ -4,20 +4,19 @@ import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
 import { curriculumData } from "@/data/curriculum";
 
-import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-2-intermedio")({
   component: Nivel2Page,
   head: () => ({
+    title: "NIVEL 2 — Intermedio | Blockchain Técnica, Smart Contracts | Aprendamos de Criptomonedas",
     meta: [
-      { title: "NIVEL 2 — Intermedio | Blockchain Técnica, Smart Contracts | Aprendamos de Criptomonedas" },
       {
         name: "description",
         content:
           "Nivel 2 Intermedio gratis: Blockchain técnica, smart contracts, economía cripto y DeFi básico. Sin registro, acceso inmediato.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/nivel-2-intermedio") }],
     scripts: [jsonLd(
       courseLd({ name: "Nivel 2 · Intermedio", description: "Ruta guiada de Nivel 2 · Intermedio con lecciones gratuitas y material descargable.", path: "/nivel-2-intermedio", level: "Nivel 2 · Intermedio" }),
       breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 2 · Intermedio", path: "/nivel-2-intermedio" }]),

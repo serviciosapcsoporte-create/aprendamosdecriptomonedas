@@ -1,85 +1,116 @@
 // @ts-nocheck
-import { createFileRoute } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Outlet,
+  useRouterState,
+} from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck } from "lucide-react";
+import {
+  BookOpen,
+  CheckCircle2,
+  Download,
+  Eye,
+  FileText,
+  Lock,
+  ShieldCheck,
+} from "lucide-react";
 
-import { canonical } from "@/lib/seo";
 export const Route = createFileRoute("/recursos")({
   component: RecursosPage,
   head: () => ({
+    title:
+      "Recursos | Guías, Checklists y Descargas | Aprendamos de Criptomonedas",
     meta: [
-      { title: "Recursos | Guías, Checklists y Descargas | Aprendamos de Criptomonedas" },
       {
         name: "description",
-        content: "Descarga guías, checklists y recursos para proteger tu inversión en criptomonedas. Guías de seguridad, estrategia y más.",
+        content:
+          "Descarga guías, checklists y recursos para proteger tu inversión en criptomonedas. Guías de seguridad, estrategia y más.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/recursos") }],
   }),
 });
 
 function RecursosPage() {
+  // /recursos es la ruta padre de /recursos/<slug>. El indice de guias se
+  // dibuja solo en /recursos; en una guia se dibuja la guia (Outlet).
+  const isIndex = useRouterState({
+    select: (s) =>
+      s.location.pathname === "/recursos" ||
+      s.location.pathname === "/recursos/",
+  });
+
   return (
     <>
       <Header />
-      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Recursos</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Guías, checklists y plantillas para proteger tu inversión y operar con confianza.
-          </p>
-        </div>
+      <main
+        id="contenido"
+        tabIndex={-1}
+        className="flex-1 container mx-auto px-4 py-12"
+      >
+        {isIndex && (
+          <>
+            <div className="text-center mb-12">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">Recursos</h1>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Guías, checklists y plantillas para proteger tu inversión y
+                operar con confianza.
+              </p>
+            </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <ResourceCard
-            title="El Escudo de 5 minutos"
-            description="La rutina mínima de seguridad que puedes aplicar hoy en cinco minutos."
-            price="GRATIS"
-            badge="free"
-            icon={<Lock className="w-6 h-6 text-success" />}
-            href="/recursos/el-escudo-de-5-minutos"
-          />
-          <ResourceCard
-            title="Checklist de Supervivencia Cripto"
-            description="Lista de verificación para no caer en estafas, hackeos ni decisiones impulsivas."
-            price="GRATIS"
-            badge="free"
-            icon={<CheckCircle2 className="w-6 h-6 text-success" />}
-            href="/recursos/checklist-supervivencia-cripto"
-          />
-          <ResourceCard
-            title="El Custodio de su propia Libertad"
-            description="Autocustodia paso a paso: claves, semillas y errores que cuestan carteras enteras."
-            price="GRATIS"
-            badge="free"
-            icon={<ShieldCheck className="w-6 h-6 text-success" />}
-            href="/recursos/el-custodio"
-          />
-          <ResourceCard
-            title="El Inversor que Sobrevive"
-            description="Gestión de riesgo y emociones para permanecer en el mercado a largo plazo."
-            price="GRATIS"
-            badge="free"
-            icon={<BookOpen className="w-6 h-6 text-success" />}
-            href="/recursos/el-inversor-que-sobrevive"
-          />
-          <ResourceCard
-            title="El Escáner"
-            description="Filtros de lógica para analizar protocolos: rendimiento real vs Ponzi."
-            price="GRATIS"
-            badge="free"
-            icon={<Eye className="w-6 h-6 text-success" />}
-            href="/recursos/el-escanner"
-          />
-          <ResourceCard
-            title="Kit de Inicio Nivel 3 (PDF)"
-            description="Checklist de DeFi y trading + guía de Layer 2 para empezar el Nivel Avanzado."
-            price="GRATIS"
-            badge="free"
-            icon={<FileText className="w-6 h-6 text-success" />}
-            href="/resources/kit-nivel-3.pdf"
-          />
-        </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <ResourceCard
+                title="El Escudo de 5 minutos"
+                description="La rutina mínima de seguridad que puedes aplicar hoy en cinco minutos."
+                price="GRATIS"
+                badge="free"
+                icon={<Lock className="w-6 h-6 text-success" />}
+                href="/recursos/el-escudo-de-5-minutos"
+              />
+              <ResourceCard
+                title="Checklist de Supervivencia Cripto"
+                description="Lista de verificación para no caer en estafas, hackeos ni decisiones impulsivas."
+                price="GRATIS"
+                badge="free"
+                icon={<CheckCircle2 className="w-6 h-6 text-success" />}
+                href="/recursos/checklist-supervivencia-cripto"
+              />
+              <ResourceCard
+                title="El Custodio de su propia Libertad"
+                description="Autocustodia paso a paso: claves, semillas y errores que cuestan carteras enteras."
+                price="GRATIS"
+                badge="free"
+                icon={<ShieldCheck className="w-6 h-6 text-success" />}
+                href="/recursos/el-custodio"
+              />
+              <ResourceCard
+                title="El Inversor que Sobrevive"
+                description="Gestión de riesgo y emociones para permanecer en el mercado a largo plazo."
+                price="GRATIS"
+                badge="free"
+                icon={<BookOpen className="w-6 h-6 text-success" />}
+                href="/recursos/el-inversor-que-sobrevive"
+              />
+              <ResourceCard
+                title="El Escáner"
+                description="Filtros de lógica para analizar protocolos: rendimiento real vs Ponzi."
+                price="GRATIS"
+                badge="free"
+                icon={<Eye className="w-6 h-6 text-success" />}
+                href="/recursos/el-escanner"
+              />
+              <ResourceCard
+                title="Kit de Inicio Nivel 3 (PDF)"
+                description="Checklist de DeFi y trading + guía de Layer 2 para empezar el Nivel Avanzado."
+                price="GRATIS"
+                badge="free"
+                icon={<FileText className="w-6 h-6 text-success" />}
+                href="/resources/kit-nivel-3.pdf"
+              />
+            </div>
+          </>
+        )}
+
+        <Outlet />
       </main>
       <Footer />
     </>

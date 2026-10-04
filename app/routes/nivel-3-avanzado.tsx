@@ -3,20 +3,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
-import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-3-avanzado")({
   component: Nivel3Page,
   head: () => ({
+    title: "NIVEL 3 — Avanzado | Criptografía, DeFi y Layer 2 | Curso Gratis",
     meta: [
-      { title: "NIVEL 3 — Avanzado | Criptografía, DeFi y Layer 2 | Curso Gratis" },
       {
         name: "description",
         content:
           "Nivel 3 Avanzado gratis: DeFi profundo, AMMs, stablecoins, bridges, Layer 2 y trading con gestión de riesgo. 18 temas completos, sin registro.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/nivel-3-avanzado") }],
     scripts: [jsonLd(
       courseLd({ name: "Nivel 3 · Avanzado", description: "Ruta guiada de Nivel 3 · Avanzado con lecciones gratuitas y material descargable.", path: "/nivel-3-avanzado", level: "Nivel 3 · Avanzado" }),
       breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 3 · Avanzado", path: "/nivel-3-avanzado" }]),

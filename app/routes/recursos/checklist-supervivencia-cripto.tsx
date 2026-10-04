@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 
-import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/checklist-supervivencia-cripto")({
   component: ChecklistSupervivencia,
   head: () => ({
+    title: "Checklist de Supervivencia Cripto | Aprendamos de Criptomonedas",
     meta: [
-      {
-        title: "Checklist de Supervivencia Cripto | Aprendamos de Criptomonedas",
-      },
       {
         name: "description",
         content:
@@ -20,7 +18,6 @@ export const Route = createFileRoute("/recursos/checklist-supervivencia-cripto")
         content: "Los errores que debes evitar antes de invertir, enviar o tradear.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/recursos/checklist-supervivencia-cripto") }],
     scripts: [jsonLd(breadcrumbLd([
       { name: "Inicio", path: "/" },
       { name: "Recursos", path: "/recursos" },

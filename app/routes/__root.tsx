@@ -1,8 +1,28 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, useRouterState, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
-import { OG_IMAGE, AUTHOR, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
+import { OG_IMAGE, AUTHOR, canonical, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
+
+/**
+ * Un solo canonical en todo el sitio, derivado de la URL que se esta viendo.
+ *
+ * Antes cada ruta declaraba el suyo en `links`, pero TanStack renderiza los
+ * links de todas las rutas que hacen match sin deduplicar por `rel`: al abrir
+ * /recursos/el-escudo-de-5-minutos el DOM tenia el canonical de la guia, el de
+ * /recursos y el repetido. Google toma el primero, asi que en navegacion
+ * cliente podia quedar apuntando a la pagina padre.
+ *
+ * En un 404 no se emite canonical: una pagina que no existe no debe canonizarse.
+ * El HTML prerenderizado (scripts/prerender.mjs) lleva el canonical estatico
+ * para los crawlers que no ejecutan JavaScript.
+ */
+function CanonicalLink() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const leaf = useRouterState({ select: (s) => s.matches[s.matches.length - 1]?.id });
+  if (!leaf || leaf === "/") return null;
+  return <link rel="canonical" href={canonical(pathname)} />;
+}
 
 function NotFoundComponent() {
   return (
@@ -62,13 +82,14 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
+    // `title` va como campo de primer nivel del head, NO dentro de `meta`.
+    // Dentro de `meta` TanStack lo renderiza como <meta name="title"> y el
+    // <title> del documento se queda siempre con el valor estatico de
+    // index.html, que es el mismo en todas las paginas.
+    title: "Aprendamos de Criptomonedas | Educación cripto sin humo",
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        title:
-          "Aprendamos de Criptomonedas | Educación cripto sin humo",
-      },
       {
         name: "description",
         content:
@@ -83,6 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "es_CO" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
@@ -124,6 +146,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className="dark">
       <head>
+        <CanonicalLink />
         <HeadContent />
       </head>
       <body>

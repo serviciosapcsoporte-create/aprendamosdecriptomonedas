@@ -16,8 +16,8 @@ import { canonical, OG_IMAGE } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
+    title: "Aprendamos de Criptomonedas | Educación cripto sin humo",
     meta: [
-      { title: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
       { name: "description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +75 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
       { name: "author", content: "Alejandro Piraquive" },
       { property: "og:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
@@ -35,7 +35,6 @@ export const Route = createFileRoute("/")({
       { name: "twitter:creator", content: "@AprendamosCripto" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
     ],
-    links: [{ rel: "canonical", href: canonical("/") }],
   }),
 });
 

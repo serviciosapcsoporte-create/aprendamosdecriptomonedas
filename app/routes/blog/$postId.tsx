@@ -4,7 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { findPost } from "@/data/posts";
 import { Calendar, ArrowLeft, BookOpen } from "lucide-react";
 
-import { SITE_URL, canonical, jsonLd, articleLd, breadcrumbLd } from "@/lib/seo";
+import { SITE_URL, jsonLd, articleLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/blog/$postId")({
   component: PostPage,
   head: ({ params }) => {
@@ -12,8 +12,8 @@ export const Route = createFileRoute("/blog/$postId")({
     if (!post) return { meta: [{ title: "Post no encontrado | Aprendamos de Criptomonedas" }] };
     const metaDesc = post.metaDescription || post.summary.substring(0, 155) + "...";
     return {
+      title: `${post.title} | Blog | Aprendamos de Criptomonedas`,
       meta: [
-        { title: `${post.title} | Blog | Aprendamos de Criptomonedas` },
         { name: "description", content: metaDesc },
         { property: "og:title", content: post.title },
         { property: "og:description", content: metaDesc },
@@ -26,7 +26,6 @@ export const Route = createFileRoute("/blog/$postId")({
         { name: "twitter:description", content: metaDesc },
         { name: "twitter:image", content: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}` },
       ],
-      links: [{ rel: "canonical", href: canonical(`/blog/${post.id}`) }],
       scripts: [
         jsonLd(
           articleLd({

@@ -8,13 +8,12 @@ import { ContactLinks } from "@/components/ContactLinks";
 export const Route = createFileRoute("/terminos")({
   component: Terminos,
   head: () => ({
+    title: "Términos y Condiciones | Aprendamos de Criptomonedas",
     meta: [
-      { title: "Términos y Condiciones | Aprendamos de Criptomonedas" },
       { name: "description", content: "Condiciones de uso de Aprendamos de Criptomonedas: naturaleza educativa del contenido, ausencia de asesoría financiera y límites de responsabilidad." },
       { property: "og:title", content: "Términos y Condiciones | Aprendamos de Criptomonedas" },
       { property: "og:url", content: canonical("/terminos") },
     ],
-    links: [{ rel: "canonical", href: canonical("/terminos") }],
     scripts: [
       jsonLd(
         breadcrumbLd([

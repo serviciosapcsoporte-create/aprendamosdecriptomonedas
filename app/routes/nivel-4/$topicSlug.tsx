@@ -26,14 +26,13 @@ export const Route = createFileRoute("/nivel-4/$topicSlug")({
     const topic = findTopic(params.topicSlug as string, "4");
     if (!topic) {
       return {
-        meta: [{ title: "Tema no encontrado | Aprendamos de Criptomonedas" }],
-        links: [{ rel: "canonical", href: canonical(path) }],
+        title: "Tema no encontrado | Aprendamos de Criptomonedas",
       };
     }
     const metaDesc = clampDesc(topic.description);
     return {
+      title: `${topic.title} | Nivel 4 · Experto | Aprendamos de Criptomonedas`,
       meta: [
-        { title: `${topic.title} | Nivel 4 · Experto | Aprendamos de Criptomonedas` },
         { name: "description", content: metaDesc },
         { property: "og:title", content: topic.title },
         { property: "og:description", content: metaDesc },
@@ -45,7 +44,6 @@ export const Route = createFileRoute("/nivel-4/$topicSlug")({
         { name: "twitter:description", content: metaDesc },
         { name: "twitter:image", content: OG_IMAGE },
       ],
-      links: [{ rel: "canonical", href: canonical(path) }],
       scripts: [
         jsonLd(
           articleLd({ headline: topic.title, description: metaDesc, path }),

@@ -5,12 +5,11 @@ import { Header, Footer } from "@/components/Header";
 import { useState } from "react";
 import { ArrowUpRight, Newspaper, RefreshCw } from "lucide-react";
 
-import { canonical } from "@/lib/seo";
 export const Route = createFileRoute("/noticias")({
   component: NoticiasPage,
   head: () => ({
+    title: "Noticias de Criptomonedas al día | Aprendamos de Criptomonedas",
     meta: [
-      { title: "Noticias de Criptomonedas al día | Aprendamos de Criptomonedas" },
       {
         name: "description",
         content:
@@ -24,7 +23,6 @@ export const Route = createFileRoute("/noticias")({
       },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: canonical("/noticias") }],
   }),
 });
 

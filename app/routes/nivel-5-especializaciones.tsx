@@ -3,20 +3,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
-import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-5-especializaciones")({
   component: Nivel5Page,
   head: () => ({
+    title: "NIVEL 5 — Especializaciones | MEV, Restaking y Regulación | Curso Gratis",
     meta: [
-      { title: "NIVEL 5 — Especializaciones | MEV, Restaking y Regulación | Curso Gratis" },
       {
         name: "description",
         content:
           "Nivel 5 Especializaciones gratis: Ethereum scaling, MEV, account abstraction, restaking, seguridad DeFi y regulación global. 11 temas, sin registro.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/nivel-5-especializaciones") }],
     scripts: [jsonLd(
       courseLd({ name: "Nivel 5 · Especializaciones", description: "Ruta guiada de Nivel 5 · Especializaciones con lecciones gratuitas y material descargable.", path: "/nivel-5-especializaciones", level: "Nivel 5 · Especializaciones" }),
       breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 5 · Especializaciones", path: "/nivel-5-especializaciones" }]),

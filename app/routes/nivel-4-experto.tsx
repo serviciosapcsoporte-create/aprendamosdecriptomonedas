@@ -3,20 +3,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 
-import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
 export const Route = createFileRoute("/nivel-4-experto")({
   component: Nivel4Page,
   head: () => ({
+    title: "NIVEL 4 — Experto | ZK-Rollups, DeFi Profesional y Custodia | Curso Gratis",
     meta: [
-      { title: "NIVEL 4 — Experto | ZK-Rollups, DeFi Profesional y Custodia | Curso Gratis" },
       {
         name: "description",
         content:
           "Nivel 4 Experto gratis: ZK-rollups, derivados, bots de arbitraje, custodia institucional y análisis on-chain. 13 temas completos, sin registro.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/nivel-4-experto") }],
     scripts: [jsonLd(
       courseLd({ name: "Nivel 4 · Experto", description: "Ruta guiada de Nivel 4 · Experto con lecciones gratuitas y material descargable.", path: "/nivel-4-experto", level: "Nivel 4 · Experto" }),
       breadcrumbLd([{ name: "Inicio", path: "/" }, { name: "Nivel 4 · Experto", path: "/nivel-4-experto" }]),

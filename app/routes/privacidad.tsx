@@ -8,8 +8,8 @@ import { ContactLinks } from "@/components/ContactLinks";
 export const Route = createFileRoute("/privacidad")({
   component: Privacidad,
   head: () => ({
+    title: "Política de Privacidad | Aprendamos de Criptomonedas",
     meta: [
-      { title: "Política de Privacidad | Aprendamos de Criptomonedas" },
       {
         name: "description",
         content:
@@ -18,7 +18,6 @@ export const Route = createFileRoute("/privacidad")({
       { property: "og:title", content: "Política de Privacidad | Aprendamos de Criptomonedas" },
       { property: "og:url", content: canonical("/privacidad") },
     ],
-    links: [{ rel: "canonical", href: canonical("/privacidad") }],
     scripts: [
       jsonLd(
         breadcrumbLd([

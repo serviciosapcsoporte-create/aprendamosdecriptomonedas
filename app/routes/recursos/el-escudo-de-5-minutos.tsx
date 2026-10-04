@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 
-import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
+import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-escudo-de-5-minutos")({
   component: ElEscudoDe5Minutos,
   head: () => ({
+    title: "El Escudo de 5 Minutos | Rutina de seguridad cripto | Aprendamos de Criptomonedas",
     meta: [
-      {
-        title: "El Escudo de 5 Minutos | Rutina de seguridad cripto | Aprendamos de Criptomonedas",
-      },
       {
         name: "description",
         content:
@@ -20,7 +18,6 @@ export const Route = createFileRoute("/recursos/el-escudo-de-5-minutos")({
         content: "Cinco minutos de rutina que te protegen de los errores que más caro cuestan.",
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/recursos/el-escudo-de-5-minutos") }],
     scripts: [jsonLd(breadcrumbLd([
       { name: "Inicio", path: "/" },
       { name: "Recursos", path: "/recursos" },

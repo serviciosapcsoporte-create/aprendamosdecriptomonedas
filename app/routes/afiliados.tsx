@@ -7,8 +7,8 @@ import { ContactLinks } from "@/components/ContactLinks";
 export const Route = createFileRoute("/afiliados")({
   component: Afiliados,
   head: () => ({
+    title: "Enlaces de Afiliado y Divulgación | Aprendamos de Criptomonedas",
     meta: [
-      { title: "Enlaces de Afiliado y Divulgación | Aprendamos de Criptomonedas" },
       {
         name: "description",
         content:
@@ -17,7 +17,6 @@ export const Route = createFileRoute("/afiliados")({
       { property: "og:title", content: "Enlaces de Afiliado y Divulgación" },
       { property: "og:url", content: canonical("/afiliados") },
     ],
-    links: [{ rel: "canonical", href: canonical("/afiliados") }],
     scripts: [
       jsonLd(
         breadcrumbLd([

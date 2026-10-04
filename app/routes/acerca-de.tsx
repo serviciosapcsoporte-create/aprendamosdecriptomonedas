@@ -2,18 +2,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 
-import { canonical, AUTHOR } from "@/lib/seo";
+import { AUTHOR } from "@/lib/seo";
 export const Route = createFileRoute("/acerca-de")({
   component: AcercaDePage,
   head: () => ({
+    title: `Acerca de ${AUTHOR} | Aprendamos de Criptomonedas`,
     meta: [
-      { title: `Acerca de ${AUTHOR} | Aprendamos de Criptomonedas` },
       {
         name: "description",
         content: `Conoce a ${AUTHOR}, fundador y autor de Aprendamos de Criptomonedas. Educación segura y estrategia clara desde 2022.`,
       },
     ],
-    links: [{ rel: "canonical", href: canonical("/acerca-de") }],
   }),
 });
 
