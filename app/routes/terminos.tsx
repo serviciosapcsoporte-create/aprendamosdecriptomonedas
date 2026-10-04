@@ -2,6 +2,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
+import { OPERATOR, LEGAL_UPDATED, MERCHANT, contactLine } from "@/lib/legal";
+import { ContactLinks } from "@/components/ContactLinks";
 
 export const Route = createFileRoute("/terminos")({
   component: Terminos,
@@ -31,7 +33,7 @@ function Terminos() {
       <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Términos y condiciones</h1>
         <p className="text-lg text-muted-foreground mb-8">
-          Última actualización: octubre de 2026
+          Última actualización: {LEGAL_UPDATED}
         </p>
 
         <section className="space-y-8 text-lg leading-relaxed">
@@ -46,9 +48,15 @@ function Terminos() {
           <div>
             <h2 className="text-2xl font-bold mb-3">1. Naturaleza del sitio</h2>
             <p>
-              Aprendamos de Criptomonedas es un proyecto editorial de Servicios APC. Publicamos material educativo
-              sobre criptomonedas, blockchain y autocustodia. El acceso al contenido es gratuito y
-              no requiere registro.
+              Aprendamos de Criptomonedas es un proyecto editorial de {OPERATOR}. Publicamos
+              material educativo sobre criptomonedas, blockchain y autocustodia. El acceso
+              al contenido es gratuito y no requiere registro.
+            </p>
+            <p className="mt-3">
+              Este sitio no vende, no cobra ni factura: únicamente enlaza cursos de
+              terceros que se adquieren en {MERCHANT}. Quien fija el precio, factura,
+              entrega y da soporte de esas compras es el marketplace y el productor,
+              {` `}no este sitio.
             </p>
           </div>
 
@@ -69,19 +77,22 @@ function Terminos() {
               mercado cambian rápido. Algo puede quedar desactualizado sin previo aviso.
             </p>
             <p>
-              Si encuentras un error, escríbenos a{" "}
-              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
-                REEMPLAZAR_EMAIL_REAL
-              </a>{" "}
-              y lo corregimos.
+              Si encuentras un error, escríbenos por <ContactLinks /> y lo
+              corregimos.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-bold mb-3">4. Enlaces de terceros</h2>
+            <p className="mb-3">
+              El sitio incluye enlaces a cursos de terceros mediante el programa de
+              afiliados de {MERCHANT}. No controlamos esos cursos ni sus productores.
+            </p>
             <p>
-              El sitio incluye enlaces a cursos de terceros mediante el programa de afiliados de
-              Hotmart. No controlamos esos cursos ni sus productores. El detalle está en la{" "}
+              El pago, la entrega, la facturación y los datos que entregas al comprar se
+              gestionan dentro de {MERCHANT}, que es el responsable de ese proceso ante
+              ti. Este sitio no recibe tu nombre, tu correo de compra, tu medio de pago
+              ni tu factura. El detalle está en la{" "}
               <Link to="/afiliados" className="text-primary hover:underline">
                 página de afiliados
               </Link>
@@ -126,10 +137,7 @@ function Terminos() {
           <div className="pt-4 border-t">
             <h2 className="text-2xl font-bold mb-3">Contacto</h2>
             <p>
-              Servicios APC · Bogotá, Colombia · +57 333 745 0634 ·{" "}
-              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
-                REEMPLAZAR_EMAIL_REAL
-              </a>
+              {contactLine()}
             </p>
           </div>
         </section>

@@ -2,7 +2,8 @@
 
 > Educacion cripto en espanol para principiantes: 75 lecciones gratuitas en 5 niveles,
 > de que es una blockchain hasta MEV, ZK-Rollups y regulacion.
-> Editor: Servicios APC. Bogota, Colombia. Contacto: REEMPLAZAR_EMAIL_REAL
+> Editor: Servicios APC. Bogota, Colombia. Autor: Alejandro Piraquive.
+> Contacto: https://www.facebook.com/AprendamosDeCriptomonedas · Telegram @ApcDeCripto (https://t.me/ApcDeCripto)
 
 ## Que es este sitio
 

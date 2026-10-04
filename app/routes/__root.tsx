@@ -2,23 +2,23 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
-import { OG_IMAGE, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
+import { OG_IMAGE, AUTHOR, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Página no encontrada</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          La página que buscas no existe o fue movida.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Volver al inicio
           </Link>
         </div>
       </div>
@@ -33,10 +33,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          Esta página no cargó
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Algo falló de nuestro lado. Puedes reintentar o volver al inicio.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -46,13 +46,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Reintentar
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Volver al inicio
           </a>
         </div>
       </div>
@@ -74,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero.",
       },
-      { name: "author", content: "Alejandro P." },
+      { name: "author", content: AUTHOR },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
       {
@@ -138,13 +138,10 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="pointer-events-none fixed left-4 top-[18%] z-20 hidden lg:block" aria-hidden="true">
-        <img
-          src="/logo-512.webp"
-          alt=""
-          className="h-36 w-auto animate-float opacity-60 drop-shadow-[0_0_22px_rgba(0,240,255,0.55)]"
-        />
-      </div>
+      {/* Se retiró el logo flotante global: se animaba en las 20 rutas con un
+          ciclo infinito, ignoraba prefers-reduced-motion y su glow cyan no
+          pertenece a la paleta ILAB. El hero de la home lleva su propio
+          componente de marca. */}
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

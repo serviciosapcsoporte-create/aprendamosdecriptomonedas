@@ -2,6 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
+import { ContactLinks } from "@/components/ContactLinks";
 
 export const Route = createFileRoute("/afiliados")({
   component: Afiliados,
@@ -123,12 +124,8 @@ function Afiliados() {
           <div>
             <h2 className="text-2xl font-bold mb-3">Transparencia</h2>
             <p>
-              Si alguna vez recibes una comisión y crees que eso condicionó lo que escribimos,
-              escríbenos a{" "}
-              <a href="mailto:REEMPLAZAR_EMAIL_REAL" className="text-primary hover:underline">
-                REEMPLAZAR_EMAIL_REAL
-              </a>
-              . Lo revisamos.
+              Si alguna vez recibes una comisión y crees que eso condicionó lo que
+              escribimos, escríbenos por <ContactLinks />. Lo revisamos.
             </p>
           </div>
         </section>

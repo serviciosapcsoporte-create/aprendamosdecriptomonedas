@@ -1,5 +1,9 @@
+import { OPERATOR, FACEBOOK, TELEGRAM } from "@/lib/legal";
+
 export const SITE_URL = "https://aprendamosdecriptomonedas.lat";
 export const BRAND = "Aprendamos de Criptomonedas";
+
+/** Único dato personal publicado: nombre editorial del autor. */
 export const AUTHOR = "Alejandro Piraquive";
 
 /** Canonical absoluto. Las rutas dinamicas reciben el slug ya resuelto. */
@@ -57,22 +61,16 @@ export const organizationLd = {
   founder: { "@id": `${SITE_URL}/#alejandro` },
   parentOrganization: {
     "@type": "Organization",
-    name: "Servicios APC",
+    name: OPERATOR,
     url: "https://serviciosapc.site/",
   },
   knowsLanguage: "es-419",
   areaServed: { "@type": "Country", name: "Colombia" },
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      telephone: "+57-333-745-0634",
-      email: "REEMPLAZAR_EMAIL_REAL",
-      availableLanguage: ["es"],
-      areaServed: "CO",
-    },
-  ],
+  // Sin contactPoint: no se publica ningún teléfono ni correo personal.
+  // Los canales públicos de la marca van en sameAs (Facebook y Telegram).
   sameAs: [
+    FACEBOOK,
+    TELEGRAM,
     "https://apcautomatizacion.site/",
     "https://apccore.site/",
     "https://apcvisionai.site/",

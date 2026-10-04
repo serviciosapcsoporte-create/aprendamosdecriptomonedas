@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { MainNav } from "@/components/MainNav";
 import { cn } from "@/lib/utils";
+import { OPERATOR } from "@/lib/legal";
+import { ContactLinks } from "@/components/ContactLinks";
 
 export function Header() {
   return (
@@ -82,28 +84,35 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-bold">Newsletter</h3>
+            <h3 className="mb-4 text-sm font-bold">Contacto</h3>
             <p className="text-sm text-muted-foreground">
-              Recibe contenido sin humo directamente en tu email.
+              Preguntas, correcciones o sugerencias. Respondemos en nuestras redes,
+              sin registro y sin guardarte en ninguna lista.
             </p>
-            <form className="mt-4 flex gap-2">
-              <input
-                type="email"
-                placeholder="tu@email.com"
-                className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm"
-              />
-              <button
-                type="submit"
-                className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
-              >
-                Suscribir
-              </button>
-            </form>
+            <ContactLinks className="mt-3 block text-sm" />
           </div>
           <div>
             <h3 className="mb-4 text-sm font-bold">Legal</h3>
+            <ul className="mb-4 space-y-2 text-sm">
+              <li>
+                <Link to="/privacidad" className="text-muted-foreground hover:text-foreground">
+                  Política de privacidad
+                </Link>
+              </li>
+              <li>
+                <Link to="/terminos" className="text-muted-foreground hover:text-foreground">
+                  Términos y condiciones
+                </Link>
+              </li>
+              <li>
+                <Link to="/afiliados" className="text-muted-foreground hover:text-foreground">
+                  Enlaces de afiliado
+                </Link>
+              </li>
+            </ul>
             <p className="text-xs text-muted-foreground">
-              © 2026 Aprendamos de Criptomonedas · Educación, no asesoría financiera.
+              © 2026 Aprendamos de Criptomonedas · {OPERATOR}. Educación, no asesoría
+              financiera.
             </p>
           </div>
         </div>

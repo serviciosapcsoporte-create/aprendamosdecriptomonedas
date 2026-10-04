@@ -3,15 +3,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
 
-import { canonical } from "@/lib/seo";
+import { canonical, AUTHOR } from "@/lib/seo";
 export const Route = createFileRoute("/acerca-de")({
   component: AcercaDePage,
   head: () => ({
     meta: [
-      { title: "Acerca de mí | Aprendamos de Criptomonedas" },
+      { title: `Acerca de ${AUTHOR} | Aprendamos de Criptomonedas` },
       {
         name: "description",
-        content: "Conoce a Alejandro P., fundador de Aprendamos de Criptomonedas. Educación segura y estrategia clara desde 2022.",
+        content: `Conoce a ${AUTHOR}, fundador y autor de Aprendamos de Criptomonedas. Educación segura y estrategia clara desde 2022.`,
       },
     ],
     links: [{ rel: "canonical", href: canonical("/acerca-de") }],
@@ -30,22 +30,22 @@ function AcercaDePage() {
         <div className="flex items-center gap-6 mb-8">
           <img
             src="/alejandro.svg"
-            alt="Alejandro P."
+            alt={`Retrato de ${AUTHOR}`}
             className="w-24 h-24 rounded-full object-cover border-4 border-amber-500"
           />
           <div>
-            <h2 className="text-xl font-bold">Alejandro P.</h2>
+            <h2 className="text-xl font-bold">{AUTHOR}</h2>
             <p className="text-muted-foreground">
-              Administrador de Aprendamos de Criptomonedas
+              Fundador y autor de Aprendamos de Criptomonedas
             </p>
           </div>
         </div>
 
         <div className="prose dark:prose-invert max-w-none">
           <p>
-            Mi nombre es Alejandro P. y soy el administrador de esta página.
-            Mi pasión radica en educar y guiar a mis seguidores en el emocionante
-            universo de las criptomonedas.
+            Mi nombre es {AUTHOR} y soy el fundador y autor de esta página. Mi pasión
+            radica en educar y guiar a mis seguidores en el emocionante universo de las
+            criptomonedas.
           </p>
 
           <h2>Lo que ofrezco</h2>
@@ -91,7 +91,7 @@ function AcercaDePage() {
               <p className="text-lg italic">
                 "En cripto, sobrevivir es la primera victoria."
               </p>
-              <p className="text-sm text-muted-foreground">— Alejandro P.</p>
+              <p className="text-sm text-muted-foreground">— {AUTHOR}</p>
             </blockquote>
           </div>
         </div>
