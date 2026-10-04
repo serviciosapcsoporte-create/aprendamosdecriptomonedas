@@ -84,7 +84,7 @@ const lessonRoutes = Object.entries(levelFiles).flatMap(([n, file]) => {
 const postsSrc = slurp("posts.ts");
 const posts = [...postsSrc.matchAll(/id:\s*"([^"]+)"/g)].map((m) => m[1]);
 const postDates = new Map();
-for (const block of postsSrc.split(/\n  \{\n/)) {
+for (const block of postsSrc.split(/\n {2}\{\n/)) {
   const id = block.match(/id:\s*"([^"]+)"/)?.[1];
   const date = block.match(/date:\s*"([^"]+)"/)?.[1];
   if (id && date) postDates.set(id, date);

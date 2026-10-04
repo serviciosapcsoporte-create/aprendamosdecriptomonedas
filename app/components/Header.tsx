@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { MainNav } from "@/components/MainNav";
-import { cn } from "@/lib/utils";
 import { OPERATOR } from "@/lib/legal";
 import { ContactLinks } from "@/components/ContactLinks";
 

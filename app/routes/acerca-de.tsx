@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { Link } from "@tanstack/react-router";
 
 import { canonical, AUTHOR } from "@/lib/seo";
 export const Route = createFileRoute("/acerca-de")({

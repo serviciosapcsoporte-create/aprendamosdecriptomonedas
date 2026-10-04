@@ -1,51 +1,8 @@
 // @ts-nocheck
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import { curriculumData } from "@/data/curriculum";
-
-interface NavItem {
-  title: string;
-  href: string;
-  description?: string;
-  icon?: ReactNode;
-  children?: NavItem[];
-  badge?: "free" | "register" | "paid" | "new";
-}
-
-const LEVEL_KEYS = ["nivel-1", "nivel-2", "nivel-3", "nivel-4", "nivel-5"] as const;
-
-function buildNavItems(): NavItem[] {
-  const levelItems: NavItem[] = LEVEL_KEYS.map((key) => {
-    const level = curriculumData[key];
-    return {
-      title: `${level.number} — ${level.title.toUpperCase()}`,
-      href: level.href,
-      badge: level.badge,
-      children: level.sections
-        .filter((section) => section.topics.length > 0)
-        .map((section) => ({
-          title: section.title,
-          href: level.href,
-          children: section.topics.map((topic) => ({
-            title: topic.title,
-            href: `/${key}/${topic.slug}`,
-          })),
-        })),
-    };
-  });
-
-  return [...levelItems, { title: "NOTICIAS", href: "/noticias", badge: "new" }];
-}
-
-const navItems: NavItem[] = buildNavItems();
-
-/** Enlaces de la cabecera que no viven en el árbol de niveles */
-const secondaryItems: NavItem[] = [
-  { title: "Blog", href: "/blog" },
-  { title: "Recursos", href: "/recursos" },
-  { title: "Acerca de mí", href: "/acerca-de" },
-];
+import { navItems, secondaryItems, type NavItem } from "@/lib/nav-items";
 
 function Badge({ badge }: { badge?: NavItem["badge"] }) {
   if (!badge) return null;
@@ -189,6 +146,3 @@ export function MainNav() {
     </>
   );
 }
-
-export type { NavItem };
-export { navItems };

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { BookOpen, CheckCircle2, Download, Eye, FileText, Lock, ShieldCheck } from "lucide-react";
 

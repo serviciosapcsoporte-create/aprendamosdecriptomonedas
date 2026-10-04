@@ -2,7 +2,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { Link } from "@tanstack/react-router";
-import { navItems } from "@/components/MainNav";
+import { navItems } from "@/lib/nav-items";
 
 import { canonical, jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
