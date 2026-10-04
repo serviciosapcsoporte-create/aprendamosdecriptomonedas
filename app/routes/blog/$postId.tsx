@@ -55,7 +55,7 @@ function PostPage() {
     return (
       <>
         <Header />
-        <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
+        <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-2xl font-bold mb-4">Post no encontrado</h1>
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground">
             ← Volver al blog
@@ -69,7 +69,7 @@ function PostPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <Link
           to="/blog"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground mb-8"

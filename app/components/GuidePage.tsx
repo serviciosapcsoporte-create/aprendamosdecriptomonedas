@@ -51,7 +51,7 @@ export function GuidePage({
   return (
     <>
       <Header />
-      <main className="flex-1 bg-[#080d1a]">
+      <main id="contenido" tabIndex={-1} className="flex-1 bg-[#080d1a]">
         <section className="relative overflow-hidden py-14 md:py-20">
           {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise */}
 

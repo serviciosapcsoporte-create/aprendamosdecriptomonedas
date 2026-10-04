@@ -31,7 +31,7 @@ function Nivel2Page() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <span className="text-3xl font-bold text-amber-600 mb-2 block">NIVEL 2</span>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Intermedio</h1>

@@ -25,6 +25,8 @@ interface AnimatedSectionProps {
     | "slide-in-from-right";
   /** Clases CSS adicionales */
   className?: string;
+  /** id del <section> (anclas / scrollIntoView) */
+  id?: string;
   /** Contenido a animar */
   children: ReactNode;
 }
@@ -42,6 +44,7 @@ export const AnimatedSection = ({
   delay = 0,
   animation = "fade-in-up",
   className,
+  id,
   children,
 }: AnimatedSectionProps) => {
   const ref = useRef<HTMLElement | null>(null);
@@ -83,6 +86,7 @@ export const AnimatedSection = ({
   return (
     <section
       ref={ref}
+      id={id}
       data-anim={animation}
       data-visible={visible ? "true" : "false"}
       style={{ "--anim-delay": `${Math.min(delay, 2)}s` } as React.CSSProperties}

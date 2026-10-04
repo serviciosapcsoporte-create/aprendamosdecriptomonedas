@@ -33,7 +33,7 @@ function Afiliados() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Enlaces de afiliado</h1>
         <p className="text-lg text-muted-foreground mb-8">
           Cómo ganamos dinero con este sitio y por qué eso no cambia lo que lees

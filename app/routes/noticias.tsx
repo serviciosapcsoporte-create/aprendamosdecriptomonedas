@@ -68,7 +68,7 @@ function NoticiasPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto mb-12 text-center">
           <span className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-amber-100 text-amber-800 mb-4">
             <Newspaper className="w-3.5 h-3.5" />

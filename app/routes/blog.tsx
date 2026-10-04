@@ -23,7 +23,7 @@ function BlogPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto mb-12 text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Blog</h1>
           <p className="text-muted-foreground">

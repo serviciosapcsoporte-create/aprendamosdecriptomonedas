@@ -81,7 +81,7 @@ function TopicPage() {
     return (
       <>
         <Header />
-        <main className="flex-1 container mx-auto px-4 py-12">
+        <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
           <h1 className="text-2xl font-bold mb-4">Tema no encontrado</h1>
           <Link to={`/${levelPrefix}-${suffix}`}>Volver a Nivel {level}</Link>
         </main>
@@ -97,7 +97,7 @@ function TopicPage() {
   return (
     <>
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
+      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
         <nav className="mb-8 flex items-center justify-between">
           <Link to={`/${levelPrefix}-${suffix}`} className="text-sm text-muted-foreground hover:text-foreground">
             Volver a Nivel {level}

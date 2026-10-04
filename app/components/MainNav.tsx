@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { curriculumData } from "@/data/curriculum";
@@ -40,76 +40,153 @@ function buildNavItems(): NavItem[] {
 
 const navItems: NavItem[] = buildNavItems();
 
-export function MainNav() {
-  return (
-    <nav className="hidden md:flex items-center space-x-1 text-sm font-medium">
-      {navItems.map((item) => (
-        <div key={item.href} className="relative group">
-          <Link
-            to={item.href}
-            className={cn(
-              "flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors",
-            )}
-          >
-            <span>{item.title}</span>
-            {item.badge === "free" && (
-              <span className="text-xs bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full">
-                Gratis
-              </span>
-            )}
-            {item.badge === "register" && (
-              <span className="text-xs bg-cyan-100 text-cyan-800 px-1.5 py-0.5 rounded-full">
-                Registro
-              </span>
-            )}
-            {item.badge === "paid" && (
-              <span className="text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full">
-                Premium
-              </span>
-            )}
-            {item.badge === "new" && (
-              <span className="text-xs bg-red-100 text-red-800 px-1.5 py-0.5 rounded-full">
-                Nuevo
-              </span>
-            )}
-          </Link>
+/** Enlaces de la cabecera que no viven en el árbol de niveles */
+const secondaryItems: NavItem[] = [
+  { title: "Blog", href: "/blog" },
+  { title: "Recursos", href: "/recursos" },
+  { title: "Acerca de mí", href: "/acerca-de" },
+];
 
-          {item.children && (
-            <div className="absolute left-0 top-full mt-2 w-64 rounded-md bg-popover p-2 shadow-lg ring-1 ring-border opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
-              {item.children.map((child) => (
-                <div key={child.href ?? child.title} className="mb-1">
-                  {child.children ? (
-                    <div className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground">
-                      {child.title}
-                    </div>
-                  ) : (
-                    <Link
-                      to={child.href}
-                      className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
-                    >
-                      {child.title}
-                    </Link>
-                  )}
-                  {child.children && (
-                    <div className="ml-4 mt-1 space-y-0.5">
-                      {child.children.map((grandchild) => (
-                        <Link
-                          key={grandchild.href}
-                          to={grandchild.href}
-                          className="block rounded-md px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:bg-accent"
-                        >
-                          {grandchild.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+function Badge({ badge }: { badge?: NavItem["badge"] }) {
+  if (!badge) return null;
+  const map = {
+    free: { label: "Gratis", className: "bg-green-100 text-green-800" },
+    register: { label: "Registro", className: "bg-cyan-100 text-cyan-800" },
+    paid: { label: "Premium", className: "bg-amber-100 text-amber-800" },
+    new: { label: "Nuevo", className: "bg-red-100 text-red-800" },
+  } as const;
+  const { label, className } = map[badge];
+  return (
+    <span className={cn("rounded-full px-1.5 py-0.5 text-xs", className)}>
+      {label}
+    </span>
+  );
+}
+
+export function MainNav() {
+  const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Escape cierra el menú móvil y devuelve el foco al botón
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const close = () => setOpen(false);
+
+  return (
+    <>
+      {/* Navegación de escritorio */}
+      <nav
+        aria-label="Principal"
+        className="hidden items-center space-x-1 text-sm font-medium md:flex"
+      >
+        {navItems.map((item) => (
+          <div key={item.href} className="group relative">
+            <Link
+              to={item.href}
+              className="flex min-h-11 items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <span>{item.title}</span>
+              <Badge badge={item.badge} />
+            </Link>
+
+            {item.children && (
+              <div className="invisible absolute left-0 top-full z-50 w-64 rounded-b-md bg-popover px-2 pb-2 pt-3 opacity-0 shadow-lg ring-1 ring-border transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                {item.children.map((child) => (
+                  <div key={child.href ?? child.title} className="mb-1">
+                    {child.children ? (
+                      <div className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground">
+                        {child.title}
+                      </div>
+                    ) : (
+                      <Link
+                        to={child.href}
+                        className="block rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                      >
+                        {child.title}
+                      </Link>
+                    )}
+                    {child.children && (
+                      <div className="ml-4 mt-1 space-y-0.5">
+                        {child.children.map((grandchild) => (
+                          <Link
+                            key={grandchild.href}
+                            to={grandchild.href}
+                            className="block min-h-9 rounded-md px-3 py-2 text-xs text-muted-foreground hover:bg-accent hover:text-foreground"
+                          >
+                            {grandchild.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      {/* Botón de menú móvil */}
+      <button
+        ref={toggleRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls="nav-movil"
+        onClick={() => setOpen((value) => !value)}
+        className="flex min-h-11 min-w-11 items-center justify-center rounded-md md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          className="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+        >
+          {open ? (
+            <path d="M6 6l12 12M18 6L6 18" />
+          ) : (
+            <path d="M4 7h16M4 12h16M4 17h16" />
           )}
-        </div>
-      ))}
-    </nav>
+        </svg>
+      </button>
+
+      {/* Panel móvil */}
+      <div
+        id="nav-movil"
+        hidden={!open}
+        className="absolute left-0 right-0 top-full border-b bg-background shadow-lg md:hidden"
+      >
+        <nav aria-label="Principal móvil" className="container mx-auto py-3">
+          <ul className="space-y-1">
+            {[...navItems, ...secondaryItems].map((item) => (
+              <li key={item.href}>
+                <Link
+                  to={item.href}
+                  onClick={close}
+                  className="flex min-h-11 items-center justify-between rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <span>{item.title}</span>
+                  <Badge badge={item.badge} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 }
 
