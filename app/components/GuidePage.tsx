@@ -162,7 +162,7 @@ export function GuidePage({
                   <a
                     key={i}
                     href={c.href}
-                    className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 bg-white/5 px-7 py-3 text-base font-medium text-white transition-all hover:border-cyan-400/70 hover:bg-cyan-400/10"
+                    className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 bg-white/5 px-7 py-3 text-base font-medium text-white transition-colors hover:border-cyan-400/70 hover:bg-cyan-400/10"
                   >
                     {c.label}
                   </a>

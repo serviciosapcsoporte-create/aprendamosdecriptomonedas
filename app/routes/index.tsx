@@ -106,13 +106,13 @@ function Index() {
                   const el = document.getElementById("curriculum");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-7 py-3 text-base font-bold text-[var(--primary-foreground)] transition-all hover:bg-[var(--primary-dark)]"
+                className="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-7 py-3 text-base font-bold text-[var(--primary-foreground)] transition-colors hover:bg-[var(--primary-dark)]"
               >
                 Empezar ahora →
               </button>
               <Link
                 to="/nivel-1-principiante"
-                className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-7 py-3 text-base font-medium text-[var(--muted-foreground)] transition-all hover:border-[var(--primary)]"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-7 py-3 text-base font-medium text-[var(--muted-foreground)] transition-colors hover:border-[var(--primary)]"
               >
                 Ver ruta →
               </Link>
