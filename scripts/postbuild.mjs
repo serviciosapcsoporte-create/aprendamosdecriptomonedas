@@ -127,13 +127,43 @@ if (existsSync(resolve(dist, "index.html"))) {
 }
 
 // Limpia bundles huerfanos de builds previos (habia dos .js y dos .css).
+// OJO: el index.html solo cita el entry y el CSS. Los demas bundles (vendors y
+// chunks cargados con import dinamico) se referencian ENTRE SI desde su propio
+// codigo ("./react-xxxx.js"), asi que hay que seguir la cadena de imports desde
+// el entry: leer solo el HTML borraba react/tanstack/medallion y la app en
+// produccion quedaba en blanco (404 en los chunks).
 const assets = resolve(dist, "assets");
 if (existsSync(assets)) {
-  const referenced = new Set([
-    ...readFileSync(resolve(dist, "index.html"), "utf8").matchAll(/(?:src|href)="\/assets\/([^"]+)"/g),
-  ].map((m) => m[1]));
-  for (const f of readdirSync(assets)) {
-    if (!referenced.has(f)) {
+  const files = readdirSync(assets);
+  const known = new Set(files);
+  // Cualquier token que parezca un archivo de assets; el filtro por `known`
+  // evita confundir rutas con el nombre de un paquete o de un source map.
+  const candidate = /([A-Za-z0-9._-]+\.[A-Za-z0-9]{2,8})\b/g;
+  const collect = (file) => {
+    const out = new Set();
+    if (!existsSync(file)) return out;
+    const text = readFileSync(file, "utf8");
+    for (const m of text.matchAll(candidate)) {
+      if (known.has(m[1])) out.add(m[1]);
+    }
+    return out;
+  };
+
+  const keep = collect(resolve(dist, "index.html"));
+  const queue = [...keep];
+  while (queue.length) {
+    const name = queue.pop();
+    if (!/\.(js|css)$/.test(name)) continue;
+    for (const next of collect(resolve(assets, name))) {
+      if (!keep.has(next)) {
+        keep.add(next);
+        queue.push(next);
+      }
+    }
+  }
+
+  for (const f of files) {
+    if (!keep.has(f)) {
       rmSync(resolve(assets, f));
       console.log(`[postbuild] asset huerfano eliminado: ${f}`);
     }
