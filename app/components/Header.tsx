@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-20 w-full border-b bg-background/80 backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex shrink-0 items-center space-x-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <img
             src="/logo.png"
             alt="Aprendamos de Criptomonedas"

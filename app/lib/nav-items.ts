@@ -17,7 +17,9 @@ function buildNavItems(): NavItem[] {
   const levelItems: NavItem[] = LEVEL_KEYS.map((key) => {
     const level = curriculumData[key];
     return {
-      title: `${level.number} — ${level.title.toUpperCase()}`,
+      // Etiqueta corta: la barra de escritorio no admite títulos largos sin
+      // partirse en dos líneas. El nombre completo vive en la página de nivel.
+      title: level.number,
       href: level.href,
       badge: level.badge,
       children: level.sections

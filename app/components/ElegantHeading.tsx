@@ -14,7 +14,7 @@ interface ElegantHeadingProps {
   as?: HeadingLevel;
   /** Contenido del heading */
   children: ReactNode;
-  /** Clase CSS adicional para el heading (acepta `text-[var(--heading-text-size)]` etc.) */
+  /** Clase CSS adicional (el tamaño se pasa con el hint `length:` de Tailwind) */
   className?: string;
   /** Alias heredado de `className` */
   classNameHeading?: string;

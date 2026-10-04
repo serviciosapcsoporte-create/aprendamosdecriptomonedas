@@ -50,7 +50,7 @@ export function MainNav() {
           <div key={item.href} className="group relative">
             <Link
               to={item.href}
-              className="flex min-h-11 items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <span>{item.title}</span>
               <Badge badge={item.badge} />
