@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MainNav } from "@/components/MainNav";
 import { OPERATOR } from "@/lib/legal";
 import { ContactLinks } from "@/components/ContactLinks";
+import { CookiePreferencesButton } from "@/components/CookiePreferencesButton";
 
 export function Header() {
   return (
@@ -110,17 +111,12 @@ export function Footer() {
               </li>
               <li>
                 {/* Retirar el consentimiento tiene que ser tan facil como darlo.
-                    Un boton de texto aqui, sin recompensa ni registro, y con el
-                    panel abierto en el sitio. */}
-                <button
-                  type="button"
-                  onClick={() =>
-                    window.dispatchEvent(new Event("adc:abrir-preferencias"))
-                  }
-                  className="text-left text-muted-foreground hover:text-foreground"
-                >
+                    Es un Dialog.Trigger de base-ui conectado por handle: el
+                    dialogo registra este boton como disparador real y devuelve
+                    el foco aqui al cerrar. */}
+                <CookiePreferencesButton className="text-left text-muted-foreground hover:text-foreground">
                   Preferencias de cookies
-                </button>
+                </CookiePreferencesButton>
               </li>
             </ul>
             <p className="text-xs text-muted-foreground">
