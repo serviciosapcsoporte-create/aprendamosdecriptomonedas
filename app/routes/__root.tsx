@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet, Link, createRootRouteWithContext, useRouter, useRouterState, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
+import { CookieConsent } from "@/components/CookieConsent";
 import { OG_IMAGE, AUTHOR, canonical, jsonLd, organizationLd, personLd, webSiteLd } from "@/lib/seo";
 
 /**
@@ -167,12 +168,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Se retiró el logo flotante global: se animaba en las 20 rutas con un
-          ciclo infinito, ignoraba prefers-reduced-motion y su glow cyan no
-          pertenece a la paleta ILAB. El hero de la home lleva su propio
-          componente de marca. */}
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      {/* Banner de consentimiento. Montado aqui y no en cada pagina para que
+          la decision se lea una sola vez por visita, no una vez por ruta. */}
+      <CookieConsent />
     </QueryClientProvider>
   );
 }

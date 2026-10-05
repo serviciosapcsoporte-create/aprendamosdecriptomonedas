@@ -108,6 +108,20 @@ export function Footer() {
                   Enlaces de afiliado
                 </Link>
               </li>
+              <li>
+                {/* Retirar el consentimiento tiene que ser tan facil como darlo.
+                    Un boton de texto aqui, sin recompensa ni registro, y con el
+                    panel abierto en el sitio. */}
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.dispatchEvent(new Event("adc:abrir-preferencias"))
+                  }
+                  className="text-left text-muted-foreground hover:text-foreground"
+                >
+                  Preferencias de cookies
+                </button>
+              </li>
             </ul>
             <p className="text-xs text-muted-foreground">
               © 2026 Aprendamos de Criptomonedas · {OPERATOR}. Educación, no asesoría

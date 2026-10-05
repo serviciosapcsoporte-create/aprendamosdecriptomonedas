@@ -73,7 +73,7 @@ function AcercaDePage() {
               <span className="text-2xl">📚</span>
               <div>
                 <h3 className="font-semibold">Plan Educativo Completo</h3>
-                <p>Curso estructurado en 5 niveles con 75 temas. Desde principiante hasta experto.</p>
+                <p>Curso estructurado en 5 niveles con 76 temas. Desde principiante hasta experto.</p>
               </div>
             </div>
           </div>

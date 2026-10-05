@@ -18,10 +18,10 @@ export const Route = createFileRoute("/")({
   head: () => ({
     title: "Aprendamos de Criptomonedas | Educación cripto sin humo",
     meta: [
-      { name: "description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +75 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
+      { name: "description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +76 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
       { name: "author", content: "Alejandro Piraquive" },
       { property: "og:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
-      { property: "og:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +75 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
+      { property: "og:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +76 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonical("/") },
       { property: "og:image", content: OG_IMAGE },
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:alt", content: "Aprendamos de Criptomonedas: educación cripto en español" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
-      { name: "twitter:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +75 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
+      { name: "twitter:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero. +76 temas en 5 niveles,  desde conceptos básicos hasta análisis on-chain avanzado." },
       { name: "twitter:image", content: OG_IMAGE },
       { name: "twitter:creator", content: "@AprendamosCripto" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
@@ -96,7 +96,7 @@ function Index() {
               </ElegantHeading>
 
               <p className="text-lg text-[var(--muted-foreground)] mb-8 max-w-2xl">
-                Domina criptomonedas, blockchain, DeFi y seguridad con 75 temas
+                Domina criptomonedas, blockchain, DeFi y seguridad con 76 temas
                 distribuidos en 5 niveles diseñados para construir conocimiento
                 de forma progresiva. Sin influencers, sin promesas, solo educación real.
               </p>

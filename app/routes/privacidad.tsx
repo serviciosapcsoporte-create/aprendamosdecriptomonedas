@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components/Header";
 import { canonical, jsonLd, breadcrumbLd } from "@/lib/seo";
 import { OPERATOR, LEGAL_UPDATED, MERCHANT, contactLine } from "@/lib/legal";
 import { ContactLinks } from "@/components/ContactLinks";
+import { CookiePreferencesButton } from "@/components/CookiePreferencesButton";
 
 export const Route = createFileRoute("/privacidad")({
   component: Privacidad,
@@ -69,8 +70,16 @@ function Privacidad() {
                 identificarte.
               </li>
               <li>
-                <strong>No hay cookies propias de seguimiento</strong> ni
-                analítica que te identifique.
+                <strong>No hay cookies propias de seguimiento.</strong> El sitio no
+                publica anuncios, no hay perfiles de usuario ni seguimiento entre
+                páginas.
+              </li>
+              <li>
+                <strong>La analítica es opcional y depende de tu consentimiento.</strong>{" "}
+                Google Analytics 4 no se carga hasta que pulsas «Aceptar analítica»
+                en el banner. Si lo rechazas, no se carga nunca en ese navegador y
+                no se guarda nada. Puedes cambiarlo cuando quieras desde{" "}
+                <CookiePreferencesButton />.
               </li>
               <li>
                 <strong>No hay formularios activos.</strong> Si en algún momento
@@ -85,8 +94,7 @@ function Privacidad() {
               </li>
               <li>
                 <strong>Recursos de terceros:</strong> las tipografías se cargan desde
-                Google Fonts, que recibe tu IP al hacerlo. Las lecciones pueden incluir
-                vídeos incrustados de plataformas externas.
+                Google Fonts, que recibe tu IP al hacerlo.
               </li>
             </ul>
             <p className="mt-3">
@@ -97,7 +105,38 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">3. Para qué los usamos</h2>
+            <h2 className="text-2xl font-bold mb-3">3. Cookies: qué usamos y por qué</h2>
+            <p className="mb-3">
+              Solo hay dos categorías, y ninguna es publicitaria:
+            </p>
+            <ul className="mb-3 list-disc list-inside space-y-2">
+              <li>
+                <strong>Necesarias.</strong> Un valor guardado en el almacenamiento
+                local de tu navegador que recuerda si ya aceptaste o rechazaste, para
+                no mostrarte el banner en cada visita. No identifica tu dispositivo
+                fuera de este navegador.
+              </li>
+              <li>
+                <strong>Analítica (Google Analytics 4).</strong> Si la aceptas, Google
+                registra qué páginas lees, durante cuánto y desde qué tipo de
+                dispositivo. Se usa para saber qué lecciones sirven y cuáles están mal
+                explicadas. La dirección IP se anonimiza. No se cruza con ninguna otra
+                fuente, no se usa para publicidad y no se comparte con terceros.
+              </li>
+            </ul>
+            <p>
+              Base legal de la analítica: tu consentimiento. Puedes retirarlo en
+              cualquier momento con <CookiePreferencesButton />, y en cuanto lo haces
+              dejamos de enviar datos. Las categorías de publicidad de Google Consent
+              Mode (almacenamiento de anuncios, datos de usuario para anuncios y
+              personalización de anuncios) están declaradas siempre como denegadas,
+              porque este sitio no publica anuncios.{" "}
+              <CookiePreferencesButton>Volver a ver el detalle</CookiePreferencesButton>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-bold mb-3">4. Para qué los usamos</h2>
             <p className="mb-3">
               No tratamos datos personales con finalidades propias. Si nos escribes por
               correo, usamos lo que envías únicamente para responderte y guardamos ese
@@ -112,7 +151,7 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">4. No vendemos tus datos</h2>
+            <h2 className="text-2xl font-bold mb-3">5. No vendemos tus datos</h2>
             <p>
               No vendemos, alquilamos ni cedemos datos personales a terceros por motivos
               comerciales. No tenemos con quién venderlos: no los recopilamos.
@@ -120,7 +159,7 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">5. Enlaces de afiliado y terceros</h2>
+            <h2 className="text-2xl font-bold mb-3">6. Enlaces de afiliado y terceros</h2>
             <p className="mb-3">
               Algunas páginas incluyen enlaces a cursos de terceros en marketplaces como{" "}
               {MERCHANT}. Si haces clic en esos enlaces y completas una compra, el
@@ -141,7 +180,7 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">6. Tus derechos</h2>
+            <h2 className="text-2xl font-bold mb-3">7. Tus derechos</h2>
             <p className="mb-3">
               Puedes conocer, actualizar o suprimir cualquier dato que nos hayas enviado
               y revocar tu consentimiento en cualquier momento escribiéndonos por{" "}
@@ -155,7 +194,7 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">7. Seguridad</h2>
+            <h2 className="text-2xl font-bold mb-3">8. Seguridad</h2>
             <p>
               El sitio se sirve sobre HTTPS con cifrado de transporte. No guardamos bases
               de datos de usuarios, así que no hay nada que filtrar de tu parte. Puedes
@@ -165,7 +204,7 @@ function Privacidad() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-3">8. Cambios</h2>
+            <h2 className="text-2xl font-bold mb-3">9. Cambios</h2>
             <p>
               Si cambiamos esta política de forma relevante, actualizaremos la fecha al
               inicio de la página y lo avisaremos de forma visible en el sitio.

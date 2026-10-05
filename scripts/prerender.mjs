@@ -266,3 +266,46 @@ console.log(
 for (const n of [1, 2, 3, 4, 5]) {
   console.log(`[prerender]   nivel-${n}: ${levelMeta[n].length} lecciones`);
 }
+
+// ---------------------------------------------------------------------------
+// El numero de lecciones aparece escrito a mano en la home, en las metas de
+// index.html, en /acerca-de y en llms.txt. Esos textos no se renderizan desde
+// los datos, asi que se caducan solos: al anadir la leccion de DeFi el sitio
+// siguio diciendo 75 temas en ocho sitios. Aqui se comprueba y se rompe el
+// build si deja de cuadar, que es mas barato que quejarse en una busqueda.
+// ---------------------------------------------------------------------------
+{
+  const porNivel = [1, 2, 3, 4, 5].map((f) => [
+    ...slurp(`level${f}.ts`).matchAll(/^\s*slug:\s*"([^"]+)"/gm),
+  ].length);
+  const totalLecciones = porNivel.reduce((a, b) => a + b, 0);
+
+  const textos = ["index.html", "public/llms.txt"]
+    .map((f) => readFileSync(resolve(root, f), "utf8"))
+    .concat(["index.tsx", "acerca-de.tsx"].map((f) => readFileSync(resolve(routesDir, f), "utf8")))
+    .join("\n");
+
+  // Cifras validas: el total del curso y el total de cada nivel. La home lista
+  // los cinco niveles con su propio conteo ("15 temas", "18 temas"...), asi que
+  // esas menciones son correctas y no se pueden marcar como error.
+  const validas = new Set([totalLecciones, ...porNivel]);
+
+  // Se ignoran los numeros que no son un conteo de lecciones, como el 75% de un
+  // ejemplo de nivel 3 o un offer ID de Hotmart que lleve 75 dentro.
+  const menciones = [
+    ...new Set(textos.match(/\b\d{2,3}\s+(?:temas|lecciones)\b/g) ?? []),
+  ].map((m) => Number(m.match(/\d+/)[0]));
+
+  const desalineados = menciones.filter((n) => !validas.has(n));
+  if (desalineados.length) {
+    throw new Error(
+      `Hay ${desalineados.length} texto(s) que no coinciden con los datos: ` +
+        `${desalineados.join(", ")}. Validas: ${[...validas].sort((a, b) => a - b).join(", ")} ` +
+        `(total y por nivel). Corrige a mano la home, las metas de index.html, ` +
+        `/acerca-de y llms.txt.`
+    );
+  }
+  console.log(
+    `[prerender] numero de lecciones coherente: ${totalLecciones} total, por nivel ${porNivel.join("/")}`
+  );
+}

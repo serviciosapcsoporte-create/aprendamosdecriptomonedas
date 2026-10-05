@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" href="/logo.png" />
 
     <title>Aprendamos de Criptomonedas | Educación cripto sin humo</title>
-    <meta name="description" content="Educación cripto en español: guías, checklists y 75 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
+    <meta name="description" content="Educación cripto en español: guías, checklists y 76 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
     <meta name="author" content="Alejandro Piraquive" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://aprendamosdecriptomonedas.lat/" />
@@ -16,14 +16,14 @@
     <meta property="og:locale" content="es_CO" />
     <meta property="og:site_name" content="Aprendamos de Criptomonedas" />
     <meta property="og:title" content="Aprendamos de Criptomonedas | Educación cripto sin humo" />
-    <meta property="og:description" content="Educación cripto en español: guías, checklists y 75 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
+    <meta property="og:description" content="Educación cripto en español: guías, checklists y 76 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
     <meta property="og:url" content="https://aprendamosdecriptomonedas.lat/" />
     <meta property="og:image" content="https://aprendamosdecriptomonedas.lat/social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aprendamos de Criptomonedas | Educación cripto sin humo" />
-    <meta name="twitter:description" content="Educación cripto en español: guías, checklists y 75 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
+    <meta name="twitter:description" content="Educación cripto en español: guías, checklists y 76 lecciones en 5 niveles para entender el mercado y proteger tu dinero Totalmente gratis, sin registro." />
     <meta name="twitter:image" content="https://aprendamosdecriptomonedas.lat/social-card.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,15 +33,31 @@
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&display=swap"
     />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EWFDLTCM8R"></script>
+    <!--
+      Google Consent Mode v2: se declara el rechazo ANTES de que exista
+      gtag.js. Antes este bloque cargaba analytics de inmediato y sin preguntar,
+      que es justo lo que prohíben el RGPD y la Ley 1581.
+
+      Ahora gtag.js NO se carga aquí. El lo inyecta app/lib/consent.ts cuando la
+      persona acepta, y aquí solo se deja la función gtag y el estado de siete
+      casillas listo para recibir la decision.
+    -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-EWFDLTCM8R");
+      window.gtag = gtag;
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+        wait_for_update: 500,
+      });
     </script>
   </head>
   <body>
@@ -54,7 +70,7 @@
     <noscript>
       <div style="max-width: 720px; margin: 0 auto; padding: 48px 24px; font-family: system-ui, sans-serif; color: #0b1b33;">
         <h1>Aprendamos de Criptomonedas</h1>
-        <p>Educación cripto en español: 75 lecciones gratuitas en 5 niveles, sin registro.</p>
+        <p>Educación cripto en español: 76 lecciones gratuitas en 5 niveles, sin registro.</p>
         <ul>
           <li><a href="/nivel-1-principiante">Nivel 1 · Principiante</a></li>
           <li><a href="/nivel-2-intermedio">Nivel 2 · Intermedio</a></li>
