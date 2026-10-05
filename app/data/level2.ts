@@ -92,6 +92,9 @@ export const level2Topics: Omit<Topic, "level">[] = [
     keywords: ["que son smart contracts", "contratos inteligentes"],
     icon: "code",
     related: ["para-que-sirven", "que-es-token-cripto"],
+
+    video: "/videos/lecciones/que-son-smart-contracts.mp4",
+    videoAlt: "Un smart contract no es un trato legal: es código que se ejecuta solo.",
   },
   {
     id: "22",
@@ -214,6 +217,26 @@ export const level2Topics: Omit<Topic, "level">[] = [
     keywords: ["market cap", "fdv", "liquidez"],
     icon: "pie-chart",
     related: ["oferta-demanda", "pools-liquidity"],
+  },
+  {
+    id: "29b",
+    slug: "defi-que-es",
+    title: "Qué es DeFi",
+    description: "Finanzas descentralizadas: protocolos en vez de bancos, y qué riesgo cambia con eso.",
+    content: [
+      "**DeFi** significa *finanzas descentralizadas*. La idea es fácil de enunciar y complicada de digerir: en lugar de depositar tu dinero en una empresa que te promete un interés, lo depositas en un programa público que hace exactamente lo que dice, sin que nadie tenga que cumplir su palabra.",
+      "Piensa en la diferencia entre un banco y una máquina expendedora. El banco es una promesa: te promete que te pagará el interés, y su capacidad de cumplir depende de su solvencia. La máquina expendedora no promete nada: introduces la moneda y el producto sale. Un protocolo DeFi funciona como la máquina: las reglas están escritas en el código y se ejecutan sin intermediario.",
+      "Eso trae una ventaja clara: **puedes verificarlo tú mismo**. El código de un protocolo es público, se puede leer, y las reservas se ven en la cadena. No necesitas confiar en la palabra de nadie; necesitas entender el código, que es una exigencia distinta.",
+      "Pero el cambio de interlocutor no elimina el riesgo: lo traslada. En un banco, si el banco quiebra, hay una entidad legal a la que reclamar. En un protocolo DeFi no hay empresa a la que llamar: hay código, y si el código tiene un error, el error se ejecuta igual. **No hay soporte técnico un domingo cuando bloqueas tu posición por aprobar una transacción equivocada.**",
+      "**Lo que DeFi no es:** no es una garantía de rentabilidad, no es anónimo y no está probado. Los protocolos más grandes han perdido cientos de millones de dólares por errores de código, no por humanos. La diferencia es que allí había a alguien a quien reclamar; aquí solo había que leer.",
+      "**Para recordar:** DeFi no es lo opuesto a un banco. Es la misma necesidad —guardar valor y mover valor— resuelta con código en vez de con confianza. A cambio de perder la red de seguridad, ganas acceso global y composibilidad. Antes de depositar, entiende qué hace el protocolo y quién puede equivocarse.",
+    ],
+    section: "DeFi Básico",
+    keywords: ["que es defi", "finanzas descentralizadas", "protocolos defi"],
+    icon: "landmark",
+    related: ["pools-liquidity", "amm-uniswap", "que-son-smart-contracts"],
+    video: "/videos/lecciones/defi-que-es.mp4",
+    videoAlt: "DeFi: no hay banco central, no hay gerente, hay protocolos.",
   },
   {
     id: "30",

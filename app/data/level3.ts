@@ -124,6 +124,9 @@ export const level3Topics: Omit<Topic, "level">[] = [
     keywords: ["stablecoin", "USDC", "USDT", "DAI", "UST", "algorítmica"],
     icon: "💵",
     badge: "free",
+
+    video: "/videos/lecciones/tipos-de-stablecoins.mp4",
+    videoAlt: "Las stablecoins nacen para resolver un problema: mantener un precio estable.",
   },
   {
     id: "n3-5-bridge-cross-chain",
@@ -223,6 +226,9 @@ export const level3Topics: Omit<Topic, "level">[] = [
     keywords: ["Layer 2", "L2", "rollup", "scaling", "Optimistic", "zk-rollup", "StarkNet"],
     icon: "🚀",
     badge: "free",
+
+    video: "/videos/lecciones/layer-2-soluciones-de-scaling.mp4",
+    videoAlt: "Escalabilidad sin sacrificar descentralización: rollups, canales y sidechains.",
   },
   {
     id: "n3-8-defi-2",

@@ -16,6 +16,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     keywords: ["que es blockchain", "blockchain explicado", "cadena de bloques"],
     icon: "lock",
     related: ["como-funciona-un-bloque", "claves-publicas-privadas"],
+
+    video: "/videos/lecciones/que-es-blockchain.mp4",
+    videoAlt: "Qué es una blockchain: red distribuida en vez de un servidor central.",
   },
   {
     id: "2",
@@ -63,6 +66,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     keywords: ["wallets criptomonedas", "cold wallet", "hot wallet", "custodial"],
     icon: "wallet",
     related: ["seed-phrase-backups", "crear-wallet"],
+
+    video: "/videos/lecciones/wallets.mp4",
+    videoAlt: "Wallets: no guardan dinero, guardan las llaves que acceden a tus fondos.",
   },
   {
     id: "5",
@@ -110,6 +116,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     keywords: ["que es un token", "criptomoneda vs token", "stablecoins"],
     icon: "bar-chart-3",
     related: ["que-es-blockchain", "oferta-demanda"],
+
+    video: "/videos/lecciones/que-es-token-cripto.mp4",
+    videoAlt: "Qué estás comprando cuando compras una cripto: una empresa, un proyecto, una idea.",
   },
   {
     id: "8",
@@ -126,6 +135,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     related: ["evitar-estafas", "seed-phrase-backups"],
     resources: [{ name: "Checklist de Supervivencia Cripto", href: "/recursos/checklist-supervivencia-cripto" }],
     badge: "free",
+
+    video: "/videos/lecciones/buenas-practicas.mp4",
+    videoAlt: "No operar también es una acción: el capital se protege cuando decides no usarlo.",
   },
   {
     id: "9",
@@ -143,6 +155,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     related: ["buenas-practicas", "cex-vs-dex"],
     resources: [{ name: "El Escudo de 5 minutos", href: "/recursos/el-escudo-de-5-minutos" }],
     badge: "free",
+
+    video: "/videos/lecciones/evitar-estafas.mp4",
+    videoAlt: "FOMO y presión social: por qué la euforia es una mala señal de entrada.",
   },
   {
     id: "10",
@@ -157,6 +172,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     keywords: ["cex vs dex", "exchange centralizado", "dex descentralizado"],
     icon: "bar-chart-2",
     related: ["evitar-estafas", "seed-phrase-backups"],
+
+    video: "/videos/lecciones/cex-vs-dex.mp4",
+    videoAlt: "Un exchange centralizado funciona como una empresa y crea un punto de confianza.",
   },
   {
     id: "11",
@@ -220,6 +238,9 @@ export const level1Topics: Omit<Topic, "level">[] = [
     keywords: ["red EVM", "ethereum virtual machine", "binance smart chain"],
     icon: "globe",
     related: ["hacer-transaccion", "leer-transaccion-explorer"],
+
+    video: "/videos/lecciones/entender-red.mp4",
+    videoAlt: "No todas las blockchains compiten: unas priorizan seguridad, otras velocidad.",
   },
   {
     id: "15",

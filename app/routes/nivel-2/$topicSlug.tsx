@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { Markdown } from "@/components/Markdown";
+import { VideoLeccion } from "@/components/VideoLeccion";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -114,6 +115,8 @@ function TopicPage() {
             </div>
             <h1 className="text-3xl font-bold mb-0">{topic.title}</h1>
           </div>
+
+          <VideoLeccion topic={topic} />
 
           {topic.resources && (
             <div className="mb-6 rounded-lg bg-warning/10 dark:bg-warning/20 p-4 border border-warning/30 dark:border-warning/30">

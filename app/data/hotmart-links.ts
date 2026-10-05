@@ -11,9 +11,43 @@
  * 4. Nivel 2 y Nivel 5 no tienen equivalente en el catálogo y quedan
  *    deliberadamente vacíos. Forzar un curso ahí rompe la confianza.
  *
+ * CÓMO PEGAR TUS HOTLINKS (no hay que tocar este archivo)
+ * Crea `.env` en la raíz del repo con una línea por HotLink:
+ *
+ *   VITE_HOTMART_1=https://pay.hotmart.com/XXXXXXX
+ *   VITE_HOTMART_3=https://pay.hotmart.com/YYYYYYY
+ *
+ * Sin esa variable el nivel se queda en placeholder y el CTA sigue apagado.
+ * Ver `.env.example` y `npm run hotlinks` para el estado de cada nivel.
+ *
  * offerId: se busca en Hotmart > Afiliados para solicitar la afiliación.
  * hotlink: se pega el enlace propio que genera Hotmart tras la aprobación.
  */
+
+/**
+ * Dominios que Hotmart usa para los HotLinks de pago. Un enlace que no sea de
+ * aquí se descarta aunque venga del .env:ASI el CTA nunca puede apuntar a un
+ * producto de otra plataforma, a un ejemplo o a una errata.
+ */
+const DOMINIOS_HOTLINK = ["pay.hotmart.com", "hotmart.com", "pay.hotmart.com.br", "sistecri.com.br"];
+
+/** Un HotLink solo cuenta si es una URL de Hotmart completa. */
+export function esHotlinkValido(hotlink: string | undefined | null): hotlink is string {
+  if (!hotlink) return false;
+  if (hotlink.startsWith("REEMPLAZAR_HOTLINK_")) return false;
+  try {
+    const u = new URL(hotlink);
+    return u.protocol === "https:" && DOMINIOS_HOTLINK.includes(u.hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
+/** Lee el HotLink de una variable de entorno con el prefijo VITE_HOTMART_. */
+function hotlinkDeNivel(nivel: string, offerId: string): string {
+  const desdeEnv = import.meta.env?.[`VITE_HOTMART_${nivel}`] as string | undefined;
+  return esHotlinkValido(desdeEnv) ? desdeEnv.trim() : `REEMPLAZAR_HOTLINK_${offerId}`;
+}
 
 export interface CursoRecomendado {
   /** Nombre exacto del producto en Hotmart */
@@ -26,7 +60,7 @@ export interface CursoRecomendado {
   offerId: string;
   /** Enlace del producto en el marketplace (público, no lleva comisión) */
   marketplaceUrl: string;
-  /** Tu HotLink. Pégalo al aprobarte Hotmart. */
+  /** Tu HotLink. Se pega en el .env con VITE_HOTMART_<nivel>. */
   hotlink: string;
   /** Por qué este curso y no otro: se escribe en el CTA */
   porQue: string;
@@ -47,7 +81,7 @@ export const cursoPorNivel: Record<string, CursoRecomendado | null> = {
     offerId: "489ep8q5",
     marketplaceUrl:
       "https://hotmart.com/es/marketplace/productos/aprende-a-invertir-en-criptomonedas-en-3-dias/P51800262O",
-    hotlink: pendiente("489ep8q5"),
+    hotlink: hotlinkDeNivel("1", "489ep8q5"),
     porQue:
       "explica el proceso completo de compra paso a paso, que es justo lo que cubrimos en el Nivel 1",
     cta: "Ver el curso de inicio",
@@ -62,7 +96,7 @@ export const cursoPorNivel: Record<string, CursoRecomendado | null> = {
     offerId: "hk7fjy4c",
     marketplaceUrl:
       "https://hotmart.com/es/marketplace/productos/web30-programa-formativo/J42004217W",
-    hotlink: pendiente("hk7fjy4c"),
+    hotlink: hotlinkDeNivel("3", "hk7fjy4c"),
     porQue:
       "cubre NFT, Web3 y contratos inteligentes con 130 clases, que es de donde salen las dudas del Nivel 3",
     cta: "Ver el curso de Web 3 y NFT",
@@ -74,7 +108,7 @@ export const cursoPorNivel: Record<string, CursoRecomendado | null> = {
     offerId: "x3hsn03j",
     marketplaceUrl:
       "https://hotmart.com/es/marketplace/productos/metodo-arbitraje/J58750549F",
-    hotlink: pendiente("x3hsn03j"),
+    hotlink: hotlinkDeNivel("4", "x3hsn03j"),
     porQue:
       "va del arbitraje y el trading algorítmico al MEV, que es exactamente el tema de esta lección",
     cta: "Ver el curso de arbitraje",
@@ -187,5 +221,5 @@ export const cursosAlternativos: CursoRecomendado[] = [
 ];
 
 export function estaActivo(curso: CursoRecomendado | null): curso is CursoRecomendado {
-  return !!curso && !curso.hotlink.startsWith("REEMPLAZAR_HOTLINK_");
+  return esHotlinkValido(curso?.hotlink);
 }

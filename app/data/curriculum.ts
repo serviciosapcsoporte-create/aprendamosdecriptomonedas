@@ -17,6 +17,14 @@ export interface Topic {
   resources?: { name: string; href: string }[];
   related?: string[];
   badge?: "free" | "register" | "paid";
+  /**
+   * Video vertical de la leccion, en /public/videos/lecciones/.
+   * Opcional a proposito: solo lo tienen las 11 lecciones que ya tienen
+   * pieza grabada. Las demas renderizan exactamente igual que antes.
+   */
+  video?: string;
+  /** Una-linea de qué trata el video, para el texto alternativo del player. */
+  videoAlt?: string;
 }
 
 export interface LevelData {
