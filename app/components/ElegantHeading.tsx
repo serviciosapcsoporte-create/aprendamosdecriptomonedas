@@ -18,6 +18,11 @@ interface ElegantHeadingProps {
   className?: string;
   /** Alias heredado de `className` */
   classNameHeading?: string;
+  /**
+   * Necesario para aria-labelledby: una sección que se anuncia por su titulo
+   * tiene que poder apuntar a el. Se reenvia al elemento del encabezado.
+   */
+  id?: string;
 }
 
 /** Fallback de tamaño cuando el llamador no pasa clases `text-*` */
@@ -36,6 +41,7 @@ export const ElegantHeading = ({
   children,
   className,
   classNameHeading,
+  id,
 }: ElegantHeadingProps) => {
   const extra = cn(className, classNameHeading);
   // Si el llamador ya controla el tamaño con clases, el inline no debe pisarlo.
@@ -44,6 +50,7 @@ export const ElegantHeading = ({
 
   return (
     <Tag
+      id={id}
       className={cn(
         "font-serif font-normal leading-[1.2] tracking-[0.02em] text-foreground",
         extra,

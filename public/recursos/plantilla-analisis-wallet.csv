@@ -1,0 +1,14 @@
+campo;que_es;como_se_calcula;ejemplo_marcado_como_ejemplo
+direccion;Direccion de la wallet analizada;Tal cual aparece en el explorador de bloques;0x1a2b...9f
+primera_actividad;Fecha de la primera transaccion;Fecha del primer bloque que la toca;2024-01-15
+ultima_actividad;Fecha de la ultima transaccion;Fecha del ultimo bloque que la toca;2026-09-30
+dias_activo;Antiguedad real de la wallet;ultima_actividad - primera_actividad;623
+num_transacciones;Volumen total de transacciones;Contar en el explorador;1842
+txns_por_mes;Cadencia de operacion;num_transacciones / dias_activo * 30;88.7
+saldo_nativo;Criptos que mantiene sin operar;Balance en el explorador;3.412
+valor_usd_estimado;Valor aproximado actual;saldo_nativo * precio del dia;318400.55
+contratos_interactuados;Cuantos protocolos ha tocado;Contar direcciones distintas en los logs;27
+envios_a_cex;Veces que ha enviado a un exchange;Cruzar contra direcciones de CEX conocidas;9
+riesgo_cex;Se/proporciona en exchanges;envios_a_cex / num_transacciones;0.49%
+token_rug_pull;Tokens que se desplomaron;Revisar liquidez retirada despues de vender;2
+notas;Tu criterio, en texto libre;Lo que un CSV no puede saber;Vende todo en el mismo dia, posible bot

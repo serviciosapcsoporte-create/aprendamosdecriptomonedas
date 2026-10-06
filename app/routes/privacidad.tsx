@@ -82,12 +82,16 @@ function Privacidad() {
                 <CookiePreferencesButton />.
               </li>
               <li>
-                <strong>No hay formularios activos.</strong> Si en algún momento
-                volvemos a activar un boletín, lo diremos aquí y pediremos tu
-                consentimiento antes de guardar tu correo.
+                <strong>Sí hay un formulario:</strong> el del lead magnet de
+                plantillas CSV. Si lo rellenas, guardamos{" "}
+                <strong>solo tu nombre o alias y tu correo electrónico</strong>,
+                y solo para enviarte esos archivos. No hay cuenta, ni
+                contraseña, ni registro previo. Ese correo{" "}
+                <strong>no se usa para publicidad ni se vende a nadie</strong>, y
+                se elimina cuando nos lo pidas.
               </li>
               <li>
-                <strong>Datos técnicos del alojamiento:</strong> el proveedor de
+                <strong>Los datos técnicos del alojamiento:</strong> el proveedor de
                 hosting registra de forma automática y temporal tu dirección IP, el
                 navegador y la página solicitada. Se usan solo para seguridad y
                 diagnóstico y se borran en pocos días.
@@ -138,15 +142,25 @@ function Privacidad() {
           <div>
             <h2 className="text-2xl font-bold mb-3">4. Para qué los usamos</h2>
             <p className="mb-3">
-              No tratamos datos personales con finalidades propias. Si nos escribes por
-              correo, usamos lo que envías únicamente para responderte y guardamos ese
-              hilo solo el tiempo necesario para cerrar la conversación. Ese
-              tratamiento se sustenta en tu solicitud expresa, conforme a la Ley 1581
-              de 2012.
+              <strong>Del formulario de plantillas:</strong> los datos que nos das
+              (nombre o alias y correo) se usan con una sola finalidad, enviarte
+              los archivos CSV y las guías que pides. Esa es la base legal: tu
+              consentimiento, que das al enviar el formulario.
+            </p>
+            <p className="mb-3">
+              <strong>Si marcas la casilla del newsletter:</strong> aceptas
+              además recibir avisos cuando publiquemos una lección nueva. Es
+              opcional y va desmarcado de serie. Si no lo marcas, no te escribimos
+              nunca por correo.
             </p>
             <p>
-              No enviamos boletines, no vendemos listas y no usamos tus datos para
-              publicidad propia.
+              <strong>Si nos escribes por correo o mensajería:</strong> usamos lo
+              que envías únicamente para responderte y guardamos ese hilo solo el
+              tiempo necesario para cerrar la conversación.
+            </p>
+            <p className="mt-3">
+              No enviamos publicidad de terceros, no vendemos listas y no usamos
+              tus datos para publicidad propia.
             </p>
           </div>
 
@@ -183,7 +197,8 @@ function Privacidad() {
             <h2 className="text-2xl font-bold mb-3">7. Tus derechos</h2>
             <p className="mb-3">
               Puedes conocer, actualizar o suprimir cualquier dato que nos hayas enviado
-              y revocar tu consentimiento en cualquier momento escribiéndonos por{" "}
+              (incluido el correo del formulario de plantillas) y revocar tu
+              consentimiento en cualquier momento escribiéndonos por{" "}
               <ContactLinks />, por mensaje privado. Respondemos en un plazo máximo de
               15 días hábiles, según el artículo 19 de la Ley 1581 de 2012.
             </p>
@@ -196,10 +211,11 @@ function Privacidad() {
           <div>
             <h2 className="text-2xl font-bold mb-3">8. Seguridad</h2>
             <p>
-              El sitio se sirve sobre HTTPS con cifrado de transporte. No guardamos bases
-              de datos de usuarios, así que no hay nada que filtrar de tu parte. Puedes
-              solicitar la eliminación de cualquier dato que nos hayas enviado, sin
-              necesidad de justificar el motivo.
+              El sitio se sirve sobre HTTPS con cifrado de transporte. Guardamos
+              únicamente nombre y correo del formulario: no hay base de datos de
+              usuarios, ni contraseñas, ni datos de pago. Puedes solicitar la
+              eliminación de lo que nos hayas enviado, sin necesidad de justificar
+              el motivo.
             </p>
           </div>
 

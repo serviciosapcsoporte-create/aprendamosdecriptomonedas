@@ -1,0 +1,13 @@
+#;punto_de_control;como_se_verifica;categoria;estado_inicial
+1;Seed phrase anotada en papel o metal, nunca en foto;Revisa que no exista captura en la galeria;llaves;pendiente
+2;Seed phrase en dos lugares fisicos distintos;Uno en casa y otro fuera;llaves;pendiente
+3;Seed phrase verificada restaurando en otro dispositivo;Restauracion de prueba, con monto 0;llaves;pendiente
+4;2FA con app, no SMS, en exchange y correo;Ajustes de seguridad de cada cuenta;cuentas;pendiente
+5;Clave unica y larga reutilizada en ningun sitio mas;Gestor de contrasenas;cuentas;pendiente
+6;Exchange conyears de retiro activos;Prueba de retiro antes de mover montos grandes;custodia;pendiente
+7;Hot wallet separada de la cold, con solo lo operativo;Reparto de fondos entre wallets;custodia;pendiente
+8;Comprobacion de la red antes de enviar;Ultimos 4 y primeros 4 caracteres de la direccion;operacion;pendiente
+9;Envio de prueba con monto minimo antes de mover;Prueba de la ruta completa;operacion;pendiente
+10;Revisar aprobaciones de tokens antes de firmar;Revoke.cash o el explorador;smart contracts;pendiente
+11;Limite de perdida definido por operacion, escrito;Regla personal, con numero;gestion;pendiente
+12;Ninguna decision con dineroTaken tras una subida fuerte;Esperar 24 horas si hayeuforia o panico;gestion;pendiente

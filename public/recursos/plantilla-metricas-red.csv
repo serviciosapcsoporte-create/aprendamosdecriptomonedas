@@ -1,0 +1,13 @@
+metrica;definicion;como_se_calcula;para_que_sirve;ejemplo_marcado_como_ejemplo
+precio;Precio de referencia;Cerrar del dia en el exchange que uses;Base de cualquier calculo en USD;
+market_cap;Capitalizacion total;precio * oferta_en_circulacion;Dimension real del proyecto;
+fdv;Valor totalmente diluido;precio * oferta_maxima;Lo que valdra cuando se desbloquee todo el supply;
+fdv_mcap_ratio;Riesgo de desbloqueo;fdv / market_cap;Por encima de 3 hay Quite probable;
+volumen_24h;Volumen traded en 24 horas;Del exchange, no del bloque;Liquidez real;
+vol_mcap;Rotacion;volumen_24h / market_cap;Cuanto rota el activo frente a su tamano;
+supply_circulante;Tokens ya liberados;Del explorador o del informe del proyecto;El denominador real, no el de marketing;
+supply_maximo;Techo de emision;Del tokenomics del proyecto;Para saber cuanto falta por emitir;
+desbloqueo_90d;Cuanto se desbloquea en 90 dias;De los vesting schedules publicados;Venta futura yaKnown;
+holders_totales;Direcciones con saldo;Del explorador;Concentracion de la distribucion;
+top10_concentracion;Porcentaje en las 10 primeras wallets;Suma de las 10 mayores / total;Si supera 50%, riesgo decetrosis;
+mcap_a_real;Capitalizacion frente a tangible;market_cap vs ingresos o reservas;Sirve para activos con caja, no para todo;

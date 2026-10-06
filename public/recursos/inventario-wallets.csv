@@ -1,0 +1,5 @@
+etiqueta;tipo;donde_vive;contenido_aprox_usd;para_que;respaldo_verificado
+Operativa;hot;Extension de navegador en el portatil;;Operar y Receive;no aplica
+Ahorro;cold;Hardware wallet en casa;;Largo plazo;si / no
+Frio;cold;Hardware wallet fuera de casa;;Respaldo del anterior;si / no
+En exchanges;custodial;Exchange grande;;On-ramp y off-ramp;si / no
