@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* Landing convertida en embudo de captacion con SAM como marco: lo minimo
    publicable ya esta, y cada bloque se itera con lo que digan los datos.
-   - Hero con el H1 del brief y la moneda giratoria en video
+   - Hero con el H1 del brief sobre video de fondo full-bleed (moneda giratoria)
    - Lead magnet de CSV con captura opcional (ver app/lib/leads.ts)
    - Ruta de 5 niveles con los conteos que salen de app/data, no escritos a mano
    - Recursos y FAQ
@@ -10,7 +10,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ElegantHeading } from "@/components/ElegantHeading";
-import { CoinHero } from "@/components/CoinHero";
+import { HeroVideo } from "@/components/HeroVideo";
 import { LeadMagnet } from "@/components/LeadMagnet";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
@@ -161,53 +161,62 @@ function Index() {
       <Header />
 
       <main id="contenido" tabIndex={-1} className="flex-1 bg-background">
-        {/* 1. HERO */}
-        <AnimatedSection animation="fade-in-up" delay={0} className="relative z-10">
-          <div className="container mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 lg:grid-cols-[1fr_auto] lg:py-20">
-            <div className="max-w-2xl">
-              <ElegantHeading
-                as="h1"
-                className="mb-6 text-[length:var(--heading-text-size)] sm:text-[length:var(--heading-text-size-md)] md:text-[length:var(--heading-text-size-md)]"
+        {/* 1. HERO — video de fondo full-bleed (capas: video z-0, velo z-10,
+            contenido z-20). Sin mascara circular ni columna adyacente. */}
+        <AnimatedSection
+          animation="fade-in-up"
+          delay={0}
+          className="relative z-10 flex min-h-[85vh] items-center overflow-hidden bg-slate-950 py-0 md:py-0 lg:py-0"
+        >
+          {/* 1.1 Video de fondo: cubre toda la seccion, sin bordes */}
+          <HeroVideo />
+
+          {/* 1.2 Velo oscuro: contraste del texto blanco sobre el video */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-10 bg-slate-950/80 backdrop-blur-[1px]"
+          />
+
+          {/* 1.3 Contenido flotante */}
+          <div className="relative z-20 mx-auto w-full max-w-4xl px-6 py-20">
+            <ElegantHeading
+              as="h1"
+              className="mb-6 text-white text-[length:var(--heading-text-size)] sm:text-[length:var(--heading-text-size-md)] md:text-[length:var(--heading-text-size-md)]"
+            >
+              Tu ruta de aprendizaje paso a paso desde{" "}
+              <span className="italic">conceptos básicos</span> hasta{" "}
+              <span className="italic">análisis on-chain avanzado</span>
+            </ElegantHeading>
+
+            <p className="mb-8 max-w-2xl text-lg text-slate-300">
+              Domina criptomonedas, blockchain, DeFi y seguridad con {totalTemas}{" "}
+              temas en 5 niveles progresivos. Sin influencers, sin promesas,
+              solo educación real.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#recursos-csv"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[hsl(var(--primary-dark))]"
               >
-                Tu ruta de aprendizaje paso a paso
-                <span className="italic text-[var(--muted-foreground)]">
-                  {" "}
-                  desde conceptos básicos hasta análisis on-chain avanzado
-                </span>
-              </ElegantHeading>
-
-              <p className="mb-8 max-w-2xl text-lg text-[var(--muted-foreground)]">
-                Domina criptomonedas, blockchain, DeFi y seguridad con {totalTemas}{" "}
-                temas en 5 niveles progresivos. Sin influencers, sin promesas,
-                solo educación real.
-              </p>
-
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="#recursos-csv"
-                  className="inline-flex items-center justify-center rounded-full bg-[var(--primary)] px-7 py-3 text-base font-bold text-[var(--primary-foreground)] transition-colors hover:bg-[var(--primary-dark)]"
-                >
-                  Empezar Gratis — Nivel 1
-                </a>
-                <a
-                  href="#recursos-csv"
-                  className="inline-flex items-center justify-center rounded-full border border-[var(--border)] px-7 py-3 text-base font-medium text-[var(--muted-foreground)] transition-colors hover:border-[var(--primary)]"
-                >
-                  Ver Temario y Recursos CSV
-                </a>
-              </div>
-
-              <p className="mt-6 text-sm text-[var(--muted-foreground)]">
-                Las {totalTemas} lecciones son públicas y sin registro. Empieza
-                por el{" "}
-                <Link to="/nivel-1-principiante" className="underline underline-offset-4">
-                  Nivel 1
-                </Link>{" "}
-                o descarga las plantillas de abajo.
-              </p>
+                Empezar Gratis — Nivel 1
+              </a>
+              <a
+                href="#recursos-csv"
+                className="inline-flex items-center justify-center rounded-full border border-white/40 px-7 py-3 text-base font-medium text-slate-200 transition-colors hover:border-white hover:text-white"
+              >
+                Ver Temario y Recursos CSV
+              </a>
             </div>
 
-            <CoinHero />
+            <p className="mt-6 text-sm text-slate-300/90">
+              Las {totalTemas} lecciones son públicas y sin registro. Empieza
+              por el{" "}
+              <Link to="/nivel-1-principiante" className="underline underline-offset-4">
+                Nivel 1
+              </Link>{" "}
+              o descarga las plantillas de abajo.
+            </p>
           </div>
         </AnimatedSection>
 
