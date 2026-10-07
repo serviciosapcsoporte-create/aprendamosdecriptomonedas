@@ -27,7 +27,7 @@ function BotonCurso({ curso }: { curso: CursoRecomendado }) {
       href={curso.linkVentas}
       target="_blank"
       rel={REL_AFILIADO}
-      className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-150 ease-out hover:brightness-110 active:scale-[0.97]"
+      className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-[transform,filter] duration-150 ease-out hover-hover:hover:brightness-110 active:scale-[0.97]"
     >
       {curso.cta}
       <span aria-hidden="true">→</span>

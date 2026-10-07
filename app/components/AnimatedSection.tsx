@@ -89,7 +89,7 @@ export const AnimatedSection = ({
       id={id}
       data-anim={animation}
       data-visible={visible ? "true" : "false"}
-      style={{ "--anim-delay": `${Math.min(delay, 2)}s` } as React.CSSProperties}
+      style={{ "--anim-delay": `${Math.min(delay, 0.15)}s` } as React.CSSProperties}
       className={cn("anim-section py-12 md:py-16 lg:py-20", className)}
     >
       {children}

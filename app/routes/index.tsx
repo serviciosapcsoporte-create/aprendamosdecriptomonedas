@@ -142,7 +142,7 @@ function FAQSection() {
                   +
                 </span>
               </summary>
-              <p className="px-5 pb-5 text-muted-foreground">{f.a}</p>
+              <p className="faq-answer px-5 pb-5 text-muted-foreground">{f.a}</p>
             </details>
           ))}
         </div>
@@ -224,7 +224,7 @@ function Index() {
         <LeadMagnet />
 
         {/* 3. RUTA DE FORMACION */}
-        <AnimatedSection animation="fade-in-up" delay={0.2} className="relative z-10 scroll-mt-24" id="curriculum">
+        <AnimatedSection animation="fade-in-up" className="relative z-10 scroll-mt-24" id="curriculum">
           <div className="container mx-auto max-w-6xl px-4 py-16">
             <ElegantHeading
               as="h2"
@@ -264,7 +264,7 @@ function Index() {
         </AnimatedSection>
 
         {/* 4. RECURSOS */}
-        <AnimatedSection animation="fade-in-up" delay={0.4} className="relative z-10">
+        <AnimatedSection animation="fade-in-up" className="relative z-10">
           <div className="bg-navy py-16 dark:bg-navy-dark">
             <div className="container mx-auto max-w-6xl px-4">
               <ElegantHeading

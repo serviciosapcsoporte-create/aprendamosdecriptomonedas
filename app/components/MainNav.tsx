@@ -56,7 +56,7 @@ export function MainNav() {
             </Link>
 
             {item.children && (
-              <div className="invisible absolute left-0 top-full z-50 w-64 rounded-b-md bg-popover px-2 pb-2 pt-3 opacity-0 shadow-lg ring-1 ring-border transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="invisible absolute left-0 top-full z-50 w-64 origin-top rounded-b-md bg-popover px-2 pb-2 pt-3 opacity-0 shadow-lg ring-1 ring-border transition-[opacity,transform,visibility] duration-150 -translate-y-1 hover-hover:group-hover:visible hover-hover:group-hover:translate-y-0 hover-hover:group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 {item.children.map((child) => (
                   <div key={child.href ?? child.title} className="mb-1">
                     {child.children ? (
@@ -122,8 +122,19 @@ export function MainNav() {
       {/* Panel móvil */}
       <div
         id="nav-movil"
-        hidden={!open}
-        className="absolute left-0 right-0 top-full border-b bg-background shadow-lg md:hidden"
+        ref={(el) => {
+          if (el) {
+            if (open) {
+              el.removeAttribute("inert");
+            } else {
+              el.setAttribute("inert", "");
+            }
+          }
+        }}
+        className={cn(
+          "absolute left-0 right-0 top-full border-b bg-background shadow-lg md:hidden transition-[opacity,transform,visibility] duration-150",
+          open ? "visible opacity-100" : "invisible opacity-0 -translate-y-1"
+        )}
       >
         <nav aria-label="Principal móvil" className="container mx-auto py-3">
           <ul className="space-y-1">

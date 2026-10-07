@@ -227,4 +227,53 @@ body {
   html {
     scroll-behavior: auto !important;
   }
+
+  /* Spinners: pulso de opacity en vez de rotacion (sin movimiento) */
+  .animate-spin {
+    animation: spin-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes spin-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Base UI Dialog: entrada con @starting-style (fade + leve rise).
+   El banner (modal={false}) y el panel de preferencias comparten
+   [data-base-ui-focusable]; el backdrop usa [data-base-ui-inert]. */
+[data-base-ui-inert] {
+  transition: opacity 200ms ease-out;
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+[data-base-ui-focusable] {
+  transition:
+    opacity 200ms ease-out,
+    transform 200ms ease-out;
+  @starting-style {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* FAQ: la respuesta hace fade sincronizado con el rotate del "+". */
+details[open] .faq-answer {
+  animation: faq-in 150ms ease-out;
+}
+
+@keyframes faq-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -137,7 +137,7 @@ function NoticiasPage() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-lg border bg-card overflow-hidden transition duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                className="group block rounded-lg border bg-card overflow-hidden transition duration-200 hover-hover:hover:-translate-y-0.5 hover:shadow-md"
               >
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">

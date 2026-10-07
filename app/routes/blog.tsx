@@ -56,7 +56,7 @@ function BlogPage() {
                   to={`/blog/${post.id}`}
                   className="group block"
                 >
-                  <div className="flex flex-col h-full bg-card rounded-lg border overflow-hidden transition-transform group-hover:-translate-y-1">
+                  <div className="flex flex-col h-full bg-card rounded-lg border overflow-hidden transition-transform hover-hover:group-hover:-translate-y-1">
                     <div className="aspect-video bg-muted overflow-hidden">
                       <img
                         src={post.image}

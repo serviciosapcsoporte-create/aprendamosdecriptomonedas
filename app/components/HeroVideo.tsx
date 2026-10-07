@@ -14,6 +14,21 @@
  * iOS lo saque a pantalla completa.
  */
 export function HeroVideo() {
+  const reduced =
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduced) {
+    return (
+      <img
+        src="/hero/moneda-poster.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-[30%_50%]"
+      />
+    );
+  }
+
   return (
     <video
       className="absolute inset-0 z-0 h-full w-full object-cover object-[30%_50%]"
