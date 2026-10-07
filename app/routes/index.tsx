@@ -131,18 +131,18 @@ function FAQSection() {
           {FAQ.map((f) => (
             <details
               key={f.q}
-              className="group rounded-lg border border-[var(--border)] bg-[var(--card)] dark:bg-[var(--card-dark)]"
+              className="group rounded-lg border border-border bg-card dark:bg-card-dark"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-base font-semibold [&::-webkit-details-marker]:hidden">
                 <h3 className="text-base font-bold">{f.q}</h3>
                 <span
                   aria-hidden="true"
-                  className="shrink-0 text-xl text-[var(--primary)] transition-transform group-open:rotate-45"
+                  className="shrink-0 text-xl text-primary transition-transform group-open:rotate-45"
                 >
                   +
                 </span>
               </summary>
-              <p className="px-5 pb-5 text-[var(--muted-foreground)]">{f.a}</p>
+              <p className="px-5 pb-5 text-muted-foreground">{f.a}</p>
             </details>
           ))}
         </div>
@@ -197,7 +197,7 @@ function Index() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#recursos-csv"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-[hsl(var(--primary-dark))]"
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
               >
                 Empezar Gratis — Nivel 1
               </a>
@@ -238,23 +238,23 @@ function Index() {
                 <Link
                   key={nivel.href}
                   to={nivel.href}
-                  className="block rounded-xl border border-[var(--border)] bg-[var(--card)] p-6 transition-shadow hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)] dark:bg-[var(--card-dark)]"
+                  className="block rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:bg-card-dark"
                 >
                   <div className="mb-4 flex items-start gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary">
                       <span className="text-sm font-bold text-white">{nivel.n}</span>
                     </div>
                     <div>
                       <ElegantHeading as="h3" className="mb-1 text-[length:var(--heading-text-size-sm)]">
                         {nivel.titulo}{" "}
-                        <span className="text-sm font-normal text-[var(--muted-foreground)]">
+                        <span className="text-sm font-normal text-muted-foreground">
                           ({nivel.etiqueta})
                         </span>
                       </ElegantHeading>
-                      <p className="text-sm text-[var(--muted-foreground)]">{nivel.desc}</p>
+                      <p className="text-sm text-muted-foreground">{nivel.desc}</p>
                     </div>
                   </div>
-                  <p className="text-sm text-[var(--muted-foreground)]">
+                  <p className="text-sm text-muted-foreground">
                     {nivel.temas} temas
                   </p>
                 </Link>
@@ -265,7 +265,7 @@ function Index() {
 
         {/* 4. RECURSOS */}
         <AnimatedSection animation="fade-in-up" delay={0.4} className="relative z-10">
-          <div className="bg-[var(--navy)] py-16 dark:bg-[var(--navy-dark)]">
+          <div className="bg-navy py-16 dark:bg-navy-dark">
             <div className="container mx-auto max-w-6xl px-4">
               <ElegantHeading
                 as="h2"
@@ -273,23 +273,23 @@ function Index() {
               >
                 Recursos descargables en CSV y plantillas prácticas
               </ElegantHeading>
-              <h3 className="mb-4 max-w-3xl text-lg font-bold text-[var(--earth-50)]">
+              <h3 className="mb-4 max-w-3xl text-lg font-bold text-earth-50">
                 Bases de datos en CSV para análisis cuantitativo cripto
               </h3>
-              <p className="mb-8 max-w-3xl text-[var(--muted-foreground)]">
+              <p className="mb-8 max-w-3xl text-muted-foreground">
                 Esquemas listos para auditorías, seguimiento de wallets y métricas
                 de red. Más las guías en PDF de los niveles 3, 4 y 5.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/recursos"
-                  className="inline-flex items-center justify-center rounded-md bg-[var(--earth-500)] px-6 py-3 text-base font-medium text-[var(--earth-950)] transition-colors hover:bg-[var(--earth-400)]"
+                  className="inline-flex items-center justify-center rounded-md bg-earth-500 px-6 py-3 text-base font-medium text-earth-950 transition-colors hover:bg-earth-400"
                 >
                   Explorar todos los recursos
                 </Link>
                 <Link
                   to="/blog"
-                  className="inline-flex items-center justify-center rounded-md border border-[var(--border)] px-6 py-3 text-base font-medium text-[var(--muted-foreground)] transition-colors hover:border-[var(--primary)]"
+                  className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-base font-medium text-muted-foreground transition-colors hover:border-primary"
                 >
                   Leer el blog
                 </Link>

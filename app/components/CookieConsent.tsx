@@ -198,7 +198,7 @@ export function CookieConsent() {
                         type="checkbox"
                         checked={analitica}
                         onChange={(e) => setAnalitica(e.target.checked)}
-                        className="h-5 w-5 rounded border-input accent-[var(--primary)]"
+                        className="h-5 w-5 rounded border-input accent-primary"
                       />
                     </label>
                   </div>

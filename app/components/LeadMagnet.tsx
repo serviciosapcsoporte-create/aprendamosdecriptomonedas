@@ -57,7 +57,7 @@ export function LeadMagnet() {
     <section
       id="recursos-csv"
       aria-labelledby="leadmagnet-titulo"
-      className="relative z-10 scroll-mt-24 border-y border-[var(--border)] bg-[var(--card)] dark:bg-[var(--card-dark)]"
+      className="relative z-10 scroll-mt-24 border-y border-border bg-card dark:bg-card-dark"
     >
       <div className="container mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-10 lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-start">
@@ -69,7 +69,7 @@ export function LeadMagnet() {
             >
               Descarga plantillas de análisis on-chain y datasets en CSV
             </ElegantHeading>
-            <p className="mb-6 max-w-2xl text-[var(--muted-foreground)]">
+            <p className="mb-6 max-w-2xl text-muted-foreground">
               Obtén gratis nuestras guías prácticas, checklists de seguridad y
               plantillas en formato CSV para rastreo de transacciones y métricas
               en la cadena. Ábrelas en Excel, Numbers o pandas sin tocar nada.
@@ -81,15 +81,15 @@ export function LeadMagnet() {
                   <a
                     href={c.archivo}
                     download
-                    className="flex h-full items-start gap-3 rounded-lg border border-[var(--border)] p-4 transition-colors hover:border-[var(--primary)]"
+                    className="flex h-full items-start gap-3 rounded-lg border border-border p-4 transition-colors hover:border-primary"
                   >
                     <FileSpreadsheet
-                      className="mt-0.5 h-5 w-5 shrink-0 text-[var(--primary)]"
+                      className="mt-0.5 h-5 w-5 shrink-0 text-primary"
                       aria-hidden="true"
                     />
                     <span>
                       <span className="block text-sm font-semibold">{c.nombre}</span>
-                      <span className="mt-1 block text-xs text-[var(--muted-foreground)]">
+                      <span className="mt-1 block text-xs text-muted-foreground">
                         {c.para}
                       </span>
                     </span>
@@ -98,30 +98,30 @@ export function LeadMagnet() {
               ))}
             </ul>
 
-            <p className="text-xs text-[var(--muted-foreground)]">
+            <p className="text-xs text-muted-foreground">
               Son plantillas con su esquema y un ejemplo marcado como ejemplo. No
               son datos de mercado: los números de una decisión los sacas de tu
               propia wallet, no de una tabla que te dé un desconocido.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--background)] p-6">
+          <div className="rounded-2xl border border-border bg-background p-6">
             {!hayEndpoint ? (
               <>
                 <h3 className="mb-2 text-lg font-bold">Descargas directas</h3>
-                <p className="mb-4 text-sm text-[var(--muted-foreground)]">
+                <p className="mb-4 text-sm text-muted-foreground">
                   La captura por correo todavía no está conectada. Mientras tanto
                   los cinco CSV se descargan sin dejar ningún dato.
                 </p>
                 <a
                   href={CSVS[0].archivo}
                   download
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-bold text-[var(--primary-foreground)] transition-colors hover:bg-[var(--primary-dark)]"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
                 >
                   <Download className="h-4 w-4" aria-hidden="true" />
                   Descargar el paquete CSV
                 </a>
-                <p className="mt-4 text-xs text-[var(--muted-foreground)]">
+                <p className="mt-4 text-xs text-muted-foreground">
                   Si prefieres que te los mandemos por correo,{" "}
                   <a href="https://t.me/ApcDeCripto" className="underline underline-offset-2">
                     escríbenos por Telegram
@@ -132,7 +132,7 @@ export function LeadMagnet() {
             ) : estado.fase === "listo" ? (
               <>
                 <h3 className="mb-2 text-lg font-bold">Listo, {nombre.trim()}</h3>
-                <p className="mb-4 text-sm text-[var(--muted-foreground)]">
+                <p className="mb-4 text-sm text-muted-foreground">
                   Te mandamos los cinco CSV a{" "}
                   <strong className="text-foreground">{email.trim()}</strong>. Si
                   no te llegan en un par de horas, revisa la carpeta de spam.
@@ -155,7 +155,7 @@ export function LeadMagnet() {
             ) : (
               <form onSubmit={enviar} noValidate>
                 <h3 className="mb-2 text-lg font-bold">Te los mandamos por correo</h3>
-                <p className="mb-5 text-sm text-[var(--muted-foreground)]">
+                <p className="mb-5 text-sm text-muted-foreground">
                   Dos campos, sin registro y sin contraseña. Solo se usan para
                   enviarte esto.
                 </p>
@@ -174,10 +174,10 @@ export function LeadMagnet() {
                       onChange={(e) => setNombre(e.target.value)}
                       aria-invalid={errores.nombre ? "true" : "false"}
                       aria-describedby={errores.nombre ? "lead-nombre-err" : undefined}
-                      className="w-full rounded-lg border border-[var(--input)] bg-[var(--background)] px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+                      className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     />
                     {errores.nombre && (
-                      <p id="lead-nombre-err" className="mt-1 text-xs text-[var(--danger)]">
+                      <p id="lead-nombre-err" className="mt-1 text-xs text-danger">
                         {errores.nombre}
                       </p>
                     )}
@@ -196,21 +196,21 @@ export function LeadMagnet() {
                       onChange={(e) => setEmail(e.target.value)}
                       aria-invalid={errores.email ? "true" : "false"}
                       aria-describedby={errores.email ? "lead-email-err" : undefined}
-                      className="w-full rounded-lg border border-[var(--input)] bg-[var(--background)] px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
+                      className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     />
                     {errores.email && (
-                      <p id="lead-email-err" className="mt-1 text-xs text-[var(--danger)]">
+                      <p id="lead-email-err" className="mt-1 text-xs text-danger">
                         {errores.email}
                       </p>
                     )}
                   </div>
 
-                  <label className="flex items-start gap-2 text-xs text-[var(--muted-foreground)]">
+                  <label className="flex items-start gap-2 text-xs text-muted-foreground">
                     <input
                       type="checkbox"
                       checked={aceptaCorreo}
                       onChange={(e) => setAceptaCorreo(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 rounded border-[var(--input)] accent-[var(--primary)]"
+                      className="mt-0.5 h-4 w-4 rounded border-input accent-primary"
                     />
                     <span>
                       También quiero recibir avisos cuando publiquemos una lección
@@ -219,7 +219,7 @@ export function LeadMagnet() {
                   </label>
 
                   {estado.fase === "fallo" && (
-                    <p role="alert" className="text-sm text-[var(--danger)]">
+                    <p role="alert" className="text-sm text-danger">
                       {estado.detalle === "sin-configurar"
                         ? "La captura no está activa. Usa los enlaces de descarga de al lado."
                         : `No pudimos enviarlo (${estado.detalle}). Puedes descargar los CSV directamente.`}
@@ -229,7 +229,7 @@ export function LeadMagnet() {
                   <button
                     type="submit"
                     disabled={estado.fase === "enviando"}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[var(--primary)] px-5 py-3 text-sm font-bold text-[var(--primary-foreground)] transition-colors hover:bg-[var(--primary-dark)] disabled:opacity-60"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark disabled:opacity-60"
                   >
                     {estado.fase === "enviando" ? (
                       <>
@@ -244,7 +244,7 @@ export function LeadMagnet() {
                     )}
                   </button>
 
-                  <p className="text-xs leading-relaxed text-[var(--muted-foreground)]">
+                  <p className="text-xs leading-relaxed text-muted-foreground">
                     Guardamos nombre y correo para enviarte los recursos. No
                     vendemos ni cedemos tus datos, y no hay publicidad. Puedes
                     pedir su eliminación cuando quieras desde la{" "}
