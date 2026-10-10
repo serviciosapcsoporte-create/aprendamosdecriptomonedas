@@ -163,6 +163,11 @@ if (existsSync(assets)) {
   }
 
   for (const f of files) {
+    // Carpetas = recursos estaticos que vienen de public/ (hoy public/assets/3d
+    // con los renders 3D). Vite los copia tal cual a dist/, asi que landings
+    // dentro de dist/assets/ y jamas son bundles huerfanos: borrarlos dejaba
+    // la landing entera sin imagenes y rompia el build con ERR_FS_EISDIR.
+    if (statSync(resolve(assets, f)).isDirectory()) continue;
     if (!keep.has(f)) {
       rmSync(resolve(assets, f));
       console.log(`[postbuild] asset huerfano eliminado: ${f}`);
