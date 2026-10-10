@@ -1,11 +1,33 @@
 // @ts-nocheck
-import { createFileRoute } from "@tanstack/react-router";
+/**
+ * Landing del Nivel 1: hero con progreso + grilla de tarjetas por bloque +
+ * banners intercalados.
+ *
+ * Que cambia respecto a la version de solo texto:
+ *   - Cada leccion es una LessonCard con portada, minutos de lectura y estado
+ *     ([✓ Completado] / [▶ Continuar]). El estado sale de app/lib/progreso.ts.
+ *   - Un banner de recomendacion de Hotmart y otro de descarga del recurso
+ *     propio se intercalan cada 3-4 lecciones: quien recorre una grilla de 15
+ *     tarjetas seguidas sin un corte abandona a la mitad.
+ *   - El hero ofrece "Continuar desde donde te quedaste".
+ *
+ * El flujo se arma como lista plana y no seccion por seccion porque el banner
+ * va DESPUES de la leccion 4, dentro del primer bloque: agrupar por secciones
+ * obligaria a mover el corte al final del bloque y quedaria a 7 de distancia.
+ */
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
-import { Link } from "@tanstack/react-router";
-import { navItems } from "@/lib/nav-items";
-
-import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { AffiliateCta } from "@/components/AffiliateCta";
+import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
+import { LessonCard } from "@/components/LessonCard";
+import { NivelHero } from "@/components/NivelHero";
+import { RecursoLeadBanner } from "@/components/RecursoLeadBanner";
+import { curriculumData } from "@/data/curriculum";
+import { miniaturaDe } from "@/data/thumbnails";
+import { borrarTodo, minutosLectura, resumenDe, useProgreso } from "@/lib/progreso";
+import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
+
 export const Route = createFileRoute("/nivel-1-principiante")({
   component: Nivel1Page,
   head: () => ({
@@ -24,89 +46,130 @@ export const Route = createFileRoute("/nivel-1-principiante")({
   }),
 });
 
+/** Se inserta un banner al terminar la leccion con este numero. */
+const CORTES = [
+  { alTerminar: 4, tipo: "hotmart", indiceCurso: 0 },
+  { alTerminar: 11, tipo: "recurso" },
+];
+
 function Nivel1Page() {
-  const nivel1 = navItems.find((n) => n.href === "/nivel-1-principiante");
-  const sections = nivel1?.children || [];
+  const nivel = curriculumData["nivel-1"];
+  const { progreso } = useProgreso();
+
+  // Flujo plano: titulo de bloque, lecciones y banners, en orden de lectura.
+  const claves = nivel.sections.flatMap((s) => s.topics.map((t) => `nivel-1/${t.slug}`));
+  const resumen = resumenDe(claves, progreso);
+
+  const items = [];
+  let numero = 0;
+  nivel.sections.forEach((s, i) => {
+    items.push({ tipo: "bloque", titulo: s.title, key: `bloque-${i}` });
+    for (const topic of s.topics) {
+      numero += 1;
+      items.push({ tipo: "leccion", topic, numero, key: `lec-${topic.slug}` });
+      const corte = CORTES.find((c) => c.alTerminar === numero);
+      if (corte) items.push({ tipo: "banner", corte, key: `banner-${numero}` });
+    }
+  });
 
   return (
     <>
       <Header />
-      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <span className="text-3xl font-bold text-warning mb-2 block">NIVEL 1</span>
-          <h1 className="text-2xl md:text-3xl font-bold mb-4">Principiante</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Objetivo: que cualquier persona entienda lo esencial y pueda entrar
-            al ecosistema sin riesgos. Todo el contenido del Nivel 1 es completamente gratis.
-          </p>
-        </div>
+      <main id="contenido" tabIndex={-1} className="flex-1 bg-background">
+        <div className="container mx-auto max-w-6xl px-4 py-12">
+          <NivelHero
+            nivel="1"
+            titulo="Nivel 1 — Principiante"
+            badge="Nivel 1"
+            objetivo="Que cualquier persona entienda lo esencial y pueda entrar al ecosistema cripto sin riesgos. Todo este nivel es gratis y no pide registro."
+            resumen={resumen}
+            hrefSiguiente={
+              resumen.siguiente ? `/nivel-1/${resumen.siguiente.split("/")[1]}` : null
+            }
+            permitirReiniciar
+            onReiniciar={borrarTodo}
+          />
 
-        {sections.map((section) => (
-          <div key={section.href} className="mb-12">
-            <h2 className="text-xl font-bold mb-4 pb-2 border-b border-border">{section.title}</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {section.children?.map((topic) => (
+          {/* Una sola rejilla: las cabeceras de bloque y los banners ocupan
+              todas las columnas (col-span-full), asi que rompen la fila sin
+              tener que cerrar y abrir el grid a mano en cada corte. */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((item) => {
+              if (item.tipo === "bloque") {
+                const delBloque = nivel.sections.find((s) => s.title === item.titulo);
+                return (
+                  <header key={item.key} className="col-span-full mt-8 first:mt-0">
+                    <h2 className="font-serif text-2xl font-medium">{item.titulo}</h2>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {delBloque.topics.length} lecciones en este bloque
+                    </p>
+                  </header>
+                );
+              }
+
+              if (item.tipo === "leccion") {
+                return (
+                  <LessonCard
+                    key={item.key}
+                    href={`/nivel-1/${item.topic.slug}`}
+                    numero={item.numero}
+                    titulo={item.topic.title}
+                    descripcion={item.topic.description}
+                    minutos={minutosLectura(item.topic.content)}
+                    miniatura={miniaturaDe("1", item.topic.slug)}
+                    estado={progreso[`nivel-1/${item.topic.slug}`]?.estado ?? null}
+                    tieneVideo={Boolean(item.topic.video)}
+                  />
+                );
+              }
+
+              return item.corte.tipo === "hotmart" ? (
+                <HotmartNativeBanner
+                  key={item.key}
+                  nivel="1"
+                  indice={item.corte.indiceCurso ?? 0}
+                  className="col-span-full my-4"
+                />
+              ) : (
+                <RecursoLeadBanner
+                  key={item.key}
+                  titulo="Checklist de supervivencia cripto"
+                  descripcion="La lista que se revisa antes de firmar, antes de conectar una wallet y antes de mover fondos. Lectura de 5 minutos, sin registro."
+                  formato="Guia"
+                  href="/recursos/checklist-supervivencia-cripto"
+                  className="col-span-full my-4"
+                />
+              );
+            })}
+          </div>
+
+          <AnimatedSection animation="fade-in-up" className="relative z-10 mt-16">
+            <div className="rounded-2xl border border-border bg-card p-6 text-center dark:bg-card-dark">
+              <h3 className="mb-2 text-lg font-bold">Guías gratuitas</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
+                Refuerza tu aprendizaje con nuestras guías de seguridad y control.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
                 <Link
-                  key={topic.href}
-                  to={topic.href}
-                  className="group p-4 rounded-lg border bg-card hover:shadow-md transition-shadow"
+                  to="/recursos/el-escudo-de-5-minutos"
+                  className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
                 >
-                  <h3 className="font-semibold text-foreground group-hover:text-primary mb-1">
-                    {topic.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {getTopicDescription(topic.href)}
-                  </p>
+                  El Escudo de 5 minutos (GRATIS)
                 </Link>
-              ))}
+                <Link
+                  to="/recursos/checklist-supervivencia-cripto"
+                  className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
+                >
+                  Checklist de Supervivencia Cripto (GRATIS)
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          </AnimatedSection>
 
-                <div className="mt-16 bg-gradient-to-r from-warning/10 to-warning/15 dark:from-warning/10 dark:to-warning/5 rounded-xl p-6 text-center">
-          <h3 className="text-xl font-bold mb-2">Guías gratuitas</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Refuerza tu aprendizaje con nuestras guías de seguridad y control.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="/recursos/el-escudo-de-5-minutos"
-              className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
-            >
-              El Escudo de 5 minutos (GRATIS)
-            </a>
-            <a
-              href="/recursos/checklist-supervivencia-cripto"
-              className="inline-flex items-center justify-center rounded-md bg-warning px-4 py-2 text-sm font-medium text-navy hover:bg-warning/70"
-            >
-              Checklist de Supervivencia Cripto (GRATIS)
-            </a>
-          </div>
+          <AffiliateCta nivel="1" />
         </div>
-        <AffiliateCta nivel="1" />
       </main>
       <Footer />
     </>
   );
-}
-
-function getTopicDescription(href: string): string {
-  const descriptions: Record<string, string> = {
-    "/nivel-1/que-es-blockchain": "Entiende qué es una cadena de bloques y por qué es revolucionaria.",
-    "/nivel-1/como-funciona-un-bloque": "Aprende cómo se estructura un bloque y cómo se enlazan entre sí.",
-    "/nivel-1/mineria-validacion": "Descubre cómo se validan las transacciones y se crean nuevos bloques.",
-    "/nivel-1/wallets": "Hot, cold, custodial y non-custodial. Elige la opción correcta para ti.",
-    "/nivel-1/claves-publicas-privadas": "Entiende la diferencia entre claves públicas y privadas.",
-    "/nivel-1/transacciones-fees": "Cómo funcionan las transacciones y por qué hay fees.",
-    "/nivel-1/que-es-token-cripto": "¿Qué diferencia hay entre un token y una criptomoneda?",
-    "/nivel-1/buenas-practicas": "Protege tus fondos con estas reglas básicas de seguridad.",
-    "/nivel-1/evitar-estafas": "Cómo reconocer estafas comunes y protegerte.",
-    "/nivel-1/cex-vs-dex": "Diferencias entre exchanges centralizados y descentralizados.",
-    "/nivel-1/seed-phrase-backups": "Cómo respaldar tu seed phrase y por qué es crítico.",
-    "/nivel-1/crear-wallet": "Guía paso a paso para crear tu primera wallet.",
-    "/nivel-1/hacer-transaccion": "Cómo enviar y recibir criptomonedas de forma segura.",
-    "/nivel-1/entender-red": "EVM vs redes no EVM: qué necesitas saber.",
-    "/nivel-1/leer-transaccion-explorer": "Cómo interpretar una transacción en un explorador de bloques.",
-  };
-  return descriptions[href] || "Contenido educativo sobre criptomonedas.";
 }

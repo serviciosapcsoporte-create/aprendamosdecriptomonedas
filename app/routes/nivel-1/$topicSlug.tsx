@@ -1,9 +1,12 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { Markdown } from "@/components/Markdown";
 import { VideoLeccion } from "@/components/VideoLeccion";
+import { FinLeccion } from "@/components/FinLeccion";
+import { registrarEnCurso } from "@/lib/progreso";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -92,6 +95,14 @@ function TopicPage() {
   const prevTopic = getPrevTopic(topic);
   const nextTopic = getNextTopic(topic);
   const badge = badgeMap[topic.badge || "free"];
+  const clave = `nivel-1/${topic.slug}`;
+
+  // Abrir la leccion la deja "en curso". Solo en el navegador: el prerender
+  // corre en Node y no tiene localStorage. El avance lo confirma el boton del
+  // final, no la visita.
+  useEffect(() => {
+    registrarEnCurso(clave);
+  }, [clave]);
 
   return (
     <>
@@ -161,20 +172,13 @@ function TopicPage() {
           )}
         </article>
 
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between p-6 bg-card rounded-lg border">
-          {prevTopic && (
-            <Link to={`/${levelPrefix}/${prevTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">
-              Anterior: {prevTopic.title}
-            </Link>
-          )}
-          {nextTopic && (
-            <Link to={`/${levelPrefix}/${nextTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-              Siguiente: {nextTopic.title}
-            </Link>
-          )}
-        </div>
+        <FinLeccion
+          clave={clave}
+          hrefAnterior={prevTopic ? `/${levelPrefix}/${prevTopic.slug}` : null}
+          tituloAnterior={prevTopic?.title ?? null}
+          hrefSiguiente={nextTopic ? `/${levelPrefix}/${nextTopic.slug}` : null}
+          tituloSiguiente={nextTopic?.title ?? null}
+        />
       </main>
       <Footer />
     </>
