@@ -1,9 +1,13 @@
 // @ts-nocheck
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { Markdown } from "@/components/Markdown";
 import { VideoLeccion } from "@/components/VideoLeccion";
+import { FinLeccion } from "@/components/FinLeccion";
+import { iconoDe } from "@/components/icons";
+import { registrarEnCurso } from "@/lib/progreso";
 
 const levelMap: Record<string, string> = {
   "1": "principiante",
@@ -73,6 +77,19 @@ function TopicPage() {
   const { topicSlug } = Route.useParams();
   const level = "2";
   const topic = findTopic(topicSlug, level);
+  // Antes del return temprano: React exige el mismo numero de hooks en cada
+  // render, y el caso "tema no encontrado" tambien los ejecuta.
+  // Abrir la leccion la deja "en curso". Solo en el navegador: el prerender
+  // corre en Node y no tiene localStorage. El avance lo confirma el boton del
+  // final, no la visita.
+  // Una sola clave para el useEffect y para <FinLeccion>. Se calcula antes
+  // del return temprano y queda vacia si no hay tema.
+  const clave = topic ? `nivel-${level}/${topic.slug}` : "";
+
+  useEffect(() => {
+    if (clave) registrarEnCurso(clave);
+  }, [clave]);
+
   const levelPrefix = `nivel-${level}`;
   const suffix = levelMap[level];
 
@@ -92,7 +109,6 @@ function TopicPage() {
   const prevTopic = getPrevTopic(topic);
   const nextTopic = getNextTopic(topic);
   const badge = badgeMap[topic.badge || "free"];
-
   return (
     <>
       <Header />
@@ -111,7 +127,10 @@ function TopicPage() {
         <article className="prose dark:prose-invert max-w-none">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 bg-warning/15 dark:bg-warning/30 rounded-lg">
-              {topic.icon}
+              {(() => {
+                const Icono = iconoDe(topic.icon);
+                return <Icono className="h-5 w-5" aria-hidden="true" />;
+              })()}
             </div>
             <h1 className="text-3xl font-bold mb-0">{topic.title}</h1>
           </div>
@@ -161,20 +180,13 @@ function TopicPage() {
           )}
         </article>
 
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between p-6 bg-card rounded-lg border">
-          {prevTopic && (
-            <Link to={`/${levelPrefix}/${prevTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">
-              Anterior: {prevTopic.title}
-            </Link>
-          )}
-          {nextTopic && (
-            <Link to={`/${levelPrefix}/${nextTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-              Siguiente: {nextTopic.title}
-            </Link>
-          )}
-        </div>
+        <FinLeccion
+          clave={clave}
+          hrefAnterior={prevTopic ? `/${levelPrefix}/${prevTopic.slug}` : null}
+          tituloAnterior={prevTopic?.title ?? null}
+          hrefSiguiente={nextTopic ? `/${levelPrefix}/${nextTopic.slug}` : null}
+          tituloSiguiente={nextTopic?.title ?? null}
+        />
       </main>
       <Footer />
     </>

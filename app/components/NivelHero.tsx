@@ -11,7 +11,7 @@
  * la quinta es lo que hace util el boton.
  */
 import { Link } from "@tanstack/react-router";
-import { CheckCircle2, PlayCircle, RotateCcw, X } from "lucide-react";
+import { BookOpen, CheckCircle2, PlayCircle, RotateCcw, X } from "lucide-react";
 import type { ResumenNivel } from "@/lib/progreso";
 import { NIVEL_ICON, NIVEL_ICON_ALT } from "@/data/assets3d";
 
@@ -26,6 +26,10 @@ interface NivelHeroProps {
   /** Solo en el nivel 1 se ofrece reiniciar: es el que se recorre entero. */
   permitirReiniciar?: boolean;
   onReiniciar?: () => void;
+  /** Pastilla verde de acceso: "100% GRATIS · Sin registro". */
+  etiqueta?: string;
+  /** Resumen de la estructura del nivel: "19 lecciones · 4 módulos técnicos". */
+  resumenTexto?: string;
 }
 
 export function NivelHero({
@@ -37,6 +41,8 @@ export function NivelHero({
   hrefSiguiente,
   permitirReiniciar = false,
   onReiniciar,
+  etiqueta,
+  resumenTexto,
 }: NivelHeroProps) {
   const { completados, total, fraccion, enCurso } = resumen;
   const hayProgreso = completados > 0 || enCurso > 0;
@@ -65,6 +71,20 @@ export function NivelHero({
         <p className="mb-2 text-xs font-bold uppercase tracking-wider text-warning">{badge}</p>
         <h1 className="mb-3 font-serif text-3xl font-medium md:text-4xl">{titulo}</h1>
         <p className="max-w-2xl text-muted-foreground">{objetivo}</p>
+
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          {etiqueta && (
+            <span className="inline-flex items-center rounded-full border border-success/30 bg-success/15 px-3 py-1 text-xs font-bold text-success">
+              {etiqueta}
+            </span>
+          )}
+          {resumenTexto && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+              <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+              {resumenTexto}
+            </span>
+          )}
+        </div>
 
         <div className="mt-6 max-w-2xl">
           <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">

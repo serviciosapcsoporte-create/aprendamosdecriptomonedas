@@ -76,6 +76,19 @@ function TopicPage() {
   const { topicSlug } = Route.useParams();
   const level = "1";
   const topic = findTopic(topicSlug, level);
+  // Antes del return temprano: React exige el mismo numero de hooks en cada
+  // render, y el caso "tema no encontrado" tambien los ejecuta.
+  // Abrir la leccion la deja "en curso". Solo en el navegador: el prerender
+  // corre en Node y no tiene localStorage. El avance lo confirma el boton del
+  // final, no la visita.
+  // Una sola clave para el useEffect y para <FinLeccion>. Se calcula antes
+  // del return temprano y queda vacia si no hay tema.
+  const clave = topic ? `nivel-${level}/${topic.slug}` : "";
+
+  useEffect(() => {
+    if (clave) registrarEnCurso(clave);
+  }, [clave]);
+
   const levelPrefix = `nivel-${level}`;
   const suffix = levelMap[level];
 
@@ -95,15 +108,6 @@ function TopicPage() {
   const prevTopic = getPrevTopic(topic);
   const nextTopic = getNextTopic(topic);
   const badge = badgeMap[topic.badge || "free"];
-  const clave = `nivel-1/${topic.slug}`;
-
-  // Abrir la leccion la deja "en curso". Solo en el navegador: el prerender
-  // corre en Node y no tiene localStorage. El avance lo confirma el boton del
-  // final, no la visita.
-  useEffect(() => {
-    registrarEnCurso(clave);
-  }, [clave]);
-
   return (
     <>
       <Header />

@@ -90,6 +90,87 @@ const NIVEL_1: Record<string, Miniatura> = {
   },
 };
 
+/** Nivel 2: tecnica al principio, DeFi al final. */
+const NIVEL_2: Record<string, Miniatura> = {
+  "funciones-hash": {
+    src: "/assets/3d/banner-analitica-onchain.webp",
+    alt: "Panel 3D con hashes, comisiones y direcciones de una transaccion",
+  },
+  "merkle-trees": {
+    src: "/assets/3d/nivel-2-blockchain.webp",
+    alt: "Nodos 3D conectados formando una estructura jerarquica",
+  },
+  "pow-vs-pos": {
+    src: "/diagrams/block-structure.svg",
+    alt: "Diagrama de como se estructura y se produce un bloque",
+    ajuste: "contain",
+  },
+  "gas-evm": {
+    src: "/assets/3d/banner-portfolio-csv.webp",
+    alt: "Tableta 3D con el coste y el estado de una operacion",
+  },
+  nodos: {
+    src: "/assets/3d/nivel-3-analitica.webp",
+    alt: "Nodos de red observados desde un grafico de analisis",
+  },
+  "que-son-smart-contracts": {
+    src: "/assets/3d/banner-wallets-defi.webp",
+    alt: "Paneles 3D de contratos ejecutandose sin intermediario",
+  },
+  "para-que-sirven": {
+    src: "/assets/3d/mockup-lead-magnet.webp",
+    alt: "Aplicacion 3D funcionando sobre datos de una cartera",
+  },
+  "riesgos-comunes": {
+    src: "/assets/3d/banner-seguridad.webp",
+    alt: "Escudo 3D con senales de alerta sobre un contrato",
+  },
+  oraculos: {
+    src: "/assets/3d/nivel-5-global.webp",
+    alt: "Globo 3D enlazado con la cadena: el mundo exterior alimentando el contrato",
+  },
+  "oferta-demanda": {
+    src: "/assets/3d/nivel-3-analitica.webp",
+    alt: "Grafico 3D de precio con lupa de analisis",
+  },
+  emision: {
+    src: "/assets/3d/banner-portfolio-csv.webp",
+    alt: "Tableta 3D con la distribucion y el calendario de emision de una moneda",
+  },
+  halving: {
+    src: "/assets/3d/banner-ruta-progreso.webp",
+    alt: "Panel 3D de produccion que se reduce a la mitad en cada ciclo",
+  },
+  "quema-de-tokens": {
+    src: "/assets/3d/banner-seguridad.webp",
+    alt: "Escudo 3D con los tokens que salen de la circulacion",
+  },
+  "market-cap": {
+    src: "/assets/3d/banner-analitica-onchain.webp",
+    alt: "Panel 3D de capitalizacion, volumen y liquidez de un activo",
+  },
+  "defi-que-es": {
+    src: "/assets/3d/banner-wallets-defi.webp",
+    alt: "Cartera 3D con las capas de finanzas descentralizadas",
+  },
+  "pools-liquidity": {
+    src: "/assets/3d/banner-portfolio-csv.webp",
+    alt: "Tableta 3D con los pares y las reservas de un pool",
+  },
+  "amm-uniswap": {
+    src: "/assets/3d/mockup-lead-magnet.webp",
+    alt: "Panel 3D de intercambio de activos sin libro de ordenes",
+  },
+  lending: {
+    src: "/assets/3d/nivel-1-wallet.webp",
+    alt: "Cartera 3D con candado: prestamos sobre garantia",
+  },
+  "staking-yield": {
+    src: "/assets/3d/banner-ruta-progreso.webp",
+    alt: "Progreso 3D de un rendimiento que crece con el tiempo",
+  },
+};
+
 /** Niveles 2 a 5 comparten los renders por tema hasta tener los suyos. */
 const POR_NIVEL: Record<string, string> = {
   "1": "/assets/3d/nivel-1-wallet.webp",
@@ -104,7 +185,13 @@ const POR_DEFECTO: Miniatura = {
   alt: "Ilustracion 3D de nodos conectados",
 };
 
+const POR_NIVEL_TEMAS: Record<string, Record<string, Miniatura>> = {
+  "1": NIVEL_1,
+  "2": NIVEL_2,
+};
+
 export function miniaturaDe(nivel: string, slug: string): Miniatura {
-  if (nivel === "1" && NIVEL_1[slug]) return NIVEL_1[slug];
+  const delNivel = POR_NIVEL_TEMAS[nivel];
+  if (delNivel && delNivel[slug]) return delNivel[slug];
   return { ...POR_DEFECTO, src: POR_NIVEL[nivel] ?? POR_DEFECTO.src };
 }

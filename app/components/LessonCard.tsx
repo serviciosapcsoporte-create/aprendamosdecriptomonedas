@@ -12,7 +12,7 @@
  * algo que nadie leyo.
  */
 import { Link } from "@tanstack/react-router";
-import { CheckCircle2, PlayCircle, Timer } from "lucide-react";
+import { ArrowRight, CheckCircle2, PlayCircle, Timer, type LucideIcon } from "lucide-react";
 import type { Miniatura } from "@/data/thumbnails";
 
 interface LessonCardProps {
@@ -26,6 +26,10 @@ interface LessonCardProps {
   numero?: number;
   /** La leccion tiene video grabado (dato real del campo `video` del tema). */
   tieneVideo?: boolean;
+  /** Icono vectorial del tema (lucide), resolvido desde `topic.icon`. */
+  icono?: LucideIcon;
+  /** Texto de la llamada a la accion al pie de la tarjeta. */
+  cta?: string;
 }
 
 function EstadoPill({ estado }: { estado?: "en-curso" | "completado" | null }) {
@@ -61,11 +65,13 @@ export function LessonCard({
   estado,
   numero,
   tieneVideo,
+  icono: Icono,
+  cta = "Ver lección",
 }: LessonCardProps) {
   return (
     <Link
       to={href}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow] duration-200 ease-out hover-hover:-translate-y-0.5 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:bg-card-dark"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow,border-color] duration-200 ease-out hover-hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:bg-card-dark"
     >
       <div className="relative aspect-video overflow-hidden bg-muted">
         <img
@@ -103,17 +109,33 @@ export function LessonCard({
 
       <div className="flex flex-1 flex-col p-5">
         <div className="mb-2 flex items-center justify-between gap-3">
-          {typeof numero === "number" && (
-            <span className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
-              Leccion {numero}
-            </span>
-          )}
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+            {Icono && (
+              <span
+                className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/10 text-primary"
+                aria-hidden="true"
+              >
+                <Icono className="h-3.5 w-3.5" />
+              </span>
+            )}
+            {typeof numero === "number" ? `Lección ${numero}` : null}
+          </span>
           <EstadoPill estado={estado} />
         </div>
         <h3 className="mb-2 font-serif text-lg font-medium leading-snug text-foreground group-hover-hover:text-primary">
           {titulo}
         </h3>
-        <p className="text-sm text-muted-foreground">{descripcion}</p>
+        <p className="mb-4 text-sm text-muted-foreground">{descripcion}</p>
+
+        {/* Llamada a la accion: toda la tarjeta es clicable, esto solo dice
+            que se puede hacer y por donde. */}
+        <span className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-primary">
+          {cta}
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-200 group-hover-hover:translate-x-1"
+            aria-hidden="true"
+          />
+        </span>
       </div>
     </Link>
   );
