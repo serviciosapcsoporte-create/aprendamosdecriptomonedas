@@ -31,6 +31,7 @@ function Nivel3Page() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-12">
+          <img src="/niveles/nivel-3.jpg" alt="Insignia Nivel 3 — Analytics Chart" className="mx-auto mb-4 w-24 h-24 rounded-xl" />
           <span className="text-3xl font-bold text-warning mb-2 block">NIVEL 3</span>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Avanzado</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">
