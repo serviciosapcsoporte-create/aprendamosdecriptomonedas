@@ -1,48 +1,55 @@
 import { Fragment, ReactNode } from "react";
 
+/**
+ * Resuelve el formato en linea: **negrita**, *cursiva*, `codigo` y [enlaces](url).
+ *
+ * SIN ESCAPAR NADA, a proposito.
+ * La version anterior escapaba primero (&, <, >, ", ') y luego imprimia los
+ * trozos como texto de React. React no decodifica entidades en los nodos de
+ * texto, asi que cualquier comilla del contenido salia en pantalla como
+ * &quot; y no como ". Afectaba a decenas de lecciones.
+ *
+ * Tampoco hace falta: React escapa por su cuenta todo lo que se le pasa como
+ * hijo, y aqui no hay ni un solo `dangerouslySetInnerHTML`. El texto de las
+ * lecciones es contenido plano; lo unico que si necesita comprobacion es el
+ * href de los enlaces, que solo acepta protocolo http(s).
+ */
 function renderInline(text: string, key: number): ReactNode {
   const parts: ReactNode[] = [];
-  // Escape HTML entities to prevent XSS - only process trusted formatting tokens
-  const escapedText = text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-  
   const regex = /(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
   let i = 0;
-  while ((match = regex.exec(escapedText)) !== null) {
+  while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(escapedText.slice(lastIndex, match.index));
+      parts.push(text.slice(lastIndex, match.index));
     }
     const token = match[0];
     let node: ReactNode = token;
     if (token.startsWith("**") && token.endsWith("**")) {
-      const inner = token.slice(2, -2).replace(/</g, "<").replace(/>/g, ">");
-      node = <strong dangerouslySetInnerHTML={{ __html: inner }} />;
+      node = <strong>{token.slice(2, -2)}</strong>;
     } else if (token.startsWith("*") && token.endsWith("*")) {
-      const inner = token.slice(1, -1).replace(/</g, "<").replace(/>/g, ">");
-      node = <em dangerouslySetInnerHTML={{ __html: inner }} />;
+      node = <em>{token.slice(1, -1)}</em>;
     } else if (token.startsWith("`")) {
-      const inner = token.slice(1, -1);
-      node = <code><pre>{inner}</pre></code>;
+      node = <code className="inline-code">{token.slice(1, -1)}</code>;
     } else if (token.startsWith("[")) {
       const linkMatch = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(token);
       if (linkMatch) {
-        const linkText = linkMatch[1].replace(/</g, "<").replace(/>/g, ">");
-        const hrefSafe = linkMatch[2].startsWith("http") ? linkMatch[2] : "";
-        node = (
-          <a
-            href={hrefSafe}
-            target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
-            rel={linkMatch[2].startsWith("http") ? "noopener noreferrer" : undefined}
-            className="text-primary hover:underline"
-          >
-            {linkText}
+        // Solo https/http. Cualquier otra cosa (javascript:, data:) se
+        // descarta y se muestra como texto plano.
+        let hrefSeguro = "";
+        try {
+          const u = new URL(linkMatch[2]);
+          if (u.protocol === "https:" || u.protocol === "http:") hrefSeguro = u.href;
+        } catch {
+          hrefSeguro = "";
+        }
+        node = hrefSeguro ? (
+          <a href={hrefSeguro} target="_blank" rel="noopener noreferrer">
+            {linkMatch[1]}
           </a>
+        ) : (
+          linkMatch[1]
         );
       }
     }
@@ -50,7 +57,7 @@ function renderInline(text: string, key: number): ReactNode {
     lastIndex = regex.lastIndex;
   }
   if (lastIndex < text.length) {
-    parts.push(escapedText.slice(lastIndex));
+    parts.push(text.slice(lastIndex));
   }
   return <Fragment key={key}>{parts}</Fragment>;
 }

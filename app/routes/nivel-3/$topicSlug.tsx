@@ -1,38 +1,36 @@
-// @ts-nocheck
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿// @ts-nocheck
+/**
+ * Plantilla de leccion: SOLO metadatos y datos.
+ *
+ * El diseño vive en app/components/LeccionLayout.tsx y lo comparten las cinco
+ * rutas (nivel-1 a nivel-5). Antes cada una llevaba una copia del markup y
+ * cualquier ajuste se aplicaba a una y se olvidaba de las demas: por eso los
+ * niveles se veian distintos entre si.
+ */
+import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { LeccionLayout } from "@/components/LeccionLayout";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
-import { Markdown } from "@/components/Markdown";
-import { VideoLeccion } from "@/components/VideoLeccion";
-
-const levelMap: Record<string, string> = {
-  "1": "principiante",
-  "2": "intermedio",
-  "3": "avanzado",
-  "4": "experto",
-  "5": "especializaciones",
-};
-
-const badgeMap: Record<string, { text: string; class: string }> = {
-  free: { text: "GRATIS", class: "bg-success/15 text-success border-success/30 dark:bg-success/30 dark:text-success/50" },
-  register: { text: "REGISTRO", class: "bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300" },
-  paid: { text: "PREMIUM", class: "bg-warning/15 text-warning border-warning/30 dark:bg-warning/30 dark:text-warning/50" },
-};
-
+import { registrarEnCurso } from "@/lib/progreso";
 import { canonical, OG_IMAGE, jsonLd, articleLd, breadcrumbLd, clampDesc } from "@/lib/seo";
+
+const NIVEL = "3";
+const SUFIJO = "avanzado";
+const TITULO = "Nivel 3 · Avanzado";
+
 export const Route = createFileRoute("/nivel-3/$topicSlug")({
   component: TopicPage,
   head: ({ params }) => {
     const path = `/nivel-3/${params.topicSlug}`;
-    const topic = findTopic(params.topicSlug as string, "3");
+    const topic = buscarTema(params.topicSlug as string, NIVEL);
     if (!topic) {
-      return {
-        title: "Tema no encontrado | Aprendamos de Criptomonedas",
-      };
+      return { title: "Tema no encontrado | Aprendamos de Criptomonedas" };
     }
     const metaDesc = clampDesc(topic.description);
     return {
-      title: `${topic.title} | Nivel 3 · Avanzado | Aprendamos de Criptomonedas`,
+      title: `${topic.title} | ${TITULO} | Aprendamos de Criptomonedas`,
       meta: [
         { name: "description", content: metaDesc },
         { property: "og:title", content: topic.title },
@@ -50,7 +48,7 @@ export const Route = createFileRoute("/nivel-3/$topicSlug")({
           articleLd({ headline: topic.title, description: metaDesc, path }),
           breadcrumbLd([
             { name: "Inicio", path: "/" },
-            { name: "Nivel 3 · Avanzado", path: "/nivel-3-avanzado" },
+            { name: TITULO, path: `/nivel-${NIVEL}-${SUFIJO}` },
             { name: topic.title, path },
           ]),
         ),
@@ -59,156 +57,57 @@ export const Route = createFileRoute("/nivel-3/$topicSlug")({
   },
 });
 
-function findTopic(slug: string, level: string) {
-  const levelData = curriculumData[`nivel-${level}`];
-  if (!levelData) return undefined;
-  for (const section of levelData.sections) {
-    const topic = section.topics.find((t) => t.slug === slug);
-    if (topic) return topic;
+function buscarTema(slug: string, nivel: string) {
+  const datos = curriculumData[`nivel-${nivel}`];
+  if (!datos) return undefined;
+  for (const seccion of datos.sections) {
+    const tema = seccion.topics.find((t) => t.slug === slug);
+    if (tema) return tema;
   }
   return undefined;
 }
 
+/** Tema del nivel ordenados como se leen, para anterior y siguiente. */
+function todosLosTemas(nivel: string) {
+  return curriculumData[`nivel-${nivel}`].sections.flatMap((s) => s.topics);
+}
+
 function TopicPage() {
   const { topicSlug } = Route.useParams();
-  const level = "3";
-  const topic = findTopic(topicSlug, level);
-  const levelPrefix = `nivel-${level}`;
-  const suffix = levelMap[level];
+  const topic = buscarTema(topicSlug, NIVEL);
+
+  // Antes del return temprano: React exige el mismo numero de hooks en cada
+  // render, y el caso "tema no encontrado" tambien los ejecuta.
+  const clave = topic ? `nivel-${NIVEL}/${topic.slug}` : "";
+  useEffect(() => {
+    if (clave) registrarEnCurso(clave);
+  }, [clave]);
 
   if (!topic) {
     return (
       <>
         <Header />
         <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
-          <h1 className="text-2xl font-bold mb-4">Tema no encontrado</h1>
-          <Link to={`/${levelPrefix}-${suffix}`}>Volver a Nivel {level}</Link>
+          <h1 className="mb-4 text-2xl font-bold">Tema no encontrado</h1>
+          <Link to={`/nivel-${NIVEL}-${SUFIJO}`}>Volver a Nivel {NIVEL}</Link>
         </main>
         <Footer />
       </>
     );
   }
 
-  const prevTopic = getPrevTopic(topic);
-  const nextTopic = getNextTopic(topic);
-  const badge = badgeMap["free"];
+  const lista = todosLosTemas(NIVEL);
+  const i = lista.findIndex((t) => t.id === topic.id);
+  const anterior = i > 0 ? lista[i - 1] : null;
+  const siguiente = i >= 0 && i < lista.length - 1 ? lista[i + 1] : null;
 
   return (
-    <>
-      <Header />
-      <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12 max-w-4xl">
-        <nav className="mb-8 flex items-center justify-between">
-          <Link to={`/${levelPrefix}-${suffix}`} className="text-sm text-muted-foreground hover:text-foreground">
-            Volver a Nivel {level}
-          </Link>
-          <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${badge.class}`}>
-            {badge.text}
-          </span>
-        </nav>
-
-        <article className="prose dark:prose-invert max-w-none">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-warning/15 dark:bg-warning/30 rounded-lg">
-              {topic.icon}
-            </div>
-            <h1 className="text-3xl font-bold mb-0">{topic.title}</h1>
-          </div>
-
-          <VideoLeccion topic={topic} />
-
-          {topic.resources && (
-            <div className="mb-6 rounded-lg bg-warning/10 dark:bg-warning/20 p-4 border border-warning/30 dark:border-warning/30">
-              <h3 className="text-sm font-bold text-warning dark:text-warning/50 mb-2">Recursos descargables</h3>
-              <ul className="space-y-1">
-                {topic.resources.map((resource) => (
-                  <li key={resource.href}>
-                    <a href={resource.href} className="text-sm text-warning dark:text-warning/50 hover:underline" download>
-                      {resource.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {topic.keywords && topic.keywords.length > 0 && (
-            <div className="mb-4">
-              <p className="text-xs text-muted-foreground">Temas relacionados: {topic.keywords.join(", ")}</p>
-            </div>
-          )}
-
-          <div className="mb-8">
-            <Markdown content={topic.content} />
-          </div>
-
-          {topic.related && topic.related.length > 0 && (
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold mb-3">Temas relacionados</h3>
-              <div className="flex flex-wrap gap-2">
-                {topic.related.map((slug) => {
-                  const relatedTopic = findTopicBySlug(slug, level);
-                  return relatedTopic ? (
-                    <Link key={slug} to={`/${levelPrefix}/${slug}`}
-                      className="inline-flex items-center px-3 py-1 text-sm rounded-md bg-muted hover:bg-muted/80 transition-colors">
-                      {relatedTopic.title}
-                    </Link>
-                  ) : null;
-                })}
-              </div>
-            </div>
-          )}
-        </article>
-
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-between p-6 bg-card rounded-lg border">
-          {prevTopic && (
-            <Link to={`/${levelPrefix}/${prevTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">
-              Anterior: {prevTopic.title}
-            </Link>
-          )}
-          {nextTopic && (
-            <Link to={`/${levelPrefix}/${nextTopic.slug}`}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-              Siguiente: {nextTopic.title}
-            </Link>
-          )}
-        </div>
-      </main>
-      <Footer />
-    </>
+    <LeccionLayout
+      nivel={NIVEL}
+      topic={topic}
+      anterior={anterior}
+      siguiente={siguiente}
+      resolverRelacionado={(slug) => buscarTema(slug, NIVEL) ?? null}
+    />
   );
-}
-
-function findTopicBySlug(slug: string, level: string) {
-  const levelData = curriculumData[`nivel-${level}`];
-  if (!levelData) return undefined;
-  for (const section of levelData.sections) {
-    const topic = section.topics.find((t) => t.slug === slug);
-    if (topic) return topic;
-  }
-  return undefined;
-}
-
-function getPrevTopic(topic: any) {
-  const levelData = curriculumData[`nivel-${topic.level}`];
-  let prev = null;
-  for (const section of levelData.sections) {
-    for (const t of section.topics) {
-      if (t.id === topic.id) return prev;
-      prev = t;
-    }
-  }
-  return null;
-}
-
-function getNextTopic(topic: any) {
-  const levelData = curriculumData[`nivel-${topic.level}`];
-  let found = false;
-  for (const section of levelData.sections) {
-    for (const t of section.topics) {
-      if (found) return t;
-      if (t.id === topic.id) found = true;
-    }
-  }
-  return null;
 }

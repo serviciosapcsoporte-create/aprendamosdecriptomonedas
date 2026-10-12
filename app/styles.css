@@ -277,3 +277,164 @@ details[open] .faq-answer {
     opacity: 1;
   }
 }
+
+/*
+ * .lesson-prose — tipografia de lectura de las lecciones (76 paginas).
+ *
+ * POR QUE NO LA CLASE `prose` DE TAILWIND
+ * El proyecto no tiene instalado @tailwindcss/typography, asi que escribir
+ * "prose prose-invert" no genera ni una regla. Esto es el equivalente escrito a
+ * mano y esta ajustada a lo que emite de verdad app/components/Markdown.tsx:
+ * h1/h2/h3, p, ol/ul, blockquote, pre, table y enlaces.
+ *
+ * Las listas numeradas llevan contador propio porque las del curso ordenan
+ * pasos ("1. Guarda la seed phrase") y un bullet las hacia leer como tips sueltos.
+ */
+.lesson-prose {
+  color: hsl(var(--foreground) / 0.86);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.lesson-prose > * + * {
+  margin-top: 1.1rem;
+}
+
+.lesson-prose h1,
+.lesson-prose h2,
+.lesson-prose h3 {
+  color: hsl(var(--foreground));
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.lesson-prose h1 {
+  font-size: 1.75rem;
+}
+.lesson-prose h2 {
+  font-size: 1.375rem;
+}
+.lesson-prose h3 {
+  font-size: 1.125rem;
+}
+
+.lesson-prose strong {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+}
+
+.lesson-prose em {
+  color: hsl(var(--primary));
+  font-style: italic;
+}
+
+.lesson-prose a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
+}
+.lesson-prose a:hover {
+  opacity: 0.8;
+}
+
+/* Listas numeradas: contador propio, alineado y con su propio color. */
+.lesson-prose ol,
+.lesson-prose ul {
+  padding-left: 1.5rem;
+  margin-top: 1.25rem;
+}
+.lesson-prose ol {
+  list-style: none;
+  counter-reset: leccion-paso;
+}
+.lesson-prose ol > li {
+  position: relative;
+  counter-increment: leccion-paso;
+  padding-left: 2rem;
+  margin-top: 0.6rem;
+}
+.lesson-prose ol > li::before {
+  content: counter(leccion-paso);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: hsl(var(--primary) / 0.14);
+  color: hsl(var(--primary));
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.lesson-prose ul {
+  list-style: disc;
+}
+.lesson-prose ul > li {
+  margin-top: 0.45rem;
+  padding-left: 0.25rem;
+}
+.lesson-prose li::marker {
+  color: hsl(var(--primary) / 0.7);
+}
+
+/* Citas: el markdown las usa para analogias y avisos ("Analogía:", "Ojo:"). */
+.lesson-prose blockquote {
+  border-left: 3px solid hsl(var(--primary) / 0.55);
+  background: hsl(var(--primary) / 0.07);
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 0.85rem 1.1rem;
+  margin-top: 1.5rem;
+  color: hsl(var(--foreground) / 0.92);
+  font-style: italic;
+}
+.lesson-prose blockquote p {
+  margin: 0;
+}
+
+.lesson-prose pre,
+.lesson-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875rem;
+}
+.lesson-prose pre {
+  overflow-x: auto;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.75rem;
+  background: hsl(var(--navy-dark));
+  padding: 1rem;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  color: hsl(var(--foreground) / 0.9);
+}
+.lesson-prose :not(pre) > code {
+  border-radius: 0.35rem;
+  background: hsl(var(--muted));
+  padding: 0.1rem 0.35rem;
+  font-size: 0.9em;
+}
+
+.lesson-prose table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.lesson-prose th {
+  background: hsl(var(--muted));
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+.lesson-prose td {
+  border-top: 1px solid hsl(var(--border));
+  padding: 0.6rem 0.75rem;
+}

@@ -3,7 +3,7 @@
  * siguiente.
  *
  * Es lo que llena el progreso que muestran las tarjetas del nivel. Va al final
- * y no al principio a proposito: marcar al abrir seria请点击-y-ya, y el
+ * y no al principio a proposito: marcar al abrir seria un clic-y-ya, y el
  * contador "7/15 completados" dejaria de significar nada.
  *
  * El boton es un toggle: se puede deshacer, porque siempre hay alguien que le
