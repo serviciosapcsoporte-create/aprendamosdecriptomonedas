@@ -116,7 +116,7 @@ function Nivel1Page() {
                     titulo={item.topic.title}
                     descripcion={item.topic.description}
                     minutos={minutosLectura(item.topic.content)}
-                    miniatura={miniaturaDe("1", item.topic.slug)}
+                    miniatura={miniaturaDe("1", item.numero, item.topic.slug, item.topic.title)}
                     estado={progreso[`nivel-1/${item.topic.slug}`]?.estado ?? null}
                     tieneVideo={Boolean(item.topic.video)}
                   />

@@ -9,6 +9,8 @@
     "hotlinks": "node scripts/hotlinks.mjs",
     "build": "npm run fetch:news && npm run assets && npm run hotlinks && vite build && node scripts/postbuild.mjs && node scripts/prerender.mjs",
     "assets": "node scripts/generate-kit-pdf.mjs && node scripts/generate-blog-covers.mjs",
+        "covers": "python scripts/build-leccion-covers.py",
+    "covers:gemini": "node scripts/build-leccion-covers-gemini.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

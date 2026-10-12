@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-label="Estructura de un bloque">
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="40" width="360" height="340" rx="14" fill="#0b1f3a"/>
+    <rect x="80" y="70" width="320" height="48" rx="8" fill="#1e3a5f"/>
+    <text x="240" y="100" font-size="18" fill="#fbbf24" text-anchor="middle">Hash del bloque anterior</text>
+    <rect x="80" y="140" width="320" height="130" rx="8" fill="#1e3a5f"/>
+    <text x="240" y="170" font-size="18" fill="#fbbf24" text-anchor="middle">Datos de transacciones</text>
+    <rect x="80" y="292" width="150" height="60" rx="8" fill="#1e3a5f"/>
+    <text x="155" y="317" font-size="16" fill="#cbd5e1" text-anchor="middle">Timestamp</text>
+    <rect x="250" y="292" width="150" height="60" rx="8" fill="#1e3a5f"/>
+    <text x="325" y="317" font-size="16" fill="#cbd5e1" text-anchor="middle">Nonce</text>
+    <rect x="520" y="120" width="300" height="180" rx="12" fill="#1e3a5f" stroke="#fbbf24" stroke-width="2"/>
+    <text x="670" y="180" font-size="20" font-weight="bold" fill="#fbbf24" text-anchor="middle">Hash del bloque</text>
+    <text x="670" y="215" font-size="16" fill="#cbd5e1" text-anchor="middle">Firma digital única generada</text>
+    <text x="670" y="245" font-size="16" fill="#cbd5e1" text-anchor="middle">a partir del contenido</text>
+    <line x1="420" y1="210" x2="520" y2="210" stroke="#fbbf24" stroke-width="4"/>
+  </g>
+</svg>

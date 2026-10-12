@@ -73,7 +73,14 @@ export function LessonCard({
       to={href}
       className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[transform,box-shadow,border-color] duration-200 ease-out hover-hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-soft-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:bg-card-dark"
     >
-      <div className="relative aspect-video overflow-hidden bg-muted">
+      {/*
+        Contenedor de la portada: la caja fija la proporcion 16:9 (aspect-video)
+        y la imagen la cubre con object-cover, asi que un render de otra
+        proporcion se recorta sin deformarse. El degradado inferior funde la
+        imagen con el fondo oscuro de la tarjeta en lugar de cortarla en seco
+        contra el texto de abajo.
+      */}
+      <div className="relative aspect-video overflow-hidden bg-slate-950">
         <img
           src={miniatura.src}
           alt={miniatura.alt}
@@ -84,8 +91,12 @@ export function LessonCard({
           }
           loading="lazy"
           decoding="async"
-          width={640}
-          height={360}
+          width={1600}
+          height={900}
+        />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card via-card/45 to-transparent"
         />
         {estado === "completado" && (
           <span
