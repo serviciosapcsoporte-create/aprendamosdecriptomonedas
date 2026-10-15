@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
+import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
 
 import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-escudo-de-5-minutos")({
@@ -29,6 +30,8 @@ export const Route = createFileRoute("/recursos/el-escudo-de-5-minutos")({
 function ElEscudoDe5Minutos() {
   return (
     <GuidePage
+      cover={GUIA_CUBIERTA['el-escudo-de-5-minutos']}
+      coverAlt={GUIA_CUBIERTA_ALT['el-escudo-de-5-minutos']}
       badge="GUÍA GRATUITA"
       title="EL ESCUDO DE 5 MINUTOS"
       subtitle="La rutina que aplicas antes de operar y te ahorra el error del millón"

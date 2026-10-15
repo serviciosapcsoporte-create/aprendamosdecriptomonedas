@@ -2,6 +2,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
+import { NIVEL_ICON, NIVEL_ICON_ALT, NIVEL_HEADER, NIVEL_HEADER_ALT } from "@/data/assets3d";
 
 import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
 import { AffiliateCta } from "@/components/AffiliateCta";
@@ -31,7 +32,26 @@ function Nivel3Page() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <img src="/niveles/nivel-3.jpg" alt="Insignia Nivel 3 — Analytics Chart" className="mx-auto mb-4 w-24 h-24 rounded-xl" />
+          {NIVEL_HEADER["3"] && (
+            <div className="relative mb-6 overflow-hidden rounded-xl">
+              <img
+                src={NIVEL_HEADER["3"]}
+                alt={NIVEL_HEADER_ALT["3"] ?? ""}
+                width={1600}
+                height={500}
+                className="h-32 w-full object-cover md:h-44"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent"
+              />
+            </div>
+          )}
+          <img
+            src={NIVEL_ICON["3"]}
+            alt={NIVEL_ICON_ALT["3"] ?? ""}
+            className="mx-auto mb-4 h-24 w-24 object-contain"
+          />
           <span className="text-3xl font-bold text-warning mb-2 block">NIVEL 3</span>
           <h1 className="text-2xl md:text-3xl font-bold mb-4">Avanzado</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6">

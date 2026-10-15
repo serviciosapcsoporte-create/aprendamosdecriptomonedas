@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
+import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
 
 import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-inversor-que-sobrevive")({
@@ -30,6 +31,8 @@ export const Route = createFileRoute("/recursos/el-inversor-que-sobrevive")({
 function ElInversorQueSobrevive() {
   return (
     <GuidePage
+      cover={GUIA_CUBIERTA['el-inversor-que-sobrevive']}
+      coverAlt={GUIA_CUBIERTA_ALT['el-inversor-que-sobrevive']}
       badge="GUÍA GRATUITA"
       title="EL INVERSOR QUE SOBREVIVE"
       subtitle="Control, seguridad y criterio en el mercado cripto"

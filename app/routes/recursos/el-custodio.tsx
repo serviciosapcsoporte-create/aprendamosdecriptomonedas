@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
+import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
 
 import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-custodio")({
@@ -29,6 +30,8 @@ export const Route = createFileRoute("/recursos/el-custodio")({
 function ElCustodio() {
   return (
     <GuidePage
+      cover={GUIA_CUBIERTA['el-custodio']}
+      coverAlt={GUIA_CUBIERTA_ALT['el-custodio']}
       badge="GUÍA GRATUITA"
       title="EL CUSTODIO DE SU PROPIA LIBERTAD"
       subtitle="Quién custodia tu dinero decide tu futuro"

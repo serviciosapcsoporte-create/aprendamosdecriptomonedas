@@ -22,6 +22,57 @@ export const NIVEL_ICON: Record<string, string> = {
   "5": "/assets/3d/nivel-5-global.webp",
 };
 
+/**
+ * Banda de cabecera de cada nivel (1600x500).
+ *
+ * Antes estas cabeceras no existian: el nivel solo teaches un icono de 176 px
+ * al 20% de opacidad en la esquina. Son ilustraciones planas distintas una de
+ * otra, una por nivel, y por eso la banda no se nota repetida.
+ */
+export const NIVEL_HEADER: Record<string, string> = {
+  "1": "/niveles/nivel-1-header.webp",
+  "2": "/niveles/nivel-2-header.webp",
+  "3": "/niveles/nivel-3-header.webp",
+  "4": "/niveles/nivel-4-header.webp",
+  "5": "/niveles/nivel-5-header.webp",
+};
+
+/** Texto alternativo de la banda de cabecera. */
+export const NIVEL_HEADER_ALT: Record<string, string> = {
+  "1": "Cabecera del Nivel 1: fundamentos, wallets y seguridad inicial",
+  "2": "Cabecera del Nivel 2: blockchain técnica, smart contracts y DeFi básico",
+  "3": "Cabecera del Nivel 3: trading, cross-chain y análisis on-chain",
+  "4": "Cabecera del Nivel 4: ZK, custodia institucional y bots",
+  "5": "Cabecera del Nivel 5: programación ZK, StarkNet y regulación",
+};
+
+/**
+ * Portada de cada guía descargable (1200x630), por su slug de ruta.
+ *
+ * Antes las guías seAbrían con un icono de lucide y un párrafo: cero imagen.
+ * La clave es el slug de /recursos/<slug>, no el titulo, porque es lo que ya
+ * usaba el enlace de cada tarjeta.
+ */
+export const GUIA_CUBIERTA: Record<string, string> = {
+  "el-escudo-de-5-minutos": "/recursos/guia-escudo.webp",
+  "checklist-supervivencia-cripto": "/recursos/guia-checklist.webp",
+  "el-custodio": "/recursos/guia-custodio.webp",
+  "el-escanner": "/recursos/guia-escanner.webp",
+  "el-inversor-que-sobrevive": "/recursos/guia-inversor.webp",
+};
+
+/** Texto alternativo de la portada de cada guía: describe el dibujo, no promete. */
+export const GUIA_CUBIERTA_ALT: Record<string, string> = {
+  "el-escudo-de-5-minutos":
+    "Escudo dorado con candado frente a una pantalla, junto a una lista de Routine de seguridad",
+  "checklist-supervivencia-cripto":
+    "Checklist de seguridad cripto impreso junto a una tableta",
+  "el-custodio": "Hardware wallet con llaves y herramientas de custodia",
+  "el-escanner": "Análisis de una red blockchain con lupa sobre el mapa de conexiones",
+  "el-inversor-que-sobrevive":
+    "Panel de inversión con la curva deCapital frente a la volatilidad",
+};
+
 /** Texto alternativo del icono de cada nivel. */
 export const NIVEL_ICON_ALT: Record<string, string> = {
   "1": "Ilustración 3D de una cartera con candado: fundamentos y seguridad",

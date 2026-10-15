@@ -35,6 +35,10 @@ interface GuidePageProps {
   sections: GuideSection[];
   cta?: { label: string; href: string; variant?: "gold" | "cyber" }[];
   backTo?: { label: string; href: string };
+  /** Ruta de la portada de la guia (1200x630). */
+  cover?: string;
+  /** Texto alternativo de la portada. */
+  coverAlt?: string;
 }
 
 export function GuidePage({
@@ -47,6 +51,8 @@ export function GuidePage({
   sections,
   cta,
   backTo,
+  cover,
+  coverAlt,
 }: GuidePageProps) {
   return (
     <>
@@ -56,6 +62,27 @@ export function GuidePage({
           {/* Simplified: removed absolute cyber-grid and cyan blobs to reduce visual noise */}
 
           <div className="relative container mx-auto px-4 text-center">
+            {/*
+                Portada de la guia. Va antes del badge para que el titulo quede
+                sobre la imagen con el degradado detras: si se pone despues, el
+                texto cae sobre un dibujo claro y se pierde. El contenedor fija
+                21:9 y la imagen cubre, asi que los 1200x630 no se deforman.
+              */}
+            {cover && (
+              <div className="relative mb-8 overflow-hidden rounded-xl">
+                <img
+                  src={cover}
+                  alt={coverAlt ?? ""}
+                  width={1200}
+                  height={630}
+                  className="h-44 w-full object-cover md:h-64"
+                />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"
+                />
+              </div>
+            )}
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
               <span className="text-primary">•</span>
               {badge}

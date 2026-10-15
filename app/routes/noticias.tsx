@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Header, Footer } from "@/components/Header";
 import { useState } from "react";
 import { ArrowUpRight, Newspaper, RefreshCw } from "lucide-react";
+import { SITE_URL } from "@/lib/seo";
 
 export const Route = createFileRoute("/noticias")({
   component: NoticiasPage,
@@ -22,6 +23,19 @@ export const Route = createFileRoute("/noticias")({
           "Resumen diario de noticias de Bitcoin, blockchain, DeFi y criptomonedas. Actualizado automáticamente todos los días.",
       },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: `${SITE_URL}/noticias/noticias-og.webp`,
+      },
+      {
+        property: "og:image:alt",
+        content: "Noticias de criptomonedas con gráficos de precios",
+      },
+      {
+        property: "og:image:width",
+        content: "1200",
+      },
+      { property: "og:image:height", content: "630" },
     ],
   }),
 });
@@ -68,6 +82,24 @@ function NoticiasPage() {
       <Header />
       <main id="contenido" tabIndex={-1} className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto mb-12 text-center">
+          {/*
+              Banner decorativo de la pagina. /noticias era la unica ruta del
+              sitio sin ninguna imagen: ni visible ni al compartir. El degradado
+              inferior es el que hace que el titulo se lea encima sin recuadro.
+            */}
+          <div className="relative mb-8 overflow-hidden rounded-xl">
+            <img
+              src="/noticias/banner-noticias.webp"
+              alt="Paneles de noticias y gráficos de precios de criptomonedas"
+              width={1200}
+              height={675}
+              className="h-40 w-full object-cover md:h-56"
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"
+            />
+          </div>
           <span className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-warning/15 text-warning mb-4">
             <Newspaper className="w-3.5 h-3.5" />
             Actualización diaria

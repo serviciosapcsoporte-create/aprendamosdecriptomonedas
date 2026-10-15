@@ -162,11 +162,46 @@ const shell = readFileSync(resolve(dist, "index.html"), "utf8");
 const BRAND = shell.match(/<meta property="og:site_name" content="([^"]*)"/)?.[1] ?? "";
 if (!BRAND) throw new Error("No se encontro og:site_name en dist/index.html");
 
+/**
+ * Imagen social por ruta.
+ *
+ * El shell de index.html trae la tarjeta global del sitio, y el prerender solo
+ * reescribe title/description/canonical. Sin esta tabla, una pagina que declara
+ * su propia og:image en el head de su ruta se quedaba con la global en el HTML
+ * estatico: que es justo el HTML que leen Google y las redes, porque en el
+ * cliente la aplicacion si hydrata con la correcta, pero el rastreador no.
+ *
+ * Solo hace falta listar las paginas con imagen propia; el resto hereda la
+ * global. Comprobar que el archivo existe evita subir un 404 como tarjeta.
+ */
+const OG_IMAGEN = {
+  "/noticias": {
+    url: "/noticias/noticias-og.webp",
+    alt: "Noticias de criptomonedas con graficos de precios",
+  },
+};
+
+for (const [path, img] of Object.entries(OG_IMAGEN)) {
+  if (!existsSync(resolve(dist, img.url.replace(/^\//, "")))) {
+    throw new Error(
+      `OG_IMAGEN: ${path} apunta a ${img.url} y ese archivo no existe en dist/. ` +
+        `Se publicaria un 404 como tarjeta social.`
+    );
+  }
+}
+
 function replaceOnce(html, re, replacement, what) {
   const matches = html.match(new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g"));
   if (!matches || matches.length !== 1) {
     throw new Error(`head: se esperaba exactamente 1 etiqueta ${what}, se hallaron ${matches ? matches.length : 0}`);
   }
+  return html.replace(re, replacement);
+}
+
+/** Igual que replaceOnce pero sin fallar si la etiqueta no esta: devuelve el HTML igual. */
+function replaceMaybeOnce(html, re, replacement) {
+  const matches = html.match(new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g"));
+  if (!matches || matches.length !== 1) return html;
   return html.replace(re, replacement);
 }
 
@@ -221,6 +256,31 @@ function renderHead(html, { title, description }, path) {
     `<meta name="twitter:description" content="${esc(description)}" />`,
     "twitter:description"
   );
+  // Imagen social propia de la ruta, si la tiene. Las de tamano y de alt van
+  // juntas para que la tarjeta no quede con la imagen de otra pagina.
+  const propia = OG_IMAGEN[path];
+  if (propia) {
+    const imagen = esc(`${SITE}${propia.url}`);
+    out = replaceOnce(
+      out,
+      /<meta property="og:image" content="[^"]*" \/>/,
+      `<meta property="og:image" content="${imagen}" />`,
+      "og:image"
+    );
+    out = replaceOnce(
+      out,
+      /<meta name="twitter:image" content="[^"]*" \/>/,
+      `<meta name="twitter:image" content="${imagen}" />`,
+      "twitter:image"
+    );
+    // El alt es opcional: el shell puede no emitirlo. Si aparece, se cambia;
+    // si no, se deja como esta y la tarjeta funciona igual.
+    out = replaceMaybeOnce(
+      out,
+      /<meta property="og:image:alt" content="[^"]*" \/>/,
+      `<meta property="og:image:alt" content="${esc(propia.alt)}" />`
+    );
+  }
   return out;
 }
 

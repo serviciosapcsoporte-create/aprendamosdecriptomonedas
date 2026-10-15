@@ -13,7 +13,7 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen, CheckCircle2, PlayCircle, RotateCcw, X } from "lucide-react";
 import type { ResumenNivel } from "@/lib/progreso";
-import { NIVEL_ICON, NIVEL_ICON_ALT } from "@/data/assets3d";
+import { NIVEL_ICON, NIVEL_ICON_ALT, NIVEL_HEADER, NIVEL_HEADER_ALT } from "@/data/assets3d";
 
 interface NivelHeroProps {
   nivel: string;
@@ -59,6 +59,28 @@ export function NivelHero({
             "radial-gradient(60% 80% at 15% 0%, rgba(249,115,22,0.14), transparent 65%)",
         }}
       />
+
+      {/*
+        Banda de cabecera de 1600x500. Va por ENCIMA del icono grande de la
+        esquina, no lo sustituye: el icono se recorta sobre el dibujo y con el
+        degradado de abajo los dos se funden en una sola imagen. Sin degradado
+        la banda se corta en seco contra la tarjeta y se ve el borde.
+      */}
+      {NIVEL_HEADER[nivel] && (
+        <div className="relative mb-6 overflow-hidden rounded-xl">
+          <img
+            src={NIVEL_HEADER[nivel]}
+            alt={NIVEL_HEADER_ALT[nivel] ?? ""}
+            width={1600}
+            height={500}
+            className="h-28 w-full object-cover md:h-40"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/25 to-transparent dark:from-card-dark"
+          />
+        </div>
+      )}
 
       <div className="relative">
         <img

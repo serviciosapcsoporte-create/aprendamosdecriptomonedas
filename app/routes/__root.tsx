@@ -82,7 +82,24 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  // Se recibe `matches` para poder respetar la imagen social de cada pagina.
+  head: ({ matches }) => {
+    // La og:image de la PAGINA manda sobre la global.
+    //
+    // Todas las salidas del sitio comparten la propiedad "og:image", y al
+    // escribirse las dos en el mismo HTML la que gana es la que se emite al
+    // final. Con la raiz fijandola a mano, /noticias declaraba su propia imagen
+    // y al renderizar salia la global: por eso la pagina "con imagen" seguia
+    // compartiendola con la home. Leyendo la del ultimo match, la pagina que
+    // declare una imagen la usa y el resto hereda la global sin tocar nada.
+    const metaPagina = matches[matches.length - 1]?.meta ?? [];
+    const imagenOg =
+      metaPagina.find((m) => m?.property === "og:image")?.content ?? OG_IMAGE;
+    const altOg =
+      metaPagina.find((m) => m?.property === "og:image:alt")?.content ??
+      "Aprendamos de Criptomonedas";
+
+    return {
     // `title` va como campo de primer nivel del head, NO dentro de `meta`.
     // Dentro de `meta` TanStack lo renderiza como <meta name="title"> y el
     // <title> del documento se queda siempre con el valor estatico de
@@ -109,16 +126,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Aprendamos de Criptomonedas" },
+      { property: "og:image:alt", content: altOg },
       { name: "twitter:title", content: "Aprendamos de Criptomonedas | Educación cripto sin humo" },
       { name: "twitter:description", content: "Educación segura, estrategia clara y sin humo. Guías, checklists y recursos para entender el mundo cripto y proteger tu dinero." },
       {
         property: "og:image",
-        content: OG_IMAGE,
+        content: imagenOg,
       },
       {
         name: "twitter:image",
-        content: OG_IMAGE,
+        content: imagenOg,
       },
     ],
     scripts: [
@@ -136,7 +153,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
-  }),
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

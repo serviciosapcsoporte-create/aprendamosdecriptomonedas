@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
+import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
 
 import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/el-escanner")({
@@ -29,6 +30,8 @@ export const Route = createFileRoute("/recursos/el-escanner")({
 function ElEscanner() {
   return (
     <GuidePage
+      cover={GUIA_CUBIERTA['el-escanner']}
+      coverAlt={GUIA_CUBIERTA_ALT['el-escanner']}
       badge="ANÁLISIS DE PROTOCOLO · SECCIÓN 2"
       title="EL ESCÁNER"
       subtitle="Interfaz de diagnóstico de capital: identificando la naturaleza del flujo"

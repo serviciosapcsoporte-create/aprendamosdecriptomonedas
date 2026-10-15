@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
+import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
 
 import { jsonLd, breadcrumbLd } from "@/lib/seo";
 export const Route = createFileRoute("/recursos/checklist-supervivencia-cripto")({
@@ -111,6 +112,8 @@ const blocks: { heading: string; items: string[] }[] = [
 function ChecklistSupervivencia() {
   return (
     <GuidePage
+      cover={GUIA_CUBIERTA['checklist-supervivencia-cripto']}
+      coverAlt={GUIA_CUBIERTA_ALT['checklist-supervivencia-cripto']}
       badge="GUÍA GRATUITA"
       title="CHECKLIST DE SUPERVIVENCIA CRIPTO"
       subtitle="Los errores que debes evitar antes de invertir, enviar o tradear"

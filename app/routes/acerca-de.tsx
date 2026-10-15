@@ -26,9 +26,17 @@ function AcercaDePage() {
         </div>
 
         <div className="flex items-center gap-6 mb-8">
+          {/*
+              Retrato ILUSTRADO. Es un rostro generado por IA usado como avatar
+              gráfico, no una fotografía: el texto alternativo lo dice para que
+              nadie lo confunda con una foto real del autor. Cuando haya una
+              foto auténtica de verdad, esta imagen se retira.
+            */}
           <img
-            src="/alejandro.svg"
-            alt={`Retrato de ${AUTHOR}`}
+            src="/alejandro-avatar-ia.webp"
+            alt="Retrato ilustrado de estilo, no una fotografía real"
+            width={800}
+            height={800}
             className="w-24 h-24 rounded-full object-cover border-4 border-warning"
           />
           <div>
