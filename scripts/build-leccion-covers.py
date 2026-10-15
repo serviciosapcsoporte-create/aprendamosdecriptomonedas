@@ -49,63 +49,88 @@ REGIONES = {
 
 ANCHO, ALTO = 1600, 900
 
-# nivel -> (slug, render base, region, es_diagrama)
+# nivel -> (slug, render base, region, es_diagrama, variacion)
+# variacion: 0-3, cambia encuadre y overlay para distinguir vecinas con mismo render
 PORTADAS = {
     "1": [
-        ("que-es-blockchain",         "/diagrams/blockchain-simple.svg", None, True),
-        ("como-funciona-un-bloque",   "/diagrams/block-structure.svg",   None, True),
-        ("mineria-validacion",        "/assets/3d/banner-analitica-onchain.webp", "left",   False),
-        ("wallets",                   "/assets/3d/nivel-1-wallet.webp",              "center", False),
-        ("claves-publicas-privadas",  "/assets/3d/nivel-1-wallet.webp",              "top",    False),
-        ("transacciones-fees",        "/assets/3d/banner-portfolio-csv.webp",        "left",   False),
-        ("que-es-token-cripto",       "/assets/3d/banner-analitica-onchain.webp", "right",  False),
-        ("buenas-practicas",          "/assets/3d/banner-seguridad.webp",            "left",   False),
-        ("evitar-estafas",            "/assets/3d/banner-seguridad.webp",            "right",  False),
-        ("cex-vs-dex",                "/assets/3d/banner-wallets-defi.webp",         "left",   False),
-        ("seed-phrase-backups",       "/assets/3d/banner-seguridad.webp",            "center", False),
-        ("crear-wallet",              "/assets/3d/banner-wallets-defi.webp",         "center", False),
-        ("hacer-transaccion",         "/assets/3d/mockup-lead-magnet.webp",          "left",   False),
-        ("entender-red",              "/assets/3d/nivel-5-global.webp",              "center", False),
-        ("leer-transaccion-explorer", "/assets/3d/banner-analitica-onchain.webp", "center", False),
+        ("que-es-blockchain",         "/diagrams/blockchain-simple.svg", None, True, 0),
+        ("como-funciona-un-bloque",   "/diagrams/block-structure.svg",   None, True, 0),
+        ("mineria-validacion",        "/assets/3d/banner-analitica-onchain.webp", "left",   False, 0),
+        ("wallets",                   "/assets/3d/nivel-1-wallet.webp",              "center", False, 0),
+        ("claves-publicas-privadas",  "/assets/3d/nivel-1-wallet.webp",              "top",    False, 1),
+        ("transacciones-fees",        "/assets/3d/banner-portfolio-csv.webp",        "left",   False, 0),
+        ("que-es-token-cripto",       "/assets/3d/banner-analitica-onchain.webp", "right",  False, 1),
+        ("buenas-practicas",          "/assets/3d/banner-seguridad.webp",            "left",   False, 0),
+        ("evitar-estafas",            "/assets/3d/banner-seguridad.webp",            "right",  False, 1),
+        ("cex-vs-dex",                "/assets/3d/banner-wallets-defi.webp",         "left",   False, 0),
+        ("seed-phrase-backups",       "/assets/3d/banner-seguridad.webp",            "center", False, 2),
+        ("crear-wallet",              "/assets/3d/banner-wallets-defi.webp",         "center", False, 1),
+        ("hacer-transaccion",         "/assets/3d/mockup-lead-magnet.webp",          "left",   False, 0),
+        ("entender-red",              "/assets/3d/nivel-5-global.webp",              "center", False, 0),
+        ("leer-transaccion-explorer", "/assets/3d/banner-analitica-onchain.webp", "center", False, 2),
     ],
     "2": [
-        ("funciones-hash",         "/assets/3d/banner-analitica-onchain.webp", "center", False),
-        ("merkle-trees",           "/assets/3d/nivel-2-blockchain.webp",      "top",    False),
-        ("pow-vs-pos",             "/assets/3d/nivel-2-blockchain.webp",      "right",  False),
-        ("gas-evm",                "/assets/3d/banner-portfolio-csv.webp",   "center", False),
-        ("nodos",                  "/assets/3d/banner-analitica-onchain.webp", "left",   False),
-        ("que-son-smart-contracts", "/assets/3d/banner-wallets-defi.webp",    "center", False),
-        ("para-que-sirven",        "/assets/3d/mockup-lead-magnet.webp",     "right",  False),
-        ("riesgos-comunes",        "/assets/3d/banner-seguridad.webp",       "left",   False),
-        ("oraculos",                "/assets/3d/nivel-5-global.webp",         "top",    False),
-        ("oferta-demanda",         "/assets/3d/nivel-3-analitica.webp",     "center", False),
-        ("emision",                "/assets/3d/banner-portfolio-csv.webp",  "left",   False),
-        ("halving",                "/assets/3d/banner-ruta-progreso.webp",  "right",  False),
-        ("quema-de-tokens",        "/assets/3d/banner-seguridad.webp",       "center", False),
-        ("market-cap",             "/assets/3d/nivel-3-analitica.webp",     "right",  False),
-        ("defi-que-es",            "/assets/3d/banner-wallets-defi.webp",   "wide",   False),
-        ("pools-liquidity",        "/assets/3d/banner-portfolio-csv.webp",  "right",  False),
-        ("amm-uniswap",            "/assets/3d/mockup-lead-magnet.webp",     "center", False),
-        ("lending",                "/assets/3d/nivel-1-wallet.webp",        "left",   False),
-        ("staking-yield",          "/assets/3d/banner-ruta-progreso.webp",  "left",   False),
+        ("funciones-hash",         "/assets/3d/banner-analitica-onchain.webp", "center", False, 1),
+        ("merkle-trees",           "/assets/3d/nivel-2-blockchain.webp",      "top",    False, 0),
+        ("pow-vs-pos",             "/assets/3d/nivel-2-blockchain.webp",      "right",  False, 1),
+        ("gas-evm",                "/assets/3d/banner-portfolio-csv.webp",   "center", False, 0),
+        ("nodos",                  "/assets/3d/banner-analitica-onchain.webp", "left",   False, 1),
+        ("que-son-smart-contracts", "/assets/3d/banner-wallets-defi.webp",    "center", False, 0),
+        ("para-que-sirven",        "/assets/3d/mockup-lead-magnet.webp",     "right",  False, 1),
+        ("riesgos-comunes",        "/assets/3d/banner-seguridad.webp",       "left",   False, 0),
+        ("oraculos",                "/assets/3d/nivel-5-global.webp",         "top",    False, 1),
+        ("oferta-demanda",         "/assets/3d/nivel-3-analitica.webp",     "center", False, 0),
+        ("emision",                "/assets/3d/banner-portfolio-csv.webp",  "left",   False, 1),
+        ("halving",                "/assets/3d/banner-ruta-progreso.webp",  "right",  False, 0),
+        ("quema-de-tokens",        "/assets/3d/banner-seguridad.webp",       "center", False, 1),
+        ("market-cap",             "/assets/3d/nivel-3-analitica.webp",     "right",  False, 0),
+        ("defi-que-es",            "/assets/3d/banner-wallets-defi.webp",   "wide",   False, 0),
+        ("pools-liquidity",        "/assets/3d/banner-portfolio-csv.webp",  "right",  False, 1),
+        ("amm-uniswap",            "/assets/3d/mockup-lead-magnet.webp",     "center", False, 0),
+        ("lending",                "/assets/3d/nivel-1-wallet.webp",        "left",   False, 1),
+        ("staking-yield",          "/assets/3d/banner-ruta-progreso.webp",  "left",   False, 0),
     ],
 }
 
 
-def recorte_16_9(im, region):
-    """Recorte suave de un render panoramico, devuelto en 16:9."""
+def recorte_16_9(im, region, variacion=0):
+    """Recorte suave de un render panoramico, devuelto en 16:9.
+
+    `variacion` (0-3) cambia el encuadre y el fondo para que dos lecciones que
+    comparten render base no se parezcan: desplaza la ventana, aplica un
+    overlay de color distinto y cambia el gradiente de fondo.
+    """
     W, H = im.size
     x0f, y0f, wf = REGIONES[region]
+    # Desplazamiento horizontal segun variacion (0%, 8%, 16%, 24%)
+    desplazamiento = variacion * 0.08
+    x0f = min(x0f + desplazamiento, 1.0 - wf)
     bw = int(round(W * wf))
     bh = int(round(bw * ALTO / ANCHO))
-    if bh > H:  # el render es mas bajo que 16:9: se ajusta el ancho
+    if bh > H:
         bh = H
         bw = int(round(H * ANCHO / ALTO))
     x0 = int(round(W * x0f))
     y0 = int(round(H * y0f))
     x0 = max(0, min(x0, W - bw))
     y0 = max(0, min(y0, H - bh))
-    return im.crop((x0, y0, x0 + bw, y0 + bh)).resize((ANCHO, ALTO), Image.LANCZOS)
+    recorte = im.crop((x0, y0, x0 + bw, y0 + bh)).resize((ANCHO, ALTO), Image.LANCZOS)
+
+    # Overlay de color segun variacion para distinguir vecinas
+    overlays = [
+        None,  # 0: sin overlay
+        (249, 115, 22, 18),   # 1: naranja suave
+        (34, 211, 238, 14),   # 2: cian suave
+        (167, 139, 250, 12),  # 3: violeta suave
+    ]
+    overlay = overlays[variacion % len(overlays)]
+    if overlay:
+        from PIL import Image as Img
+        r, g, b, a = overlay
+        capa = Img.new("RGBA", recorte.size, (r, g, b, a))
+        recorte = Img.alpha_composite(recorte.convert("RGBA"), capa).convert("RGB")
+
+    return recorte
 
 
 def componer_16_9(cuadrado, region="center"):
@@ -145,7 +170,7 @@ def main():
     rutas = {}
     total = 0
     for nivel in sorted(PORTADAS):
-        for i, (slug, base, region, es_svg) in enumerate(PORTADAS[nivel], start=1):
+        for i, (slug, base, region, es_svg, variacion) in enumerate(PORTADAS[nivel], start=1):
             origen = os.path.join(publico, base.lstrip("/").replace("/", os.sep))
             nombre = "leccion-%02d-%s" % (i, slug)
             if es_svg:
@@ -159,7 +184,7 @@ def main():
                 im = Image.open(origen).convert("RGB")
                 salida = os.path.join(destino, nombre + ".webp")
                 if im.width >= im.height * 1.2:
-                    portada = recorte_16_9(im, region)
+                    portada = recorte_16_9(im, region, variacion)
                 else:
                     portada = componer_16_9(im, region)
                 portada.save(salida, "WEBP", quality=84, method=6)
