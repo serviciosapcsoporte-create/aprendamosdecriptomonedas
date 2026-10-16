@@ -82,7 +82,7 @@ function Nivel3Page() {
                   slug={item.topic.slug}
                   titulo={item.topic.title}
                   descripcion={item.topic.description}
-                  minutos={minutosLectura(item.topic)}
+                  minutos={minutosLectura(item.topic.content)}
                   estado={progreso[`nivel-3/${item.topic.slug}`] ?? "nuevo"}
                   miniatura={miniaturaDe("3", item.numero, item.topic.slug, item.topic.title)}
                 />

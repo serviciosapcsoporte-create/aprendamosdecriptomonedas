@@ -149,8 +149,11 @@ export function resumenDe(claves: string[], progreso: Progreso = leer()): Resume
  * (ritmo de lectura en espanol). Si la barra dice "8 min" y la leccion tiene el
  * doble de texto, el contador miente.
  */
-export function minutosLectura(contenido: string[] | undefined): number {
-  if (!contenido || contenido.length === 0) return 1;
+export function minutosLectura(contenido: string[] | undefined | null): number {
+  // Sin array no hay nada que contar: devuelve el minimo en vez de romper el
+  // render. Antes un topic sin 'content' tiraba "join is not not a function"
+  // y la pagina entera se quedaba en blanco.
+  if (!Array.isArray(contenido) || contenido.length === 0) return 1;
   const palabras = contenido.join(" ").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(palabras / 200));
 }

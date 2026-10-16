@@ -21,6 +21,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { AffiliateCta } from "@/components/AffiliateCta";
 import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
 import { LessonCard } from "@/components/LessonCard";
+import { BlockSimulator } from "@/components/BlockSimulator";
+import { SeedQuiz } from "@/components/SeedQuiz";
 import { NivelHero } from "@/components/NivelHero";
 import { RecursoLeadBanner } from "@/components/RecursoLeadBanner";
 import { curriculumData } from "@/data/curriculum";
@@ -48,7 +50,7 @@ export const Route = createFileRoute("/nivel-1-principiante")({
 
 /** Se inserta un banner al terminar la leccion con este numero. */
 const CORTES = [
-  { alTerminar: 4, tipo: "hotmart", indiceCurso: 0 },
+  { alTerminar: 7, tipo: "hotmart", indiceCurso: 0 },
   { alTerminar: 11, tipo: "recurso" },
 ];
 
@@ -67,6 +69,12 @@ function Nivel1Page() {
     for (const topic of s.topics) {
       numero += 1;
       items.push({ tipo: "leccion", topic, numero, key: `lec-${topic.slug}` });
+      if (numero === 2) {
+        items.push({ tipo: "simulador", key: "simulador-bloque" });
+      }
+      if (numero === 9) {
+        items.push({ tipo: "quiz", key: "quiz-seed" });
+      }
       const corte = CORTES.find((c) => c.alTerminar === numero);
       if (corte) items.push({ tipo: "banner", corte, key: `banner-${numero}` });
     }
@@ -121,6 +129,14 @@ function Nivel1Page() {
                     tieneVideo={Boolean(item.topic.video)}
                   />
                 );
+              }
+
+              if (item.tipo === "simulador") {
+                return <BlockSimulator key={item.key} />;
+              }
+
+              if (item.tipo === "quiz") {
+                return <SeedQuiz key={item.key} />;
               }
 
               return item.corte.tipo === "hotmart" ? (
