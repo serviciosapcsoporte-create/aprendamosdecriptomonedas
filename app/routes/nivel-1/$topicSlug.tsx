@@ -12,6 +12,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionBlockchain } from "@/components/LeccionBlockchain";
+import { LeccionBloque } from "@/components/LeccionBloque";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -101,6 +102,16 @@ function TopicPage() {
   const i = lista.findIndex((t) => t.id === topic.id);
   const anterior = i > 0 ? lista[i - 1] : null;
   const siguiente = i >= 0 && i < lista.length - 1 ? lista[i + 1] : null;
+
+  if (topic.slug === "como-funciona-un-bloque") {
+    return (
+      <LeccionBloque
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
 
   if (topic.slug === "que-es-blockchain") {
     return (
