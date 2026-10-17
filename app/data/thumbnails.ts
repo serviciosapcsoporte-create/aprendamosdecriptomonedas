@@ -31,18 +31,7 @@ export interface Miniatura {
 }
 
 /** Los dos diagramas: SVG, se copian tal cual y no se escalan. */
-const DIAGRAMAS: Record<string, Miniatura> = {
-  "que-es-blockchain": {
-    src: "/assets/lecciones/leccion-01-que-es-blockchain.svg",
-    alt: "Diagrama de bloques enlazados: una cadena que no se puede reescribir",
-    ajuste: "contain",
-  },
-  "como-funciona-un-bloque": {
-    src: "/assets/lecciones/leccion-02-como-funciona-un-bloque.svg",
-    alt: "Diagrama de la estructura interna de un bloque",
-    ajuste: "contain",
-  },
-};
+const DIAGRAMAS: Record<string, Miniatura> = {};
 
 function nombreArchivo(numero: number, slug: string): string {
   return `/assets/lecciones/leccion-${String(numero).padStart(2, "0")}-${slug}.webp`;
