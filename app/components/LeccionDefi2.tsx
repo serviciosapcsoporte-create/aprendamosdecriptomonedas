@@ -98,19 +98,18 @@ export function LeccionDefi2({ topic, anterior, siguiente }: { topic: Topic; ant
               </button>
             </div>
           </div>
+          <div className="container mx-auto max-w-4xl px-4 py-10">
+            <FinLeccion
+              clave={clave}
+              hrefAnterior={anterior ? `/nivel-3/${anterior.slug}` : null}
+              tituloAnterior={anterior?.title ?? null}
+              hrefSiguiente={siguiente ? `/nivel-3/${siguiente.slug}` : null}
+              tituloSiguiente={siguiente?.title ?? null}
+            />
+          </div>
         </div>
       </main>
       <Footer />
-
-      <div className="container mx-auto max-w-4xl px-4 pb-10">
-        <FinLeccion
-          clave={clave}
-          hrefAnterior={anterior ? `/nivel-3/${anterior.slug}` : null}
-          tituloAnterior={anterior?.title ?? null}
-          hrefSiguiente={siguiente ? `/nivel-3/${siguiente.slug}` : null}
-          tituloSiguiente={siguiente?.title ?? null}
-        />
-      </div>
     </>
   );
 }

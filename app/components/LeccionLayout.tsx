@@ -686,18 +686,16 @@ export function LeccionLayout({
             </div>
           )}
 
+          <FinLeccion
+            clave={clave}
+            hrefAnterior={anterior ? rutaLeccion(nivel, anterior.slug) : null}
+            tituloAnterior={anterior?.title ?? null}
+            hrefSiguiente={siguiente ? rutaLeccion(nivel, siguiente.slug) : null}
+            tituloSiguiente={siguiente?.title ?? null}
+          />
         </div>
       </main>
       <Footer />
-      <div className="container mx-auto max-w-4xl px-4 py-10">
-        <FinLeccion
-          clave={clave}
-          hrefAnterior={anterior ? rutaLeccion(nivel, anterior.slug) : null}
-          tituloAnterior={anterior?.title ?? null}
-          hrefSiguiente={siguiente ? rutaLeccion(nivel, siguiente.slug) : null}
-          tituloSiguiente={siguiente?.title ?? null}
-        />
-      </div>
     </>
   );
 }
