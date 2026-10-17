@@ -27,10 +27,12 @@ import { TopicIcon } from "@/components/TopicIcon";
 import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
 import { GasCalculator } from "@/components/GasCalculator";
 import { DexFlow } from "@/components/DexFlow";
+import { OnChainTracker } from "@/components/OnChainTracker";
+import { LeadMagnet, ArbitrageSimulator, CairoCodeBlock, CertificateModule } from "@/components/Level45Modules";
 import { VideoLeccion } from "@/components/VideoLeccion";
 import { curriculumData } from "@/data/curriculum";
 import { miniaturaDe } from "@/data/thumbnails";
-import { minutosLectura } from "@/lib/progreso";
+import { minutosLectura, useProgreso, resumenDe } from "@/lib/progreso";
 import type { Topic } from "@/data/curriculum";
 
 const BADGE: Record<string, { text: string; className: string }> = {
@@ -447,13 +449,30 @@ export function LeccionLayout({
     declarados.length > 0 ? declarados : [anterior, siguiente].filter((t): t is Topic => Boolean(t));
 
   const todosLosTemas = curriculumData[`nivel-${nivel}`]?.sections.flatMap((s) => s.topics) ?? [];
+  const { progreso } = useProgreso();
+  const clavesNivel = todosLosTemas.map((t) => `nivel-${nivel}/${t.slug}`);
+  const resumenNivel = resumenDe(clavesNivel, progreso);
   const indiceLeccion = Math.max(0, todosLosTemas.findIndex((t) => t.id === topic.id));
   const totalLecciones = todosLosTemas.length || 1;
   const progresoPct = Math.round(((indiceLeccion + 1) / totalLecciones) * 100);
   const minutos = minutosLectura(topic.content);
   const portada = miniaturaDe(nivel, indiceLeccion + 1, topic.slug, topic.title);
   const [quizSel, setQuizSel] = useState<string | null>(null);
-  const quiz = QUIZZES[topic.slug];
+  const quiz = QUIZZES[topic.slug] ?? (() => {
+    const otros = todosLosTemas.filter((t) => t.id !== topic.id).slice(0, 2).map((t) => t.title);
+    const opciones = [
+      { k: "A", t: topic.title },
+      { k: "B", t: otros[0] ?? "Otro concepto" },
+      { k: "C", t: otros[1] ?? "Concepto adicional" },
+    ];
+    return {
+      pregunta: `¿Cuál es el tema principal de esta lección?`,
+      opciones,
+      correcta: "A",
+      ok: "Correcto. Identificaste el tema principal.",
+      bad: "Incorrecto. Revisa el título y la descripción de la lección.",
+    };
+  })();
 
   return (
     <>
@@ -557,6 +576,27 @@ export function LeccionLayout({
             {topic.slug === "gas-evm" && <GasCalculator />}
             {topic.slug === "amm-uniswap" && <DexFlow />}
 
+            {nivel === "3" && (
+              <>
+                <section className="mt-6 grid gap-4 md:grid-cols-3">
+                  {["/assets/3d/nivel-3-analitica.webp", "/assets/3d/banner-analitica-onchain.webp", "/assets/3d/banner-portfolio-csv.webp"].map((src) => (
+                    <div key={src} className="overflow-hidden rounded-xl border border-slate-800">
+                      <img src={src} alt="Mockup dashboard" className="aspect-video w-full object-cover" loading="lazy" />
+                    </div>
+                  ))}
+                </section>
+                <OnChainTracker />
+                <LeadMagnet />
+              </>
+            )}
+            {nivel === "4" && <ArbitrageSimulator />}
+            {nivel === "5" && (
+              <>
+                <CairoCodeBlock />
+                <CertificateModule nivel={nivel} />
+              </>
+            )}
+
             <HotmartNativeBanner nivel={nivel} className="my-8" />
 
             {quiz && (
@@ -622,6 +662,15 @@ export function LeccionLayout({
               </section>
             )}
           </article>
+
+          {resumenNivel.fraccion === 1 && (
+            <div className="mt-6 rounded-2xl border border-green-500/40 bg-green-500/10 p-6 text-center">
+              <p className="mb-3 text-sm text-green-200">Completaste el 100% del nivel. Desbloquea tu certificado.</p>
+              <button className="rounded-xl bg-green-500 px-4 py-2.5 text-sm font-bold text-black transition hover:bg-green-400">
+                Descargar certificado (simulado)
+              </button>
+            </div>
+          )}
 
           <FinLeccion
             clave={clave}

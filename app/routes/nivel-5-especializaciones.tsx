@@ -93,6 +93,16 @@ function Nivel5Page() {
           })}
         </div>
 
+        <div className="mt-8 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6">
+          <h3 className="mb-2 text-xl font-bold text-white">Siguiente Paso: Accede a la Comunidad Privada VIP y Mentorías en Hotmart</h3>
+          <p className="mb-4 text-sm text-gray-300">
+            Lleva tu conocimiento al siguiente nivel con mentorías y comunidad privada.
+          </p>
+          <a href="/afiliados" className="inline-block rounded-xl bg-amber-400 px-6 py-2.5 font-bold text-black transition hover:bg-amber-300">
+            Explorar ecosistema Hotmart →
+          </a>
+        </div>
+
         <AffiliateCta nivel="5" />
       </main>
       <Footer />

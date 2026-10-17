@@ -93,6 +93,16 @@ function Nivel3Page() {
           })}
         </div>
 
+        <div className="mt-8 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6">
+          <h3 className="mb-2 text-xl font-bold text-white">Muro de Registro / Lead Capture</h3>
+          <p className="mb-4 text-sm text-gray-300">
+            Regístrate para acceder a las lecciones avanzadas y recursos premium.
+          </p>
+          <a href="/recursos" className="inline-block rounded-xl bg-amber-400 px-6 py-2.5 font-bold text-black transition hover:bg-amber-300">
+            Acceder a lecciones avanzadas
+          </a>
+        </div>
+
         <AffiliateCta nivel="3" />
       </main>
       <Footer />
