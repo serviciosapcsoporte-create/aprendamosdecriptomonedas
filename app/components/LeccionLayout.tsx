@@ -184,8 +184,14 @@ export function LeccionLayout({
                 app/styles.css. No se usa la clase `prose` de Tailwind porque el
                 proyecto no tiene instalado @tailwindcss/typography y escribarla
                 no generaria nada. */}
-            <div className="lesson-prose">
-              <Markdown content={topic.content} />
+            <div className="grid gap-4">
+              {topic.content.map((parrafo, i) => (
+                <div key={i} className="rounded-xl border border-slate-800 bg-slate-950/40 p-5">
+                  <div className="lesson-prose">
+                    <Markdown content={[parrafo]} />
+                  </div>
+                </div>
+              ))}
             </div>
 
             <HotmartNativeBanner nivel={nivel} className="my-8" />
