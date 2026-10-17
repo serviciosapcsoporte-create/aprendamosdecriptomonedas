@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionAMM } from "@/components/LeccionAMM";
 import { LeccionDefi2 } from "@/components/LeccionDefi2";
+import { LeccionPrestamos } from "@/components/LeccionPrestamos";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -102,6 +103,16 @@ function TopicPage() {
   const i = lista.findIndex((t) => t.id === topic.id);
   const anterior = i > 0 ? lista[i - 1] : null;
   const siguiente = i >= 0 && i < lista.length - 1 ? lista[i + 1] : null;
+
+  if (topic.slug === "protocolas-de-prestamo") {
+    return (
+      <LeccionPrestamos
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
 
   if (topic.slug === "defi-2-y-protocolos-avanzados") {
     return (
