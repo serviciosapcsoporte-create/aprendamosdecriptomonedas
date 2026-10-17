@@ -29,6 +29,10 @@ import { GasCalculator } from "@/components/GasCalculator";
 import { DexFlow } from "@/components/DexFlow";
 import { OnChainTracker } from "@/components/OnChainTracker";
 import { LeadMagnet, ArbitrageSimulator, CairoCodeBlock, CertificateModule } from "@/components/Level45Modules";
+import {
+  CustodySimulator, YieldCalculator, PegSimulator, BridgeSimulator, OracleManipulator,
+  L2GasComparer, POLSimulator, HealthFactorCalculator, InsuranceCoverageSim
+} from "@/components/Nivel3Widgets";
 import { VideoLeccion } from "@/components/VideoLeccion";
 import { curriculumData } from "@/data/curriculum";
 import { miniaturaDe } from "@/data/thumbnails";
@@ -596,6 +600,16 @@ export function LeccionLayout({
                 <CertificateModule nivel={nivel} />
               </>
             )}
+
+            {topic.slug === "dex-vs-exchange-centralizado" && <CustodySimulator />}
+            {topic.slug === "yield-farming-de-fi" && <YieldCalculator />}
+            {topic.slug === "tipos-de-stablecoins" && <PegSimulator />}
+            {topic.slug === "bridges-cross-chain" && <BridgeSimulator />}
+            {topic.slug === "el-problema-del-oracle" && <OracleManipulator />}
+            {topic.slug === "layer-2-soluciones-de-scaling" && <L2GasComparer />}
+            {topic.slug === "defi-2-y-protocolos-avanzados" && <POLSimulator />}
+            {topic.slug === "protocolas-de-prestamo" && <HealthFactorCalculator />}
+            {topic.slug === "seguros-en-defi" && <InsuranceCoverageSim />}
 
             <HotmartNativeBanner nivel={nivel} className="my-8" />
 
