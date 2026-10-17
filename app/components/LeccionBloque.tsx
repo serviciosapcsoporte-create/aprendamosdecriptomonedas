@@ -155,16 +155,18 @@ export function LeccionBloque({ topic, anterior, siguiente }: { topic: Topic; an
             </section>
           </article>
 
-          <FinLeccion
-            clave={clave}
-            hrefAnterior={anterior ? `/nivel-1/${anterior.slug}` : null}
-            tituloAnterior={anterior?.title ?? null}
-            hrefSiguiente={siguiente ? `/nivel-1/${siguiente.slug}` : null}
-            tituloSiguiente={siguiente?.title ?? null}
-          />
         </div>
       </main>
       <Footer />
+      <div className="container mx-auto max-w-4xl px-4 py-10">
+        <FinLeccion
+          clave={clave}
+          hrefAnterior={anterior ? `/nivel-1/${anterior.slug}` : null}
+          tituloAnterior={anterior?.title ?? null}
+          hrefSiguiente={siguiente ? `/nivel-1/${siguiente.slug}` : null}
+          tituloSiguiente={siguiente?.title ?? null}
+        />
+      </div>
     </>
   );
 }
