@@ -23,7 +23,11 @@ import { Header, Footer } from "@/components/Header";
 import { FinLeccion } from "@/components/FinLeccion";
 import { Markdown } from "@/components/Markdown";
 import { TopicIcon } from "@/components/TopicIcon";
+import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
 import { VideoLeccion } from "@/components/VideoLeccion";
+import { curriculumData } from "@/data/curriculum";
+import { miniaturaDe } from "@/data/thumbnails";
+import { minutosLectura } from "@/lib/progreso";
 import type { Topic } from "@/data/curriculum";
 
 const BADGE: Record<string, { text: string; className: string }> = {
@@ -84,6 +88,13 @@ export function LeccionLayout({
   const relacionados =
     declarados.length > 0 ? declarados : [anterior, siguiente].filter((t): t is Topic => Boolean(t));
 
+  const todosLosTemas = curriculumData[`nivel-${nivel}`]?.sections.flatMap((s) => s.topics) ?? [];
+  const indiceLeccion = Math.max(0, todosLosTemas.findIndex((t) => t.id === topic.id));
+  const totalLecciones = todosLosTemas.length || 1;
+  const progresoPct = Math.round(((indiceLeccion + 1) / totalLecciones) * 100);
+  const minutos = minutosLectura(topic.content);
+  const portada = miniaturaDe(nivel, indiceLeccion + 1, topic.slug, topic.title);
+
   return (
     <>
       <Header />
@@ -104,9 +115,27 @@ export function LeccionLayout({
             </span>
           </nav>
 
+          <div className="mb-6">
+            <p className="mb-2 text-sm font-semibold text-muted-foreground">
+              Nivel {nivel} — Leccion {indiceLeccion + 1} de {totalLecciones} · {progresoPct}% completado
+            </p>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
+              <div className="h-full rounded-full bg-amber-400" style={{ width: `${progresoPct}%` }} />
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">⏱️ {minutos} min de lectura</p>
+          </div>
+
           {/* Tarjeta oscura: es el contenedor de lectura de todo el sitio, el
               mismo que usan las guias de /recursos. */}
           <article className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8">
+            <div className="mb-6 overflow-hidden rounded-xl border border-border">
+              <img
+                src={portada.src}
+                alt={portada.alt}
+                className={`aspect-video w-full ${portada.ajuste === "contain" ? "object-contain" : "object-cover"}`}
+                loading="lazy"
+              />
+            </div>
             <header className="mb-6">
               <span
                 className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary"
@@ -158,6 +187,8 @@ export function LeccionLayout({
             <div className="lesson-prose">
               <Markdown content={topic.content} />
             </div>
+
+            <HotmartNativeBanner nivel={nivel} className="my-8" />
 
             {relacionados.length > 0 && (
               <section className="mt-10 border-t border-slate-800 pt-8">
