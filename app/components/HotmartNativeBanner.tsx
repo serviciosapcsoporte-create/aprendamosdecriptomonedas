@@ -63,10 +63,15 @@ export function HotmartNativeBanner({
       aria-label={`Curso recomendado: ${curso.curso}`}
       className={`not-prose overflow-hidden rounded-2xl border border-amber-500/40 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 shadow-lg ${className}`}
     >
-      <div className="relative p-5 md:p-6">
-        <span className="absolute right-4 top-4 rounded-full border border-amber-400/60 bg-amber-500/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-300">
-          Recomendado · Enlace de afiliado
-        </span>
+      <div className="p-5 md:p-6">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <span className="rounded-full border border-amber-400/60 bg-amber-500/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-300">
+            Recomendado
+          </span>
+          <span className="rounded-full border border-slate-600 bg-slate-800 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-300">
+            Enlace de afiliado
+          </span>
+        </div>
 
         <div className="flex flex-col gap-5 md:flex-row md:items-center">
           <div className="w-full shrink-0 md:w-56">
