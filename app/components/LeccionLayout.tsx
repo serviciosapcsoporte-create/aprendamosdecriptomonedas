@@ -25,6 +25,8 @@ import { FinLeccion } from "@/components/FinLeccion";
 import { Markdown } from "@/components/Markdown";
 import { TopicIcon } from "@/components/TopicIcon";
 import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
+import { GasCalculator } from "@/components/GasCalculator";
+import { DexFlow } from "@/components/DexFlow";
 import { VideoLeccion } from "@/components/VideoLeccion";
 import { curriculumData } from "@/data/curriculum";
 import { miniaturaDe } from "@/data/thumbnails";
@@ -184,6 +186,215 @@ const QUIZZES: Record<string, { pregunta: string; opciones: { k: string; t: stri
     ok: "Correcto. Muestra actividad real de la red.",
     bad: "Incorrecto. Un explorer muestra transacciones y estados.",
   },
+  "funciones-hash": {
+    pregunta: "¿Qué propiedad clave tiene una función hash criptográfica?",
+    opciones: [
+      { k: "A", t: "Es reversible." },
+      { k: "B", t: "Un pequeño cambio altera el hash por completo." },
+      { k: "C", t: "Siempre devuelve el mismo número." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Pequeños cambios producen hashes muy diferentes.",
+    bad: "Incorrecto. Las funciones hash son sensibles a cambios.",
+  },
+  "merkle-trees": {
+    pregunta: "¿Para qué sirve un Merkle Tree?",
+    opciones: [
+      { k: "A", t: "Guardar contraseñas." },
+      { k: "B", t: "Verificar integridad de muchas transacciones de forma eficiente." },
+      { k: "C", t: "Minar bloques." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Permite pruebas de inclusión eficientes.",
+    bad: "Incorrecto. Merkle Trees verifican integridad de datos.",
+  },
+  "pow-vs-pos": {
+    pregunta: "¿Qué consume menos energía?",
+    opciones: [
+      { k: "A", t: "Proof of Work." },
+      { k: "B", t: "Proof of Stake." },
+      { k: "C", t: "Ambos igual." },
+    ],
+    correcta: "B",
+    ok: "Correcto. PoS consume mucha menos energía.",
+    bad: "Incorrecto. PoW requiere alto cómputo.",
+  },
+  "gas-evm": {
+    pregunta: "¿Qué determina el costo de una transacción en Ethereum?",
+    opciones: [
+      { k: "A", t: "Solo el monto enviado." },
+      { k: "B", t: "Gas limit y precio del gas." },
+      { k: "C", t: "El nombre del token." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Gas limit × precio gas = fee.",
+    bad: "Incorrecto. El fee depende del gas y su precio.",
+  },
+  "nodos": {
+    pregunta: "¿Qué tipo de nodo tiene toda la cadena?",
+    opciones: [
+      { k: "A", t: "Light node." },
+      { k: "B", t: "Full node." },
+      { k: "C", t: "Archive node solo metadata." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Full node almacena la cadena completa.",
+    bad: "Incorrecto. Full node mantiene toda la blockchain.",
+  },
+  "que-son-smart-contracts": {
+    pregunta: "¿Qué es un smart contract?",
+    opciones: [
+      { k: "A", t: "Un contrato legal en papel." },
+      { k: "B", t: "Código que se ejecuta en la blockchain." },
+      { k: "C", t: "Un exchange centralizado." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Es código autoejecutable en la cadena.",
+    bad: "Incorrecto. Smart contracts son programas on-chain.",
+  },
+  "para-que-sirven": {
+    pregunta: "¿Un uso común de smart contracts es?",
+    opciones: [
+      { k: "A", t: "Enviar emails." },
+      { k: "B", t: "Automatizar acuerdos y DeFi." },
+      { k: "C", t: "Guardar fotos." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Automatizan lógica y finanzas descentralizadas.",
+    bad: "Incorrecto. Sirven para automatizar procesos on-chain.",
+  },
+  "riesgos-comunes": {
+    pregunta: "¿Un riesgo común en smart contracts es?",
+    opciones: [
+      { k: "A", t: "Bugs en el código." },
+      { k: "B", t: "Exceso de documentación." },
+      { k: "C", t: "Demasiada descentralización." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Bugs pueden causar pérdidas.",
+    bad: "Incorrecto. Errores de código son riesgos clave.",
+  },
+  "oraculos": {
+    pregunta: "¿Qué hace un oráculo en blockchain?",
+    opciones: [
+      { k: "A", t: "Minar bloques." },
+      { k: "B", t: "Traer datos del mundo real a la cadena." },
+      { k: "C", t: "Guardar contraseñas." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Conecta blockchain con datos externos.",
+    bad: "Incorrecto. Oráculos proveen datos off-chain.",
+  },
+  "oferta-demanda": {
+    pregunta: "¿Qué afecta el precio de un activo cripto?",
+    opciones: [
+      { k: "A", t: "Solo el nombre." },
+      { k: "B", t: "Oferta y demanda." },
+      { k: "C", t: "El color del logo." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Oferta y demanda determinan precio.",
+    bad: "Incorrecto. El mercado responde a oferta/demanda.",
+  },
+  "emision": {
+    pregunta: "¿Qué es la emisión de una criptomoneda?",
+    opciones: [
+      { k: "A", t: "La creación de nuevas unidades." },
+      { k: "B", t: "La quema de tokens." },
+      { k: "C", t: "El precio en USD." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Emisión es la creación de nuevas unidades.",
+    bad: "Incorrecto. Emisión se refiere a supply nuevo.",
+  },
+  "halving": {
+    pregunta: "¿Qué hace el halving de Bitcoin?",
+    opciones: [
+      { k: "A", t: "Duplica la recompensa." },
+      { k: "B", t: "Reduce la recompensa a la mitad." },
+      { k: "C", t: "Elimina fees." },
+    ],
+    correcta: "B",
+    ok: "Correcto. El halving reduce la recompensa minera.",
+    bad: "Incorrecto. Halving = mitad de recompensa.",
+  },
+  "quema-de-tokens": {
+    pregunta: "¿Qué es la quema de tokens?",
+    opciones: [
+      { k: "A", t: "Enviar tokens a una dirección inaccesible." },
+      { k: "B", t: "Vender todos los tokens." },
+      { k: "C", t: "Minar nuevos tokens." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Quemar reduce el supply circulante.",
+    bad: "Incorrecto. Quema = destrucción de tokens.",
+  },
+  "market-cap": {
+    pregunta: "¿Qué es el market cap?",
+    opciones: [
+      { k: "A", t: "Precio × supply circulante." },
+      { k: "B", t: "Solo el precio." },
+      { k: "C", t: "El número de usuarios." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Market cap = precio × supply.",
+    bad: "Incorrecto. Market cap considera supply circulante.",
+  },
+  "defi-que-es": {
+    pregunta: "¿Qué es DeFi?",
+    opciones: [
+      { k: "A", t: "Finanzas centralizadas tradicionales." },
+      { k: "B", t: "Finanzas descentralizadas sobre blockchain." },
+      { k: "C", t: "Un exchange custodial." },
+    ],
+    correcta: "B",
+    ok: "Correcto. DeFi es finanzas sin intermediarios.",
+    bad: "Incorrecto. DeFi es descentralizado.",
+  },
+  "pools-liquidity": {
+    pregunta: "¿Qué es un pool de liquidez?",
+    opciones: [
+      { k: "A", t: "Un fondo de tokens bloqueados para facilitar intercambios." },
+      { k: "B", t: "Una cuenta bancaria." },
+      { k: "C", t: "Un minero." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Los pools permiten swaps automáticos.",
+    bad: "Incorrecto. Pools bloquean tokens para AMMs.",
+  },
+  "amm-uniswap": {
+    pregunta: "¿Qué usa Uniswap para fijar precios?",
+    opciones: [
+      { k: "A", t: "Un order book centralizado." },
+      { k: "B", t: "Fórmula de producto constante (x*y=k)." },
+      { k: "C", t: "Un banco." },
+    ],
+    correcta: "B",
+    ok: "Correcto. AMM usa x*y=k.",
+    bad: "Incorrecto. Uniswap es AMM, no order book.",
+  },
+  "lending": {
+    pregunta: "¿Qué es lending en DeFi?",
+    opciones: [
+      { k: "A", t: "Prestar/borrowar cripto con colateral." },
+      { k: "B", t: "Minar Bitcoin." },
+      { k: "C", t: "Comprar NFTs." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Lending permite préstamos descentralizados.",
+    bad: "Incorrecto. Lending es préstamo con colateral.",
+  },
+  "staking-yield": {
+    pregunta: "¿Qué es el yield farming?",
+    opciones: [
+      { k: "A", t: "Ganar recompensas por proveer liquidez/stake." },
+      { k: "B", t: "Minar con GPU." },
+      { k: "C", t: "Comprar hardware." },
+    ],
+    correcta: "A",
+    ok: "Correcto. Yield farming genera rendimiento por participación.",
+    bad: "Incorrecto. Yield farming busca rendimiento en DeFi.",
+  },
 };
 
 const SUFIJO: Record<string, string> = {
@@ -342,6 +553,9 @@ export function LeccionLayout({
                 </div>
               ))}
             </div>
+
+            {topic.slug === "gas-evm" && <GasCalculator />}
+            {topic.slug === "amm-uniswap" && <DexFlow />}
 
             <HotmartNativeBanner nivel={nivel} className="my-8" />
 

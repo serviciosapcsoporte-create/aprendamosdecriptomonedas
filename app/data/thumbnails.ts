@@ -57,6 +57,13 @@ export function miniaturaDe(
       ajuste: "cover",
     };
   }
+  if (nivel === "2") {
+    return {
+      src: `/assets/lecciones/nivel-2-leccion-${String(numero).padStart(2, "0")}.webp`,
+      alt: `Portada ilustrada de la leccion: ${titulo}`,
+      ajuste: "cover",
+    };
+  }
   const diagrama = DIAGRAMAS[slug];
   if (diagrama) return diagrama;
   return {

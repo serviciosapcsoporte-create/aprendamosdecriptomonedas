@@ -110,6 +110,17 @@ function Nivel2Page() {
                     />
                   ))}
                 </div>
+
+                {modulo.titulo === "Smart Contracts" && (
+                  <HotmartNativeBanner
+                    nivel="2"
+                    indice={0}
+                    imagen="/assets/lecciones/nivel-2-leccion-06.webp"
+                    titulo="Masterclass DeFi: De Principiante a Inversionista en Protocolos Decentralizados"
+                    cta="Aprender DeFi en Hotmart →"
+                    className="mt-6"
+                  />
+                )}
               </section>
             ))}
           </div>
