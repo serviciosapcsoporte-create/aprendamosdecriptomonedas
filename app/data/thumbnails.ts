@@ -66,7 +66,7 @@ export function miniaturaDe(
   }
   if (nivel === "3") {
     return {
-      src: `/assets/lecciones/nivel-3-leccion-${String(numero).padStart(2, "0")}.webp`,
+      src: `/assets/lecciones/nivel-3/leccion-${String(numero).padStart(2, "0")}.webp`,
       alt: `Portada ilustrada de la leccion: ${titulo}`,
       ajuste: "cover",
     };
