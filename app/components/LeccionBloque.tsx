@@ -47,7 +47,7 @@ export function LeccionBloque({ topic, anterior, siguiente }: { topic: Topic; an
             </header>
 
             <div className="mb-6 overflow-hidden rounded-xl border border-border bg-slate-950/40">
-              <img src="/assets/lecciones/leccion-02-como-funciona-un-bloque.webp" alt="Portada" className="aspect-video w-full object-cover" loading="lazy" />
+              <img src="/assets/lecciones/leccion-02.webp" alt="Portada" className="aspect-video w-full object-cover" loading="lazy" />
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -109,7 +109,7 @@ export function LeccionBloque({ topic, anterior, siguiente }: { topic: Topic; an
               <div className="flex flex-col items-center gap-6 md:flex-row">
                 <div className="w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3">
                   <div className="aspect-video">
-                    <img src="/assets/lecciones/leccion-02-como-funciona-un-bloque.webp" alt="Estructura de Bloques" className="h-full w-full object-cover" loading="lazy" />
+                    <img src="/assets/lecciones/leccion-02.webp" alt="Estructura de Bloques" className="h-full w-full object-cover" loading="lazy" />
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">

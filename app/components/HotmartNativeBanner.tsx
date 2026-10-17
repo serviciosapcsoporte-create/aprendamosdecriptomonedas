@@ -34,6 +34,11 @@ interface HotmartNativeBannerProps {
   /** Imagen ilustrativa. NO es una captura del curso. */
   imagen?: string;
   className?: string;
+  titulo?: string;
+  pruebaSocial?: string;
+  productor?: string;
+  descripcion?: string;
+  cta?: string;
 }
 
 export function HotmartNativeBanner({
@@ -41,6 +46,11 @@ export function HotmartNativeBanner({
   indice = 0,
   imagen = "/assets/3d/banner-portfolio-csv.webp",
   className = "",
+  titulo,
+  pruebaSocial,
+  productor,
+  descripcion,
+  cta,
 }: HotmartNativeBannerProps) {
   const activos = (cursosPorNivel[nivel] ?? []).filter(estaActivo);
   const curso: CursoRecomendado | undefined = activos[indice];
@@ -78,15 +88,14 @@ export function HotmartNativeBanner({
 
           <div className="min-w-0 flex-1">
             <p className="mb-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
-              <span className="font-bold text-amber-400">{curso.pruebaSocial}</span>
-              <span className="text-slate-400">{curso.productor} · Hotmart</span>
+              <span className="font-bold text-amber-400">{pruebaSocial ?? curso.pruebaSocial}</span>
+              <span className="text-slate-400">{productor ?? curso.productor} · Hotmart</span>
             </p>
             <h3 className="mb-2 font-serif text-lg font-medium leading-snug text-white md:text-xl">
-              {curso.curso}
+              {titulo ?? curso.curso}
             </h3>
             <p className="mb-4 text-sm text-slate-300">
-              Ya lo explicamos gratis en las lecciones de este nivel. Si lo quieres
-              en video, este curso {curso.porQue}.
+              {descripcion ?? `Ya lo explicamos gratis en las lecciones de este nivel. Si lo quieres en video, este curso ${curso.porQue}.`}
             </p>
 
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
@@ -96,7 +105,7 @@ export function HotmartNativeBanner({
                 rel={REL_AFILIADO}
                 className="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition-[filter,transform] duration-150 ease-out hover-hover:brightness-110 active:scale-[0.98]"
               >
-                {curso.cta}
+                {cta ?? curso.cta}
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
               </a>
               <a

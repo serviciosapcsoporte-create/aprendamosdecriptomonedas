@@ -60,7 +60,7 @@ export function LeccionBlockchain({
                   <video
                     className="aspect-video w-full"
                     src={topic.video}
-                    poster="/assets/lecciones/leccion-01-que-es-blockchain.webp"
+                    poster="/assets/lecciones/leccion-01.webp"
                     controls
                     preload="none"
                     playsInline
@@ -92,7 +92,7 @@ export function LeccionBlockchain({
                 <div className="w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3">
                   <div className="aspect-video">
                     <img
-                      src="/assets/lecciones/leccion-01-que-es-blockchain.webp"
+                      src="/assets/lecciones/leccion-01.webp"
                       alt="Curso Hotmart"
                       className="h-full w-full object-cover"
                       loading="lazy"

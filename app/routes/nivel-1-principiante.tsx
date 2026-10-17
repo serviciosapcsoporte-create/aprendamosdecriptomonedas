@@ -144,6 +144,12 @@ function Nivel1Page() {
                   key={item.key}
                   nivel="1"
                   indice={item.corte.indiceCurso ?? 0}
+                  imagen="/assets/lecciones/leccion-01.webp"
+                  titulo="Aprende a invertir en criptomonedas en menos de 3 dias"
+                  pruebaSocial="⭐ 5.0"
+                  productor="Carpe Diem Capital"
+                  descripcion="Si quieres pasar de la teoria a la practica en video con soporte y certificacion, accede al programa de inicio rapido."
+                  cta="Ver Oferta Especial en Hotmart →"
                   className="col-span-full my-4"
                 />
               ) : (

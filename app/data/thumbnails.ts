@@ -43,16 +43,25 @@ function nombreArchivo(numero: number, slug: string): string {
  * @param titulo  Solo para el texto alternativo: no se escribe a mano por leccion.
  */
 export function miniaturaDe(
-  _nivel: string,
+  nivel: string,
   numero: number,
   slug: string,
   titulo: string,
 ): Miniatura {
+  // Nivel 1 usa portadas numeradas simples (leccion-01.webp ... leccion-15.webp)
+  // para que cada tarjeta tenga una imagen univoca y facil de auditar.
+  if (nivel === "1") {
+    return {
+      src: `/assets/lecciones/leccion-${String(numero).padStart(2, "0")}.webp`,
+      alt: `Portada ilustrada de la leccion: ${titulo}`,
+      ajuste: "cover",
+    };
+  }
   const diagrama = DIAGRAMAS[slug];
   if (diagrama) return diagrama;
   return {
     src: nombreArchivo(numero, slug),
-    alt: `Portada ilustrada de la lección: ${titulo}`,
+    alt: `Portada ilustrada de la leccion: ${titulo}`,
     ajuste: "cover",
   };
 }

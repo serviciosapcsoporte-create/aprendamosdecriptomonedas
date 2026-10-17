@@ -17,6 +17,7 @@
  *  - "Temas relacionados" como tarjetas clicables, no una linea de texto.
  *  - Bloque de accion con "Marcar como completada" y navegacion anterior/siguiente.
  */
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight, FileText, Sparkles } from "lucide-react";
 import { Header, Footer } from "@/components/Header";
@@ -37,6 +38,152 @@ const BADGE: Record<string, { text: string; className: string }> = {
     className: "border-info/30 bg-info/15 text-info",
   },
   paid: { text: "PREMIUM", className: "border-warning/30 bg-warning/15 text-warning" },
+};
+
+const QUIZZES: Record<string, { pregunta: string; opciones: { k: string; t: string }[]; correcta: string; ok: string; bad: string }> = {
+  "mineria-validacion": {
+    pregunta: "¿Qué diferencia principal hay entre Proof of Work y Proof of Stake?",
+    opciones: [
+      { k: "A", t: "PoW usa poder computacional; PoS bloquea cripto como garantía." },
+      { k: "B", t: "PoW no consume energía; PoS sí." },
+      { k: "C", t: "Ambos son idénticos." },
+    ],
+    correcta: "A",
+    ok: "Correcto. PoW compite con cómputo y PoS usa stake como garantía.",
+    bad: "Incorrecto. PoW consume mucha energía y PoS usa bloqueo de cripto.",
+  },
+  "wallets": {
+    pregunta: "¿Qué guarda realmente una wallet?",
+    opciones: [
+      { k: "A", t: "Las monedas físicas." },
+      { k: "B", t: "Tus llaves privadas." },
+      { k: "C", t: "El historial del banco." },
+    ],
+    correcta: "B",
+    ok: "Correcto. La wallet guarda tus llaves privadas, no las monedas.",
+    bad: "Incorrecto. Las monedas viven en la blockchain; la wallet guarda llaves.",
+  },
+  "claves-publicas-privadas": {
+    pregunta: "¿La relación entre llave privada y pública es de un solo sentido?",
+    opciones: [
+      { k: "A", t: "No, es reversible." },
+      { k: "B", t: "Sí, solo de privada a pública." },
+      { k: "C", t: "Solo en Bitcoin." },
+    ],
+    correcta: "B",
+    ok: "Correcto. De la privada se obtiene la pública, no al revés.",
+    bad: "Incorrecto. Es matemáticamente inviable deducir la privada desde la pública.",
+  },
+  "transacciones-fees": {
+    pregunta: "¿A quién van las fees de una transacción?",
+    opciones: [
+      { k: "A", t: "Al proyecto o empresa." },
+      { k: "B", t: "A mineros o validadores." },
+      { k: "C", t: "Al gobierno." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Las fees incentivan a quienes aseguran la red.",
+    bad: "Incorrecto. Las fees van a mineros/validadores, no al proyecto.",
+  },
+  "que-es-token-cripto": {
+    pregunta: "¿Un token ERC-20 vive sobre qué red?",
+    opciones: [
+      { k: "A", t: "Bitcoin." },
+      { k: "B", t: "Ethereum." },
+      { k: "C", t: "Ninguna." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Los tokens ERC-20 viven sobre Ethereum.",
+    bad: "Incorrecto. ERC-20 es un estándar de Ethereum.",
+  },
+  "buenas-practicas": {
+    pregunta: "¿Qué método de 2FA es más seguro?",
+    opciones: [
+      { k: "A", t: "SMS." },
+      { k: "B", t: "App autenticadora." },
+      { k: "C", t: "Solo contraseña." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Las apps autenticadoras evitan SIM swapping.",
+    bad: "Incorrecto. SMS puede ser interceptado; usa app autenticadora.",
+  },
+  "evitar-estafas": {
+    pregunta: "¿Cuál es señal clara de estafa?",
+    opciones: [
+      { k: "A", t: "Promesa de rendimiento garantizado." },
+      { k: "B", t: "Uso de hardware wallet." },
+      { k: "C", t: "Verificar la dirección." },
+    ],
+    correcta: "A",
+    ok: "Correcto. No existe rentabilidad garantizada.",
+    bad: "Incorrecto. Las promesas de ganancia segura son estafa.",
+  },
+  "cex-vs-dex": {
+    pregunta: "¿En un DEX quién custodia tus fondos?",
+    opciones: [
+      { k: "A", t: "La empresa exchange." },
+      { k: "B", t: "Tú mismo." },
+      { k: "C", t: "El gobierno." },
+    ],
+    correcta: "B",
+    ok: "Correcto. En un DEX controlas tus fondos.",
+    bad: "Incorrecto. En DEX no hay custodio central.",
+  },
+  "seed-phrase-backups": {
+    pregunta: "¿Dónde guardar la seed phrase?",
+    opciones: [
+      { k: "A", t: "En la nube." },
+      { k: "B", t: "En papel o metal físico." },
+      { k: "C", t: "En un correo." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Guárdala offline en papel o metal.",
+    bad: "Incorrecto. Nunca la guardes en digital.",
+  },
+  "crear-wallet": {
+    pregunta: "¿Crear una wallet cuesta dinero?",
+    opciones: [
+      { k: "A", t: "Sí, siempre." },
+      { k: "B", t: "No." },
+      { k: "C", t: "Solo en Bitcoin." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Crear una wallet es gratis.",
+    bad: "Incorrecto. Desconfía de sitios que cobren por crear wallet.",
+  },
+  "hacer-transaccion": {
+    pregunta: "¿Una transacción confirmada se puede revertir?",
+    opciones: [
+      { k: "A", t: "Sí." },
+      { k: "B", t: "No." },
+      { k: "C", t: "Solo si contactas soporte." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Las transacciones confirmadas son irreversibles.",
+    bad: "Incorrecto. No hay reversión en blockchain.",
+  },
+  "entender-red": {
+    pregunta: "¿Qué significa EVM?",
+    opciones: [
+      { k: "A", t: "Ethereum Virtual Machine." },
+      { k: "B", t: "Exchange Virtual Market." },
+      { k: "C", t: "Encrypted Value Module." },
+    ],
+    correcta: "A",
+    ok: "Correcto. EVM es la máquina virtual de Ethereum.",
+    bad: "Incorrecto. EVM = Ethereum Virtual Machine.",
+  },
+  "leer-transaccion-explorer": {
+    pregunta: "¿Qué muestra un block explorer?",
+    opciones: [
+      { k: "A", t: "Solo precios." },
+      { k: "B", t: "Transacciones y estados en la cadena." },
+      { k: "C", t: "Contraseñas." },
+    ],
+    correcta: "B",
+    ok: "Correcto. Muestra actividad real de la red.",
+    bad: "Incorrecto. Un explorer muestra transacciones y estados.",
+  },
 };
 
 const SUFIJO: Record<string, string> = {
@@ -94,6 +241,8 @@ export function LeccionLayout({
   const progresoPct = Math.round(((indiceLeccion + 1) / totalLecciones) * 100);
   const minutos = minutosLectura(topic.content);
   const portada = miniaturaDe(nivel, indiceLeccion + 1, topic.slug, topic.title);
+  const [quizSel, setQuizSel] = useState<string | null>(null);
+  const quiz = QUIZZES[topic.slug];
 
   return (
     <>
@@ -195,6 +344,31 @@ export function LeccionLayout({
             </div>
 
             <HotmartNativeBanner nivel={nivel} className="my-8" />
+
+            {quiz && (
+              <section className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-500/5 p-6">
+                <h3 className="mb-3 font-serif text-xl">Quiz de retencion</h3>
+                <p className="mb-4 text-sm text-muted-foreground">{quiz.pregunta}</p>
+                <div className="space-y-3">
+                  {quiz.opciones.map((o) => (
+                    <button
+                      key={o.k}
+                      disabled={quizSel !== null}
+                      onClick={() => setQuizSel(o.k)}
+                      className={quizSel === o.k ? "flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm transition border-amber-500/60 bg-amber-500/10" : "flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm transition border-border bg-card hover:border-accent/50"}
+                    >
+                      <span className="font-bold">{o.k})</span>
+                      <span>{o.t}</span>
+                    </button>
+                  ))}
+                </div>
+                {quizSel && (
+                  <div className={quizSel === quiz.correcta ? "mt-4 rounded-xl border border-green-500/40 bg-green-500/10 px-4 py-3 text-sm text-green-800 dark:text-green-200" : "mt-4 rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-800 dark:text-red-200"}>
+                    {quizSel === quiz.correcta ? quiz.ok : quiz.bad}
+                  </div>
+                )}
+              </section>
+            )}
 
             {relacionados.length > 0 && (
               <section className="mt-10 border-t border-slate-800 pt-8">
