@@ -19,6 +19,9 @@ import { LeccionStablecoins } from "@/components/LeccionStablecoins";
 import { LeccionOracle } from "@/components/LeccionOracle";
 import { LeccionSeguros } from "@/components/LeccionSeguros";
 import { LeccionDexVsCex } from "@/components/LeccionDexVsCex";
+import { LeccionGestionRiesgo } from "@/components/LeccionGestionRiesgo";
+import { LeccionBridges } from "@/components/LeccionBridges";
+import { LeccionLayer2 } from "@/components/LeccionLayer2";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -182,6 +185,36 @@ function TopicPage() {
   if (topic.slug === "dex-vs-exchange-centralizado") {
     return (
       <LeccionDexVsCex
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "trading-avanzado-gestión-de-riesgo") {
+    return (
+      <LeccionGestionRiesgo
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "bridges-cross-chain") {
+    return (
+      <LeccionBridges
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "layer-2-soluciones-de-scaling") {
+    return (
+      <LeccionLayer2
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
