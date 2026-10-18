@@ -10,10 +10,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionAMM } from "@/components/LeccionAMM";
 import { LeccionDefi2 } from "@/components/LeccionDefi2";
 import { LeccionPrestamos } from "@/components/LeccionPrestamos";
+import { LeccionNivel3 } from "@/components/LeccionNivel3";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -135,12 +135,10 @@ function TopicPage() {
   }
 
   return (
-    <LeccionLayout
-      nivel={NIVEL}
+    <LeccionNivel3
       topic={topic}
       anterior={anterior}
       siguiente={siguiente}
-      resolverRelacionado={(slug) => buscarTema(slug, NIVEL) ?? null}
     />
   );
 }

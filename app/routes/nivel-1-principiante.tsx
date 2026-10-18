@@ -144,7 +144,7 @@ function Nivel1Page() {
                   key={item.key}
                   nivel="1"
                   indice={item.corte.indiceCurso ?? 0}
-                  imagen="/assets/lecciones/leccion-01.webp"
+                  imagen="/assets/3d/banner-portfolio-csv.webp"
                   titulo="Aprende a invertir en criptomonedas en menos de 3 dias"
                   pruebaSocial="⭐ 5.0"
                   productor="Carpe Diem Capital"
