@@ -46,7 +46,7 @@ export function LeccionBridges({ topic, anterior, siguiente }: { topic: Topic; a
           <p className="mb-6 text-sm text-gray-400">{topic.description}</p>
 
           <div className="relative mb-8 w-full overflow-hidden rounded-2xl border border-amber-500/30 bg-gray-900 shadow-2xl aspect-video">
-            <img src="/assets/lecciones/nivel-3/leccion-05-bridges-cross-chain.webp" alt="Bridges Cross-Chain" className="h-full w-full object-cover" />
+            <img src="/assets/lecciones/nivel-3/leccion-05-bridges-cross-chain.webp" alt="Bridges Cross-Chain" className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = "/assets/lecciones/default-cover.webp"; }} />
           </div>
 
           <div className="my-8 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -109,7 +109,7 @@ export function LeccionBridges({ topic, anterior, siguiente }: { topic: Topic; a
           <div className="my-10 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6 shadow-2xl">
             <div className="flex flex-col items-center gap-6 md:flex-row">
               <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3 aspect-video">
-                <img src="/assets/lecciones/nivel-3/leccion-05-bridges-cross-chain.webp" alt="Curso Cross-Chain DeFi" className="h-full w-full object-cover" />
+                <img src="/assets/lecciones/nivel-3/leccion-05-bridges-cross-chain.webp" alt="Curso Cross-Chain DeFi" className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = "/assets/lecciones/default-cover.webp"; }} />
                 <span className="absolute left-2 top-2 rounded bg-amber-500 px-2 py-0.5 text-[10px] font-bold text-black">PATROCINADO</span>
               </div>
               <div className="w-full md:w-2/3">

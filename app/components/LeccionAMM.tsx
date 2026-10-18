@@ -44,7 +44,7 @@ export function LeccionAMM({ topic, anterior, siguiente }: { topic: Topic; anter
             </header>
 
             <div className="mb-6 overflow-hidden rounded-xl border border-border">
-              <img src="/assets/lecciones/nivel-3/leccion-01.webp" alt="Portada AMM" className="aspect-video w-full object-cover" loading="lazy" />
+              <img src="/assets/lecciones/nivel-3/leccion-01.webp" alt="Portada AMM" className="aspect-video w-full object-cover" loading="lazy" onError={(e) => { e.currentTarget.src = "/assets/lecciones/default-cover.webp"; }} />
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -68,7 +68,7 @@ export function LeccionAMM({ topic, anterior, siguiente }: { topic: Topic; anter
               <div className="flex flex-col items-center gap-6 md:flex-row">
                 <div className="w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3">
                   <div className="aspect-video">
-                    <img src="/assets/lecciones/nivel-3/leccion-01.webp" alt="Curso DeFi" className="h-full w-full object-cover" loading="lazy" />
+                    <img src="/assets/lecciones/nivel-3/leccion-01.webp" alt="Curso DeFi" className="h-full w-full object-cover" loading="lazy" onError={(e) => { e.currentTarget.src = "/assets/lecciones/default-cover.webp"; }} />
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">
