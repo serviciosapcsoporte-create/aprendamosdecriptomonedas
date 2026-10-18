@@ -14,6 +14,7 @@ import { LeccionAMM } from "@/components/LeccionAMM";
 import { LeccionDefi2 } from "@/components/LeccionDefi2";
 import { LeccionPrestamos } from "@/components/LeccionPrestamos";
 import { LeccionNivel3 } from "@/components/LeccionNivel3";
+import { LeccionYieldFarming } from "@/components/LeccionYieldFarming";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -127,6 +128,16 @@ function TopicPage() {
   if (topic.slug === "automated-market-maker") {
     return (
       <LeccionAMM
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "yield-farming-de-fi") {
+    return (
+      <LeccionYieldFarming
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
