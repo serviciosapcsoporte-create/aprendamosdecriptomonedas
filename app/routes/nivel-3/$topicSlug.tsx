@@ -17,6 +17,7 @@ import { LeccionNivel3 } from "@/components/LeccionNivel3";
 import { LeccionYieldFarming } from "@/components/LeccionYieldFarming";
 import { LeccionStablecoins } from "@/components/LeccionStablecoins";
 import { LeccionOracle } from "@/components/LeccionOracle";
+import { LeccionSeguros } from "@/components/LeccionSeguros";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -160,6 +161,16 @@ function TopicPage() {
   if (topic.slug === "el-problema-del-oracle") {
     return (
       <LeccionOracle
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "seguros-en-defi") {
+    return (
+      <LeccionSeguros
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}

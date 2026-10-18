@@ -22,7 +22,7 @@
  * activadas. Consent Mode v2 las exige declaradas.
  */
 
-export const GA_MEASUREMENT_ID = "G-EWFDLTCM8R";
+export const GA_MEASUREMENT_ID = "G-L1J1FRQCFE";
 
 const STORAGE_KEY = "adc-consent-v1";
 
