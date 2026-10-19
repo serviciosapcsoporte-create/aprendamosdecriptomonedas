@@ -22,6 +22,7 @@ import { LeccionDexVsCex } from "@/components/LeccionDexVsCex";
 import { LeccionGestionRiesgo } from "@/components/LeccionGestionRiesgo";
 import { LeccionBridges } from "@/components/LeccionBridges";
 import { LeccionLayer2 } from "@/components/LeccionLayer2";
+import { LeccionIdentidad } from "@/components/LeccionIdentidad";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -215,6 +216,16 @@ function TopicPage() {
   if (topic.slug === "layer-2-soluciones-de-scaling") {
     return (
       <LeccionLayer2
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "identidad-web3") {
+    return (
+      <LeccionIdentidad
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
