@@ -23,6 +23,7 @@ import { LeccionGestionRiesgo } from "@/components/LeccionGestionRiesgo";
 import { LeccionBridges } from "@/components/LeccionBridges";
 import { LeccionLayer2 } from "@/components/LeccionLayer2";
 import { LeccionIdentidad } from "@/components/LeccionIdentidad";
+import { LeccionPrivacidad } from "@/components/LeccionPrivacidad";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -226,6 +227,16 @@ function TopicPage() {
   if (topic.slug === "identidad-web3") {
     return (
       <LeccionIdentidad
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "privacidad-zcash-monero") {
+    return (
+      <LeccionPrivacidad
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
