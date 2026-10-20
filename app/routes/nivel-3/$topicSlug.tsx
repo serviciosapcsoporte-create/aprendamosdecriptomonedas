@@ -26,6 +26,7 @@ import { LeccionIdentidad } from "@/components/LeccionIdentidad";
 import { LeccionPrivacidad } from "@/components/LeccionPrivacidad";
 import { LeccionMineria } from "@/components/LeccionMineria";
 import { LeccionNfts } from "@/components/LeccionNfts";
+import { LeccionDaos } from "@/components/LeccionDaos";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -259,6 +260,16 @@ function TopicPage() {
   if (topic.slug === "mercado-de-nfts") {
     return (
       <LeccionNfts
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "daos-y-gobernanza-descentralizada") {
+    return (
+      <LeccionDaos
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
