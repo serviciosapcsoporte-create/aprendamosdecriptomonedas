@@ -28,6 +28,7 @@ import { LeccionMineria } from "@/components/LeccionMineria";
 import { LeccionNfts } from "@/components/LeccionNfts";
 import { LeccionDaos } from "@/components/LeccionDaos";
 import { LeccionEthereum2 } from "@/components/LeccionEthereum2";
+import { LeccionMev } from "@/components/LeccionMev";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -281,6 +282,16 @@ function TopicPage() {
   if (topic.slug === "ethereum-2-staking") {
     return (
       <LeccionEthereum2
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "mev-maximal-extractable-value") {
+    return (
+      <LeccionMev
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
