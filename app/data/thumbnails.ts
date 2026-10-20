@@ -73,7 +73,7 @@ export function miniaturaDe(
   }
   if (nivel === "4") {
     return {
-      src: `/assets/lecciones/nivel-4-leccion-${String(numero).padStart(2, "0")}.webp`,
+      src: `/assets/lecciones/nivel-4/leccion-${String(numero).padStart(2, "0")}.webp`,
       alt: `Portada ilustrada de la leccion: ${titulo}`,
       ajuste: "cover",
     };
