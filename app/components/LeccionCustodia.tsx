@@ -52,7 +52,14 @@ export function LeccionCustodia({ topic, anterior, siguiente }: { topic: Topic; 
           <p className="mb-6 text-sm text-gray-400">{topic.description}</p>
 
           <div className="relative mb-8 w-full overflow-hidden rounded-2xl border border-amber-500/30 bg-gray-900 shadow-2xl aspect-video">
-            <img src="/assets/lecciones/nivel-4/leccion-06.webp" alt="Custodia Institucional Multi-Sig y MPC Threshold Signatures" className="h-full w-full object-cover" />
+            <img
+              src="/assets/lecciones/nivel-4/custodia-institucional.webp"
+              alt="Custodia Institucional, Multi-Sig y Threshold Signatures"
+              onError={(e) => {
+                e.currentTarget.src = "/assets/lecciones/nivel-4/leccion-02.webp";
+              }}
+              className="h-full w-full object-cover"
+            />
           </div>
 
           <div className="my-8 grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -113,7 +120,11 @@ export function LeccionCustodia({ topic, anterior, siguiente }: { topic: Topic; 
           <div className="my-10 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6 shadow-2xl">
             <div className="flex flex-col items-center gap-6 md:flex-row">
               <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3 aspect-video">
-                <img src="/assets/lecciones/nivel-4/leccion-06.webp" alt="Curso Experto Custodia Web3" className="h-full w-full object-cover" />
+                <img
+                  src="/assets/lecciones/nivel-4/custodia-institucional.webp"
+                  alt="Curso Custodia Web3"
+                  className="h-full w-full object-cover"
+                />
                 <span className="absolute left-2 top-2 rounded bg-amber-500 px-2 py-0.5 text-[10px] font-bold text-black">PATROCINADO</span>
               </div>
               <div className="w-full md:w-2/3">
