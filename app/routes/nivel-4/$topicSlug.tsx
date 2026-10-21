@@ -14,6 +14,7 @@ import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionL2Rollups } from "@/components/LeccionL2Rollups";
 import { LeccionZkRollups } from "@/components/LeccionZkRollups";
 import { LeccionDexAvanzados } from "@/components/LeccionDexAvanzados";
+import { LeccionDerivados } from "@/components/LeccionDerivados";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -127,6 +128,16 @@ if (topic.slug === "zk-rollups-starknet-zksync") {
 if (topic.slug === "dex-avanzados-gamma-swap") {
     return (
       <LeccionDexAvanzados
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+if (topic.slug === "derivados-futures-y-opciones") {
+    return (
+      <LeccionDerivados
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
