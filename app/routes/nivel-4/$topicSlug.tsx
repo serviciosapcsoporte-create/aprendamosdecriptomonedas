@@ -15,6 +15,7 @@ import { LeccionL2Rollups } from "@/components/LeccionL2Rollups";
 import { LeccionZkRollups } from "@/components/LeccionZkRollups";
 import { LeccionDexAvanzados } from "@/components/LeccionDexAvanzados";
 import { LeccionDerivados } from "@/components/LeccionDerivados";
+import { LeccionBotsArbitraje } from "@/components/LeccionBotsArbitraje";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -138,6 +139,16 @@ if (topic.slug === "dex-avanzados-gamma-swap") {
 if (topic.slug === "derivados-futures-y-opciones") {
     return (
       <LeccionDerivados
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+if (topic.slug === "bots-arbitraje-mev") {
+    return (
+      <LeccionBotsArbitraje
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
