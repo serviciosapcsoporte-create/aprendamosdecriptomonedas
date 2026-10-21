@@ -12,6 +12,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionL2Rollups } from "@/components/LeccionL2Rollups";
+import { LeccionZkRollups } from "@/components/LeccionZkRollups";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -105,6 +106,16 @@ function TopicPage() {
 if (topic.slug === "arbitrum-optimism-layer-2") {
     return (
       <LeccionL2Rollups
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+if (topic.slug === "zk-rollups-starknet-zksync") {
+    return (
+      <LeccionZkRollups
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
