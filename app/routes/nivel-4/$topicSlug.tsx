@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { LeccionLayout } from "@/components/LeccionLayout";
 import { LeccionL2Rollups } from "@/components/LeccionL2Rollups";
 import { LeccionZkRollups } from "@/components/LeccionZkRollups";
+import { LeccionDexAvanzados } from "@/components/LeccionDexAvanzados";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -116,6 +117,16 @@ if (topic.slug === "arbitrum-optimism-layer-2") {
 if (topic.slug === "zk-rollups-starknet-zksync") {
     return (
       <LeccionZkRollups
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+if (topic.slug === "dex-avanzados-gamma-swap") {
+    return (
+      <LeccionDexAvanzados
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
