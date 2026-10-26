@@ -17,6 +17,7 @@ import { LeccionDexAvanzados } from "@/components/LeccionDexAvanzados";
 import { LeccionDerivados } from "@/components/LeccionDerivados";
 import { LeccionBotsArbitraje } from "@/components/LeccionBotsArbitraje";
 import { LeccionCustodia } from "@/components/LeccionCustodia";
+import { LeccionHardwareWallets } from "@/components/LeccionHardwareWallets";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -160,6 +161,16 @@ if (topic.slug === "bots-arbitraje-mev") {
 if (topic.slug === "custodia-institucional") {
     return (
       <LeccionCustodia
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+if (topic.slug === "hardware-wallets-y-cold-storage") {
+    return (
+      <LeccionHardwareWallets
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
