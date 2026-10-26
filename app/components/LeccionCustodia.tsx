@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Header, Footer } from "@/components/Header";
 import { FinLeccion } from "@/components/FinLeccion";
+import { miniaturaDe } from "@/data/thumbnails";
 import type { Topic } from "@/data/curriculum";
 
 const HOTLINK = "https://go.hotmart.com/U107924633L";
@@ -25,6 +26,7 @@ export function LeccionCustodia({ topic, anterior, siguiente }: { topic: Topic; 
     setSigners((prev) => prev.map((s) => (s.id === id ? { ...s, signed: !s.signed } : s)));
   };
   const clave = "nivel-4/custodia-institucional";
+  const portada = miniaturaDe("4", 6, topic.slug, topic.title);
 
   return (
     <>
@@ -53,11 +55,8 @@ export function LeccionCustodia({ topic, anterior, siguiente }: { topic: Topic; 
 
           <div className="relative mb-8 w-full overflow-hidden rounded-2xl border border-amber-500/30 bg-gray-900 shadow-2xl aspect-video">
             <img
-              src="/assets/lecciones/nivel-4/custodia-institucional.webp"
+              src={portada.src}
               alt="Custodia Institucional, Multi-Sig y Threshold Signatures"
-              onError={(e) => {
-                e.currentTarget.src = "/assets/lecciones/nivel-4/leccion-02.webp";
-              }}
               className="h-full w-full object-cover"
             />
           </div>
@@ -121,7 +120,7 @@ export function LeccionCustodia({ topic, anterior, siguiente }: { topic: Topic; 
             <div className="flex flex-col items-center gap-6 md:flex-row">
               <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-gray-800 md:w-1/3 aspect-video">
                 <img
-                  src="/assets/lecciones/nivel-4/custodia-institucional.webp"
+                  src={portada.src}
                   alt="Curso Custodia Web3"
                   className="h-full w-full object-cover"
                 />

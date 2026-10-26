@@ -611,7 +611,11 @@ export function LeccionLayout({
             {topic.slug === "protocolas-de-prestamo" && <HealthFactorCalculator />}
             {topic.slug === "seguros-en-defi" && <InsuranceCoverageSim />}
 
-            <HotmartNativeBanner nivel={nivel} className="my-8" />
+            <HotmartNativeBanner
+              nivel={nivel}
+              imagen={nivel === "4" ? portada.src : undefined}
+              className="my-8"
+            />
 
             {quiz && (
               <section className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-500/5 p-6">
