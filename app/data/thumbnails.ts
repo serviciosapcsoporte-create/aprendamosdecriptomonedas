@@ -33,6 +33,27 @@ export interface Miniatura {
 /** Los dos diagramas: SVG, se copian tal cual y no se escalan. */
 const DIAGRAMAS: Record<string, Miniatura> = {};
 
+/**
+ * Nivel 4: cada leccion con su propio archivo, nombrado por el concepto.
+ * Asi ninguna tarjeta repite la imagen de otra (ni la del ZK repetido) y
+ * cambiar una portada es cambiar un solo archivo.
+ */
+const ASSETS_NIVEL_4: Record<string, string> = {
+  "arbitrum-optimism-layer-2": "arbitrum-optimism.webp",
+  "zk-rollups-starknet-zksync": "zk-rollups-starknet.webp",
+  "dex-avanzados-gamma-swap": "dex-gamma-swap.webp",
+  "derivados-futures-y-opciones": "derivados-futuros.webp",
+  "bots-arbitraje-mev": "bots-arbitraje-mev.webp",
+  "custodia-institucional": "custodia-institucional.webp",
+  "hardware-wallets-y-cold-storage": "hardware-wallets.webp",
+  "exploits-y-lecciones-seguridad": "exploits-ciberseguridad.webp",
+  "composabilidad-defi-y-risk-parity": "composabilidad-defi.webp",
+  "token-unlocks-y-emision": "token-unlocks.webp",
+  "analisis-on-chain-dune": "analisis-onchain-dune.webp",
+  "optimizacion-cartera-y-seguros": "optimizacion-cartera.webp",
+  "liquid-staking-lido-rocket": "liquid-staking.webp",
+};
+
 function nombreArchivo(numero: number, slug: string): string {
   return `/assets/lecciones/leccion-${String(numero).padStart(2, "0")}-${slug}.webp`;
 }
@@ -72,8 +93,11 @@ export function miniaturaDe(
     };
   }
   if (nivel === "4") {
+    const dedicado = ASSETS_NIVEL_4[slug];
     return {
-      src: `/assets/lecciones/nivel-4/leccion-${String(numero).padStart(2, "0")}.webp`,
+      src: dedicado
+        ? `/assets/lecciones/nivel-4/${dedicado}`
+        : `/assets/lecciones/nivel-4/leccion-${String(numero).padStart(2, "0")}.webp`,
       alt: `Portada ilustrada de la leccion: ${titulo}`,
       ajuste: "cover",
     };

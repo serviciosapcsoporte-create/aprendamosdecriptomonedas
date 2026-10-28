@@ -3,7 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
-import { minutosLectura, resumenDe, useProgreso } from "@/lib/progreso";
+import { resumenDe, useProgreso } from "@/lib/progreso";
+import { miniaturaDe } from "@/data/thumbnails";
 import { NivelHero } from "@/components/NivelHero";
 import { AffiliateCta } from "@/components/AffiliateCta";
 import { jsonLd, courseLd, breadcrumbLd } from "@/lib/seo";
@@ -65,7 +66,7 @@ function Nivel4Page() {
             >
               <div className="relative aspect-video w-full overflow-hidden bg-gray-950">
                 <img
-                  src={`/assets/lecciones/nivel-4/leccion-${String(numero).padStart(2, "0")}.webp`}
+                  src={miniaturaDe("4", numero, topic.slug, topic.title).src}
                   alt={topic.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
