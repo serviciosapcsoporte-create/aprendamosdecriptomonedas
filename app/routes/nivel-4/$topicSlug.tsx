@@ -20,6 +20,7 @@ import { LeccionCustodia } from "@/components/LeccionCustodia";
 import { LeccionExploits } from "@/components/LeccionExploits";
 import { LeccionHardwareWallets } from "@/components/LeccionHardwareWallets";
 import { LeccionComposabilidadDefi } from "@/components/LeccionComposabilidadDefi";
+import { LeccionAnalisisOnChain, LeccionLiquidStaking, LeccionOptimizacionCartera, LeccionTokenUnlocks } from "@/components/LeccionesLevel4Interactives";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -198,6 +199,19 @@ if (topic.slug === "hardware-wallets-y-cold-storage") {
         siguiente={siguiente}
       />
     );
+  }
+
+  if (topic.slug === "token-unlocks-y-emision") {
+    return <LeccionTokenUnlocks topic={topic} anterior={anterior} siguiente={siguiente} />;
+  }
+  if (topic.slug === "analisis-on-chain-dune") {
+    return <LeccionAnalisisOnChain topic={topic} anterior={anterior} siguiente={siguiente} />;
+  }
+  if (topic.slug === "optimizacion-cartera-y-seguros") {
+    return <LeccionOptimizacionCartera topic={topic} anterior={anterior} siguiente={siguiente} />;
+  }
+  if (topic.slug === "liquid-staking-lido-rocket") {
+    return <LeccionLiquidStaking topic={topic} anterior={anterior} siguiente={siguiente} />;
   }
 
   return (
