@@ -11,6 +11,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { LeccionLayout } from "@/components/LeccionLayout";
+import { LeccionNivel5Interactiva } from "@/components/LeccionesLevel5Interactives";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -100,6 +101,28 @@ function TopicPage() {
   const i = lista.findIndex((t) => t.id === topic.id);
   const anterior = i > 0 ? lista[i - 1] : null;
   const siguiente = i >= 0 && i < lista.length - 1 ? lista[i + 1] : null;
+
+  if ([
+    "zk-rollups-y-el-futuro-ethereum",
+    "mev-maximizer-y-auction-design",
+    "account-abstraction-y-smart-contracts",
+    "cross-rollup-communication",
+    "zk-identity-y-privacy",
+    "modular-blockchain-y-op-stack",
+    "starknet-y-lenguaje-cairo",
+    "restaking-y-eigenlayer",
+    "defi-security-y-formal-verification",
+    "ingenieria-de-cartera-crypto",
+    "regulacion-y-compliance-global",
+  ].includes(topic.slug)) {
+    return (
+      <LeccionNivel5Interactiva
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
 
   return (
     <LeccionLayout
