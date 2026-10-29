@@ -16,6 +16,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { ElegantHeading } from "@/components/ElegantHeading";
 import { HeroVideo } from "@/components/HeroVideo";
 import { LeadMagnet } from "@/components/LeadMagnet";
+import { HomeNoticias } from "@/components/HomeNoticias";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import {
@@ -399,6 +400,8 @@ function Index() {
             </div>
           </div>
         </AnimatedSection>
+
+        <HomeNoticias />
 
         {/* Social Proof / Prueba Social */}
         <AnimatedSection animation="fade-in-up" className="relative z-10 scroll-mt-24">
