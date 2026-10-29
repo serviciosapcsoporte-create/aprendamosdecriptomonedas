@@ -19,6 +19,7 @@ import { LeccionBotsArbitraje } from "@/components/LeccionBotsArbitraje";
 import { LeccionCustodia } from "@/components/LeccionCustodia";
 import { LeccionExploits } from "@/components/LeccionExploits";
 import { LeccionHardwareWallets } from "@/components/LeccionHardwareWallets";
+import { LeccionComposabilidadDefi } from "@/components/LeccionComposabilidadDefi";
 import { Header, Footer } from "@/components/Header";
 import { curriculumData } from "@/data/curriculum";
 import { registrarEnCurso } from "@/lib/progreso";
@@ -182,6 +183,16 @@ if (topic.slug === "exploits-y-lecciones-seguridad") {
 if (topic.slug === "hardware-wallets-y-cold-storage") {
     return (
       <LeccionHardwareWallets
+        topic={topic}
+        anterior={anterior}
+        siguiente={siguiente}
+      />
+    );
+  }
+
+  if (topic.slug === "composabilidad-defi-y-risk-parity") {
+    return (
+      <LeccionComposabilidadDefi
         topic={topic}
         anterior={anterior}
         siguiente={siguiente}
