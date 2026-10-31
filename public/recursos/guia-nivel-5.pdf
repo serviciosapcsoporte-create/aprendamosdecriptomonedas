@@ -1,0 +1,62 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+4 0 obj
+<< /Length 2211 >>
+stream
+BT /F2 18 Tf 1 0 0 1 56 736 Td (Guia de Ruta  Nivel 5 \(Especializaciones\)) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 708 Td (Como elegir tu especializacion: Ethereum Scaling, Blockchain Modular y Regulacion) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 686 Td (A. Perfil: cual especializacion te queda mejor) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Te gusta programar -> ZK Programming y Desarrollo Avanzado) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  Te interesa la infraestructura -> Blockchain Modular y Wallet Tech) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Vienes del trading -> Finanzas y Analisis on-chain profundo) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  Te preocupa el marco legal -> Regulacion y Privacidad) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 596 Td (B. Ethereum Scaling \(ZK Programming / Cairo\)) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 574 Td ([ ]  Fundamentos: como un rollup comprime datos y prueba su estado) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 558 Td ([ ]  Cairo: sintaxis, felt, y contratos StarkNet) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  Practica: deploy de un contrato simple en testnet) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Recursos: Starknet docs, Cairo book, workshops oficiales) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 506 Td (C. Blockchain Modular y EigenLayer) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 484 Td ([ ]  Entender las capas: consenso, ejecucion, disponibilidad de datos) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 468 Td ([ ]  EigenLayer y restaking: riesgos y oportunidades) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 452 Td ([ ]  Experimentar con una cadena modular de testnet) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Comparar monolitico vs modular con datos reales de uso) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 416 Td (D. Regulacion y Finanzas institucionales) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 394 Td ([ ]  Marco global: MiCA \(UE\), EEUU \(SEC/CFTC\), LATAM) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 378 Td ([ ]  Como afecta la regulacion a exchanges y stablecoins) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 362 Td ([ ]  Custodia institucional e informes on-chain) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 346 Td ([ ]  Estrategia de carrera: roles que van a crecer) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 318 Td (Nivel 5: 11 especializaciones, acceso de por vida. Elige una ruta y ejecuta.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000000232 00000 n 
+0000002495 00000 n 
+0000002552 00000 n 
+0000002698 00000 n 
+trailer
+<< /Size 8 /Root 7 0 R >>
+startxref
+2747
+%%EOF

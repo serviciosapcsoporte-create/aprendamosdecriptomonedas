@@ -1,6 +1,5 @@
-fecha;activo;operacion;entrada;salida;precio_entrada;precio_salida;resultado_pct;notas
-2026-01-15;BTC;compra;0.05;;42000;;;Ejemplo: no es una operacion real
-2026-02-03;ETH;compra;2.0;;2400;;;
-2026-03-18;ETH;venta;;2.0;;3100;29.2;Salio bien: aqui se ve el criterio
-2026-04-22;SOL;compra;40;;95;;;
-2026-05-30;SOL;venta;;40;;70;-26.3;Perdida: por que se tomo esa decision
+﻿marcador;fecha;activo;operacion;entrada;salida;precio_entrada;precio_salida;resultado_pct;stop_loss;notas
+[EJEMPLO REAL];2026-01-15;BTC;compra;0.05;;42000;;;39500;Ejemplo: no es una operacion real. Aqui va el porque de la decision.
+;;;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;

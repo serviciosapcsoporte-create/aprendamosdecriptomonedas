@@ -1,13 +1,16 @@
-metrica;definicion;como_se_calcula;para_que_sirve;ejemplo_marcado_como_ejemplo
-precio;Precio de referencia;Cerrar del dia en el exchange que uses;Base de cualquier calculo en USD;
-market_cap;Capitalizacion total;precio * oferta_en_circulacion;Dimension real del proyecto;
-fdv;Valor totalmente diluido;precio * oferta_maxima;Lo que valdra cuando se desbloquee todo el supply;
-fdv_mcap_ratio;Riesgo de desbloqueo;fdv / market_cap;Por encima de 3 hay Quite probable;
-volumen_24h;Volumen traded en 24 horas;Del exchange, no del bloque;Liquidez real;
-vol_mcap;Rotacion;volumen_24h / market_cap;Cuanto rota el activo frente a su tamano;
-supply_circulante;Tokens ya liberados;Del explorador o del informe del proyecto;El denominador real, no el de marketing;
-supply_maximo;Techo de emision;Del tokenomics del proyecto;Para saber cuanto falta por emitir;
-desbloqueo_90d;Cuanto se desbloquea en 90 dias;De los vesting schedules publicados;Venta futura yaKnown;
-holders_totales;Direcciones con saldo;Del explorador;Concentracion de la distribucion;
-top10_concentracion;Porcentaje en las 10 primeras wallets;Suma de las 10 mayores / total;Si supera 50%, riesgo decetrosis;
-mcap_a_real;Capitalizacion frente a tangible;market_cap vs ingresos o reservas;Sirve para activos con caja, no para todo;
+﻿marcador;metrica;definicion;como_se_calcula;para_que_sirve
+ESQUEMA;precio;Precio de referencia en USD;Cierre del dia en el exchange que uses;Base de cualquier calculo
+ESQUEMA;market_cap;Capitalizacion total;precio * oferta_en_circulacion;Dimension real del proyecto
+ESQUEMA;fdv;Valor totalmente diluido;precio * oferta_maxima;Lo que valdria con todo el supply liberado
+ESQUEMA;fdv_mcap_ratio;Riesgo de desbloqueo;fdv / market_cap;Por encima de 3 es riesgo alto de dilucion
+ESQUEMA;volumen_24h;Volumen negociado en 24 horas;Del exchange, no del bloque;Liquidez real
+ESQUEMA;vol_mcap;Rotacion;volumen_24h / market_cap;Cuanto rota el activo frente a su tamano
+ESQUEMA;supply_circulante;Tokens ya liberados;Del explorador o del informe del proyecto;El denominador real, no el de marketing
+ESQUEMA;supply_maximo;Techo de emision;Del tokenomics del proyecto;Para saber cuanto falta por emitir
+ESQUEMA;desbloqueo_90d;Cuanto se desbloquea en 90 dias;De los vesting schedules publicados;Venta futura ya conocida
+ESQUEMA;holders_totales;Direcciones con saldo;Del explorador;Concentracion de la distribucion
+ESQUEMA;top10_concentracion;Porcentaje en las 10 primeras wallets;Suma de las 10 mayores / total;Si supera 50%, riesgo de centralizacion
+ESQUEMA;mcap_a_real;Capitalizacion frente a valor tangible;market_cap vs ingresos o reservas;Sirve para activos con caja, no para todo
+
+marcador;metrica;valor_ejemplo;nota
+[EJEMPLO REAL];token_ejemplo;precio 64.500 | mcap 1,26 B | fdv 1,34 B | fdv/mcap 1,06 | vol 24h 28 B | rotacion 2,22% | supply 19,7M/21M | desbloqueo 90d 0 | holders 1,02M | top10 12,4%;Datos de ejemplo, no de mercado. Los numeros de tu decision salen de tu propia fuente.

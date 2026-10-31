@@ -117,6 +117,22 @@ function RecursosPage() {
                 icon={<FileText className="w-6 h-6 text-success" />}
                 href="/resources/kit-nivel-3.pdf"
               />
+              <ResourceCard
+                title="Workbook Nivel 4 (PDF)"
+                description="Ejercicios y casos prácticos del nivel Experto: DeFi, rollups, MEV y seguridad."
+                price="GRATIS"
+                badge="free"
+                icon={<FileText className="w-6 h-6 text-success" />}
+                href="/recursos/workbook-nivel-4.pdf"
+              />
+              <ResourceCard
+                title="Guía Nivel 5 (PDF)"
+                description="Mapa de especializaciones: análisis on-chain, trading, desarrollo y compliance."
+                price="GRATIS"
+                badge="free"
+                icon={<FileText className="w-6 h-6 text-success" />}
+                href="/recursos/guia-nivel-5.pdf"
+              />
             </div>
           </>
         )}
@@ -147,7 +163,7 @@ function ResourceCard({
   imagen?: string;
   imagenAlt?: string;
 }) {
-  const isExternal = href.startsWith("/resources/");
+  const isExternal = href.startsWith("/resources/") || href.endsWith(".pdf");
   return (
     <div className="flex flex-col h-full overflow-hidden rounded-lg border bg-card">
       {imagen && (

@@ -71,27 +71,27 @@ export async function enviarLead(datos: Lead): Promise<ResultadoEnvio> {
 export const CSVS = [
   {
     archivo: "/recursos/plantilla-analisis-wallet.csv",
-    nombre: "Plantilla de análisis de wallet",
-    para: "Cómo auditar una wallet: antigüedad, cadencia, concentración y envíos a exchanges.",
+    nombre: "Plantilla de Análisis de Wallet",
+    para: "Cómo auditar una wallet: antigüedad, cadencia de transacciones, concentración de activos y envíos hacia CEXs.",
   },
   {
     archivo: "/recursos/plantilla-metricas-red.csv",
-    nombre: "Plantilla de métricas de red",
-    para: "Los ratios que separan un token de una preventa: FDV/MCAp, rotación y desbloqueos.",
+    nombre: "Plantilla de Métricas de Red",
+    para: "Los ratios que separan un proyecto sólido de una preventa: FDV/MCap, tasa de rotación y calendarios de desbloqueo.",
   },
   {
     archivo: "/recursos/checklist-seguridad.csv",
-    nombre: "Checklist de seguridad",
-    para: "12 puntos verificables en diez minutos sobre llaves, cuentas, custodia y operar.",
+    nombre: "Checklist de Seguridad Institucional",
+    para: "12 puntos verificables en diez minutos sobre custodia, frases de recuperación, hardware wallets y firmas operativas.",
   },
   {
     archivo: "/recursos/registro-operaciones.csv",
-    nombre: "Registro de operaciones",
-    para: "Llevar cada compra y venta con el porqué. Vale más que cualquier gráfico.",
+    nombre: "Registro de Operaciones & Trading Log",
+    para: "Lleva el registro estricto de cada compra, venta, nivel de stop-loss y la justificación táctica de tu decisión.",
   },
   {
     archivo: "/recursos/inventario-wallets.csv",
-    nombre: "Inventario de wallets",
-    para: "Saber cuánto tienes en exchanges y cuánto controlas tú de verdad.",
+    nombre: "Inventario de Wallets & Cold Storage",
+    para: "Control de balance real: audita cuánto capital tienes depositado en exchanges y cuánto controlas bajo custodia propia.",
   },
 ] as const;
