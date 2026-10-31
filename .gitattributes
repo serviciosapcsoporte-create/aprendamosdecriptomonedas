@@ -1,0 +1,12 @@
+# Binarios: nunca normalizar line endings (evita corromper PDF/XLSX/ZIP).
+*.pdf binary
+*.xlsx binary
+*.zip binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary
