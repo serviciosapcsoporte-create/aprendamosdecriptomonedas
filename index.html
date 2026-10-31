@@ -34,14 +34,17 @@
     />
 
     <!--
-      Google Consent Mode v2: se declara el rechazo ANTES de que exista
-      gtag.js. Antes este bloque cargaba analytics de inmediato y sin preguntar,
-      que es justo lo que prohíben el RGPD y la Ley 1581.
+      Google tag (gtag.js) — Consent Mode avanzado.
 
-      Ahora gtag.js NO se carga aquí. El lo inyecta app/lib/consent.ts cuando la
-      persona acepta, y aquí solo se deja la función gtag y el estado de siete
-      casillas listo para recibir la decision.
+      gtag.js se carga siempre para que Google pueda detectar la etiqueta y para
+      que la medición sin cookies funcione desde la primera visita. El estado de
+      consentimiento arranca DENEGADO (analytics_storage, ad_*, etc.): antes de
+      aceptar no se guardan cookies ni identificadores, solo pings anónimos.
+      Al aceptar, app/lib/consent.ts actualiza las señales a granted.
+
+      window.__gaCargado evita que consent.ts vuelva a inyectar el script.
     -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L1J1FRQCFE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -58,6 +61,12 @@
         security_storage: "granted",
         wait_for_update: 500,
       });
+      gtag("js", new Date());
+      gtag("config", "G-L1J1FRQCFE", {
+        anonymize_ip: true,
+        send_page_view: true,
+      });
+      window.__gaCargado = true;
     </script>
   </head>
   <body>

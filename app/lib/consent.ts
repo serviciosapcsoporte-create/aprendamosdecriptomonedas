@@ -5,16 +5,17 @@
  *   - Qué categorías existen realmente en el sitio (solo dos, y se refleja en
  *     el banner: inventar toggles de publicidad que no existen es peor que no
  *     tener banner).
- *   - Si Google Analytics 4 se carga. Ahora mismo se carga SIEMPRE y de forma
- *     inmediata desde index.html, antes de que nadie haya aceptado nada: eso es
- *     exactamente lo que el RGPD y la LGPD prohíben.
+ *   - Si Google Analytics 4 se carga. Se usa Consent Mode AVANZADO: gtag.js se
+ *     carga siempre (desde index.html) para que Google detecte la etiqueta y
+ *     para medir sin cookies, pero analytics_storage y las señales ad_* arrancan
+ *     DENEGADAS. Antes de aceptar no se escriben cookies ni identificadores;
+ *     solo se envían pings anónimos (cookieless). Al aceptar se actualizan las
+ *     señales a granted y GA4 empieza a usar almacenamiento.
  *
- * Decisión de diseño: Consent Mode BÁSICO (sin Fireside/advanced). Google
- * Analytics no se inyecta hasta que hay consentimiento. Con el modo avanzado
- * GA4 se carga con analytics_storage denegado y sigue mandando cookieless
- * pings; es legally defendible en la UE, pero en Colombia la Ley 1581 pide un
- * consentimiento claro y previo, y "sin cargar nada hasta que aceptas" es la
- * lectura que no admite discusión.
+ * Motivo del cambio: con el modo básico (no cargar nada hasta aceptar) Google
+ * no detecta la etiqueta y la verificación de instalación falla, además de
+ * perderse toda la medición de quienes navegan sin decidir. El modo avanzado es
+ * el recomendado por Google y mantiene el consentimiento previo para cookies.
  *
  * Lo que se declara denegado siempre, aunque se acepte la analítica:
  *   ad_storage, ad_user_data, ad_personalization
@@ -89,9 +90,10 @@ function guardarConsent(consent: Consent) {
 }
 
 /**
- * Carga gtag.js y configura la propiedad. Es idempotente: si ya se cargó, solo
- * actualiza las señales de consent, que es lo que permite revocar el
- * consentimiento y que Google deje de enviar datos.
+ * Aplica la decisión actual. Con Consent Mode avanzado gtag.js ya viene cargado
+ * desde index.html (window.__gaCargado === true), así que aquí normalmente solo
+ * se actualizan las señales. El bloque de carga queda como respaldo por si el
+ * script no se pudo cargar y para permitir revocar el consentimiento.
  */
 export function aplicarConsent(consent: Consent): void {
   if (typeof window === "undefined") return;
