@@ -94,4 +94,19 @@ export const CSVS = [
     nombre: "Inventario de Wallets & Cold Storage",
     para: "Control de balance real: audita cuánto capital tienes depositado en exchanges y cuánto controlas bajo custodia propia.",
   },
+  {
+    archivo: "/recursos/calculadora-riesgo.csv",
+    nombre: "Calculadora de Posición & Risk Sizing",
+    para: "Tamaño exacto de la posición según capital total, tolerancia al riesgo por operación y distancia al stop-loss.",
+  },
+  {
+    archivo: "/recursos/tesis-inversion.csv",
+    nombre: "Plantilla de Tesis de Inversión & Invalidación",
+    para: "Documenta la tesis fundamental, métricas de adopción, catalizadores y el precio o evento exacto que invalida la tesis.",
+  },
+  {
+    archivo: "/recursos/seguimiento-airdrop.csv",
+    nombre: "Seguimiento de Airdrops & Points Farming",
+    para: "Controla puntos acumulados, gas invertido, número de transacciones y carteras en protocolos pre-token.",
+  },
 ] as const;

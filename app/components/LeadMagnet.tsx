@@ -1,10 +1,10 @@
 /**
- * Bloque de recursos descargables.
+ * Kit institucional de 8 plantillas descargables.
  *
- * Cinco plantillas, cada una en CSV, XLSX y PDF estático (16:9 con CTA a
- * Hotmart). Arriba, el paquete ZIP completo. Si VITE_LEADS_ENDPOINT está
- * configurado se pide nombre y correo antes de descargar; si no, la descarga es
- * directa y se explica por qué (ver app/lib/leads.ts).
+ * Cada plantilla existe en CSV, XLSX (con fórmulas) y PDF estático 16:9 con CTA
+ * a Hotmart. El paquete ZIP las agrupa. Si VITE_LEADS_ENDPOINT está configurado
+ * se pide correo antes de descargar; si no, la descarga es directa y se explica
+ * por qué (ver app/lib/leads.ts). Nunca se finge una captura que no existe.
  */
 import { useState } from "react";
 import {
@@ -21,7 +21,6 @@ import {
   FileSpreadsheet,
   FileText,
   Loader2,
-  Mail,
   Package,
 } from "lucide-react";
 
@@ -31,6 +30,9 @@ const BADGES: Record<string, string> = {
   "checklist-seguridad.csv": "Auditoría",
   "registro-operaciones.csv": "Gestión de riesgo",
   "inventario-wallets.csv": "Custodia",
+  "calculadora-riesgo.csv": "Risk sizing",
+  "tesis-inversion.csv": "Inversión",
+  "seguimiento-airdrop.csv": "Airdrop farming",
 };
 
 const ZIP = "/recursos/paquete-plantillas-csv.zip";
@@ -41,9 +43,17 @@ type Estado =
   | { fase: "listo" }
   | { fase: "fallo"; detalle: string };
 
+function descargarZip() {
+  const a = document.createElement("a");
+  a.href = ZIP;
+  a.download = "paquete-plantillas-csv.zip";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
 export function LeadMagnet() {
   const hayEndpoint = endpointConfigurado() !== null;
-  const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [aceptaCorreo, setAceptaCorreo] = useState(false);
   const [errores, setErrores] = useState<Record<string, string>>({});
@@ -51,24 +61,29 @@ export function LeadMagnet() {
 
   const enviar = async (e: React.FormEvent) => {
     e.preventDefault();
-    const err = validar({ nombre, email });
-    setErrores(err);
-    if (Object.keys(err).length) {
+    const err = validar({ nombre: email.split("@")[0] || "suscriptor", email });
+    setErrores(err.email ? { email: err.email } : {});
+    if (err.email) {
       document.querySelector<HTMLElement>("[aria-invalid='true']")?.focus();
       return;
     }
     setEstado({ fase: "enviando" });
     const lead: Lead = {
-      nombre: nombre.trim(),
+      nombre: email.split("@")[0] || "suscriptor",
       email: email.trim(),
       aceptaCorreo,
-      origen: "leadmagnet-csv",
+      origen: "leadmagnet-kit-8",
       fecha: new Date().toISOString(),
     };
     const r = await enviarLead(lead);
-    if (r.estado === "ok") setEstado({ fase: "listo" });
-    else if (r.estado === "sin-configurar") setEstado({ fase: "fallo", detalle: "sin-configurar" });
-    else setEstado({ fase: "fallo", detalle: r.detalle });
+    if (r.estado === "ok") {
+      setEstado({ fase: "listo" });
+      descargarZip();
+    } else if (r.estado === "sin-configurar") {
+      setEstado({ fase: "fallo", detalle: "sin-configurar" });
+    } else {
+      setEstado({ fase: "fallo", detalle: r.detalle });
+    }
   };
 
   return (
@@ -86,28 +101,40 @@ export function LeadMagnet() {
           id="leadmagnet-titulo"
           className="mb-2 mt-4 text-3xl font-extrabold text-white"
         >
-          Kits de herramientas y plantillas descargables
+          Kit Institucional Completo: 8 Plantillas Maestras
         </ElegantHeading>
         <p className="mx-auto mt-2 max-w-2xl text-sm text-gray-400">
-          Plantillas con esquema explícito y una fila marcada como [EJEMPLO REAL].
-          Descarga el paquete completo o cada archivo en el formato que prefieras.
+          Ocho plantillas con fila de esquema y una fila marcada como [EJEMPLO REAL].
+          Descarga el paquete completo o cada archivo en CSV, Excel con fórmulas o PDF.
         </p>
       </div>
 
-      <div className="mx-auto max-w-2xl rounded-2xl border border-gray-800 bg-gray-950/70 p-5">
+      <div className="mx-auto max-w-2xl rounded-3xl border border-amber-500/40 bg-gradient-to-br from-gray-900 via-[#0A0E1A] to-gray-900 p-6 shadow-2xl sm:p-8">
+        <div className="mb-6 text-center">
+          <span className="inline-block rounded-full border border-amber-500/30 bg-amber-500/20 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-amber-400">
+            Acceso exclusivo
+          </span>
+          <h3 className="mb-2 mt-3 text-2xl font-extrabold text-white">
+            Kit Institucional Completo (8 Plantillas Maestras)
+          </h3>
+          <p className="mx-auto max-w-lg text-xs leading-relaxed text-gray-400">
+            Obtén acceso inmediato al paquete ZIP con todas las plantillas en CSV,
+            Excel con fórmulas y PDFs tipo landing page.
+          </p>
+        </div>
+
         {!hayEndpoint ? (
           <>
             <a
               href={ZIP}
               download
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-8 py-3.5 font-extrabold text-black transition-colors hover:bg-amber-300"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-8 py-3.5 text-sm font-extrabold text-black transition-colors hover:bg-amber-300"
             >
               <Package className="h-5 w-5" aria-hidden="true" />
-              Descargar paquete completo (ZIP)
+              Descargar Kit Completo de Herramientas (ZIP)
             </a>
-            <p className="mt-3 text-center text-xs text-gray-500">
-              Cinco CSV listos para Excel, Numbers o pandas. Sin registro.
-              Si prefieres recibirlos por correo,{" "}
+            <p className="mt-3 text-center text-[11px] text-gray-500">
+              Descarga directa, sin registro. Si prefieres recibirlo por correo,{" "}
               <a href="https://t.me/ApcDeCripto" className="underline underline-offset-2">
                 escríbenos por Telegram
               </a>
@@ -115,60 +142,40 @@ export function LeadMagnet() {
             </p>
           </>
         ) : estado.fase === "listo" ? (
-          <div aria-live="polite">
-            <p className="mb-3 flex items-center gap-2 text-sm font-semibold text-emerald-400">
-              <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-              Listo, {nombre.trim()}. Te enviamos los recursos a {email.trim()}.
+          <div aria-live="polite" className="space-y-3 rounded-2xl border border-emerald-500/50 bg-emerald-950/40 p-6 text-center">
+            <CheckCircle2 className="mx-auto h-7 w-7 text-emerald-400" aria-hidden="true" />
+            <h4 className="text-base font-bold text-emerald-300">Acceso concedido</h4>
+            <p className="text-xs text-gray-300">
+              Enviamos el enlace a <strong>{email}</strong>. La descarga del ZIP
+              debería haber comenzado en tu navegador.
             </p>
             <a
               href={ZIP}
               download
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-8 py-3.5 font-extrabold text-black transition-colors hover:bg-amber-300"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-2.5 text-xs font-bold text-black transition-colors hover:bg-emerald-400"
             >
-              <Package className="h-5 w-5" aria-hidden="true" />
-              Descargar paquete completo (ZIP)
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Descargar ZIP ahora
             </a>
           </div>
         ) : (
-          <form onSubmit={enviar} noValidate className="space-y-3">
-            <p className="text-sm font-semibold text-white">
-              Recibe el paquete completo en tu correo
-            </p>
+          <form onSubmit={enviar} noValidate className="space-y-4">
             <div>
-              <label htmlFor="lm-nombre" className="mb-1 block text-xs text-gray-400">
-                Nombre o alias
-              </label>
-              <input
-                id="lm-nombre"
-                name="nombre"
-                type="text"
-                autoComplete="given-name"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                aria-invalid={Boolean(errores.nombre)}
-                aria-describedby={errores.nombre ? "lm-error-nombre" : undefined}
-                className="w-full rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white outline-none focus:border-amber-400"
-              />
-              {errores.nombre && (
-                <p id="lm-error-nombre" className="mt-1 text-xs text-red-400">
-                  {errores.nombre}
-                </p>
-              )}
-            </div>
-            <div>
-              <label htmlFor="lm-email" className="mb-1 block text-xs text-gray-400">
-                Correo
+              <label htmlFor="lm-email" className="mb-1 block text-xs font-mono text-gray-400">
+                Correo electrónico:
               </label>
               <input
                 id="lm-email"
                 name="email"
                 type="email"
                 autoComplete="email"
+                required
+                placeholder="tu.nombre@institucion.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 aria-invalid={Boolean(errores.email)}
                 aria-describedby={errores.email ? "lm-error-email" : undefined}
-                className="w-full rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white outline-none focus:border-amber-400"
+                className="w-full rounded-xl border border-gray-800 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-400"
               />
               {errores.email && (
                 <p id="lm-error-email" className="mt-1 text-xs text-red-400">
@@ -176,7 +183,7 @@ export function LeadMagnet() {
                 </p>
               )}
             </div>
-            <label className="flex items-start gap-2 text-xs text-gray-400">
+            <label className="flex items-start gap-2 text-[11px] text-gray-400">
               <input
                 type="checkbox"
                 checked={aceptaCorreo}
@@ -188,17 +195,17 @@ export function LeadMagnet() {
             <button
               type="submit"
               disabled={estado.fase === "enviando"}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-8 py-3.5 font-extrabold text-black transition-colors hover:bg-amber-300 disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-amber-400 px-8 py-3.5 text-sm font-extrabold text-black transition-colors hover:bg-amber-300 disabled:opacity-50"
             >
               {estado.fase === "enviando" ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-                  Enviando…
+                  Preparando el paquete…
                 </>
               ) : (
                 <>
-                  <Mail className="h-4 w-4" aria-hidden="true" />
-                  Descargar el paquete completo (ZIP)
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  Descargar Kit Completo de Herramientas (ZIP)
                 </>
               )}
             </button>
@@ -209,12 +216,10 @@ export function LeadMagnet() {
                   : `No pudimos enviarlo (${estado.detalle}). Puedes descargar abajo.`}
               </p>
             )}
-            <p className="text-xs leading-relaxed text-gray-500">
-              Guardamos nombre y correo solo para enviarte los recursos. No
-              vendemos ni cedemos tus datos y no hay publicidad. Puedes pedir su
-              eliminación desde la{" "}
+            <p className="text-center text-[10px] text-gray-500">
+              Tus datos están seguros. Cero spam, baja cuando quieras.{" "}
               <a href="/privacidad" className="underline underline-offset-2">
-                política de privacidad
+                Política de privacidad
               </a>
               .
             </p>
