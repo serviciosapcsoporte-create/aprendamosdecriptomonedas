@@ -6,11 +6,13 @@ import {
 } from "@tanstack/react-router";
 import { Header, Footer } from "@/components/Header";
 import { GUIA_CUBIERTA, GUIA_CUBIERTA_ALT } from "@/data/assets3d";
+import { PLANTILLAS } from "@/data/recursos-plantillas";
 import {
   BookOpen,
   CheckCircle2,
   Download,
   Eye,
+  FileSpreadsheet,
   FileText,
   Lock,
   ShieldCheck,
@@ -56,6 +58,47 @@ function RecursosPage() {
                 Guías, checklists y plantillas para proteger tu inversión y
                 operar con confianza.
               </p>
+            </div>
+
+            <div className="mb-8 flex flex-col items-start justify-between gap-3 rounded-xl border border-warning/30 bg-card px-5 py-4 sm:flex-row sm:items-center">
+              <div>
+                <h2 className="text-lg font-bold">Kit Institucional: 8 plantillas de trabajo</h2>
+                <p className="text-sm text-muted-foreground">
+                  Cada plantilla tiene su página con el esquema de columnas, un ejemplo y
+                  descarga en CSV, Excel con fórmulas y PDF.
+                </p>
+              </div>
+              <a
+                href="/recursos/paquete-plantillas-csv.zip"
+                className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-secondary"
+              >
+                <Download className="h-4 w-4" />
+                Descargar ZIP
+              </a>
+            </div>
+
+            <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {PLANTILLAS.map((p) => (
+                <a
+                  key={p.slug}
+                  href={`/recursos/${p.slug}`}
+                  className="group flex flex-col rounded-lg border bg-card p-5 transition-colors hover:border-warning/40"
+                >
+                  <span className="mb-2 w-fit rounded-full bg-warning/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-warning">
+                    {p.badge}
+                  </span>
+                  <h3 className="mb-1 text-sm font-bold leading-snug group-hover:text-warning">
+                    {p.nombre}
+                  </h3>
+                  <p className="mb-3 flex-1 text-xs leading-relaxed text-muted-foreground">
+                    {p.resumen}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground">
+                    <FileSpreadsheet className="h-3.5 w-3.5" aria-hidden="true" />
+                    CSV · Excel · PDF
+                  </span>
+                </a>
+              ))}
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

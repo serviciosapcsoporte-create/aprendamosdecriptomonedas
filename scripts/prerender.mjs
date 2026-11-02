@@ -116,6 +116,14 @@ const staticRoutes = {
   "/recursos/el-custodio": { file: "recursos/el-custodio.tsx" },
   "/recursos/el-escudo-de-5-minutos": { file: "recursos/el-escudo-de-5-minutos.tsx" },
   "/recursos/el-escanner": { file: "recursos/el-escanner.tsx" },
+  "/recursos/plantilla-analisis-wallet": { file: "recursos/plantilla-analisis-wallet.tsx" },
+  "/recursos/plantilla-metricas-red": { file: "recursos/plantilla-metricas-red.tsx" },
+  "/recursos/checklist-seguridad": { file: "recursos/checklist-seguridad.tsx" },
+  "/recursos/registro-operaciones": { file: "recursos/registro-operaciones.tsx" },
+  "/recursos/inventario-wallets": { file: "recursos/inventario-wallets.tsx" },
+  "/recursos/calculadora-riesgo": { file: "recursos/calculadora-riesgo.tsx" },
+  "/recursos/tesis-inversion": { file: "recursos/tesis-inversion.tsx" },
+  "/recursos/seguimiento-airdrop": { file: "recursos/seguimiento-airdrop.tsx" },
 };
 
 // ---------------------------------------------------------------------------

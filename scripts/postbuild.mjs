@@ -47,6 +47,15 @@ const resourceSlugs = [
   "el-custodio",
   "el-escudo-de-5-minutos",
   "el-escanner",
+  // Landings de las plantillas del Kit Institucional (app/data/recursos-plantillas.ts).
+  "plantilla-analisis-wallet",
+  "plantilla-metricas-red",
+  "checklist-seguridad",
+  "registro-operaciones",
+  "inventario-wallets",
+  "calculadora-riesgo",
+  "tesis-inversion",
+  "seguimiento-airdrop",
 ].map((s) => ({
   path: `/recursos/${s}`,
   priority: "0.7",

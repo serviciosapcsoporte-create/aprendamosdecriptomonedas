@@ -246,7 +246,11 @@ export function LeadMagnet() {
                   <span className="mb-1 inline-block rounded-md border border-gray-700 bg-gray-800 px-2.5 py-0.5 text-[10px] font-semibold text-amber-400">
                     {BADGES[base + ".csv"] ?? "Recurso"}
                   </span>
-                  <h4 className="mb-1 text-base font-bold text-white">{c.nombre}</h4>
+                  <h4 className="mb-1 text-base font-bold text-white">
+                    <a href={`/recursos/${base}`} className="transition-colors hover:text-amber-400">
+                      {c.nombre}
+                    </a>
+                  </h4>
                   <p className="text-xs leading-relaxed text-gray-400">{c.para}</p>
                 </div>
                 <div className="flex w-full items-center justify-end gap-2 md:w-auto">
