@@ -24,6 +24,7 @@ import {
   Zap,
 } from "lucide-react";
 import { HotmartNativeBanner } from "@/components/HotmartNativeBanner";
+import { CustodiaSimulador } from "@/components/CustodiaSimulador";
 import { PLANTILLAS, archivo, type PlantillaRecurso } from "@/data/recursos-plantillas";
 
 const PASOS = [
@@ -55,8 +56,7 @@ type TabId = (typeof TABS)[number]["id"];
 const PANEL_ANIM = "animate-[faq-in_200ms_ease-out] motion-reduce:animate-none";
 
 export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso }) {
-  const { slug, badge, nombre, resumen, variables, ejemplo } = plantilla;
-  const otras = PLANTILLAS.filter((p) => p.slug !== slug).slice(0, 4);
+  const { slug, badge, nombre, resumen, variables, ejemplo } = plantilla;  const otras = PLANTILLAS.filter((p) => p.slug !== slug).slice(0, 4);
   const [tab, setTab] = useState<TabId>("esquema");
   const tabsRef = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -93,6 +93,8 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
           Gratis · CSV, Excel con fórmulas y PDF · sin registro obligatorio
         </p>
       </div>
+
+      {plantilla.simulador === "custodia" && <CustodiaSimulador />}
 
       <section
         aria-label="Detalle de la plantilla"

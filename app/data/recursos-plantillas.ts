@@ -33,6 +33,8 @@ export interface PlantillaRecurso {
   variables: VariablePlantilla[];
   /** Fila [EJEMPLO REAL] del CSV, resumida. */
   ejemplo: string;
+  /** Widget interactivo propio de la plantilla, si lo tiene. */
+  simulador?: "custodia";
 }
 
 export const PLANTILLAS: PlantillaRecurso[] = [
@@ -372,6 +374,7 @@ export const PLANTILLAS: PlantillaRecurso[] = [
     ],
     ejemplo:
       "Operativa (hot) en extensión del portátil con 850 USD para operar; ahorro en cold con respaldo verificado.",
+    simulador: "custodia",
   },
   {
     slug: "calculadora-riesgo",

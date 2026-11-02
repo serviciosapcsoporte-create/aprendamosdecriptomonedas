@@ -1,145 +1,173 @@
 {
-  "generatedAt": "2026-11-02T17:50:16.976Z",
+  "generatedAt": "2026-11-02T18:37:56.080Z",
   "items": [
+    {
+      "title": "Bitunix: ¿qué ofrece este exchange y cómo se compara con sus competidores?",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/reviews/bitunix-que-ofrece-como-se-compara-con-competidores/",
+      "publishedAt": "2026-11-02T18:37:11.000Z",
+      "excerpt": "Analizamos los principales productos y las características de la plataforma, lo bueno, lo mejorable y para quién realmente es recomendable. La nota Bitunix: ¿qué ofrece este exchange y cómo se compara con sus competidore"
+    },
+    {
+      "title": "Concejo de Hermantown da luz verde al centro de datos de Google pese al rechazo vecinal",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/estados-unidos/concejo-de-hermantown-da-luz-verde-al-centro-de-datos-de-google-pese-al-rechazo-vecinal/",
+      "publishedAt": "2026-11-02T18:34:24.000Z",
+      "excerpt": "El concejo de Hermantown aprobó por unanimidad el plan de Google para un centro de datos de 200 acres, tras protestas y cambios al proyecto. La decisión no despeja las demandas ni la revisión pendiente sobre su consumo e"
+    },
+    {
+      "title": "DeepSeek abre dsh-superagent, un agente que busca tareas de programación en chats de equipo",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/deepseek-abre-dsh-superagent-un-agente-que-busca-tareas-de-programacion-en-chats-de-equipo/",
+      "publishedAt": "2026-11-02T18:33:17.000Z",
+      "excerpt": "DeepSeek publicó en GitHub el prototipo de investigación dsh-superagent, un agente que puede ejecutar tareas de programación a partir de solicitudes explícitas o reglas definidas por un equipo. Su diseño contempla contro"
+    },
+    {
+      "title": "10 noticias para hoy: hackeo en Brasil, stablecoins y cifras de Anthropic",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/bitcoin/10-noticias-para-hoy-hackeo-en-brasil-stablecoins-y-cifras-de-anthropic/",
+      "publishedAt": "2026-11-02T18:30:05.000Z",
+      "excerpt": "Mercado Bitcoin investiga una brecha de seguridad relacionada con transferencias sospechosas por más de USD $40 millones. Anthropic revela ingresos trimestrales de USD $17.000 millones, Reino Unido prepara cambios fiscal"
+    },
+    {
+      "title": "Nvidia, Nike Join 50 Companies Blocking OKX–ICE Stock Token Push",
+      "source": "Bitcoin Magazine",
+      "link": "https://bitcoinmagazine.com/news/50-companies-blocks-okx-ice-token",
+      "publishedAt": "2026-11-02T18:30:00.000Z",
+      "excerpt": "Bitcoin Magazine Nvidia, Nike Join 50 Companies Blocking OKX–ICE Stock Token Push Fifty companies, including Nvidia, Microsoft and JPMorgan, have blocked OKX and ICE from tokenizing their shares under the SEC’s new Innov"
+    },
+    {
+      "title": "Falla crítica en Linux: ¿qué hay en riesgo para el ecosistema Bitcoin e Internet?",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/tecnologia/falla-critica-linux-hay-riesgo-ecosistema-bitcoin-e/",
+      "publishedAt": "2026-11-02T18:24:54.000Z",
+      "excerpt": "Linux es usado como base de gran parte de internet y el error detectado permitiría que hackers tomen control remotamente de servidores vulnerables. La nota Falla crítica en Linux: ¿qué hay en riesgo para el ecosistema Bi"
+    },
+    {
+      "title": "Eclair endurece la financiación de canales Lightning ante el riesgo de entradas no confirmadas",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/tecnologia/eclair-endurece-la-financiacion-de-canales-lightning-ante-el-riesgo-de-entradas-no-confirmadas/",
+      "publishedAt": "2026-11-02T18:21:48.000Z",
+      "excerpt": "ACINQ publicó Eclair 0.14.6 para reducir el riesgo de que un par malicioso manipule fondos de canales Lightning antes de que las transacciones de financiación se confirmen en Bitcoin. La actualización incorpora una opció"
+    },
+    {
+      "title": "Colombia propone impuesto del 5% para «sacar a la luz» las criptomonedas no declaradas",
+      "source": "CriptoNoticias",
+      "link": "https://www.criptonoticias.com/regulacion/colombia-impuesto-sacar-luz-criptomonedas/",
+      "publishedAt": "2026-11-02T18:20:03.000Z",
+      "excerpt": "El Gobierno presentó un proyecto de ley para incluir criptoactivos omitidos en las declaraciones ante la DIAN. La nota Colombia propone impuesto del 5% para «sacar a la luz» las criptomonedas no declaradas se publicó pri"
+    },
+    {
+      "title": "Binance verifica reservas mientras intenta normalizar retiros tras el hackeo récord",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/blockchain/binance-verifica-reservas-mientras-intenta-normalizar-retiros-tras-el-hackeo-record/",
+      "publishedAt": "2026-11-02T18:15:15.000Z",
+      "excerpt": "Binance informó que repuso cerca del 95% de los activos afectados por el ataque y publicó una nueva prueba de reservas para diez criptoactivos, mientras prepara la reactivación gradual de retiros."
+    },
+    {
+      "title": "CRV cae 5,09% frente a la apertura y pone a prueba su soporte el 2 de noviembre de 2026",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/crv-cae-509-frente-a-la-apertura-y-pone-a-prueba-su-soporte-el-2-de-noviembre-de-2026/",
+      "publishedAt": "2026-11-02T18:10:32.000Z",
+      "excerpt": "A las 13:07 UTC del 2 de noviembre, CRV cotizaba en USD $0,2688275, un 5,09% por debajo de la apertura y un 2,46% por debajo del cierre previo. El precio se mantenía apenas por encima de la SMA-200, con volumen inferior "
+    },
+    {
+      "title": "ARB bajo presión el 2 de noviembre de 2026: la caída reabre dudas sobre Arbitrum",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/arb-bajo-presion-el-2-de-noviembre-de-2026-la-caida-reabre-dudas-sobre-arbitrum/",
+      "publishedAt": "2026-11-02T18:10:10.000Z",
+      "excerpt": "ARB cae 4,62% y cotiza por debajo de sus medias móviles de corto plazo. El retroceso coincide con reportes recientes de pérdidas en bóvedas de Premia Labs en Arbitrum, aunque no hay evidencia que confirme que el incident"
+    },
+    {
+      "title": "PUMP bajo presión: señales técnicas débiles al 2 de noviembre de 2026",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/pump-bajo-presion-senales-tecnicas-debiles-al-2-de-noviembre-de-2026/",
+      "publishedAt": "2026-11-02T18:07:24.000Z",
+      "excerpt": "PUMP retrocede 6,17% y cotiza por debajo de sus promedios móviles de corto y mediano plazo, con un MACD bajista y un RSI débil. El volumen también está por debajo de su referencia mensual, mientras que los datos disponib"
+    },
+    {
+      "title": "ONDO bajo presión: el retroceso de 6,93% pone a prueba soportes el 2 de noviembre de 2026",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/ondo-bajo-presion-el-retroceso-de-693-pone-a-prueba-soportes-el-2-de-noviembre-de-2026/",
+      "publishedAt": "2026-11-02T18:07:13.000Z",
+      "excerpt": "ONDO retrocede 6,93% hasta USD $0,385104 y cotiza por debajo de sus principales medias móviles de corto plazo, aunque se mantiene apenas sobre el nivel de Fibonacci de 78,6% y la SMA-200. El volumen diario también queda "
+    },
+    {
+      "title": "MORPHO cae 6,83% el 2 de noviembre: volumen débil y soportes bajo presión",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/morpho-cae-683-el-2-de-noviembre-volumen-debil-y-soportes-bajo-presion/",
+      "publishedAt": "2026-11-02T18:04:22.000Z",
+      "excerpt": "MORPHO cotiza en USD $2,16 tras una caída diaria reportada de 6,83%, pero los datos de referencia no permiten atribuirla a un catalizador específico del protocolo. El precio está por debajo de varias medias móviles y del"
+    },
+    {
+      "title": "JUP cae 5,88% el 2 de noviembre de 2026: presión técnica y catalizador incierto",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/jup-cae-588-el-2-de-noviembre-de-2026-presion-tecnica-y-catalizador-incierto/",
+      "publishedAt": "2026-11-02T18:04:09.000Z",
+      "excerpt": "JUP pierde 5,88% en la jornada y cotiza por debajo de sus medias móviles de corto y mediano plazo, aunque todavía supera la SMA-200. El volumen diario está muy por debajo de su promedio mensual. No hay datos de derivados"
+    },
+    {
+      "title": "WLD cae 6,59% el 2 de noviembre de 2026 y pone a prueba soportes",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/wld-cae-659-el-2-de-noviembre-de-2026-y-pone-a-prueba-soportes/",
+      "publishedAt": "2026-11-02T18:01:26.000Z",
+      "excerpt": "Worldcoin (WLD) retrocede 6,59% en la sesión del 2 de noviembre y cotiza por debajo de sus principales medias móviles, con el MACD todavía bajista y una volatilidad diaria elevada. Aunque el estocástico sugiere una condi"
+    },
+    {
+      "title": "PYTH cae 5,39% y pone a prueba soportes el 2 de noviembre de 2026",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/pyth-cae-539-y-pone-a-prueba-soportes-el-2-de-noviembre-de-2026/",
+      "publishedAt": "2026-11-02T18:01:06.000Z",
+      "excerpt": "PYTH retrocede con indicadores de corto plazo débiles y un volumen muy inferior a su promedio reciente, aunque el precio conserva una referencia de soporte cerca de sus medias de 90 y 200 días. Un reporte externo apunta "
+    },
+    {
+      "title": "PEPE cae con fuerza el 2 de noviembre de 2026: el mercado busca señales de estabilización",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/pepe-cae-con-fuerza-el-2-de-noviembre-de-2026-el-mercado-busca-senales-de-estabilizacion/",
+      "publishedAt": "2026-11-02T17:58:25.000Z",
+      "excerpt": "PEPE cotiza en USD $0,0000046 y el dato de mercado reporta una caída diaria de 7,62%, aunque el precio actual y el cierre previo publicados implican un retroceso menor. El token conserva ganancias en los horizontes de 7,"
+    },
+    {
+      "title": "TIA cae con fuerza y deja al mercado sin un catalizador confirmado el 2 de noviembre de 2026",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/tia-cae-con-fuerza-y-deja-al-mercado-sin-un-catalizador-confirmado-el-2-de-noviembre-de-2026/",
+      "publishedAt": "2026-11-02T17:58:17.000Z",
+      "excerpt": "TIA cotiza en USD $0,4469721 en la lectura del 2 de noviembre. La variación indicada de -6,95% corresponde al retroceso desde la apertura; frente al cierre previo, la caída es de 4,87%. El precio está por debajo de sus p"
+    },
+    {
+      "title": "AAVE cae con fuerza el 2 de noviembre de 2026 y pone a prueba soportes clave",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/aave-cae-con-fuerza-el-2-de-noviembre-de-2026-y-pone-a-prueba-soportes-clave/",
+      "publishedAt": "2026-11-02T17:55:26.000Z",
+      "excerpt": "AAVE retrocede con fuerza y cotiza por debajo de sus principales medias móviles de corto plazo, mientras un aumento moderado del volumen acompaña la presión vendedora. El panorama técnico favorece la cautela, pero los da"
+    },
+    {
+      "title": "ETHFI cae 8,32% el 2 de noviembre de 2026 y pone a prueba el soporte diario",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/ethfi-cae-832-el-2-de-noviembre-de-2026-y-pone-a-prueba-el-soporte-diario/",
+      "publishedAt": "2026-11-02T17:55:25.000Z",
+      "excerpt": "ETHFI retrocede con fuerza en una jornada de volumen inferior a su promedio mensual y cotiza por debajo de sus principales medias móviles. La sobreventa de corto plazo abre la puerta a un rebote, pero el deterioro técnic"
+    },
+    {
+      "title": "LIT cae 2,66% el 2 de noviembre de 2026 y cotiza cerca de USD $3,08",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/lit-cae-266-el-2-de-noviembre-de-2026-y-cotiza-cerca-de-usd-308/",
+      "publishedAt": "2026-11-02T17:52:29.000Z",
+      "excerpt": "LIT cotiza en USD $3,08 y registra una variación diaria de -2,66%. Está por debajo de la apertura, el VWAP y varias medias móviles de referencia. El volumen se ubica por debajo de su promedio de 30 días y no hay un catal"
+    },
+    {
+      "title": "Midnight (NIGHT) cae 3,54% el 2 de noviembre de 2026 y pierde impulso",
+      "source": "DiarioBitcoin",
+      "link": "https://www.diariobitcoin.com/analisis/midnight-night-cae-354-el-2-de-noviembre-de-2026-y-pierde-impulso/",
+      "publishedAt": "2026-11-02T17:52:22.000Z",
+      "excerpt": "NIGHT retrocede 3,54% en la jornada y cotiza por debajo de su VWAP intradía, mientras el volumen queda casi 48% por debajo de su promedio de 30 días. El RSI neutral y la distancia frente a las medias de largo plazo moder"
+    },
     {
       "title": "ENA bajo presión: el desbloqueo de tokens coincide con una caída de 9,71% el 2 de noviembre de 2026",
       "source": "DiarioBitcoin",
       "link": "https://www.diariobitcoin.com/analisis/ena-bajo-presion-el-desbloqueo-de-tokens-coincide-con-una-caida-de-971-el-2-de-noviembre-de-2026/",
       "publishedAt": "2026-11-02T17:49:43.000Z",
       "excerpt": "ENA retrocedió 9,71% en la sesión del 2 de noviembre y cotiza por debajo de sus principales promedios móviles de corto plazo. Un desbloqueo reportado de 94,19 millones de tokens podría añadir presión de oferta, aunque la"
-    },
-    {
-      "title": "XPL cae 4,96% y sigue bajo sus medias móviles el 2 de noviembre de 2026",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/xpl-cae-496-y-sigue-bajo-sus-medias-moviles-el-2-de-noviembre-de-2026/",
-      "publishedAt": "2026-11-02T17:49:24.000Z",
-      "excerpt": "XPL pierde 4,96% en la jornada y cotiza por debajo de todas las medias móviles proporcionadas, con volumen superior a su promedio de 30 días. Un reporte no confirmado relaciona la presión reciente con un episodio de pérd"
-    },
-    {
-      "title": "Wells Fargo actualizará sus reglas para agentes de IA y cuentas bancarias",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/wells-fargo-actualizara-sus-reglas-para-agentes-de-ia-y-cuentas-bancarias/",
-      "publishedAt": "2026-11-02T17:47:09.000Z",
-      "excerpt": "Wells Fargo actualizará su acuerdo de banca en línea el 24 de noviembre. Según la cláusula descrita en la cobertura, los clientes deberán conservar pruebas de que revocaron la autorización de sus agentes de IA, y el banc"
-    },
-    {
-      "title": "La manufactura de EE.UU. acelera en octubre mientras crece la presión sobre los suministros",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/la-manufactura-de-ee-uu-acelera-en-octubre-mientras-crece-la-presion-sobre-los-suministros/",
-      "publishedAt": "2026-11-02T17:47:02.000Z",
-      "excerpt": "La manufactura estadounidense volvió a expandirse en octubre y la producción alcanzó su ritmo más acelerado desde 2021. Fabricantes consultados señalaron presiones sobre los suministros vinculados con centros de datos de"
-    },
-    {
-      "title": "ZRO cae con fuerza el 2 de noviembre de 2026 y pone a prueba soportes clave",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/zro-cae-con-fuerza-el-2-de-noviembre-de-2026-y-pone-a-prueba-soportes-clave/",
-      "publishedAt": "2026-11-02T17:46:27.000Z",
-      "excerpt": "ZRO retrocede con señales técnicas mixtas y un volumen inferior a su promedio de 30 días, mientras una fuente secundaria apunta a posibles depósitos en exchanges sin confirmar la causalidad. El precio reportado y el porc"
-    },
-    {
-      "title": "Venice Token (VVV) cae 10,02% el 2 de noviembre de 2026: señales técnicas bajo presión",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/venice-token-vvv-cae-1002-el-2-de-noviembre-de-2026-senales-tecnicas-bajo-presion/",
-      "publishedAt": "2026-11-02T17:46:26.000Z",
-      "excerpt": "Venice Token (VVV) pierde 10,02% en la jornada y cotiza por debajo de sus medias móviles de corto plazo, con indicadores de impulso debilitados. El volumen negociado sigue por debajo de su promedio de 30 días, mientras l"
-    },
-    {
-      "title": "Putin exige que los centros de datos privados de Rusia reserven el 10% de su capacidad",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/putin-exige-que-los-centros-de-datos-privados-de-rusia-reserven-el-10-de-su-capacidad/",
-      "publishedAt": "2026-11-02T17:43:34.000Z",
-      "excerpt": "Vladimir Putin firmó un decreto que obliga a los centros de datos privados de Rusia a reservar el 10% de su capacidad para sostener la infraestructura de TI. Una comisión podrá ordenar que se habilite esa reserva en un p"
-    },
-    {
-      "title": "MNT el 2 de noviembre: rebote marginal frente a una tendencia bajista",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/mnt-el-2-de-noviembre-rebote-marginal-frente-a-una-tendencia-bajista/",
-      "publishedAt": "2026-11-02T17:43:33.000Z",
-      "excerpt": "MNT registra un avance diario de 0,21% y un volumen ligeramente superior a su promedio de 30 días, pero cotiza por debajo de las medias móviles informadas. El análisis examina los soportes inmediatos, las señales técnica"
-    },
-    {
-      "title": "BGB pierde impulso y se acerca a soporte: claves del 2 de noviembre de 2026",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/bgb-pierde-impulso-y-se-acerca-a-soporte-claves-del-2-de-noviembre-de-2026/",
-      "publishedAt": "2026-11-02T17:43:13.000Z",
-      "excerpt": "BGB cotiza en USD $1,77 con una pérdida diaria de 0,74% y señales técnicas mayormente bajistas, aunque el RSI de 29 apunta a condiciones de sobreventa. El volumen permanece por debajo de su promedio mensual y no se confi"
-    },
-    {
-      "title": "Anthropic limita Claude Code para frenar la clonación de videojuegos",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/anthropic-limita-claude-code-para-frenar-la-clonacion-de-videojuegos/",
-      "publishedAt": "2026-11-02T17:42:44.000Z",
-      "excerpt": "Anthropic confirmó que añadió barreras a Claude Code para impedir recreaciones de videojuegos específicos, mientras usuarios también reportan bloqueos de ingeniería inversa en Opus 5.5."
-    },
-    {
-      "title": "JST sube 2,78% el 2 de noviembre de 2026, pero el volumen no confirma el impulso",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/jst-sube-278-el-2-de-noviembre-de-2026-pero-el-volumen-no-confirma-el-impulso/",
-      "publishedAt": "2026-11-02T17:40:38.000Z",
-      "excerpt": "JST avanza 2,78% según la variación diaria reportada y cotiza sobre varias medias móviles, pero el volumen permanece por debajo de su promedio y el MACD conserva una señal bajista. El cuadro favorece la cautela: la tende"
-    },
-    {
-      "title": "QNT el 2 de noviembre de 2026: volumen débil deja al token en una zona de decisión",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/bancos-y-pagos-verticales/qnt-el-2-de-noviembre-de-2026-volumen-debil-deja-al-token-en-una-zona-de-decision/",
-      "publishedAt": "2026-11-02T17:40:31.000Z",
-      "excerpt": "QNT cotiza en USD $196,83, con una baja diaria reportada de 1,13%, y se encuentra bajo su apertura, el cierre previo y el VWAP intradía. El volumen informado permanece muy por debajo del promedio mensual. La cotización s"
-    },
-    {
-      "title": "SPX: rebote frágil y señales técnicas mixtas el 2 de noviembre de 2026",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/spx-rebote-fragil-y-senales-tecnicas-mixtas-el-2-de-noviembre-de-2026/",
-      "publishedAt": "2026-11-02T17:37:58.000Z",
-      "excerpt": "SPX avanza 1,23% según la variación reportada, aunque permanece por debajo de sus principales promedios móviles y acumula una caída de 18,05% en 30 días. El volumen inferior a su media y un MACD con histograma positivo, "
-    },
-    {
-      "title": "STABLE el 2 de noviembre de 2026: avance débil con volumen en mínimos",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/stable-el-2-de-noviembre-de-2026-avance-debil-con-volumen-en-minimos/",
-      "publishedAt": "2026-11-02T17:37:43.000Z",
-      "excerpt": "STABLE registra una cotización de USD $0,0269527 y señales técnicas de corto plazo parcialmente constructivas, pero el volumen diario se sitúa muy por debajo de su promedio y la lectura del cambio porcentual presenta una"
-    },
-    {
-      "title": "PAXG sube 1,74% el 2 de noviembre de 2026, pero sigue bajo presión técnica",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/paxg-sube-174-el-2-de-noviembre-de-2026-pero-sigue-bajo-presion-tecnica/",
-      "publishedAt": "2026-11-02T17:35:09.000Z",
-      "excerpt": "PAX Gold avanza 1,74% en la cotización reportada, pero el impulso choca con una estructura técnica aún débil: el precio permanece bajo sus medias móviles de 15 a 200 días y el MACD continúa bajista. El volumen mejora fre"
-    },
-    {
-      "title": "STX: el rebote de 1,40% pierde fuerza ante un volumen débil — 2 de noviembre de 2026",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/stx-el-rebote-de-140-pierde-fuerza-ante-un-volumen-debil-2-de-noviembre-de-2026/",
-      "publishedAt": "2026-11-02T17:35:04.000Z",
-      "excerpt": "STX registra un avance intradía reportado de 1,40% frente a la apertura, aunque cotiza por debajo del cierre previo. El volumen permanece por debajo de su promedio mensual y el MACD conserva una señal bajista. El precio "
-    },
-    {
-      "title": "HBAR bajo presión: niveles técnicos decisivos para el 2 de noviembre de 2026",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/hbar-bajo-presion-niveles-tecnicos-decisivos-para-el-2-de-noviembre-de-2026/",
-      "publishedAt": "2026-11-02T17:32:23.000Z",
-      "excerpt": "HBAR cotiza en USD $0,0699942 tras una caída reportada de 2,87%, con volumen inferior a su promedio mensual y señales técnicas mayormente bajistas. El RSI y el estocástico apuntan a sobreventa, pero la tendencia sigue dé"
-    },
-    {
-      "title": "XAUT el 2 de noviembre de 2026: la falta de datos impide confirmar el rumbo",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/analisis/xaut-el-2-de-noviembre-de-2026-la-falta-de-datos-impide-confirmar-el-rumbo/",
-      "publishedAt": "2026-11-02T17:31:57.000Z",
-      "excerpt": "La información disponible no incluye cotización, variación ni volumen verificables de XAUT para el 2 de noviembre de 2026, por lo que no permite confirmar un movimiento ni establecer niveles de operación. Tether publica "
-    },
-    {
-      "title": "Squarespace recortará al 19% de su plantilla y despedirá a unos 300 empleados",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/tecnologia/squarespace-recortara-al-19-de-su-plantilla-y-despedira-a-unos-300-empleados/",
-      "publishedAt": "2026-11-02T17:31:19.000Z",
-      "excerpt": "Squarespace anunció que recortará cerca de 300 puestos, equivalentes al 19% de su plantilla, mientras reorganiza sus operaciones. La compañía dijo que ofrecerá a los empleados afectados 16 semanas de salario base y cober"
-    },
-    {
-      "title": "Musk rompe récord con USD $474 millones en donaciones para las elecciones de medio mandato",
-      "source": "DiarioBitcoin",
-      "link": "https://www.diariobitcoin.com/estados-unidos/musk-rompe-record-con-usd-474-millones-en-donaciones-para-las-elecciones-de-medio-mandato/",
-      "publishedAt": "2026-11-02T17:30:55.000Z",
-      "excerpt": "Elon Musk destinó USD $474 millones a grupos políticos durante el ciclo electoral de medio mandato de 2026, una cifra récord para un donante individual, según un análisis de The New York Times. La mayor parte se dirigió "
     },
     {
       "title": "Entró en vigencia el informe mensual obligatorio para exchanges de bitcoin en Argentina",
@@ -254,27 +282,6 @@
       "excerpt": "La estrategia compra 811 Bitcoin con nuevas acciones de MSTR, reduciendo el Bitcoin por acción, mientras que las tenencias por acción de Strive aumentan. El post MicroStrategy y Strive compran más Bitcoin, pero los accio"
     },
     {
-      "title": "Una empresa se desprenderá de su reserva de bitcoin tras el ataque a Binance",
-      "source": "CriptoNoticias",
-      "link": "https://www.criptonoticias.com/mercados/empresa-desprendera-reserva-bitcoin-asustada-ataque/",
-      "publishedAt": "2026-11-02T13:08:14.000Z",
-      "excerpt": "Next Technology Holding, que cotiza en Nasdaq, informó que la venta de la moneda digital se hará en uno o varios tramos. La nota Una empresa se desprenderá de su reserva de bitcoin tras el ataque a Binance se publicó pri"
-    },
-    {
-      "title": "Hackean portal de Solana Mobile: una app falsa pidió frases semilla desde la web oficial",
-      "source": "CriptoNoticias",
-      "link": "https://www.criptonoticias.com/seguridad-bitcoin/hackean-solana-mobile-app-falsa/",
-      "publishedAt": "2026-11-02T12:31:05.000Z",
-      "excerpt": "Solana Mobile identificó y corrigió el error que permitía enlazar a aplicaciones que no estaban completamente publicadas. La nota Hackean portal de Solana Mobile: una app falsa pidió frases semilla desde la web oficial s"
-    },
-    {
-      "title": "Ten cuidado si usas un viejo iPhone como hardware wallet de bitcoin",
-      "source": "CriptoNoticias",
-      "link": "https://www.criptonoticias.com/seguridad-bitcoin/cuidado-viejo-iphone-hardware-wallet-bitcoin/",
-      "publishedAt": "2026-11-02T12:02:48.000Z",
-      "excerpt": "El CEO de Onekey alertó que modelos anteriores al iPhone 11 poseen fallas de hardware irreparables que exponen los fondos, incluso en modo avión. La nota Ten cuidado si usas un viejo iPhone como hardware wallet de bitcoi"
-    },
-    {
       "title": "ETF de Ethereum registran su peor mes desde su debut en 2024",
       "source": "BeInCrypto ES",
       "link": "https://es.beincrypto.com/ethereum-etf-registran-salida-record-en-octubre/",
@@ -287,13 +294,6 @@
       "link": "https://es.beincrypto.com/colapso-bursatil-caida-mercado-acciones-eeuu-esta-semana/",
       "publishedAt": "2026-11-02T10:18:00.000Z",
       "excerpt": "Wall Street entra en una semana decisiva después de una fuerte caída el viernes. El Nasdaq cayó 2.86%, su peor día desde principios de junio, mientras que el S&P 500 retrocedió 1.82%. Ahora, los analistas advierten que l"
-    },
-    {
-      "title": "¿Es seguro tu BTCPay Server? Lo que revela la investigación sobre el hack de hot wallets",
-      "source": "BeInCrypto ES",
-      "link": "https://es.beincrypto.com/btcpay-server-hack-monedas-calientes-vaciadas/",
-      "publishedAt": "2026-11-02T08:53:00.000Z",
-      "excerpt": "El equipo de BTCPay Server vincula los drenajes de hot wallets a las versiones 2.4.1 y anteriores y reporta que no hay ataques creíbles en su última versión 2.4.7. El post ¿Es seguro tu BTCPay Server? Lo que revela la in"
     }
   ]
 }
