@@ -146,8 +146,9 @@ export function LeadMagnet() {
             <CheckCircle2 className="mx-auto h-7 w-7 text-emerald-400" aria-hidden="true" />
             <h4 className="text-base font-bold text-emerald-300">Acceso concedido</h4>
             <p className="text-xs text-gray-300">
-              Enviamos el enlace a <strong>{email}</strong>. La descarga del ZIP
-              debería haber comenzado en tu navegador.
+              La descarga del ZIP empezó en tu navegador. Guardamos{" "}
+              <strong>{email}</strong> para avisarte cuando publiquemos nuevas
+              plantillas.
             </p>
             <a
               href={ZIP}

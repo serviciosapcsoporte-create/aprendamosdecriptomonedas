@@ -42,6 +42,44 @@ export function endpointConfigurado(): string | null {
   return typeof v === "string" && v.startsWith("https://") ? v : null;
 }
 
+/**
+ * Web3Forms necesita la access_key dentro del cuerpo (su endpoint es compartido
+ * por todos los formularios). Se toma de VITE_WEB3FORMS_KEY o, si no existe,
+ * del query string del propio endpoint. La key es pública por diseño: viaja en
+ * el navegador de cualquier formulario Web3Forms.
+ */
+function claveWeb3Forms(endpoint: string): string | null {
+  const directa = import.meta.env?.VITE_WEB3FORMS_KEY;
+  if (typeof directa === "string" && directa.trim()) return directa.trim();
+  if (!/web3forms/i.test(endpoint)) return null;
+  try {
+    return new URL(endpoint).searchParams.get("access_key");
+  } catch {
+    return null;
+  }
+}
+
+function cuerpoPara(endpoint: string, datos: Lead): Record<string, unknown> {
+  const clave = claveWeb3Forms(endpoint);
+  if (!clave) return { ...datos };
+  return {
+    access_key: clave,
+    subject: `Nuevo lead — Kit Institucional (${datos.origen})`,
+    from_name: "aprendamosdecriptomonedas.lat",
+    name: datos.nombre,
+    email: datos.email,
+    acepta_correo: datos.aceptaCorreo ? "sí" : "no",
+    origen: datos.origen,
+    fecha: datos.fecha,
+    message:
+      `Kit Institucional solicitado.\n` +
+      `Correo: ${datos.email}\n` +
+      `Acepta contenido: ${datos.aceptaCorreo ? "sí" : "no"}\n` +
+      `Origen: ${datos.origen}\n` +
+      `Fecha: ${datos.fecha}`,
+  };
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export function validar(datos: Pick<Lead, "nombre" | "email">): Record<string, string> {
@@ -54,13 +92,19 @@ export function validar(datos: Pick<Lead, "nombre" | "email">): Record<string, s
 export async function enviarLead(datos: Lead): Promise<ResultadoEnvio> {
   const endpoint = endpointConfigurado();
   if (!endpoint) return { estado: "sin-configurar" };
+  const esWeb3Forms = claveWeb3Forms(endpoint) !== null;
   try {
     const res = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(datos),
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(cuerpoPara(endpoint, datos)),
     });
     if (!res.ok) return { estado: "error", detalle: `HTTP ${res.status}` };
+    if (esWeb3Forms) {
+      // Web3Forms responde 200 con success:false cuando rechaza el envio.
+      const cuerpo = (await res.json().catch(() => null)) as { success?: boolean } | null;
+      if (cuerpo && cuerpo.success === false) return { estado: "error", detalle: "rechazado" };
+    }
     return { estado: "ok" };
   } catch (e) {
     return { estado: "error", detalle: e instanceof Error ? e.message.slice(0, 80) : "error de red" };
