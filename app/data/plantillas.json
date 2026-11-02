@@ -1,0 +1,501 @@
+[
+  {
+    "slug": "plantilla-analisis-wallet",
+    "badge": "Seguridad on-chain",
+    "nombre": "Plantilla de AnÃ¡lisis de Wallet",
+    "resumen": "CÃ³mo auditar una wallet: antigÃ¼edad, cadencia de transacciones, concentraciÃ³n de activos y envÃ­os hacia exchanges.",
+    "variables": [
+      {
+        "key": "direccion",
+        "label": "DirecciÃ³n de la wallet",
+        "description": "DirecciÃ³n analizada, tal cual aparece en el explorador de bloques.",
+        "example": "0x1a2bâ€¦9f"
+      },
+      {
+        "key": "primera_actividad",
+        "label": "Primera actividad",
+        "description": "Fecha del primer bloque que toca la wallet: ahÃ­ empieza la antigÃ¼edad real.",
+        "example": "2024-01-15"
+      },
+      {
+        "key": "ultima_actividad",
+        "label": "Ãšltima actividad",
+        "description": "Fecha del Ãºltimo bloque. Con la primera da la ventana de actividad.",
+        "example": "2026-09-30"
+      },
+      {
+        "key": "dias_activo",
+        "label": "DÃ­as activa",
+        "description": "AntigÃ¼edad real: Ãºltima actividad menos primera actividad.",
+        "example": "623"
+      },
+      {
+        "key": "num_transacciones",
+        "label": "Transacciones totales",
+        "description": "Volumen total de transacciones contadas en el explorador.",
+        "example": "1.842"
+      },
+      {
+        "key": "txns_por_mes",
+        "label": "Cadencia (tx / mes)",
+        "description": "Cadencia de operaciÃ³n: transacciones / dÃ­as activo Ã— 30.",
+        "example": "88,7"
+      },
+      {
+        "key": "saldo_nativo",
+        "label": "Saldo nativo",
+        "description": "Cripto nativa que mantiene sin operar.",
+        "example": "3,412"
+      },
+      {
+        "key": "valor_usd_estimado",
+        "label": "Valor estimado (USD)",
+        "description": "Saldo nativo Ã— precio del dÃ­a en el exchange que uses.",
+        "example": "220.074"
+      },
+      {
+        "key": "contratos_interactuados",
+        "label": "Contratos interactuados",
+        "description": "Protocolos distintos que ha tocado, contando direcciones en los logs.",
+        "example": "27"
+      },
+      {
+        "key": "envios_a_cex",
+        "label": "EnvÃ­os a exchange",
+        "description": "Veces que enviÃ³ fondos a un exchange, cruzando direcciones de CEX conocidas.",
+        "example": "9"
+      },
+      {
+        "key": "riesgo_cex",
+        "label": "Riesgo CEX",
+        "description": "ProporciÃ³n de envÃ­os a exchanges sobre el total de transacciones.",
+        "example": "0,49 %"
+      },
+      {
+        "key": "token_rug_pull",
+        "label": "Tokens colapsados",
+        "description": "Tokens que se desplomaron despuÃ©s de retirar liquidez.",
+        "example": "2"
+      },
+      {
+        "key": "notas",
+        "label": "Notas de criterio",
+        "description": "Tu criterio en texto libre: lo que un CSV no puede saber.",
+        "example": "Activa desde 2024, 9 envÃ­os a CEX sobre 1.842 tx."
+      }
+    ],
+    "ejemplo": "0x1a2bâ€¦9f Â· 623 dÃ­as activa Â· 1.842 transacciones Â· 88,7 tx/mes Â· 9 envÃ­os a CEX (0,49 %) Â· 2 tokens colapsados. Datos inventados para ilustrar."
+  },
+  {
+    "slug": "plantilla-metricas-red",
+    "badge": "TokenÃ³mica",
+    "nombre": "Plantilla de MÃ©tricas de Red",
+    "resumen": "Los ratios que separan un proyecto sÃ³lido de una preventa: FDV/MCap, rotaciÃ³n y calendarios de desbloqueo.",
+    "variables": [
+      {
+        "key": "precio",
+        "label": "Precio (USD)",
+        "description": "Precio de referencia en USD: cierre del dÃ­a en el exchange que uses.",
+        "example": "64.500"
+      },
+      {
+        "key": "market_cap",
+        "label": "Market cap",
+        "description": "CapitalizaciÃ³n total: precio Ã— oferta en circulaciÃ³n.",
+        "example": "1,26 B"
+      },
+      {
+        "key": "fdv",
+        "label": "FDV",
+        "description": "Valor totalmente diluido: precio Ã— oferta mÃ¡xima.",
+        "example": "1,34 B"
+      },
+      {
+        "key": "fdv_mcap_ratio",
+        "label": "FDV / MCap",
+        "description": "Riesgo de desbloqueo: FDV / market cap. Por encima de 3 es diluciÃ³n alta.",
+        "example": "1,06"
+      },
+      {
+        "key": "volumen_24h",
+        "label": "Volumen 24 h",
+        "description": "Volumen negociado en 24 h: liquidez real, no la del bloque.",
+        "example": "28 B"
+      },
+      {
+        "key": "vol_mcap",
+        "label": "RotaciÃ³n",
+        "description": "RotaciÃ³n: volumen 24 h / market cap.",
+        "example": "2,22 %"
+      },
+      {
+        "key": "supply_circulante",
+        "label": "Supply circulante",
+        "description": "Tokens ya liberados, del explorador o del informe del proyecto.",
+        "example": "19,7 M"
+      },
+      {
+        "key": "supply_maximo",
+        "label": "Supply mÃ¡ximo",
+        "description": "Techo de emisiÃ³n segÃºn el tokenomics: cuÃ¡nto falta por emitir.",
+        "example": "21 M"
+      },
+      {
+        "key": "desbloqueo_90d",
+        "label": "Desbloqueo 90 d",
+        "description": "Supply que se libera en 90 dÃ­as segÃºn los vesting schedules publicados.",
+        "example": "0"
+      },
+      {
+        "key": "holders_totales",
+        "label": "Holders",
+        "description": "Direcciones con saldo: concentraciÃ³n de la distribuciÃ³n.",
+        "example": "1,02 M"
+      },
+      {
+        "key": "top10_concentracion",
+        "label": "Top 10",
+        "description": "Porcentaje en las 10 mayores wallets. Sobre 50 % es centralizaciÃ³n alta.",
+        "example": "12,4 %"
+      },
+      {
+        "key": "mcap_a_real",
+        "label": "MCap / valor real",
+        "description": "Market cap frente a ingresos o reservas tangibles. Solo aplica a activos con caja.",
+        "example": "no aplica"
+      }
+    ],
+    "ejemplo": "Precio 64.500 Â· mcap 1,26 B Â· FDV 1,34 B Â· FDV/mcap 1,06 Â· volumen 28 B Â· rotaciÃ³n 2,22 % Â· supply 19,7 M/21 M Â· desbloqueo 90 d 0 Â· holders 1,02 M Â· top 10 12,4 %. Datos de ejemplo."
+  },
+  {
+    "slug": "checklist-seguridad",
+    "badge": "AuditorÃ­a",
+    "nombre": "Checklist de Seguridad Institucional",
+    "resumen": "12 puntos verificables en diez minutos sobre custodia, frases de recuperaciÃ³n, hardware wallets y firmas operativas.",
+    "variables": [
+      {
+        "key": "marcador",
+        "label": "Marcador de fila",
+        "description": "[EJEMPLO REAL] marca la fila de guÃ­a; vacÃ­o para tus propios datos.",
+        "example": "[EJEMPLO REAL]"
+      },
+      {
+        "key": "#",
+        "label": "N.Âº de control",
+        "description": "NÃºmero del punto de control, del 1 al 12.",
+        "example": "1"
+      },
+      {
+        "key": "punto_de_control",
+        "label": "Punto de control",
+        "description": "El control que se verifica, en una frase concreta.",
+        "example": "Seed phrase anotada en papel o metal, nunca en foto"
+      },
+      {
+        "key": "como_se_verifica",
+        "label": "CÃ³mo se verifica",
+        "description": "El paso exacto para comprobarlo, no la teorÃ­a.",
+        "example": "Revisa que no exista captura en la galerÃ­a"
+      },
+      {
+        "key": "categoria",
+        "label": "CategorÃ­a",
+        "description": "llaves, custodia, accesos u operativa.",
+        "example": "llaves"
+      },
+      {
+        "key": "estado",
+        "label": "Estado",
+        "description": "cumple / pendiente / no aplica. Sin este campo la lista no sirve.",
+        "example": "cumple"
+      }
+    ],
+    "ejemplo": "Punto 1: seed phrase anotada en papel o metal, nunca en una foto; se revisa que no exista captura en la galerÃ­a. CategorÃ­a llaves."
+  },
+  {
+    "slug": "registro-operaciones",
+    "badge": "GestiÃ³n de riesgo",
+    "nombre": "Registro de Operaciones & Trading Log",
+    "resumen": "Lleva el registro estricto de cada compra, venta, nivel de stop-loss y la justificaciÃ³n tÃ¡ctica de tu decisiÃ³n.",
+    "variables": [
+      {
+        "key": "fecha",
+        "label": "Fecha",
+        "description": "Fecha de la operaciÃ³n en ISO (AAAA-MM-DD).",
+        "example": "2026-01-15"
+      },
+      {
+        "key": "activo",
+        "label": "Activo",
+        "description": "El activo o par operado: BTC, ETH, el que sea.",
+        "example": "BTC"
+      },
+      {
+        "key": "operacion",
+        "label": "OperaciÃ³n",
+        "description": "compra, venta, apertura o cierre.",
+        "example": "compra"
+      },
+      {
+        "key": "entrada",
+        "label": "Entrada (cantidad)",
+        "description": "Cantidad del activo, no el valor en USD.",
+        "example": "0,05"
+      },
+      {
+        "key": "salida",
+        "label": "Salida (cantidad)",
+        "description": "Cantidad cerrada, si aplica. VacÃ­o mientras la posiciÃ³n sigue abierta.",
+        "example": "â€”"
+      },
+      {
+        "key": "precio_entrada",
+        "label": "Precio de entrada",
+        "description": "Precio de ejecuciÃ³n real, no el que esperabas.",
+        "example": "42.000"
+      },
+      {
+        "key": "precio_salida",
+        "label": "Precio de salida",
+        "description": "Precio de cierre real de la operaciÃ³n.",
+        "example": "â€”"
+      },
+      {
+        "key": "resultado_pct",
+        "label": "Resultado %",
+        "description": "Resultado calculado sobre entrada y salida.",
+        "example": "â€”"
+      },
+      {
+        "key": "stop_loss",
+        "label": "Stop-loss",
+        "description": "Nivel de invalidaciÃ³n definido antes de entrar.",
+        "example": "39.500"
+      },
+      {
+        "key": "notas",
+        "label": "Notas",
+        "description": "La justificaciÃ³n tÃ¡ctica: por quÃ© entraste y por quÃ© saliste.",
+        "example": "Aqui va el porque de la decision."
+      }
+    ],
+    "ejemplo": "BTC Â· compra 0,05 a 42.000 con stop en 39.500 Â· 15/01/2026. La nota explica la decisiÃ³n; el resultado no se toca."
+  },
+  {
+    "slug": "inventario-wallets",
+    "badge": "Custodia",
+    "nombre": "Inventario de Wallets & Cold Storage",
+    "resumen": "Control de balance real: audita cuÃ¡nto capital tienes depositado en exchanges y cuÃ¡nto controlas bajo custodia propia.",
+    "variables": [
+      {
+        "key": "etiqueta",
+        "label": "Etiqueta",
+        "description": "Nombre con el que reconoces esa wallet: Operativa, Ahorro, Reserva.",
+        "example": "Operativa"
+      },
+      {
+        "key": "tipo",
+        "label": "Tipo",
+        "description": "hot, cold, exchange o multisig.",
+        "example": "hot"
+      },
+      {
+        "key": "donde_vive",
+        "label": "DÃ³nde vive",
+        "description": "Dispositivo o plataforma donde estÃ¡: extensiÃ³n, hardware, exchange.",
+        "example": "ExtensiÃ³n de navegador en el portÃ¡til"
+      },
+      {
+        "key": "contenido_aprox_usd",
+        "label": "Contenido aprox. (USD)",
+        "description": "Valor aproximado custodiado en esa wallet.",
+        "example": "850"
+      },
+      {
+        "key": "para_que",
+        "label": "Para quÃ©",
+        "description": "Para quÃ© la usas: operar, recibir o largo plazo.",
+        "example": "Operar y recibir"
+      },
+      {
+        "key": "respaldo_verificado",
+        "label": "Respaldo verificado",
+        "description": "si / no / no aplica: si ya probaste recuperarla, no si crees que podrÃ­as.",
+        "example": "no aplica"
+      }
+    ],
+    "ejemplo": "Operativa (hot) en extensiÃ³n del portÃ¡til con 850 USD para operar; ahorro en cold con respaldo verificado.",
+    "simulador": "custodia"
+  },
+  {
+    "slug": "calculadora-riesgo",
+    "badge": "Risk sizing",
+    "nombre": "Calculadora de PosiciÃ³n & Risk Sizing",
+    "resumen": "TamaÃ±o exacto de la posiciÃ³n segÃºn capital total, tolerancia al riesgo por operaciÃ³n y distancia al stop-loss.",
+    "variables": [
+      {
+        "key": "capital_total",
+        "label": "Capital total",
+        "description": "Capital total destinado a trading, no el saldo de una sola cuenta.",
+        "example": "10.000"
+      },
+      {
+        "key": "tolerancia_riesgo_pct",
+        "label": "Tolerancia de riesgo",
+        "description": "Porcentaje mÃ¡ximo que aceptas perder en una operaciÃ³n: 1â€“2 %.",
+        "example": "1 %"
+      },
+      {
+        "key": "precio_entrada",
+        "label": "Precio de entrada",
+        "description": "Precio al que entrarÃ­as.",
+        "example": "3.000"
+      },
+      {
+        "key": "stop_loss",
+        "label": "Stop-loss",
+        "description": "Nivel que invalida la operaciÃ³n. Se define antes de entrar.",
+        "example": "2.900"
+      },
+      {
+        "key": "distancia_stop_pct",
+        "label": "Distancia al stop",
+        "description": "(precio de entrada âˆ’ stop) / precio de entrada.",
+        "example": "3,33 %"
+      },
+      {
+        "key": "riesgo_usd",
+        "label": "Riesgo en USD",
+        "description": "capital_total Ã— tolerancia_riesgo_pct / 100.",
+        "example": "100"
+      },
+      {
+        "key": "tamano_posicion_usd",
+        "label": "TamaÃ±o de posiciÃ³n",
+        "description": "riesgo_usd / distancia_stop_pct: el tamaÃ±o que hace que el stop cueste justo el riesgo.",
+        "example": "3.000"
+      },
+      {
+        "key": "apalancamiento_max",
+        "label": "Apalancamiento mÃ¡x.",
+        "description": "MÃ¡ximo que permite tu plan. Nunca se sube para compensar una pÃ©rdida.",
+        "example": "10x"
+      },
+      {
+        "key": "margen_requerido",
+        "label": "Margen requerido",
+        "description": "tamaÃ±o de la posiciÃ³n / apalancamiento mÃ¡ximo.",
+        "example": "300"
+      }
+    ],
+    "ejemplo": "10.000 USD Â· 1 % de riesgo Â· entrada 3.000 Â· stop 2.900 (3,33 %) â†’ riesgo 100 USD, posiciÃ³n 3.000 USD y margen 300 con 10x."
+  },
+  {
+    "slug": "tesis-inversion",
+    "badge": "InversiÃ³n",
+    "nombre": "Plantilla de Tesis de InversiÃ³n & InvalidaciÃ³n",
+    "resumen": "Documenta la tesis fundamental, mÃ©tricas de adopciÃ³n, catalizadores y el precio o evento exacto que invalida la tesis.",
+    "variables": [
+      {
+        "key": "proyecto",
+        "label": "Proyecto",
+        "description": "El activo o protocolo sobre el que tomas la decisiÃ³n.",
+        "example": "Arbitrum"
+      },
+      {
+        "key": "sector",
+        "label": "Sector",
+        "description": "L2, DeFi, infraestructura, RWAâ€¦ para comparar con pares reales.",
+        "example": "L2 Scaling"
+      },
+      {
+        "key": "tesis_fundamental",
+        "label": "Tesis fundamental",
+        "description": "Por quÃ© existe la oportunidad, en dos frases.",
+        "example": "Adopcion de Orbit Chains"
+      },
+      {
+        "key": "catalizador_clave",
+        "label": "Catalizador clave",
+        "description": "El evento concreto que desbloquea el valor.",
+        "example": "EIP-4844 y bajada de gas"
+      },
+      {
+        "key": "metrica_validacion",
+        "label": "MÃ©trica de validaciÃ³n",
+        "description": "El dato que confirma o desmiente la tesis: TVL, ingresos, usuarios.",
+        "example": "TVL > $3B"
+      },
+      {
+        "key": "precio_invalidacion",
+        "label": "Precio de invalidaciÃ³n",
+        "description": "El nivel que la invalida. Se escribe antes de entrar, no despuÃ©s.",
+        "example": "1,20 USD"
+      },
+      {
+        "key": "fecha_entrada",
+        "label": "Fecha de entrada",
+        "description": "CuÃ¡ndo tomaste la posiciÃ³n.",
+        "example": "2026-01-10"
+      },
+      {
+        "key": "precio_entrada",
+        "label": "Precio de entrada",
+        "description": "A quÃ© precio entraste.",
+        "example": "1,45"
+      },
+      {
+        "key": "estado",
+        "label": "Estado",
+        "description": "activa, cerrada o invalidada, con la razÃ³n.",
+        "example": "activa"
+      }
+    ],
+    "ejemplo": "Arbitrum (L2) Â· adopciÃ³n de Orbit Chains Â· TVL > 3 B Â· invalida bajo 1,20 USD Â· entrada 1,45 el 10/01/2026."
+  },
+  {
+    "slug": "seguimiento-airdrop",
+    "badge": "Airdrop farming",
+    "nombre": "Seguimiento de Airdrops & Points Farming",
+    "resumen": "Controla puntos acumulados, gas invertido, nÃºmero de transacciones y carteras en protocolos pre-token.",
+    "variables": [
+      {
+        "key": "protocolo",
+        "label": "Protocolo",
+        "description": "El protocolo pre-token que estÃ¡s trabajando.",
+        "example": "EigenLayer"
+      },
+      {
+        "key": "cadenas_involucradas",
+        "label": "Cadenas",
+        "description": "L1 o L2 donde interactÃºas.",
+        "example": "Ethereum L1"
+      },
+      {
+        "key": "gasto_gas_usd",
+        "label": "Gasto en gas (USD)",
+        "description": "Gas acumulado: cuÃ¡nto te estÃ¡ costando la posible recompensa.",
+        "example": "45,50"
+      },
+      {
+        "key": "puntos_acumulados",
+        "label": "Puntos acumulados",
+        "description": "Points o XP registrados por el protocolo.",
+        "example": "12.500"
+      },
+      {
+        "key": "frecuencia_interactiva",
+        "label": "Frecuencia",
+        "description": "Diaria, semanal o mensual. Lo que prometiste cumplir.",
+        "example": "Semanal"
+      },
+      {
+        "key": "wallet_asociada",
+        "label": "Wallet asociada",
+        "description": "DirecciÃ³n usada, abreviada, para no mezclar carteras.",
+        "example": "0x1aâ€¦4F"
+      }
+    ],
+    "ejemplo": "EigenLayer Â· Ethereum L1 Â· 45,50 USD de gas Â· 12.500 puntos Â· interacciÃ³n semanal Â· 0x1aâ€¦4F."
+  }
+]
