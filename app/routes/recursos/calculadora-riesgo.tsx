@@ -8,14 +8,14 @@ const plantilla = plantillaPorSlug("calculadora-riesgo") as PlantillaRecurso;
 export const Route = createFileRoute("/recursos/calculadora-riesgo")({
   component: () => <PlantillaLanding plantilla={plantilla} />,
   head: () => ({
-    title: "Calculadora de Posición y Risk Sizing | Aprendamos de Criptomonedas",
+    title: "Calculadora del tamaño de posición | Aprendamos de Criptomonedas",
     meta: [
       {
         name: "description",
         content:
-          "Calcula tamaño de posición, riesgo en USD y margen requerido antes de operar. Descarga gratis en CSV, Excel con fórmulas y PDF.",
+          "Calcula el tamaño de posición, el riesgo en USD y el margen requerido antes de operar. Descarga gratis en CSV, Excel (con fórmulas) y PDF.",
       },
-      { property: "og:title", content: "Calculadora de Posición y Risk Sizing" },
+      { property: "og:title", content: "Calculadora del tamaño de posición" },
       {
         property: "og:description",
         content: "El tamaño de posición que hace que tu stop cueste exactamente el riesgo definido.",
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/recursos/calculadora-riesgo")({
         breadcrumbLd([
           { name: "Inicio", path: "/" },
           { name: "Recursos", path: "/recursos" },
-          { name: "Calculadora de Posición", path: "/recursos/calculadora-riesgo" },
+          { name: "Calculadora del tamaño de posición", path: "/recursos/calculadora-riesgo" },
         ]),
       ),
     ],

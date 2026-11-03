@@ -60,6 +60,17 @@ Los temas de niveles 3-5 se escriben en markdown extendido (títulos, listas, ta
 
 Además: blog, noticias automáticas (RSS, actualización diaria), guías descargables en `/recursos` y rutas legacy `/b/*` que redirigen a `/recursos`.
 
+## Reporte de noticias en Telegram
+
+El workflow de GitHub Pages actualiza el sitio y envía al grupo un resumen diario
+de hasta siete noticias, a las 08:23 (hora de Colombia). También se puede enviar
+manualmente desde la ejecución del workflow.
+
+En **Settings → Secrets and variables → Actions** del repositorio, configura
+`NEWS_BOT_TOKEN` y `NEWS_CHAT_ID` con las credenciales del bot y el identificador
+del grupo. El bot debe pertenecer al grupo y tener permiso para enviar mensajes.
+Los secretos no se guardan en el repositorio.
+
 ## Deploy en GitHub Pages
 
 El dominio `aprendamosdecriptomonedas.lat` ya apunta a GitHub. El workflow `.github/workflows/deploy.yml` publica `dist/` en cada push a `main` mediante GitHub Actions. También se usa `public/404.html` (generado en el build) para el fallback SPA de links profundos.

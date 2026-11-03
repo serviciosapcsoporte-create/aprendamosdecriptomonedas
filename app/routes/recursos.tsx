@@ -62,10 +62,10 @@ function RecursosPage() {
 
             <div className="mb-8 flex flex-col items-start justify-between gap-3 rounded-xl border border-warning/30 bg-card px-5 py-4 sm:flex-row sm:items-center">
               <div>
-                <h2 className="text-lg font-bold">Kit Institucional: 8 plantillas de trabajo</h2>
+                <h2 className="text-lg font-bold">Kit institucional: 8 plantillas de trabajo</h2>
                 <p className="text-sm text-muted-foreground">
-                  Cada plantilla tiene su página con el esquema de columnas, un ejemplo y
-                  descarga en CSV, Excel con fórmulas y PDF.
+                  Cada plantilla tiene una página propia con el esquema de columnas, un ejemplo
+                  y archivos descargables en CSV, Excel (con fórmulas) y PDF.
                 </p>
               </div>
               <a
@@ -103,7 +103,7 @@ function RecursosPage() {
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <ResourceCard
-                title="El Escudo de 5 minutos"
+                title="El escudo de 5 minutos"
                 description="La rutina mínima de seguridad que puedes aplicar hoy en cinco minutos."
                 price="GRATIS"
                 badge="free"
@@ -113,8 +113,8 @@ function RecursosPage() {
                 imagenAlt={GUIA_CUBIERTA_ALT['el-escudo-de-5-minutos']}
               />
               <ResourceCard
-                title="Checklist de Supervivencia Cripto"
-                description="Lista de verificación para no caer en estafas, hackeos ni decisiones impulsivas."
+                title="Checklist de supervivencia cripto"
+                description="Lista de verificación para evitar estafas, hackeos y decisiones impulsivas."
                 price="GRATIS"
                 badge="free"
                 icon={<CheckCircle2 className="w-6 h-6 text-success" />}
@@ -123,8 +123,8 @@ function RecursosPage() {
                 imagenAlt={GUIA_CUBIERTA_ALT['checklist-supervivencia-cripto']}
               />
               <ResourceCard
-                title="El Custodio de su propia Libertad"
-                description="Autocustodia paso a paso: claves, semillas y errores que cuestan carteras enteras."
+                title="El custodio de su propia libertad"
+                description="Autocustodia paso a paso: claves, frases de recuperación y errores que pueden costarte todos tus fondos."
                 price="GRATIS"
                 badge="free"
                 icon={<ShieldCheck className="w-6 h-6 text-success" />}
@@ -133,8 +133,8 @@ function RecursosPage() {
                 imagenAlt={GUIA_CUBIERTA_ALT['el-custodio']}
               />
               <ResourceCard
-                title="El Inversor que Sobrevive"
-                description="Gestión de riesgo y emociones para permanecer en el mercado a largo plazo."
+                title="El inversor que sobrevive"
+                description="Gestión del riesgo y de las emociones para mantenerte en el mercado a largo plazo."
                 price="GRATIS"
                 badge="free"
                 icon={<BookOpen className="w-6 h-6 text-success" />}
@@ -143,8 +143,8 @@ function RecursosPage() {
                 imagenAlt={GUIA_CUBIERTA_ALT['el-inversor-que-sobrevive']}
               />
               <ResourceCard
-                title="El Escáner"
-                description="Filtros de lógica para analizar protocolos: rendimiento real vs Ponzi."
+                title="El escáner"
+                description="Filtros lógicos para analizar protocolos y distinguir el rendimiento real de los esquemas Ponzi."
                 price="GRATIS"
                 badge="free"
                 icon={<Eye className="w-6 h-6 text-success" />}
@@ -153,28 +153,28 @@ function RecursosPage() {
                 imagenAlt={GUIA_CUBIERTA_ALT['el-escanner']}
               />
               <ResourceCard
-                title="Kit de Inicio Nivel 3 (PDF)"
-                description="Checklist de DeFi y trading + guía de Layer 2 para empezar el Nivel Avanzado."
+                title="Kit de inicio del nivel 3 (PDF)"
+                description="Lista de verificación de DeFi y trading, más una guía sobre redes de capa 2 para comenzar el nivel avanzado."
                 price="GRATIS"
                 badge="free"
                 icon={<FileText className="w-6 h-6 text-success" />}
                 href="/resources/kit-nivel-3.pdf"
               />
               <ResourceCard
-                title="Workbook Nivel 4 (PDF)"
-                description="Ejercicios y casos prácticos del nivel Experto: DeFi, rollups, MEV y seguridad."
+                title="Cuaderno de trabajo del nivel 4 (PDF)"
+                description="Ejercicios y casos prácticos de DeFi, rollups, MEV y seguridad para el nivel experto."
                 price="GRATIS"
                 badge="free"
                 icon={<FileText className="w-6 h-6 text-success" />}
-                href="/recursos/workbook-nivel-4.pdf"
+                href="/resources/workbook-nivel-4.pdf"
               />
               <ResourceCard
-                title="Guía Nivel 5 (PDF)"
-                description="Mapa de especializaciones: análisis on-chain, trading, desarrollo y compliance."
+                title="Guía del nivel 5 (PDF)"
+                description="Mapa de especializaciones: análisis en cadena, trading, desarrollo y cumplimiento normativo."
                 price="GRATIS"
                 badge="free"
                 icon={<FileText className="w-6 h-6 text-success" />}
-                href="/recursos/guia-nivel-5.pdf"
+                href="/resources/guia-nivel-5.pdf"
               />
             </div>
           </>

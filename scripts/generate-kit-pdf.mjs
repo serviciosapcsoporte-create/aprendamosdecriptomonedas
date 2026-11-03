@@ -97,40 +97,45 @@ buildPdfFile({
   outSub: ".",
   sections: [
     {
-      title: "Kit de Inicio — Nivel 3 (Avanzado)",
-      subtitle: "Checklist de DeFi, trading y Layer 2",
-      headings: ["Antes de empezar (seguridad)", "DeFi: lo minimo antes de tocar contratos", "Layer 2: elegir red sin errores", "Trading: regla de supervivencia"],
+      title: "Kit de inicio - nivel 3 (avanzado)",
+      subtitle: "Lista de verificación de DeFi y trading, y guía de redes de capa 2",
+      headings: [
+        "Antes de comenzar: seguridad",
+        "DeFi: conceptos básicos antes de interactuar con contratos",
+        "Redes de capa 2: elige una sin errores",
+        "Trading: regla de supervivencia",
+      ],
       lists: {
-        "Antes de empezar (seguridad)": [
-          "Cartera fria o hardware wallet para fondos grandes",
-          "2FA activado en exchanges y email principal",
-          "Semilla escrita en papel, guardada fuera de casa",
-          "Nunca compartas claves ni semillas con nadie",
-          "Verifica siempre la URL del exchange / dApp antes de conectar",
+        "Antes de comenzar: seguridad": [
+          "Usa una cartera fría o hardware wallet para guardar los fondos importantes",
+          "Activa la autenticación de dos factores en tus exchanges y en tu correo principal",
+          "Anota la frase de recuperación (frase semilla) en papel y guárdala en un lugar seguro",
+          "No compartas nunca tus claves ni tu frase de recuperación",
+          "Verifica la URL del exchange o de la aplicación descentralizada (dApp) antes de conectar tu wallet",
         ],
-        "DeFi: lo minimo antes de tocar contratos": [
-          "Entiendes la diferencia: exchange centralizado vs DEX",
-          "Conoces como funciona un AMM (x*y=k) y el slippage",
-          "Has probado primero en red de testnet",
-          "Compruebas la liquidez del pool antes de operar",
-          "Sabes que gas != fee del protocolo",
+        "DeFi: conceptos básicos antes de interactuar con contratos": [
+          "¿Entiendes la diferencia entre un exchange centralizado y un DEX?",
+          "¿Sabes cómo funciona un AMM (x*y=k) y qué es el deslizamiento?",
+          "¿Has probado primero en una red de pruebas (testnet)?",
+          "¿Has comprobado la liquidez del fondo antes de operar?",
+          "¿Sabes que el gas no es lo mismo que la comisión del protocolo?",
         ],
-        "Layer 2: elegir red sin errores": [
-          "Sabes si el L2 es optimistic rollup o zk-rollup",
-          "Conoces como se vuelve a L1 (bridge) y sus costos",
-          "Usas el bridge oficial o el que audito la comunidad",
-          "Tienes ETH en L2 para pagar gas (no el mismo que en L1)",
+        "Redes de capa 2: elige una sin errores": [
+          "¿Sabes si la red L2 usa un optimistic rollup o un zk-rollup?",
+          "¿Conoces el proceso y el costo de volver a L1 mediante un puente?",
+          "Usa el puente oficial o uno auditado por la comunidad",
+          "Ten ETH en la L2 para pagar el gas; el saldo de L1 no sirve para pagar las comisiones de la L2",
         ],
         "Trading: regla de supervivencia": [
-          "Nunca arriesgas mas del 1-2% por operacion",
-          "Plan escrito antes de abrir: entrada, stop y objetivo",
-          "No apalancas mientras operas en spot",
-          "Llevas registro de cada trade (gano/perdi y por que)",
+          "No arriesgues más del 1-2 % del capital por operación",
+          "Escribe un plan antes de abrir una posición: entrada, stop y objetivo",
+          "Evita el apalancamiento al operar en spot",
+          "Registra cada operación, su resultado y el motivo",
         ],
       },
     },
   ],
-  footer: "Recuerda: primero riesgo, despues rentabilidad. Este kit acompaña los 18 temas del Nivel 3. Disfrutalo.",
+  footer: "Recuerda: primero gestiona el riesgo y luego busca rentabilidad. Este kit complementa los 18 temas del nivel 3.",
 });
 
 buildPdfFile({
@@ -138,48 +143,48 @@ buildPdfFile({
   outSub: ".",
   sections: [
     {
-      title: "Workbook — Nivel 4 (Experto)",
-      subtitle: "Framework de analisis para protocolos DeFi, L2 y oportunidades de arbitraje",
+      title: "Cuaderno de trabajo - nivel 4 (experto)",
+      subtitle: "Marco de análisis de protocolos DeFi y redes de capa 2, con oportunidades de arbitraje",
       headings: [
-        "1. Checklist de seguridad de un protocolo",
-        "2. Analisis de un proyecto Layer 2",
-        "3. Plan de estrategia de trading algoritmico",
+        "1. Lista de verificación de seguridad de un protocolo",
+        "2. Análisis de un proyecto Layer 2",
+        "3. Plan de estrategia de trading algorítmico",
         "4. Diario de operaciones (plantilla)",
       ],
       lists: {
-        "1. Checklist de seguridad de un protocolo": [
-          "Auditorias publicas y salidas de auditorias conocidas",
-          "Timelock o multisig sobre fondos del protocolo",
-          "Historial de exploits en la cadena que opera",
-          "TVL real vs token inflado",
-          "Equipo con doxing / reputacion verificable",
-          "Politica de respuesta ante incidentes (bug bounty)",
+        "1. Lista de verificación de seguridad de un protocolo": [
+          "Auditorías públicas y resultados de firmas reconocidas",
+          "Bloqueo temporal (timelock) o firma múltiple (multisig) para administrar los fondos del protocolo",
+          "Historial de incidentes de seguridad en la cadena donde opera",
+          "Valor total bloqueado (TVL) real frente al valor inflado asociado al token",
+          "Equipo con identidad y reputación verificables",
+          "Política de respuesta ante incidentes, incluido un programa de recompensas por errores",
         ],
-        "2. Analisis de un proyecto Layer 2": [
-          "Es optimistic rollup o zk-rollup? Que implica cada uno",
-          "Secuenciador: descentralizado o controlado por la empresa",
-          "Puente de salida: plazo y costo para volver a L1",
-          "Liquidez de los bridges y riesgo de puente",
-          "Comunidad de desarrolladores y roadmap publicado",
+        "2. Análisis de un proyecto Layer 2": [
+          "¿La red usa un optimistic rollup o un zk-rollup? ¿Qué implica cada opción?",
+          "Secuenciador: ¿está descentralizado o lo controla una sola empresa?",
+          "Puente de salida: plazo y costo para retirar fondos a L1",
+          "Liquidez de los puentes y riesgos asociados",
+          "Comunidad de desarrolladores y hoja de ruta publicada",
         ],
-        "3. Plan de estrategia de trading algoritmico": [
-          "Definir sesgo: delta-neutral, direccional o arbitraje",
-          "Elegir mercado y ventana de operacion",
-          "Backtest: 200+ eventos, incluyendo crisis de liquidez",
-          "Parametros de riesgo: exposure maxima, drawdown stop",
-          "Ejecucion: DEX vs CEX, MEV protection, slippage max",
+        "3. Plan de estrategia de trading algorítmico": [
+          "Define la estrategia: delta neutral, direccional o de arbitraje",
+          "Elige el mercado y el marco temporal",
+          "Haz pruebas retrospectivas con más de 200 eventos e incluye crisis de liquidez",
+          "Define los límites de riesgo: exposición máxima y pérdida máxima",
+          "Planifica la ejecución (DEX o CEX) y fija límites para MEV y deslizamiento",
         ],
         "4. Diario de operaciones (plantilla)": [
-          "Fecha / par / direccion",
-          "Tesiss: por que me meto (1 linea)",
-          "Entrada, stop inicial, take profit",
-          "Riesgo arriesgado (1-2% max)",
-          "Resultado y leccion aprendida",
+          "Fecha, par y dirección de la operación",
+          "Tesis: por qué entras (en una línea)",
+          "Precio de entrada, stop inicial y objetivo de beneficio",
+          "Riesgo asumido (máximo del 1-2 % del capital)",
+          "Resultado y lección aprendida",
         ],
       },
     },
   ],
-  footer: "Nivel 4 Experto: 13 temas, acceso de por vida. Primero analiza, luego capital.",
+  footer: "Nivel 4 (experto): 13 temas y acceso de por vida. Analiza primero; luego decide cuánto capital arriesgar.",
 });
 
 buildPdfFile({
@@ -187,41 +192,41 @@ buildPdfFile({
   outSub: ".",
   sections: [
     {
-      title: "Guia de Ruta — Nivel 5 (Especializaciones)",
-      subtitle: "Como elegir tu especializacion: Ethereum Scaling, Blockchain Modular y Regulacion",
+      title: "Guía de especialización - nivel 5",
+      subtitle: "Cómo elegir una especialización en escalabilidad de Ethereum, blockchains modulares o regulación",
       headings: [
-        "A. Perfil: cual especializacion te queda mejor",
-        "B. Ethereum Scaling (ZK Programming / Cairo)",
-        "C. Blockchain Modular y EigenLayer",
-        "D. Regulacion y Finanzas institucionales",
+        "A. Perfil: ¿qué especialización se adapta mejor a ti?",
+        "B. Escalabilidad de Ethereum (programación ZK / Cairo)",
+        "C. Blockchains modulares y EigenLayer",
+        "D. Regulación y finanzas institucionales",
       ],
       lists: {
-        "A. Perfil: cual especializacion te queda mejor": [
-          "Te gusta programar -> ZK Programming y Desarrollo Avanzado",
-          "Te interesa la infraestructura -> Blockchain Modular y Wallet Tech",
-          "Vienes del trading -> Finanzas y Analisis on-chain profundo",
-          "Te preocupa el marco legal -> Regulacion y Privacidad",
+        "A. Perfil: ¿qué especialización se adapta mejor a ti?": [
+          "Si te gusta programar: programación ZK y desarrollo avanzado",
+          "Si te interesa la infraestructura: blockchains modulares y tecnología de billeteras",
+          "Si te interesa el trading: finanzas y análisis en cadena (on-chain) avanzado",
+          "Si te preocupa el marco legal: regulación y privacidad",
         ],
-        "B. Ethereum Scaling (ZK Programming / Cairo)": [
-          "Fundamentos: como un rollup comprime datos y prueba su estado",
-          "Cairo: sintaxis, felt, y contratos StarkNet",
-          "Practica: deploy de un contrato simple en testnet",
-          "Recursos: Starknet docs, Cairo book, workshops oficiales",
+        "B. Escalabilidad de Ethereum (programación ZK / Cairo)": [
+          "Fundamentos: cómo un rollup comprime datos y demuestra su estado",
+          "Cairo: sintaxis, felt y contratos de Starknet",
+          "Práctica: despliega un contrato sencillo en una red de pruebas",
+          "Recursos: documentación de Starknet, libro de Cairo y talleres oficiales",
         ],
-        "C. Blockchain Modular y EigenLayer": [
-          "Entender las capas: consenso, ejecucion, disponibilidad de datos",
+        "C. Blockchains modulares y EigenLayer": [
+          "Comprende las capas: consenso, ejecución y disponibilidad de datos",
           "EigenLayer y restaking: riesgos y oportunidades",
-          "Experimentar con una cadena modular de testnet",
-          "Comparar monolitico vs modular con datos reales de uso",
+          "Prueba una cadena modular en una red de pruebas",
+          "Compara arquitecturas monolíticas y modulares con datos reales de uso",
         ],
-        "D. Regulacion y Finanzas institucionales": [
-          "Marco global: MiCA (UE), EEUU (SEC/CFTC), LATAM",
-          "Como afecta la regulacion a exchanges y stablecoins",
+        "D. Regulación y finanzas institucionales": [
+          "Marco global: MiCA (UE), EE. UU. (SEC/CFTC) y Latinoamérica",
+          "Cómo afecta la regulación a los exchanges y las stablecoins",
           "Custodia institucional e informes on-chain",
-          "Estrategia de carrera: roles que van a crecer",
+          "Estrategia profesional: puestos con perspectivas de crecimiento",
         ],
       },
     },
   ],
-  footer: "Nivel 5: 11 especializaciones, acceso de por vida. Elige una ruta y ejecuta.",
+  footer: "Nivel 5: 11 especializaciones y acceso de por vida. Elige una ruta y llévala a la práctica.",
 });

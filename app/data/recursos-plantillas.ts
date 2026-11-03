@@ -6,7 +6,7 @@
  * tiene ahora su pagina con el esquema de datos real, un ejemplo y los tres
  * formatos, para que quien llega desde una busqueda entienda que descarga antes
  * de descargar. El esquema de aqui NO se inventa: sale de los CSV de
- * public/recursos/ (encabezado y fila [EJEMPLO REAL]).
+ * public/recursos/ (encabezado y fila [EJEMPLO]).
  *
  * FUENTE UNICA
  * Los datos viven en plantillas.json porque tambien los consume
@@ -28,7 +28,7 @@ export interface VariablePlantilla {
   label: string;
   /** Que es y como se calcula o verifica. */
   description: string;
-  /** Valor de la fila [EJEMPLO REAL] del CSV, o el marcador editorial si no tiene. */
+  /** Valor de la fila [EJEMPLO] del CSV, o el marcador editorial si no tiene. */
   example: string;
 }
 
@@ -38,7 +38,7 @@ export interface PlantillaRecurso {
   nombre: string;
   resumen: string;
   variables: VariablePlantilla[];
-  /** Fila [EJEMPLO REAL] del CSV, resumida. */
+  /** Fila [EJEMPLO] del CSV, resumida. */
   ejemplo: string;
   /** Widget interactivo propio de la plantilla, si lo tiene. */
   simulador?: "custodia";

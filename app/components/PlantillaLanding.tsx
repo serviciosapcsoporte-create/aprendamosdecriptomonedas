@@ -4,8 +4,8 @@
  * POR QUE UNA LANDING Y NO SOLO EL ARCHIVO
  * Quien llega desde una busqueda ("plantilla de riesgo cripto") no descarga un
  * archivo de un nombre que no conoce: necesita ver el esquema de columnas y un
- * ejemplo real antes de confiar. Esta pagina muestra exactamente las columnas
- * del CSV y el ejemplo que trae, y desde ahi ofrece PDF, Excel y CSV.
+ * ejemplo antes de descargar. Esta página muestra las columnas del CSV y la
+ * fila de muestra que incluye; desde aquí se ofrecen los formatos PDF, Excel y CSV.
  *
  * El banner de Hotmart es el componente compartido (HotmartNativeBanner): trae
  * el enlace verificado y la declaracion de afiliado. Aqui NO se escribe un link
@@ -31,17 +31,17 @@ const PASOS = [
   {
     titulo: "Elige el formato que vas a usar",
     texto:
-      "El PDF es la guía de estudio; el Excel trae las fórmulas listas para operar; el CSV importa en cualquier hoja de cálculo.",
+      "El PDF es la guía de estudio; el Excel incluye fórmulas y listas desplegables; el archivo CSV se puede importar en cualquier hoja de cálculo.",
   },
   {
-    titulo: "Reemplaza la fila [EJEMPLO REAL]",
+    titulo: "Reemplaza la fila de ejemplo",
     texto:
-      "Cada archivo trae una fila marcada como guía. Bórrala y coloca tus propios datos on-chain.",
+      "Cada archivo incluye una fila marcada como [EJEMPLO]. Elimínala cuando entiendas el esquema y sustitúyela por tus propios datos.",
   },
   {
-    titulo: "Decide con tu propia fuente",
+    titulo: "Verifica tus fuentes",
     texto:
-      "Los números reales salen de tu wallet y de tu explorador de bloques, no de la tabla de un desconocido.",
+      "Obtén los datos de tu wallet y del explorador de bloques que uses; no des por válidas cifras de terceros sin verificarlas.",
   },
 ];
 
@@ -74,7 +74,7 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
           href="/recursos"
           className="inline-flex items-center gap-1 text-xs font-bold text-warning hover:underline"
         >
-          ← Volver al Centro de Recursos
+          ← Volver a recursos
         </a>
         <div className="flex items-center gap-3">
           <span className="rounded-lg border border-warning/30 bg-warning/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-warning">
@@ -90,7 +90,7 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
         <h1 className="mb-3 text-3xl font-extrabold tracking-tight md:text-4xl">{nombre}</h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground">{resumen}</p>
         <p className="mt-3 text-xs text-muted-foreground">
-          Gratis · CSV, Excel con fórmulas y PDF · sin registro obligatorio
+          Gratis · CSV, Excel (con fórmulas) y PDF · sin registro obligatorio
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                 <h2 className="font-mono text-xs uppercase tracking-wider text-warning">
-                  Estructura de columnas y definición
+                  Estructura de columnas y definiciones
                 </h2>
                 <span className="font-mono text-[10px] text-muted-foreground">
                   Optimizado para Excel y Google Sheets
@@ -188,7 +188,7 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                 <h2 className="font-mono text-xs uppercase tracking-wider text-success">
-                  Fila [EJEMPLO REAL] del archivo
+                  Ejemplo de una fila del archivo
                 </h2>
                 <span className="font-mono text-[10px] text-muted-foreground">
                   Datos de muestra, no de mercado
@@ -257,7 +257,7 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
             Descarga esta herramienta ahora
           </h2>
           <p className="text-xs text-muted-foreground">
-            Sin instalaciones ni cuentas para descargar.
+            No necesitas instalar nada ni crear una cuenta para descargarla.
           </p>
         </div>
         <div className="flex w-full flex-wrap items-center justify-end gap-2.5 md:w-auto">
@@ -293,10 +293,10 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
         <div className="flex flex-col items-start justify-between gap-3 rounded-2xl border border-border bg-card p-5 md:flex-row md:items-center">
           <div>
             <h2 id="kit-titulo" className="mb-1 text-sm font-bold">
-              Las 8 plantillas, en un solo ZIP
+              Las ocho plantillas en un solo ZIP
             </h2>
             <p className="text-xs text-muted-foreground">
-              El paquete completo con todas las plantillas en CSV, más el LEEME de uso.
+              Incluye las ocho plantillas en formato CSV y un archivo LEEME con instrucciones.
             </p>
           </div>
           <a
@@ -336,9 +336,9 @@ export function PlantillaLanding({ plantilla }: { plantilla: PlantillaRecurso })
           </h2>
         </div>
         <p className="mb-4 text-sm text-muted-foreground">
-          ¿Quieres el mismo marco aplicado en video? El curso recomendado trabaja el arbitraje y la
-          gestión de riesgo con parámetros definidos. Es una recomendación de afiliado, no un
-          requisito para usar estas plantillas.
+          ¿Quieres ver este mismo marco aplicado en video? El curso recomendado aborda el arbitraje
+          y la gestión del riesgo con parámetros definidos. Es un enlace de afiliado; no necesitas
+          comprarlo para usar estas plantillas.
         </p>
         <HotmartNativeBanner nivel="4" />
       </section>

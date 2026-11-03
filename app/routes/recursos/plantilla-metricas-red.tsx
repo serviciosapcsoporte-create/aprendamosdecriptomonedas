@@ -8,17 +8,17 @@ const plantilla = plantillaPorSlug("plantilla-metricas-red") as PlantillaRecurso
 export const Route = createFileRoute("/recursos/plantilla-metricas-red")({
   component: () => <PlantillaLanding plantilla={plantilla} />,
   head: () => ({
-    title: "Plantilla de Métricas de Red (CSV, Excel y PDF) | Aprendamos de Criptomonedas",
+    title: "Plantilla de métricas de red (CSV, Excel y PDF) | Aprendamos de Criptomonedas",
     meta: [
       {
         name: "description",
         content:
-          "Calcula FDV/MCap, rotación, supply y desbloqueos con fórmulas listas. Descarga gratis en CSV, Excel y PDF.",
+          "Analiza la valoración totalmente diluida (FDV), la capitalización de mercado, el volumen negociado y los próximos desbloqueos. Descarga gratis en CSV, Excel con fórmulas y PDF.",
       },
-      { property: "og:title", content: "Plantilla de Métricas de Red" },
+      { property: "og:title", content: "Plantilla de métricas de red" },
       {
         property: "og:description",
-        content: "Los ratios que separan un proyecto sólido de una preventa, en una tabla.",
+        content: "Compara la valoración, el volumen negociado y la oferta de un token en una sola plantilla.",
       },
     ],
     scripts: [
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/recursos/plantilla-metricas-red")({
         breadcrumbLd([
           { name: "Inicio", path: "/" },
           { name: "Recursos", path: "/recursos" },
-          { name: "Plantilla de Métricas de Red", path: "/recursos/plantilla-metricas-red" },
+          { name: "Plantilla de métricas de red", path: "/recursos/plantilla-metricas-red" },
         ]),
       ),
     ],

@@ -9,36 +9,36 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
 endobj
 4 0 obj
-<< /Length 2472 >>
+<< /Length 2868 >>
 stream
-BT /F2 18 Tf 1 0 0 1 56 736 Td (Workbook  Nivel 4 \(Experto\)) Tj ET
-BT /F1 11 Tf 1 0 0 1 56 708 Td (Framework de analisis para protocolos DeFi, L2 y oportunidades de arbitraje) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 686 Td (1. Checklist de seguridad de un protocolo) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Auditorias publicas y salidas de auditorias conocidas) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  Timelock o multisig sobre fondos del protocolo) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Historial de exploits en la cadena que opera) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  TVL real vs token inflado) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 600 Td ([ ]  Equipo con doxing / reputacion verificable) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 584 Td ([ ]  Politica de respuesta ante incidentes \(bug bounty\)) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 564 Td (2. Analisis de un proyecto Layer 2) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  Es optimistic rollup o zk-rollup? Que implica cada uno) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Secuenciador: descentralizado o controlado por la empresa) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 510 Td ([ ]  Puente de salida: plazo y costo para volver a L1) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 494 Td ([ ]  Liquidez de los bridges y riesgo de puente) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 478 Td ([ ]  Comunidad de desarrolladores y roadmap publicado) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 458 Td (3. Plan de estrategia de trading algoritmico) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Definir sesgo: delta-neutral, direccional o arbitraje) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 420 Td ([ ]  Elegir mercado y ventana de operacion) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 404 Td ([ ]  Backtest: 200+ eventos, incluyendo crisis de liquidez) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 388 Td ([ ]  Parametros de riesgo: exposure maxima, drawdown stop) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 372 Td ([ ]  Ejecucion: DEX vs CEX, MEV protection, slippage max) Tj ET
+BT /F2 18 Tf 1 0 0 1 56 736 Td (Cuaderno de trabajo - nivel 4 \(experto\)) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 708 Td (Marco de análisis de protocolos DeFi y redes de capa 2, con oportunidades de arbitraje) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 686 Td (1. Lista de verificación de seguridad de un protocolo) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Auditorías públicas y resultados de firmas reconocidas) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  Bloqueo temporal \(timelock\) o firma múltiple \(multisig\) para administrar los fondos del protocolo) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Historial de incidentes de seguridad en la cadena donde opera) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  Valor total bloqueado \(TVL\) real frente al valor inflado asociado al token) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 600 Td ([ ]  Equipo con identidad y reputación verificables) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 584 Td ([ ]  Política de respuesta ante incidentes, incluido un programa de recompensas por errores) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 564 Td (2. Análisis de un proyecto Layer 2) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  ¿La red usa un optimistic rollup o un zk-rollup? ¿Qué implica cada opción?) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Secuenciador: ¿está descentralizado o lo controla una sola empresa?) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 510 Td ([ ]  Puente de salida: plazo y costo para retirar fondos a L1) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 494 Td ([ ]  Liquidez de los puentes y riesgos asociados) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 478 Td ([ ]  Comunidad de desarrolladores y hoja de ruta publicada) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 458 Td (3. Plan de estrategia de trading algorítmico) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Define la estrategia: delta neutral, direccional o de arbitraje) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 420 Td ([ ]  Elige el mercado y el marco temporal) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 404 Td ([ ]  Haz pruebas retrospectivas con más de 200 eventos e incluye crisis de liquidez) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 388 Td ([ ]  Define los límites de riesgo: exposición máxima y pérdida máxima) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 372 Td ([ ]  Planifica la ejecución \(DEX o CEX\) y fija límites para MEV y deslizamiento) Tj ET
 BT /F2 13 Tf 1 0 0 1 56 352 Td (4. Diario de operaciones \(plantilla\)) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 330 Td ([ ]  Fecha / par / direccion) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 314 Td ([ ]  Tesiss: por que me meto \(1 linea\)) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 298 Td ([ ]  Entrada, stop inicial, take profit) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 282 Td ([ ]  Riesgo arriesgado \(1-2% max\)) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 266 Td ([ ]  Resultado y leccion aprendida) Tj ET
-BT /F1 11 Tf 1 0 0 1 56 238 Td (Nivel 4 Experto: 13 temas, acceso de por vida. Primero analiza, luego capital.) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 330 Td ([ ]  Fecha, par y dirección de la operación) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 314 Td ([ ]  Tesis: por qué entras \(en una línea\)) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 298 Td ([ ]  Precio de entrada, stop inicial y objetivo de beneficio) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 282 Td ([ ]  Riesgo asumido \(máximo del 1-2 % del capital\)) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 266 Td ([ ]  Resultado y lección aprendida) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 238 Td (Nivel 4 \(experto\): 13 temas y acceso de por vida. Analiza primero; luego decide cuánto capital arriesgar.) Tj ET
 endstream
 endobj
 5 0 obj
@@ -57,11 +57,11 @@ xref
 0000000079 00000 n 
 0000000154 00000 n 
 0000000232 00000 n 
-0000002756 00000 n 
-0000002813 00000 n 
-0000002959 00000 n 
+0000003152 00000 n 
+0000003209 00000 n 
+0000003355 00000 n 
 trailer
 << /Size 8 /Root 7 0 R >>
 startxref
-3008
+3404
 %%EOF

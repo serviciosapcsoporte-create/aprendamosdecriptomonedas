@@ -1,5 +1,5 @@
 ﻿marcador;etiqueta;tipo;donde_vive;contenido_aprox_usd;para_que;respaldo_verificado
-[EJEMPLO REAL];Operativa;hot;Extension de navegador en el portatil;850;Operar y recibir;no aplica
-;Ahorro;cold;Hardware wallet en casa;;Largo plazo;si / no
-;Frio;cold;Hardware wallet fuera de casa;;Respaldo del anterior;si / no
-;En exchanges;custodial;Exchange grande;;On-ramp y off-ramp;si / no
+[EJEMPLO];Operativa;hot;Extensión del navegador en el portátil;850;Operar y recibir fondos;no aplica
+;Ahorro;cold;Hardware wallet guardada en casa;;A largo plazo;sí / no
+;Reserva;cold;Hardware wallet guardada en un lugar seguro;;Respaldo de la anterior;sí / no
+;En exchanges;custodial;Exchange centralizado;;Depositar y retirar fondos;sí / no

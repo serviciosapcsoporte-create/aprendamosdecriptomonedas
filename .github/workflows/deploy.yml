@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "23 13 * * *"
 
 permissions:
   contents: read
@@ -31,6 +33,14 @@ jobs:
           # (ver app/lib/leads.ts).
           VITE_LEADS_ENDPOINT: ${{ secrets.VITE_LEADS_ENDPOINT }}
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
+      - name: Guardar noticias para Telegram
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: telegram-news
+          path: public/data/news.json
+          if-no-files-found: error
+          retention-days: 1
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -45,3 +55,19 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  telegram-news:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: telegram-news
+          path: telegram-news
+      - name: Enviar reporte diario al grupo
+        env:
+          NEWS_BOT_TOKEN: ${{ secrets.NEWS_BOT_TOKEN }}
+          NEWS_CHAT_ID: ${{ secrets.NEWS_CHAT_ID }}
+        run: node scripts/send-news-report.mjs --file telegram-news/news.json

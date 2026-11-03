@@ -1,13 +1,13 @@
 ﻿marcador;#;punto_de_control;como_se_verifica;categoria;estado
-[EJEMPLO REAL];1;Seed phrase anotada en papel o metal, nunca en foto;Revisa que no exista captura en la galeria;llaves;cumple
-;2;Seed phrase en dos lugares fisicos distintos;Uno en casa y otro fuera;llaves;pendiente
-;3;Seed phrase verificada restaurando en otro dispositivo;Restauracion de prueba, con monto 0;llaves;pendiente
-;4;2FA con app, no SMS, en exchange y correo;Ajustes de seguridad de cada cuenta;cuentas;pendiente
-;5;Clave unica y larga, reutilizada en ningun otro sitio;Gestor de contrasenas;cuentas;pendiente
-;6;Exchange con retiros activos y verificados;Prueba de retiro antes de mover montos grandes;custodia;pendiente
-;7;Hot wallet separada de la cold, con solo lo operativo;Reparto de fondos entre wallets;custodia;pendiente
-;8;Comprobacion de la red antes de enviar;Ultimos 4 y primeros 4 caracteres de la direccion;operacion;pendiente
-;9;Envio de prueba con monto minimo antes de mover;Prueba de la ruta completa;operacion;pendiente
-;10;Revisar aprobaciones de tokens antes de firmar;Revoke.cash o el explorador;smart contracts;pendiente
-;11;Limite de perdida definido por operacion, escrito;Regla personal, con numero;gestion;pendiente
-;12;Ninguna decision de dinero tomada tras una subida fuerte;Esperar 24 horas si hay euforia o panico;gestion;pendiente
+[EJEMPLO];1;Frase semilla anotada en papel o metal, nunca en una foto;Comprueba que no haya fotos ni capturas en la galería;llaves;cumple
+;2;Frase semilla guardada en dos lugares físicos distintos;Guarda una copia en casa y otra en un lugar seguro;llaves;pendiente
+;3;Copia de respaldo comprobada mediante el procedimiento de recuperación;Haz la prueba en un dispositivo seguro y sin fondos;llaves;pendiente
+;4;Autenticación de dos factores con una aplicación, no solo SMS, en el exchange y el correo;Revisa los ajustes de seguridad de cada cuenta;cuentas;pendiente
+;5;Contraseña única y larga que no reutilizas en ningún otro sitio;Usa un gestor de contraseñas;cuentas;pendiente
+;6;Cuenta del exchange con los retiros habilitados y operativos;Haz una prueba de retiro antes de mover cantidades grandes;custodia;pendiente
+;7;Hot wallet separada de la cold wallet, con solo los fondos necesarios para operar;Revisa cómo distribuyes los fondos entre tus wallets;custodia;pendiente
+;8;Red correcta antes de enviar;Comprueba la red y verifica la dirección completa;operacion;pendiente
+;9;Envío de prueba con un monto mínimo antes de mover más fondos;Comprueba la ruta completa;operacion;pendiente
+;10;Aprobaciones de tokens revisadas antes de firmar;Usa Revoke.cash o el explorador de bloques;smart contracts;pendiente
+;11;Límite de pérdida por operación definido y por escrito;Anota tu regla y el límite numérico;gestion;pendiente
+;12;Evita tomar decisiones impulsivas después de una subida fuerte;Espera 24 horas si sientes euforia o pánico;gestion;pendiente

@@ -205,15 +205,15 @@ function paginaUso(p) {
   const pasos = [
     [
       "Elige el formato",
-      `El PDF es la guía de estudio; el Excel (${p.slug}.xlsx) trae fórmulas y listas desplegables; el CSV importa en cualquier hoja de cálculo.`,
+      `El PDF es la guía de estudio; el Excel (${p.slug}.xlsx) incluye fórmulas y listas desplegables; el archivo CSV se puede importar en cualquier hoja de cálculo.`,
     ],
     [
       "Reemplaza la fila de ejemplo",
-      "Cada archivo trae una fila marcada como EJEMPLO. Bórrala cuando entiendas el esquema: esos números son de muestra, no de mercado.",
+      "Cada archivo incluye una fila marcada como [EJEMPLO]. Elimínala cuando entiendas el esquema: contiene datos de muestra, no datos de mercado.",
     ],
     [
-      "Trabaja con tu propia fuente",
-      "Los números salen de tu wallet y de tu explorador de bloques. Esta plantilla ordena el registro; no reemplaza la verificación.",
+      "Verifica tus fuentes",
+      "Obtén los datos de tu wallet y del explorador de bloques que uses. Esta plantilla ayuda a organizarlos, pero no sustituye su verificación.",
     ],
   ];
 
@@ -262,7 +262,7 @@ function paginaUso(p) {
 
     <div class="nota" style="margin-top:9mm;">
       <strong>Qué no es.</strong> No es asesoría financiera ni una recomendación de compra. Los
-      umbrales y ejemplos son de referencia editorial: la decisión y la verificación son tuyas.
+      umbrales y ejemplos tienen fines ilustrativos: la decisión y la verificación son tuyas.
       En el sitio, el bloque de formación es un enlace de afiliado y está señalado como tal.
     </div>
 
@@ -574,17 +574,17 @@ async function construirXlsx(p) {
     [
       "CÓMO SE USA",
       [
-        "1. Lee el esquema: cada columna tiene nombre, definición y ejemplo (hoja «Plantilla», fila 4).",
-        "2. Borra la fila de ejemplo cuando entiendas la estructura: son datos de muestra, no de mercado.",
-        "3. Llena tus filas. Las listas desplegables y las fórmulas ya están puestas; no las sobrescribas.",
+        "1. Lee el esquema: cada columna tiene un nombre, una definición y un ejemplo (hoja «Plantilla», fila 4).",
+        "2. Elimina la fila de ejemplo cuando entiendas la estructura: contiene datos de muestra, no datos de mercado.",
+        "3. Completa tus filas. Las listas desplegables y las fórmulas ya están configuradas; no las sobrescribas.",
         "4. Filtra por estado o riesgo con la flecha del encabezado para revisar lo pendiente.",
       ],
     ],
     [
       "QUÉ NO ES",
       [
-        "No es asesoría financiera ni una recomendación de compra. Los umbrales (por ejemplo, más del 20 % en exchanges) son de referencia editorial.",
-        "La verificación de tus datos on-chain es tuya: esta hoja ordena el registro, no sustituye al explorador de bloques.",
+        "No es asesoría financiera ni una recomendación de compra. Los umbrales (por ejemplo, más del 20 % en exchanges) son orientativos.",
+        "Verifica tus datos en cadena: esta hoja ayuda a organizarlos, pero no sustituye al explorador de bloques.",
       ],
     ],
   ];
@@ -851,21 +851,28 @@ ${plantillas.map((p, i) => `${i + 1}. **${p.nombre}** — ${p.resumen}`).join("\
 
 ## Cómo se usa
 
-1. Empieza por el PDF: explica qué mide cada campo antes de que escribas nada.
+1. Empieza por el PDF, que explica qué mide cada campo antes de que escribas.
 2. Pasa al Excel: la hoja «Empieza aquí» tiene las instrucciones y la hoja «Plantilla» ya trae fórmulas y listas.
-3. Borra la fila de ejemplo cuando entiendas la estructura. Esos números son de muestra, no de mercado.
-4. El CSV es para importar a otra herramienta; si lo abres en Excel usa «Datos > Desde texto» y elige «;» como separador.
+3. Elimina la fila de ejemplo cuando entiendas la estructura. Contiene datos de muestra, no datos de mercado.
+4. Para importar el CSV en Excel, ve a «Datos > Desde texto» y selecciona «;» como separador.
 
 ## Qué no es
 
-No es asesoría financiera ni una recomendación de compra. Los umbrales y ejemplos son de
-referencia editorial; la verificación de tus datos on-chain es tuya. En el sitio, el bloque de
-formación es un enlace de afiliado y está señalado como tal.
+No es asesoría financiera ni una recomendación de compra. Los umbrales y ejemplos tienen fines
+ilustrativos; verifica tus datos en cadena. En el sitio, el bloque de formación es un enlace de
+afiliado y está señalado como tal.
 
 ## Licencia de uso
 
 Uso libre para tu operación personal o de tu negocio. No revendas los archivos como producto
 propio ni retires la marca: si los compartes, comparte el enlace original.
+`;
+
+const LEEME_CSV = `Kit institucional: 8 plantillas CSV
+
+Formato UTF-8 con punto y coma (;) como separador, compatible con Excel en español.
+Cada archivo incluye un esquema y una fila marcada [EJEMPLO] con datos ficticios.
+Reemplaza la fila de ejemplo por tus propios datos. No son datos de mercado ni recomendaciones financieras.
 `;
 
 function htmlIndice() {
@@ -1017,11 +1024,21 @@ async function main() {
   const zip = crearZip(entradas);
   fs.writeFileSync(path.join(RECURSOS, "paquete-plantillas.zip"), zip);
 
+  const entradasCsv = [
+    { nombre: "LEEME.txt", datos: Buffer.from(LEEME_CSV, "utf8") },
+    ...plantillas.map((p) => ({
+      nombre: `${p.slug}.csv`,
+      datos: fs.readFileSync(path.join(RECURSOS, `${p.slug}.csv`)),
+    })),
+  ];
+  const zipCsv = crearZip(entradasCsv);
+  fs.writeFileSync(path.join(RECURSOS, "paquete-plantillas-csv.zip"), zipCsv);
+
   const kb = (b) => `${Math.round(b / 1024)} KB`;
   console.log(
     `\nPDF: ${kb(fs.statSync(path.join(RECURSOS, `${plantillas[0].slug}.pdf`)).size)} · XLSX: ${kb(
       fs.statSync(path.join(RECURSOS, `${plantillas[0].slug}.xlsx`)).size,
-    )} · ZIP: ${kb(zip.length)}`,
+    )} · ZIP: ${kb(zip.length)} · CSV ZIP: ${kb(zipCsv.length)}`,
   );
 }
 

@@ -1,10 +1,9 @@
 /**
- * Kit institucional de 8 plantillas descargables.
+ * Kit institucional de ocho plantillas descargables.
  *
- * Cada plantilla existe en CSV, XLSX (con fórmulas) y PDF estático 16:9 con CTA
- * a Hotmart. El paquete ZIP las agrupa. Si VITE_LEADS_ENDPOINT está configurado
- * se pide correo antes de descargar; si no, la descarga es directa y se explica
- * por qué (ver app/lib/leads.ts). Nunca se finge una captura que no existe.
+ * Cada plantilla está disponible en CSV, XLSX (con fórmulas) y PDF imprimible.
+ * El paquete ZIP las agrupa. Si VITE_LEADS_ENDPOINT está configurado, se pide
+ * un correo antes de descargar; si no, la descarga es directa (ver app/lib/leads.ts).
  */
 import { useState } from "react";
 import {
@@ -30,9 +29,9 @@ const BADGES: Record<string, string> = {
   "checklist-seguridad.csv": "Auditoría",
   "registro-operaciones.csv": "Gestión de riesgo",
   "inventario-wallets.csv": "Custodia",
-  "calculadora-riesgo.csv": "Risk sizing",
+  "calculadora-riesgo.csv": "Gestión del riesgo",
   "tesis-inversion.csv": "Inversión",
-  "seguimiento-airdrop.csv": "Airdrop farming",
+  "seguimiento-airdrop.csv": "Airdrops",
 };
 
 const ZIP = "/recursos/paquete-plantillas-csv.zip";
@@ -101,10 +100,10 @@ export function LeadMagnet() {
           id="leadmagnet-titulo"
           className="mb-2 mt-4 text-3xl font-extrabold text-white"
         >
-          Kit Institucional Completo: 8 Plantillas Maestras
+          Kit institucional completo: ocho plantillas de trabajo
         </ElegantHeading>
         <p className="mx-auto mt-2 max-w-2xl text-sm text-gray-400">
-          Ocho plantillas con fila de esquema y una fila marcada como [EJEMPLO REAL].
+          Ocho plantillas con una fila de esquema y otra marcada como [EJEMPLO].
           Descarga el paquete completo o cada archivo en CSV, Excel con fórmulas o PDF.
         </p>
       </div>
@@ -112,14 +111,14 @@ export function LeadMagnet() {
       <div className="mx-auto max-w-2xl rounded-3xl border border-amber-500/40 bg-gradient-to-br from-gray-900 via-[#0A0E1A] to-gray-900 p-6 shadow-2xl sm:p-8">
         <div className="mb-6 text-center">
           <span className="inline-block rounded-full border border-amber-500/30 bg-amber-500/20 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-amber-400">
-            Acceso exclusivo
+            Descarga gratuita
           </span>
           <h3 className="mb-2 mt-3 text-2xl font-extrabold text-white">
-            Kit Institucional Completo (8 Plantillas Maestras)
+            Kit institucional completo (ocho plantillas)
           </h3>
           <p className="mx-auto max-w-lg text-xs leading-relaxed text-gray-400">
-            Obtén acceso inmediato al paquete ZIP con todas las plantillas en CSV,
-            Excel con fórmulas y PDFs tipo landing page.
+            Descarga el paquete ZIP con las plantillas en CSV, Excel (con fórmulas)
+            y PDF con instrucciones y hojas de trabajo.
           </p>
         </div>
 
@@ -146,9 +145,8 @@ export function LeadMagnet() {
             <CheckCircle2 className="mx-auto h-7 w-7 text-emerald-400" aria-hidden="true" />
             <h4 className="text-base font-bold text-emerald-300">Acceso concedido</h4>
             <p className="text-xs text-gray-300">
-              La descarga del ZIP empezó en tu navegador. Guardamos{" "}
-              <strong>{email}</strong> para avisarte cuando publiquemos nuevas
-              plantillas.
+              La descarga del ZIP ya comenzó. Usaremos <strong>{email}</strong>{" "}
+              para enviarte el recurso; solo recibirás novedades si aceptaste recibir contenido.
             </p>
             <a
               href={ZIP}
@@ -230,7 +228,7 @@ export function LeadMagnet() {
 
       <div className="mt-8">
         <h3 className="mb-4 text-center text-xs font-mono uppercase tracking-wider text-gray-500">
-          O descárgalos uno a uno en CSV, Excel o PDF estático
+          O descarga cada plantilla en CSV, Excel o PDF
         </h3>
         <div className="space-y-4">
           {CSVS.map((c) => {
@@ -288,27 +286,27 @@ export function LeadMagnet() {
 
       <div className="mt-8 flex flex-col items-center justify-between gap-4 rounded-2xl border border-gray-800 bg-gray-950/80 p-4 md:flex-row">
         <p className="text-xs text-gray-400">
-          <strong className="mb-0.5 block text-white">Guías y workbooks complementarios</strong>
-          También tienes la <strong>Guía de Nivel 5</strong> y el{" "}
-          <strong>Workbook de Nivel 4</strong> en PDF.
+          <strong className="mb-0.5 block text-white">Guías y cuadernos de trabajo complementarios</strong>
+          También tienes la <strong>guía del nivel 5</strong> y el{" "}
+          <strong>cuaderno de trabajo del nivel 4</strong> en PDF.
         </p>
         <div className="flex items-center gap-2">
           <a
-            href="/recursos/workbook-nivel-4.pdf"
+            href="/resources/workbook-nivel-4.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-bold text-amber-400 hover:underline"
           >
-            Ver Workbook Nivel 4 →
+            Ver cuaderno de trabajo del nivel 4 →
           </a>
           <span className="text-gray-600">|</span>
           <a
-            href="/recursos/guia-nivel-5.pdf"
+            href="/resources/guia-nivel-5.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-bold text-amber-400 hover:underline"
           >
-            Ver Guía Nivel 5 →
+            Ver guía del nivel 5 →
           </a>
         </div>
       </div>

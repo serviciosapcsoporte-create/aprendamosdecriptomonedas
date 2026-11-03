@@ -115,42 +115,42 @@ export async function enviarLead(datos: Lead): Promise<ResultadoEnvio> {
 export const CSVS = [
   {
     archivo: "/recursos/plantilla-analisis-wallet.csv",
-    nombre: "Plantilla de Análisis de Wallet",
-    para: "Cómo auditar una wallet: antigüedad, cadencia de transacciones, concentración de activos y envíos hacia CEXs.",
+    nombre: "Plantilla de análisis de wallet",
+    para: "Analiza una dirección con datos sobre su antigüedad, frecuencia de transacciones, concentración de activos y envíos a exchanges centralizados.",
   },
   {
     archivo: "/recursos/plantilla-metricas-red.csv",
-    nombre: "Plantilla de Métricas de Red",
-    para: "Los ratios que separan un proyecto sólido de una preventa: FDV/MCap, tasa de rotación y calendarios de desbloqueo.",
+    nombre: "Plantilla de métricas de red",
+    para: "Compara capitalización de mercado, FDV, volumen y desbloqueos para evaluar la tokenómica de un proyecto.",
   },
   {
     archivo: "/recursos/checklist-seguridad.csv",
-    nombre: "Checklist de Seguridad Institucional",
-    para: "12 puntos verificables en diez minutos sobre custodia, frases de recuperación, hardware wallets y firmas operativas.",
+    nombre: "Checklist de seguridad institucional",
+    para: "Revisa en diez minutos 12 controles de custodia, frases de recuperación, hardware wallets y operaciones.",
   },
   {
     archivo: "/recursos/registro-operaciones.csv",
-    nombre: "Registro de Operaciones & Trading Log",
-    para: "Lleva el registro estricto de cada compra, venta, nivel de stop-loss y la justificación táctica de tu decisión.",
+    nombre: "Registro de operaciones",
+    para: "Registra compras, ventas, niveles de stop-loss y los motivos de cada decisión.",
   },
   {
     archivo: "/recursos/inventario-wallets.csv",
-    nombre: "Inventario de Wallets & Cold Storage",
-    para: "Control de balance real: audita cuánto capital tienes depositado en exchanges y cuánto controlas bajo custodia propia.",
+    nombre: "Inventario de billeteras y almacenamiento en frío",
+    para: "Registra cuánto capital tienes en exchanges y cuánto mantienes bajo tu propia custodia.",
   },
   {
     archivo: "/recursos/calculadora-riesgo.csv",
-    nombre: "Calculadora de Posición & Risk Sizing",
-    para: "Tamaño exacto de la posición según capital total, tolerancia al riesgo por operación y distancia al stop-loss.",
+    nombre: "Calculadora del tamaño de posición",
+    para: "Calcula el tamaño de una posición a partir del capital, el riesgo por operación y la distancia al stop-loss.",
   },
   {
     archivo: "/recursos/tesis-inversion.csv",
-    nombre: "Plantilla de Tesis de Inversión & Invalidación",
-    para: "Documenta la tesis fundamental, métricas de adopción, catalizadores y el precio o evento exacto que invalida la tesis.",
+    nombre: "Plantilla de tesis de inversión e invalidación",
+    para: "Documenta la tesis fundamental, las métricas de adopción, los catalizadores y el precio o evento que la invalidaría.",
   },
   {
     archivo: "/recursos/seguimiento-airdrop.csv",
-    nombre: "Seguimiento de Airdrops & Points Farming",
-    para: "Controla puntos acumulados, gas invertido, número de transacciones y carteras en protocolos pre-token.",
+    nombre: "Seguimiento de airdrops y puntos",
+    para: "Lleva un registro de los puntos acumulados, el gasto en gas, las transacciones y las billeteras asociadas a protocolos que aún no han lanzado su token.",
   },
 ] as const;

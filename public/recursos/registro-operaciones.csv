@@ -1,5 +1,5 @@
 ﻿marcador;fecha;activo;operacion;entrada;salida;precio_entrada;precio_salida;resultado_pct;stop_loss;notas
-[EJEMPLO REAL];2026-01-15;BTC;compra;0.05;;42000;;;39500;Ejemplo: no es una operacion real. Aqui va el porque de la decision.
+[EJEMPLO];2026-01-15;BTC;compra;0.05;;42000;;;39500;Ejemplo ficticio: anota aquí el motivo de la decisión.
 ;;;;;;;;;;
 ;;;;;;;;;;
 ;;;;;;;;;;

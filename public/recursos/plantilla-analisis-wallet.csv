@@ -1,18 +1,18 @@
 ﻿marcador;campo;que_es;como_se_calcula
-ESQUEMA;direccion;Direccion de la wallet analizada;Tal cual aparece en el explorador de bloques
-ESQUEMA;primera_actividad;Fecha de la primera transaccion;Fecha del primer bloque que la toca
-ESQUEMA;ultima_actividad;Fecha de la ultima transaccion;Fecha del ultimo bloque que la toca
-ESQUEMA;dias_activo;Antiguedad real de la wallet;ultima_actividad - primera_actividad
-ESQUEMA;num_transacciones;Volumen total de transacciones;Contar en el explorador
-ESQUEMA;txns_por_mes;Cadencia de operacion;num_transacciones / dias_activo * 30
-ESQUEMA;saldo_nativo;Cripto que mantiene sin operar;Balance de la moneda nativa en el explorador
-ESQUEMA;precio_usd;Precio del activo nativo hoy;Cierre del dia en el exchange que uses
-ESQUEMA;valor_usd_estimado;Valor aproximado actual;saldo_nativo * precio_usd
-ESQUEMA;contratos_interactuados;Cuantos protocolos ha tocado;Contar direcciones distintas en los logs
-ESQUEMA;envios_a_cex;Veces que ha enviado a un exchange;Cruzar contra direcciones de CEX conocidas
-ESQUEMA;riesgo_cex;Proporcion de envios a exchanges;envios_a_cex / num_transacciones
-ESQUEMA;token_rug_pull;Tokens que se desplomaron;Revisar liquidez retirada despues de vender
-ESQUEMA;notas;Tu criterio, en texto libre;Lo que un CSV no puede saber
+ESQUEMA;direccion;Dirección de la wallet analizada;Tal como aparece en el explorador de bloques
+ESQUEMA;primera_actividad;Fecha de la primera transacción;Fecha del primer bloque con actividad de la wallet
+ESQUEMA;ultima_actividad;Fecha de la última transacción;Fecha del último bloque con actividad de la wallet
+ESQUEMA;dias_activo;Días de actividad;ultima_actividad - primera_actividad
+ESQUEMA;num_transacciones;Número total de transacciones;Cuenta las transacciones en el explorador
+ESQUEMA;txns_por_mes;Frecuencia mensual de transacciones;num_transacciones / dias_activo * 30
+ESQUEMA;saldo_nativo;Cantidad de la moneda nativa sin mover;Consulta el saldo en el explorador
+ESQUEMA;precio_usd;Precio actual aproximado del activo nativo en USD;Cierre diario en el exchange que consultes
+ESQUEMA;valor_usd_estimado;Valor actual aproximado en USD;saldo_nativo * precio_usd
+ESQUEMA;contratos_interactuados;Número de protocolos con los que interactuó;Cuenta las direcciones distintas en los registros
+ESQUEMA;envios_a_cex;Número de envíos a exchanges centralizados;Contrasta las transacciones con direcciones conocidas de exchanges
+ESQUEMA;riesgo_cex;Proporción de envíos a exchanges;envios_a_cex / num_transacciones
+ESQUEMA;token_rug_pull;Tokens afectados por rug pull o una caída abrupta;Revisa si el proyecto sufrió una retirada de liquidez
+ESQUEMA;notas;Notas de análisis, en texto libre;Anota aspectos que no se reflejan en los datos del CSV
 
 marcador;campo;valor_ejemplo;nota
-[EJEMPLO REAL];wallet_ejemplo;0x1a2b...9f | 2024-01-15 | 2026-09-30 | 623 | 1842 | 88,7 | 3,412 | 64.500 | 220.074 | 27 | 9 | 0,49% | 2;Wallet activa desde 2024, 9 envios a CEX sobre 1842 tx y 2 tokens colapsados. Datos inventados para ilustrar.
+[EJEMPLO];wallet_ejemplo;0x1a2b…9f | 2024-01-15 | 2025-09-29 | 623 | 1842 | 88,7 | 3,412 | 64.500 | 220.074 | 27 | 9 | 0,49% | 2;Datos ficticios, solo con fines ilustrativos.

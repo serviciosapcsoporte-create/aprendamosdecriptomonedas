@@ -9,31 +9,31 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
 endobj
 4 0 obj
-<< /Length 2211 >>
+<< /Length 2379 >>
 stream
-BT /F2 18 Tf 1 0 0 1 56 736 Td (Guia de Ruta  Nivel 5 \(Especializaciones\)) Tj ET
-BT /F1 11 Tf 1 0 0 1 56 708 Td (Como elegir tu especializacion: Ethereum Scaling, Blockchain Modular y Regulacion) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 686 Td (A. Perfil: cual especializacion te queda mejor) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Te gusta programar -> ZK Programming y Desarrollo Avanzado) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  Te interesa la infraestructura -> Blockchain Modular y Wallet Tech) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Vienes del trading -> Finanzas y Analisis on-chain profundo) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  Te preocupa el marco legal -> Regulacion y Privacidad) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 596 Td (B. Ethereum Scaling \(ZK Programming / Cairo\)) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 574 Td ([ ]  Fundamentos: como un rollup comprime datos y prueba su estado) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 558 Td ([ ]  Cairo: sintaxis, felt, y contratos StarkNet) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  Practica: deploy de un contrato simple en testnet) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Recursos: Starknet docs, Cairo book, workshops oficiales) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 506 Td (C. Blockchain Modular y EigenLayer) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 484 Td ([ ]  Entender las capas: consenso, ejecucion, disponibilidad de datos) Tj ET
+BT /F2 18 Tf 1 0 0 1 56 736 Td (Guía de especialización - nivel 5) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 708 Td (Cómo elegir una especialización en escalabilidad de Ethereum, blockchains modulares o regulación) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 686 Td (A. Perfil: ¿qué especialización se adapta mejor a ti?) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 664 Td ([ ]  Si te gusta programar: programación ZK y desarrollo avanzado) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 648 Td ([ ]  Si te interesa la infraestructura: blockchains modulares y tecnología de billeteras) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 632 Td ([ ]  Si te interesa el trading: finanzas y análisis en cadena \(on-chain\) avanzado) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 616 Td ([ ]  Si te preocupa el marco legal: regulación y privacidad) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 596 Td (B. Escalabilidad de Ethereum \(programación ZK / Cairo\)) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 574 Td ([ ]  Fundamentos: cómo un rollup comprime datos y demuestra su estado) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 558 Td ([ ]  Cairo: sintaxis, felt y contratos de Starknet) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 542 Td ([ ]  Práctica: despliega un contrato sencillo en una red de pruebas) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 526 Td ([ ]  Recursos: documentación de Starknet, libro de Cairo y talleres oficiales) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 506 Td (C. Blockchains modulares y EigenLayer) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 484 Td ([ ]  Comprende las capas: consenso, ejecución y disponibilidad de datos) Tj ET
 BT /F2 10 Tf 1 0 0 1 56 468 Td ([ ]  EigenLayer y restaking: riesgos y oportunidades) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 452 Td ([ ]  Experimentar con una cadena modular de testnet) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Comparar monolitico vs modular con datos reales de uso) Tj ET
-BT /F2 13 Tf 1 0 0 1 56 416 Td (D. Regulacion y Finanzas institucionales) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 394 Td ([ ]  Marco global: MiCA \(UE\), EEUU \(SEC/CFTC\), LATAM) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 378 Td ([ ]  Como afecta la regulacion a exchanges y stablecoins) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 452 Td ([ ]  Prueba una cadena modular en una red de pruebas) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 436 Td ([ ]  Compara arquitecturas monolíticas y modulares con datos reales de uso) Tj ET
+BT /F2 13 Tf 1 0 0 1 56 416 Td (D. Regulación y finanzas institucionales) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 394 Td ([ ]  Marco global: MiCA \(UE\), EE. UU. \(SEC/CFTC\) y Latinoamérica) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 378 Td ([ ]  Cómo afecta la regulación a los exchanges y las stablecoins) Tj ET
 BT /F2 10 Tf 1 0 0 1 56 362 Td ([ ]  Custodia institucional e informes on-chain) Tj ET
-BT /F2 10 Tf 1 0 0 1 56 346 Td ([ ]  Estrategia de carrera: roles que van a crecer) Tj ET
-BT /F1 11 Tf 1 0 0 1 56 318 Td (Nivel 5: 11 especializaciones, acceso de por vida. Elige una ruta y ejecuta.) Tj ET
+BT /F2 10 Tf 1 0 0 1 56 346 Td ([ ]  Estrategia profesional: puestos con perspectivas de crecimiento) Tj ET
+BT /F1 11 Tf 1 0 0 1 56 318 Td (Nivel 5: 11 especializaciones y acceso de por vida. Elige una ruta y llévala a la práctica.) Tj ET
 endstream
 endobj
 5 0 obj
@@ -52,11 +52,11 @@ xref
 0000000079 00000 n 
 0000000154 00000 n 
 0000000232 00000 n 
-0000002495 00000 n 
-0000002552 00000 n 
-0000002698 00000 n 
+0000002663 00000 n 
+0000002720 00000 n 
+0000002866 00000 n 
 trailer
 << /Size 8 /Root 7 0 R >>
 startxref
-2747
+2915
 %%EOF
